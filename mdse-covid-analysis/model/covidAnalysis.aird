@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis uid="_vk28UCjWEeuutt3k_Nx_Sg" selectedViews="_wG6ggCjWEeuutt3k_Nx_Sg" version="14.3.1.202003261200">
+    <semanticResources>covidAnalysis.ecore</semanticResources>
+    <semanticResources>covidAnalysis.genmodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_wG6ggCjWEeuutt3k_Nx_Sg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_wKCtACjWEeuutt3k_Nx_Sg" name="covidAnalysis" repPath="#_wJIHACjWEeuutt3k_Nx_Sg" changeId="e4b64a15-f23b-4bc4-9f9f-1a3332cc5244">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="covidAnalysis.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_wJIHACjWEeuutt3k_Nx_Sg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_wK1-QCjWEeuutt3k_Nx_Sg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_wK1-QSjWEeuutt3k_Nx_Sg" type="Sirius" element="_wJIHACjWEeuutt3k_Nx_Sg" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_wK1-QijWEeuutt3k_Nx_Sg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_wMs_cCjWEeuutt3k_Nx_Sg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_wMs_cSjWEeuutt3k_Nx_Sg"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_wJqSgCjWEeuutt3k_Nx_Sg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="covidAnalysis.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
