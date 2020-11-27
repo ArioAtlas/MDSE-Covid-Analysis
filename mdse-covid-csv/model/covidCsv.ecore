@@ -23,6 +23,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="health_expenditure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="out_of_pocket_health_expenditure"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IndexData" eType="#//IndexData"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexData" instanceTypeName="CSV">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -50,5 +51,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_confirmed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IndexData" eType="#//IndexData"/>
   </eClassifiers>
 </ecore:EPackage>
