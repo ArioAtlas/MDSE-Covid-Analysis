@@ -1,0 +1,12 @@
+key,wikidata,datacommons,country_code,country_name,subregion1_code,subregion1_name,subregion2_code,subregion2_name,locality_code,locality_name,3166-1-alpha-2,3166-1-alpha-3,aggregation_level
+AD,Q228,country/AND,AD,Andorra,,,,,,,AD,AND,0
+AE,Q878,country/ARE,AE,United Arab Emirates,,,,,,,AE,ARE,0
+AF,Q889,country/AFG,AF,Afghanistan,,,,,,,AF,AFG,0
+CM,Q1009,country/CMR,CM,Cameroon,,,,,,,CM,CMR,0
+CN,Q148,country/CHN,CN,China,,,,,,,CN,CHN,0
+GA,Q1000,country/GAB,GA,Gabon,,,,,,,GA,GAB,0
+GB,Q145,country/GBR,GB,United Kingdom,,,,,,,GB,GBR,0
+IE,Q22890,,IE,Ireland,,,,,,,IE,IRL,0
+IL,Q801,country/ISR,IL,Israel,,,,,,,IL,ISR,0
+SE,Q34,country/SWE,SE,Sweden,,,,,,,SE,SWE,0
+US,Q30,country/USA,US,United States of America,,,,,,,US,USA,0
