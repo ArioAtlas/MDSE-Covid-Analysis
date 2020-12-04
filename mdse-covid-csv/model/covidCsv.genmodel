@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/mdse-covid-csv/src-gen" creationIcons="false"
-    editDirectory="/mdse-covid-csv.edit/src-gen" editorDirectory="/mdse-covid-csv.editor/src-gen"
-    modelPluginID="mdse-covid-csv" modelName="CovidCsv" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    modelDirectory="/mdse-covid-csv/src" creationIcons="false" editDirectory="/mdse-covid-csv.edit/src"
+    editorDirectory="/mdse-covid-csv.editor/src" modelPluginID="mdse-covid-csv" modelName="CovidCsv"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>covidCsv.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="CovidCsv" basePackage="mdse-covid-csv" disposableProviderFactory="true"
+  <genPackages prefix="covid" basePackage="mdse.covd" disposableProviderFactory="true"
       ecorePackage="covidCsv.ecore#/">
-    <genClasses ecoreClass="covidCsv.ecore#//HealthData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/life_expectancy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/smoking_prevalence"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/diabetes_prevalence"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/infant_mortality_rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/adult_male_mortality_rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/adult_female_mortality_rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/pollution_mortality_rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/comorbidity_mortality_rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/hospital_beds"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/nurses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/physicians"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/health_expenditure"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthData/out_of_pocket_health_expenditure"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//HealthData/IndexData"/>
+    <genClasses ecoreClass="covidCsv.ecore#//HealthRecord">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/life_expectancy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/smoking_prevalence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/diabetes_prevalence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/infant_mortality_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/adult_male_mortality_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/adult_female_mortality_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/pollution_mortality_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/comorbidity_mortality_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/hospital_beds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/nurses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/physicians"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/health_expenditure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//HealthRecord/out_of_pocket_health_expenditure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//HealthRecord/IndexData"/>
     </genClasses>
     <genClasses ecoreClass="covidCsv.ecore#//IndexData">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//IndexData/key"/>
@@ -41,17 +41,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//IndexData/alpha_3"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//IndexData/aggregation_level"/>
     </genClasses>
-    <genClasses ecoreClass="covidCsv.ecore#//EpidemiologyData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/date"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/new_confirmed"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/new_deceased"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/new_recovered"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/new_tested"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/total_confirmed"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/total_deceased"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyData/total_tested"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//EpidemiologyData/IndexData"/>
+    <genClasses ecoreClass="covidCsv.ecore#//EpidemiologyRecord">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/new_confirmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/new_deceased"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/new_recovered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/new_tested"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/total_confirmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/total_deceased"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidCsv.ecore#//EpidemiologyRecord/total_tested"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//EpidemiologyRecord/IndexData"/>
+    </genClasses>
+    <genClasses ecoreClass="covidCsv.ecore#//DataPool">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//DataPool/HealthData"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidCsv.ecore#//DataPool/EpidemiologyData"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

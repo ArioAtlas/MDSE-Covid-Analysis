@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated covid19 -->
+      <package
+            uri="http://www.example.org/covid19"
+            class="se.lnu.joa.covid.model.covid19.Covid19Package"
+            genModel="model/covid19.genmodel"/>
+   </extension>
+
+</plugin>

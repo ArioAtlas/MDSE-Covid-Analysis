@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="covidCsv" nsURI="http://www.example.org/covidCsv" nsPrefix="covidCsv">
-  <eClassifiers xsi:type="ecore:EClass" name="HealthData" instanceTypeName="CSV">
+  <eClassifiers xsi:type="ecore:EClass" name="HealthRecord">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="life_expectancy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
@@ -25,7 +25,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="IndexData" eType="#//IndexData"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndexData" instanceTypeName="CSV">
+  <eClassifiers xsi:type="ecore:EClass" name="IndexData">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="wikidata" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -40,7 +40,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha_3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EpidemiologyData" instanceTypeName="CSV">
+  <eClassifiers xsi:type="ecore:EClass" name="EpidemiologyRecord">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -52,5 +52,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="IndexData" eType="#//IndexData"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataPool">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="HealthData" upperBound="-1"
+        eType="#//HealthRecord" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EpidemiologyData" upperBound="-1"
+        eType="#//EpidemiologyRecord" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

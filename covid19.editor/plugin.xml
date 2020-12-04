@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated covid19 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="se.lnu.joa.covid.model.covid19.presentation.Covid19ModelWizardID"
+            name="%_UI_Covid19ModelWizard_label"
+            class="se.lnu.joa.covid.model.covid19.presentation.Covid19ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Covid19ModelFile.gif">
+         <description>%_UI_Covid19ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated covid19 -->
+      <editor
+            id="se.lnu.joa.covid.model.covid19.presentation.Covid19EditorID"
+            name="%_UI_Covid19Editor_label"
+            icon="icons/full/obj16/Covid19ModelFile.gif"
+            extensions="covid19"
+            class="se.lnu.joa.covid.model.covid19.presentation.Covid19Editor"
+            contributorClass="se.lnu.joa.covid.model.covid19.presentation.Covid19ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
