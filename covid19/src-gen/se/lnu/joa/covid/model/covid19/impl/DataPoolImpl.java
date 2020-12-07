@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.covid19.Covid19Package;
 import se.lnu.joa.covid.model.covid19.DataPool;
 import se.lnu.joa.covid.model.covid19.Epidemiology;
 import se.lnu.joa.covid.model.covid19.Health;
+import se.lnu.joa.covid.model.covid19.Index;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +32,7 @@ import se.lnu.joa.covid.model.covid19.Health;
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.covid19.impl.DataPoolImpl#getHealthData <em>Health Data</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.covid19.impl.DataPoolImpl#getEpidemiologyData <em>Epidemiology Data</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.covid19.impl.DataPoolImpl#getIndexData <em>Index Data</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,7 +49,7 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	protected EList<Health> healthData;
 
 	/**
-	 * The cached value of the '{@link #getEpidemiologyData() <em>Epidemiology Data</em>}' reference list.
+	 * The cached value of the '{@link #getEpidemiologyData() <em>Epidemiology Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEpidemiologyData()
@@ -56,6 +57,16 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	 * @ordered
 	 */
 	protected EList<Epidemiology> epidemiologyData;
+
+	/**
+	 * The cached value of the '{@link #getIndexData() <em>Index Data</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIndexData()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Index> indexData;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,10 +106,22 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	 */
 	public EList<Epidemiology> getEpidemiologyData() {
 		if (epidemiologyData == null) {
-			epidemiologyData = new EObjectResolvingEList<Epidemiology>(Epidemiology.class, this,
+			epidemiologyData = new EObjectContainmentEList<Epidemiology>(Epidemiology.class, this,
 					Covid19Package.DATA_POOL__EPIDEMIOLOGY_DATA);
 		}
 		return epidemiologyData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Index> getIndexData() {
+		if (indexData == null) {
+			indexData = new EObjectContainmentEList<Index>(Index.class, this, Covid19Package.DATA_POOL__INDEX_DATA);
+		}
+		return indexData;
 	}
 
 	/**
@@ -111,6 +134,10 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 		switch (featureID) {
 		case Covid19Package.DATA_POOL__HEALTH_DATA:
 			return ((InternalEList<?>) getHealthData()).basicRemove(otherEnd, msgs);
+		case Covid19Package.DATA_POOL__EPIDEMIOLOGY_DATA:
+			return ((InternalEList<?>) getEpidemiologyData()).basicRemove(otherEnd, msgs);
+		case Covid19Package.DATA_POOL__INDEX_DATA:
+			return ((InternalEList<?>) getIndexData()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -127,6 +154,8 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 			return getHealthData();
 		case Covid19Package.DATA_POOL__EPIDEMIOLOGY_DATA:
 			return getEpidemiologyData();
+		case Covid19Package.DATA_POOL__INDEX_DATA:
+			return getIndexData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +177,10 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 			getEpidemiologyData().clear();
 			getEpidemiologyData().addAll((Collection<? extends Epidemiology>) newValue);
 			return;
+		case Covid19Package.DATA_POOL__INDEX_DATA:
+			getIndexData().clear();
+			getIndexData().addAll((Collection<? extends Index>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +199,9 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 		case Covid19Package.DATA_POOL__EPIDEMIOLOGY_DATA:
 			getEpidemiologyData().clear();
 			return;
+		case Covid19Package.DATA_POOL__INDEX_DATA:
+			getIndexData().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,6 +218,8 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 			return healthData != null && !healthData.isEmpty();
 		case Covid19Package.DATA_POOL__EPIDEMIOLOGY_DATA:
 			return epidemiologyData != null && !epidemiologyData.isEmpty();
+		case Covid19Package.DATA_POOL__INDEX_DATA:
+			return indexData != null && !indexData.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -98,6 +98,15 @@ public class Covid19Switch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Covid19Package.INDEX: {
+			Index index = (Index) theEObject;
+			T result = caseIndex(index);
+			if (result == null)
+				result = caseDataRecord(index);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -160,6 +169,21 @@ public class Covid19Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataRecord(DataRecord object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Index</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIndex(Index object) {
 		return null;
 	}
 

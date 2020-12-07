@@ -64,6 +64,8 @@ public class Covid19FactoryImpl extends EFactoryImpl implements Covid19Factory {
 			return createDataPool();
 		case Covid19Package.DATA_RECORD:
 			return createDataRecord();
+		case Covid19Package.INDEX:
+			return createIndex();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +109,16 @@ public class Covid19FactoryImpl extends EFactoryImpl implements Covid19Factory {
 	public DataRecord createDataRecord() {
 		DataRecordImpl dataRecord = new DataRecordImpl();
 		return dataRecord;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Index createIndex() {
+		IndexImpl index = new IndexImpl();
+		return index;
 	}
 
 	/**

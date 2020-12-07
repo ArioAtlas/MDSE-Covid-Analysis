@@ -131,13 +131,112 @@ public interface Covid19Package extends EPackage {
 	int HEALTH__SMOKING_PREVALENCE = DATA_RECORD_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Diabetes prevalence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__DIABETES_PREVALENCE = DATA_RECORD_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Infant mortality rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__INFANT_MORTALITY_RATE = DATA_RECORD_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Adult male mortality rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__ADULT_MALE_MORTALITY_RATE = DATA_RECORD_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Adult female mortality rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__ADULT_FEMALE_MORTALITY_RATE = DATA_RECORD_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Pollution mortality rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__POLLUTION_MORTALITY_RATE = DATA_RECORD_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Comorbidity mortality rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__COMORBIDITY_MORTALITY_RATE = DATA_RECORD_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Hospital beds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__HOSPITAL_BEDS = DATA_RECORD_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Nurses</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__NURSES = DATA_RECORD_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Physicians</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__PHYSICIANS = DATA_RECORD_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Health expenditure</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__HEALTH_EXPENDITURE = DATA_RECORD_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Out of pocket health expenditure</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE = DATA_RECORD_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>Health</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HEALTH_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 2;
+	int HEALTH_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Health</em>' class.
@@ -168,13 +267,22 @@ public interface Covid19Package extends EPackage {
 	int EPIDEMIOLOGY__KEY = DATA_RECORD__KEY;
 
 	/**
+	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__DATE = DATA_RECORD_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>New confirmed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EPIDEMIOLOGY__NEW_CONFIRMED = DATA_RECORD_FEATURE_COUNT + 0;
+	int EPIDEMIOLOGY__NEW_CONFIRMED = DATA_RECORD_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>New deceased</b></em>' attribute.
@@ -183,7 +291,52 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EPIDEMIOLOGY__NEW_DECEASED = DATA_RECORD_FEATURE_COUNT + 1;
+	int EPIDEMIOLOGY__NEW_DECEASED = DATA_RECORD_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>New recovered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__NEW_RECOVERED = DATA_RECORD_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>New tested</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__NEW_TESTED = DATA_RECORD_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Total confirmed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__TOTAL_CONFIRMED = DATA_RECORD_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Total deceased</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__TOTAL_DECEASED = DATA_RECORD_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Total tested</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__TOTAL_TESTED = DATA_RECORD_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Epidemiology</em>' class.
@@ -192,7 +345,7 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EPIDEMIOLOGY_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 2;
+	int EPIDEMIOLOGY_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Epidemiology</em>' class.
@@ -223,7 +376,7 @@ public interface Covid19Package extends EPackage {
 	int DATA_POOL__HEALTH_DATA = 0;
 
 	/**
-	 * The feature id for the '<em><b>Epidemiology Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Epidemiology Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,13 +385,22 @@ public interface Covid19Package extends EPackage {
 	int DATA_POOL__EPIDEMIOLOGY_DATA = 1;
 
 	/**
+	 * The feature id for the '<em><b>Index Data</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_POOL__INDEX_DATA = 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Pool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_POOL_FEATURE_COUNT = 2;
+	int DATA_POOL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Data Pool</em>' class.
@@ -248,6 +410,52 @@ public interface Covid19Package extends EPackage {
 	 * @ordered
 	 */
 	int DATA_POOL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.covid19.impl.IndexImpl <em>Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.covid19.impl.IndexImpl
+	 * @see se.lnu.joa.covid.model.covid19.impl.Covid19PackageImpl#getIndex()
+	 * @generated
+	 */
+	int INDEX = 4;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__KEY = DATA_RECORD__KEY;
+
+	/**
+	 * The feature id for the '<em><b>Wikidata</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__WIKIDATA = DATA_RECORD_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_OPERATION_COUNT = DATA_RECORD_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.covid19.Health <em>Health</em>}'.
@@ -282,6 +490,127 @@ public interface Covid19Package extends EPackage {
 	EAttribute getHealth_Smoking_prevalence();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getDiabetes_prevalence <em>Diabetes prevalence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Diabetes prevalence</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getDiabetes_prevalence()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Diabetes_prevalence();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getInfant_mortality_rate <em>Infant mortality rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Infant mortality rate</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getInfant_mortality_rate()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Infant_mortality_rate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getAdult_male_mortality_rate <em>Adult male mortality rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Adult male mortality rate</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getAdult_male_mortality_rate()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Adult_male_mortality_rate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getAdult_female_mortality_rate <em>Adult female mortality rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Adult female mortality rate</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getAdult_female_mortality_rate()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Adult_female_mortality_rate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getPollution_mortality_rate <em>Pollution mortality rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pollution mortality rate</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getPollution_mortality_rate()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Pollution_mortality_rate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getComorbidity_mortality_rate <em>Comorbidity mortality rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comorbidity mortality rate</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getComorbidity_mortality_rate()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Comorbidity_mortality_rate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getHospital_beds <em>Hospital beds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hospital beds</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getHospital_beds()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Hospital_beds();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getNurses <em>Nurses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nurses</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getNurses()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Nurses();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getPhysicians <em>Physicians</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Physicians</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getPhysicians()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Physicians();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getHealth_expenditure <em>Health expenditure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Health expenditure</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getHealth_expenditure()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Health_expenditure();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Health#getOut_of_pocket_health_expenditure <em>Out of pocket health expenditure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Out of pocket health expenditure</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Health#getOut_of_pocket_health_expenditure()
+	 * @see #getHealth()
+	 * @generated
+	 */
+	EAttribute getHealth_Out_of_pocket_health_expenditure();
+
+	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.covid19.Epidemiology <em>Epidemiology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +619,17 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 */
 	EClass getEpidemiology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getDate()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_Date();
 
 	/**
 	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getNew_confirmed <em>New confirmed</em>}'.
@@ -314,6 +654,61 @@ public interface Covid19Package extends EPackage {
 	EAttribute getEpidemiology_New_deceased();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getNew_recovered <em>New recovered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New recovered</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getNew_recovered()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_New_recovered();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getNew_tested <em>New tested</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New tested</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getNew_tested()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_New_tested();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_confirmed <em>Total confirmed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total confirmed</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_confirmed()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_Total_confirmed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_deceased <em>Total deceased</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total deceased</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_deceased()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_Total_deceased();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_tested <em>Total tested</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total tested</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_tested()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_Total_tested();
+
+	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.covid19.DataPool <em>Data Pool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,15 +730,26 @@ public interface Covid19Package extends EPackage {
 	EReference getDataPool_HealthData();
 
 	/**
-	 * Returns the meta object for the reference list '{@link se.lnu.joa.covid.model.covid19.DataPool#getEpidemiologyData <em>Epidemiology Data</em>}'.
+	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.covid19.DataPool#getEpidemiologyData <em>Epidemiology Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Epidemiology Data</em>'.
+	 * @return the meta object for the containment reference list '<em>Epidemiology Data</em>'.
 	 * @see se.lnu.joa.covid.model.covid19.DataPool#getEpidemiologyData()
 	 * @see #getDataPool()
 	 * @generated
 	 */
 	EReference getDataPool_EpidemiologyData();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.covid19.DataPool#getIndexData <em>Index Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Index Data</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.DataPool#getIndexData()
+	 * @see #getDataPool()
+	 * @generated
+	 */
+	EReference getDataPool_IndexData();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.covid19.DataRecord <em>Data Record</em>}'.
@@ -365,6 +771,27 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataRecord_Key();
+
+	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.covid19.Index <em>Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Index</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index
+	 * @generated
+	 */
+	EClass getIndex();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getWikidata <em>Wikidata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wikidata</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getWikidata()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Wikidata();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -416,6 +843,94 @@ public interface Covid19Package extends EPackage {
 		EAttribute HEALTH__SMOKING_PREVALENCE = eINSTANCE.getHealth_Smoking_prevalence();
 
 		/**
+		 * The meta object literal for the '<em><b>Diabetes prevalence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__DIABETES_PREVALENCE = eINSTANCE.getHealth_Diabetes_prevalence();
+
+		/**
+		 * The meta object literal for the '<em><b>Infant mortality rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__INFANT_MORTALITY_RATE = eINSTANCE.getHealth_Infant_mortality_rate();
+
+		/**
+		 * The meta object literal for the '<em><b>Adult male mortality rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__ADULT_MALE_MORTALITY_RATE = eINSTANCE.getHealth_Adult_male_mortality_rate();
+
+		/**
+		 * The meta object literal for the '<em><b>Adult female mortality rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__ADULT_FEMALE_MORTALITY_RATE = eINSTANCE.getHealth_Adult_female_mortality_rate();
+
+		/**
+		 * The meta object literal for the '<em><b>Pollution mortality rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__POLLUTION_MORTALITY_RATE = eINSTANCE.getHealth_Pollution_mortality_rate();
+
+		/**
+		 * The meta object literal for the '<em><b>Comorbidity mortality rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__COMORBIDITY_MORTALITY_RATE = eINSTANCE.getHealth_Comorbidity_mortality_rate();
+
+		/**
+		 * The meta object literal for the '<em><b>Hospital beds</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__HOSPITAL_BEDS = eINSTANCE.getHealth_Hospital_beds();
+
+		/**
+		 * The meta object literal for the '<em><b>Nurses</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__NURSES = eINSTANCE.getHealth_Nurses();
+
+		/**
+		 * The meta object literal for the '<em><b>Physicians</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__PHYSICIANS = eINSTANCE.getHealth_Physicians();
+
+		/**
+		 * The meta object literal for the '<em><b>Health expenditure</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__HEALTH_EXPENDITURE = eINSTANCE.getHealth_Health_expenditure();
+
+		/**
+		 * The meta object literal for the '<em><b>Out of pocket health expenditure</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE = eINSTANCE.getHealth_Out_of_pocket_health_expenditure();
+
+		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.covid19.impl.EpidemiologyImpl <em>Epidemiology</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -424,6 +939,14 @@ public interface Covid19Package extends EPackage {
 		 * @generated
 		 */
 		EClass EPIDEMIOLOGY = eINSTANCE.getEpidemiology();
+
+		/**
+		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__DATE = eINSTANCE.getEpidemiology_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>New confirmed</b></em>' attribute feature.
@@ -440,6 +963,46 @@ public interface Covid19Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute EPIDEMIOLOGY__NEW_DECEASED = eINSTANCE.getEpidemiology_New_deceased();
+
+		/**
+		 * The meta object literal for the '<em><b>New recovered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__NEW_RECOVERED = eINSTANCE.getEpidemiology_New_recovered();
+
+		/**
+		 * The meta object literal for the '<em><b>New tested</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__NEW_TESTED = eINSTANCE.getEpidemiology_New_tested();
+
+		/**
+		 * The meta object literal for the '<em><b>Total confirmed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__TOTAL_CONFIRMED = eINSTANCE.getEpidemiology_Total_confirmed();
+
+		/**
+		 * The meta object literal for the '<em><b>Total deceased</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__TOTAL_DECEASED = eINSTANCE.getEpidemiology_Total_deceased();
+
+		/**
+		 * The meta object literal for the '<em><b>Total tested</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__TOTAL_TESTED = eINSTANCE.getEpidemiology_Total_tested();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.covid19.impl.DataPoolImpl <em>Data Pool</em>}' class.
@@ -460,12 +1023,20 @@ public interface Covid19Package extends EPackage {
 		EReference DATA_POOL__HEALTH_DATA = eINSTANCE.getDataPool_HealthData();
 
 		/**
-		 * The meta object literal for the '<em><b>Epidemiology Data</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Epidemiology Data</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DATA_POOL__EPIDEMIOLOGY_DATA = eINSTANCE.getDataPool_EpidemiologyData();
+
+		/**
+		 * The meta object literal for the '<em><b>Index Data</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_POOL__INDEX_DATA = eINSTANCE.getDataPool_IndexData();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.covid19.impl.DataRecordImpl <em>Data Record</em>}' class.
@@ -484,6 +1055,24 @@ public interface Covid19Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_RECORD__KEY = eINSTANCE.getDataRecord_Key();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.covid19.impl.IndexImpl <em>Index</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.covid19.impl.IndexImpl
+		 * @see se.lnu.joa.covid.model.covid19.impl.Covid19PackageImpl#getIndex()
+		 * @generated
+		 */
+		EClass INDEX = eINSTANCE.getIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Wikidata</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__WIKIDATA = eINSTANCE.getIndex_Wikidata();
 
 	}
 
