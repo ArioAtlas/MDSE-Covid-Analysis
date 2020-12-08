@@ -99,11 +99,6 @@ public class UsingEmfModel {
 				System.out.println("\n");
 			}
 			
-			//Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-	        //Map<String, Object> m = reg.getExtensionToFactoryMap();
-	        //m.put("Covid19", new XMIResourceFactoryImpl());
-			
-			
 
 			
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
@@ -116,11 +111,9 @@ public class UsingEmfModel {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("Did i go here 1");
 		} catch (NullPointerException e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.println("Did i go here 2");
 		}
     	
         
