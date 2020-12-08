@@ -99,21 +99,29 @@ public class UsingEmfModel {
 				System.out.println("\n");
 			}
 			
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-	        
-	        System.out.println(resourceSet.createResource(URI.createURI("HealthData")));
+			//Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+	        //Map<String, Object> m = reg.getExtensionToFactoryMap();
+	        //m.put("Covid19", new XMIResourceFactoryImpl());
 			
-			//resourceSet.createResource(URI.createURI("HealthData")).getContents().add(pool);
+			
+
+			
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
+	        
+	        System.out.println(resourceSet.createResource(URI.createURI("HealthData.Covid19")));
+			
+			resourceSet.createResource(URI.createURI("HealthData.Covid19")).getContents().add(pool);
 			
 	        
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Did i go here 1");
 		} catch (NullPointerException e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			System.out.println("Did i go here 2");
 		}
-    	
     	
         
     }
