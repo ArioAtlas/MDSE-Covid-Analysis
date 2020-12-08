@@ -330,13 +330,22 @@ public interface Covid19Package extends EPackage {
 	int EPIDEMIOLOGY__TOTAL_DECEASED = DATA_RECORD_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Total recovered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPIDEMIOLOGY__TOTAL_RECOVERED = DATA_RECORD_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Total tested</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EPIDEMIOLOGY__TOTAL_TESTED = DATA_RECORD_FEATURE_COUNT + 7;
+	int EPIDEMIOLOGY__TOTAL_TESTED = DATA_RECORD_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Epidemiology</em>' class.
@@ -345,7 +354,7 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EPIDEMIOLOGY_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 8;
+	int EPIDEMIOLOGY_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Epidemiology</em>' class.
@@ -440,13 +449,121 @@ public interface Covid19Package extends EPackage {
 	int INDEX__WIKIDATA = DATA_RECORD_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Datacommons</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__DATACOMMONS = DATA_RECORD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Country code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__COUNTRY_CODE = DATA_RECORD_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Country name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__COUNTRY_NAME = DATA_RECORD_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Subregion1 code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__SUBREGION1_CODE = DATA_RECORD_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Subregion1 name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__SUBREGION1_NAME = DATA_RECORD_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Subregion2 code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__SUBREGION2_CODE = DATA_RECORD_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Subregion2 name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__SUBREGION2_NAME = DATA_RECORD_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Locality code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__LOCALITY_CODE = DATA_RECORD_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Locality name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__LOCALITY_NAME = DATA_RECORD_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Alpha 2</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__ALPHA_2 = DATA_RECORD_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Alpha 3</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__ALPHA_3 = DATA_RECORD_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Aggregation level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX__AGGREGATION_LEVEL = DATA_RECORD_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>Index</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 1;
+	int INDEX_FEATURE_COUNT = DATA_RECORD_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Index</em>' class.
@@ -698,6 +815,17 @@ public interface Covid19Package extends EPackage {
 	EAttribute getEpidemiology_Total_deceased();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_recovered <em>Total recovered</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total recovered</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_recovered()
+	 * @see #getEpidemiology()
+	 * @generated
+	 */
+	EAttribute getEpidemiology_Total_recovered();
+
+	/**
 	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Epidemiology#getTotal_tested <em>Total tested</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -792,6 +920,138 @@ public interface Covid19Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIndex_Wikidata();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getDatacommons <em>Datacommons</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Datacommons</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getDatacommons()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Datacommons();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getCountry_code <em>Country code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Country code</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getCountry_code()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Country_code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getCountry_name <em>Country name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Country name</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getCountry_name()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Country_name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getSubregion1_code <em>Subregion1 code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subregion1 code</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getSubregion1_code()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Subregion1_code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getSubregion1_name <em>Subregion1 name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subregion1 name</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getSubregion1_name()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Subregion1_name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getSubregion2_code <em>Subregion2 code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subregion2 code</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getSubregion2_code()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Subregion2_code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getSubregion2_name <em>Subregion2 name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Subregion2 name</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getSubregion2_name()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Subregion2_name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getLocality_code <em>Locality code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Locality code</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getLocality_code()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Locality_code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getLocality_name <em>Locality name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Locality name</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getLocality_name()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Locality_name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getAlpha_2 <em>Alpha 2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alpha 2</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getAlpha_2()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Alpha_2();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getAlpha_3 <em>Alpha 3</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alpha 3</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getAlpha_3()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Alpha_3();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.covid19.Index#getAggregation_level <em>Aggregation level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Aggregation level</em>'.
+	 * @see se.lnu.joa.covid.model.covid19.Index#getAggregation_level()
+	 * @see #getIndex()
+	 * @generated
+	 */
+	EAttribute getIndex_Aggregation_level();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -997,6 +1257,14 @@ public interface Covid19Package extends EPackage {
 		EAttribute EPIDEMIOLOGY__TOTAL_DECEASED = eINSTANCE.getEpidemiology_Total_deceased();
 
 		/**
+		 * The meta object literal for the '<em><b>Total recovered</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EPIDEMIOLOGY__TOTAL_RECOVERED = eINSTANCE.getEpidemiology_Total_recovered();
+
+		/**
 		 * The meta object literal for the '<em><b>Total tested</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1073,6 +1341,102 @@ public interface Covid19Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute INDEX__WIKIDATA = eINSTANCE.getIndex_Wikidata();
+
+		/**
+		 * The meta object literal for the '<em><b>Datacommons</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__DATACOMMONS = eINSTANCE.getIndex_Datacommons();
+
+		/**
+		 * The meta object literal for the '<em><b>Country code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__COUNTRY_CODE = eINSTANCE.getIndex_Country_code();
+
+		/**
+		 * The meta object literal for the '<em><b>Country name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__COUNTRY_NAME = eINSTANCE.getIndex_Country_name();
+
+		/**
+		 * The meta object literal for the '<em><b>Subregion1 code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__SUBREGION1_CODE = eINSTANCE.getIndex_Subregion1_code();
+
+		/**
+		 * The meta object literal for the '<em><b>Subregion1 name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__SUBREGION1_NAME = eINSTANCE.getIndex_Subregion1_name();
+
+		/**
+		 * The meta object literal for the '<em><b>Subregion2 code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__SUBREGION2_CODE = eINSTANCE.getIndex_Subregion2_code();
+
+		/**
+		 * The meta object literal for the '<em><b>Subregion2 name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__SUBREGION2_NAME = eINSTANCE.getIndex_Subregion2_name();
+
+		/**
+		 * The meta object literal for the '<em><b>Locality code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__LOCALITY_CODE = eINSTANCE.getIndex_Locality_code();
+
+		/**
+		 * The meta object literal for the '<em><b>Locality name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__LOCALITY_NAME = eINSTANCE.getIndex_Locality_name();
+
+		/**
+		 * The meta object literal for the '<em><b>Alpha 2</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__ALPHA_2 = eINSTANCE.getIndex_Alpha_2();
+
+		/**
+		 * The meta object literal for the '<em><b>Alpha 3</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__ALPHA_3 = eINSTANCE.getIndex_Alpha_3();
+
+		/**
+		 * The meta object literal for the '<em><b>Aggregation level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX__AGGREGATION_LEVEL = eINSTANCE.getIndex_Aggregation_level();
 
 	}
 
