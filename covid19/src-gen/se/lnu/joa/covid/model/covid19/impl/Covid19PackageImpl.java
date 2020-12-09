@@ -326,8 +326,17 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEpidemiology_Total_tested() {
+	public EAttribute getEpidemiology_Total_recovered() {
 		return (EAttribute) epidemiologyEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEpidemiology_Total_tested() {
+		return (EAttribute) epidemiologyEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -407,6 +416,114 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIndex_Datacommons() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Country_code() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Country_name() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Subregion1_code() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Subregion1_name() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Subregion2_code() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Subregion2_name() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Locality_code() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Locality_name() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Alpha_2() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Alpha_3() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndex_Aggregation_level() {
+		return (EAttribute) indexEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Covid19Factory getCovid19Factory() {
 		return (Covid19Factory) getEFactoryInstance();
 	}
@@ -454,6 +571,7 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__NEW_TESTED);
 		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_CONFIRMED);
 		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_DECEASED);
+		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_RECOVERED);
 		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_TESTED);
 
 		dataPoolEClass = createEClass(DATA_POOL);
@@ -466,6 +584,18 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 
 		indexEClass = createEClass(INDEX);
 		createEAttribute(indexEClass, INDEX__WIKIDATA);
+		createEAttribute(indexEClass, INDEX__DATACOMMONS);
+		createEAttribute(indexEClass, INDEX__COUNTRY_CODE);
+		createEAttribute(indexEClass, INDEX__COUNTRY_NAME);
+		createEAttribute(indexEClass, INDEX__SUBREGION1_CODE);
+		createEAttribute(indexEClass, INDEX__SUBREGION1_NAME);
+		createEAttribute(indexEClass, INDEX__SUBREGION2_CODE);
+		createEAttribute(indexEClass, INDEX__SUBREGION2_NAME);
+		createEAttribute(indexEClass, INDEX__LOCALITY_CODE);
+		createEAttribute(indexEClass, INDEX__LOCALITY_NAME);
+		createEAttribute(indexEClass, INDEX__ALPHA_2);
+		createEAttribute(indexEClass, INDEX__ALPHA_3);
+		createEAttribute(indexEClass, INDEX__AGGREGATION_LEVEL);
 	}
 
 	/**
@@ -544,25 +674,28 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEpidemiology_Date(), ecorePackage.getEString(), "date", null, 0, 1, Epidemiology.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_confirmed(), ecorePackage.getEInt(), "new_confirmed", null, 0, 1,
+		initEAttribute(getEpidemiology_New_confirmed(), ecorePackage.getEString(), "new_confirmed", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_deceased(), ecorePackage.getEInt(), "new_deceased", null, 0, 1,
+		initEAttribute(getEpidemiology_New_deceased(), ecorePackage.getEString(), "new_deceased", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_recovered(), ecorePackage.getEInt(), "new_recovered", null, 0, 1,
+		initEAttribute(getEpidemiology_New_recovered(), ecorePackage.getEString(), "new_recovered", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_tested(), ecorePackage.getEInt(), "new_tested", null, 0, 1,
+		initEAttribute(getEpidemiology_New_tested(), ecorePackage.getEString(), "new_tested", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_confirmed(), ecorePackage.getEInt(), "total_confirmed", null, 0, 1,
+		initEAttribute(getEpidemiology_Total_confirmed(), ecorePackage.getEString(), "total_confirmed", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_deceased(), ecorePackage.getEInt(), "total_deceased", null, 0, 1,
+		initEAttribute(getEpidemiology_Total_deceased(), ecorePackage.getEString(), "total_deceased", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_tested(), ecorePackage.getEInt(), "total_tested", null, 0, 1,
+		initEAttribute(getEpidemiology_Total_recovered(), ecorePackage.getEString(), "total_recovered", null, 0, 1,
+				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_Total_tested(), ecorePackage.getEString(), "total_tested", null, 0, 1,
 				Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -586,6 +719,35 @@ public class Covid19PackageImpl extends EPackageImpl implements Covid19Package {
 		initEClass(indexEClass, Index.class, "Index", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndex_Wikidata(), ecorePackage.getEString(), "wikidata", null, 0, 1, Index.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Datacommons(), ecorePackage.getEString(), "datacommons", null, 0, 1, Index.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Country_code(), ecorePackage.getEString(), "country_code", null, 0, 1, Index.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Country_name(), ecorePackage.getEString(), "country_name", null, 0, 1, Index.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Subregion1_code(), ecorePackage.getEString(), "subregion1_code", null, 0, 1,
+				Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getIndex_Subregion1_name(), ecorePackage.getEString(), "subregion1_name", null, 0, 1,
+				Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getIndex_Subregion2_code(), ecorePackage.getEString(), "subregion2_code", null, 0, 1,
+				Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getIndex_Subregion2_name(), ecorePackage.getEString(), "subregion2_name", null, 0, 1,
+				Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getIndex_Locality_code(), ecorePackage.getEString(), "locality_code", null, 0, 1, Index.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Locality_name(), ecorePackage.getEString(), "locality_name", null, 0, 1, Index.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Alpha_2(), ecorePackage.getEString(), "alpha_2", null, 0, 1, Index.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Alpha_3(), ecorePackage.getEString(), "alpha_3", null, 0, 1, Index.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Aggregation_level(), ecorePackage.getEString(), "aggregation_level", null, 0, 1,
+				Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
