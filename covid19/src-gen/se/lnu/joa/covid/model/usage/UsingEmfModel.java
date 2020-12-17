@@ -1,15 +1,23 @@
 package se.lnu.joa.covid.model.usage;
 
 import java.io.FileReader;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.util.Map;
+import java.util.Collections;
+import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.eclipse.core.internal.runtime.Activator;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -23,6 +31,8 @@ import se.lnu.joa.covid.model.covid19.Epidemiology;
 import se.lnu.joa.covid.model.covid19.Health;
 import se.lnu.joa.covid.model.covid19.Index;
 import se.lnu.joa.covid.model.covid19.util.Covid19AdapterFactory;
+
+import org.eclipse.m2m.qvt.oml.*;
 
 
 public class UsingEmfModel {
@@ -223,15 +233,38 @@ public class UsingEmfModel {
 			}
 			
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
-	        			
-			resourceSet.createResource(URI.createURI("HealthData.Covid19")).getContents().add(pool);
 			
-	        
+			URI uri = URI.createURI("HealthData.Covid19");
+	        			
+			resourceSet.createResource(uri).getContents().add(pool);
+			
+			// Define the transformation input
+			Resource inResource = resourceSet.getResource(uri, false);
+			EList<EObject> inObjects = inResource.getContents();
+						
+			// Create the Input and Output Models
+			ModelExtent inModel = new BasicModelExtent(inObjects);
+			ModelExtent outModel = new BasicModelExtent();
+						
+			// Set up execution environment and configuration properties
+			TransformationExecutor executor = new TransformationExecutor(uri);
+			ExecutionContextImpl context = new ExecutionContextImpl();
+	
+			ExecutionDiagnostic result = executor.execute(context, inModel, outModel); // TODO: Why does this throw IllegalArgumentException?
+			
+			if (result.getSeverity() == Diagnostic.OK) {
+				// The objects got captured in outModel => save into resource
+				List<EObject> outObjects = outModel.getContents();
+				ResourceSet resourceSet2 = new ResourceSetImpl();
+				Resource outResource = resourceSet2.getResource(
+						URI.createURI("HealthData.Covid19.New"), false);
+				outResource.getContents().addAll(outObjects);
+				outResource.save(Collections.emptyMap());
+			} 
+						
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NullPointerException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
     	
