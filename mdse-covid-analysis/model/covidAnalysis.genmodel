@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mdse-covid-analysis/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/mdse-covid-analysis/src-gen" creationIcons="false"
     editDirectory="/mdse-covid-analysis.edit/src-gen" editorDirectory="/mdse-covid-analysis.editor/src-gen"
     modelPluginID="mdse-covid-analysis" modelName="CovidAnalysis" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
@@ -8,5 +9,61 @@
   <foreignModel>covidAnalysis.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="CovidAnalysis" basePackage="mdse-covid-analysis" disposableProviderFactory="true"
-      ecorePackage="covidAnalysis.ecore#/"/>
+      ecorePackage="covidAnalysis.ecore#/">
+    <genClasses ecoreClass="covidAnalysis.ecore#//AnalyticModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//AnalyticModel/dataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//AnalyticModel/datasetName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//AnalyticModel/regression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//AnalyticModel/visualization"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//Visualization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/xAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/yAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/subTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/xAxisLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/yAxisLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/colorLabel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//Visualization/scale_x"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//Visualization/scale_y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Visualization/caption"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//Regression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Regression/dependentValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Regression/independentValue"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//LinnearRegression"/>
+    <genClasses ecoreClass="covidAnalysis.ecore#//LogarithmicRegression"/>
+    <genClasses ecoreClass="covidAnalysis.ecore#//LinearPlot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//LinearPlot/lineSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//LinearPlot/lineAlpha"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//LinearPlot/animation"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//ScatterPlot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//ScatterPlot/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//ScatterPlot/stroke"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covidAnalysis.ecore#//ScatterPlot/animation"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//Animation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/transitionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/shadowWake"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/fps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/endPause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/resolution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/outputPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//Animation/outputName"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//Log10Scale"/>
+    <genClasses ecoreClass="covidAnalysis.ecore#//SqrtScale"/>
+    <genClasses ecoreClass="covidAnalysis.ecore#//DateScale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//DateScale/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covidAnalysis.ecore#//DateScale/breaks"/>
+    </genClasses>
+    <genClasses ecoreClass="covidAnalysis.ecore#//Scale"/>
+  </genPackages>
 </genmodel:GenModel>

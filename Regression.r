@@ -16,7 +16,7 @@ data %>%
 ggplot(aes(x=Day, y=total_confirmed, color=key)) +
   geom_point(alpha = 0.7, stroke = 0) +
   theme_fivethirtyeight() +
-  labs(title = "Infection vs Death",
+  labs(title = "Infection over Time in Europe",
        x = "Days Passed",
        y = "Total Infection",
        color = "Country",
