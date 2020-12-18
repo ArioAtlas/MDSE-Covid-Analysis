@@ -238,16 +238,18 @@ public class UsingEmfModel {
 	        			
 			resourceSet.createResource(uri).getContents().add(pool);
 			
+			URI transformationURI = URI.createURI("platform:/resource/Covid19QVT/Cov19M2MTransformation.qvto"); 
+			
 			// Define the transformation input
 			Resource inResource = resourceSet.getResource(uri, false);
-			EList<EObject> inObjects = inResource.getContents();
+			EList<EObject> inObjects = inResource.getContents(); 
 						
 			// Create the Input and Output Models
 			ModelExtent inModel = new BasicModelExtent(inObjects);
 			ModelExtent outModel = new BasicModelExtent();
 						
 			// Set up execution environment and configuration properties
-			TransformationExecutor executor = new TransformationExecutor(uri);
+			TransformationExecutor executor = new TransformationExecutor(transformationURI);
 			ExecutionContextImpl context = new ExecutionContextImpl();
 	
 			ExecutionDiagnostic result = executor.execute(context, inModel, outModel); // TODO: Why does this throw IllegalArgumentException?
