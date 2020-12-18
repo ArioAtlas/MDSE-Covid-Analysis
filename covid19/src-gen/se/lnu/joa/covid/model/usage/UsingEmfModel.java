@@ -252,14 +252,14 @@ public class UsingEmfModel {
 			TransformationExecutor executor = new TransformationExecutor(transformationURI);
 			ExecutionContextImpl context = new ExecutionContextImpl();
 	
-			ExecutionDiagnostic result = executor.execute(context, inModel, outModel); // TODO: Why does this throw IllegalArgumentException?
+			ExecutionDiagnostic result = executor.execute(context, inModel, outModel);
 			
 			if (result.getSeverity() == Diagnostic.OK) {
 				// The objects got captured in outModel => save into resource
 				List<EObject> outObjects = outModel.getContents();
 				ResourceSet resourceSet2 = new ResourceSetImpl();
 				Resource outResource = resourceSet2.getResource(
-						URI.createURI("HealthData.Covid19.New"), false);
+						URI.createURI("HealthData.Covid19.New"), false); // TODO: Change the URI!!
 				outResource.getContents().addAll(outObjects);
 				outResource.save(Collections.emptyMap());
 			} 

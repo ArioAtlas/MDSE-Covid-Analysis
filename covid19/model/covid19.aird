@@ -5,6 +5,7 @@
     <semanticResources>covid19.genmodel</semanticResources>
     <semanticResources>../build.properties</semanticResources>
     <semanticResources>../plugin.properties</semanticResources>
+    <semanticResources>covid19-analysis.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ifIzUDT3Eeuo8cyz3zRmOw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ijGtUDT3Eeuo8cyz3zRmOw" name="covid19" repPath="#_ih9d0DT3Eeuo8cyz3zRmOw" changeId="8dd4df6a-530d-458a-b689-1a9fbc0ccafd">
