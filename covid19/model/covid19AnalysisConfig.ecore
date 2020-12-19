@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="covid19-analysis">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="config" nsURI="http://lnu.se/dv651/covid19/config" nsPrefix="covid19">
+  <eClassifiers xsi:type="ecore:EClass" name="Config">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//DataModel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualizatoin" eType="#//Visualization"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regression" eType="#//Regression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="animation" eType="#//Animation"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="datasetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

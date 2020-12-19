@@ -6,7 +6,7 @@ library(dplyr)
 library(gapminder)
 library(ggthemes)
 
-epidemiology <- read.csv("C:/Users/Omid/Desktop/Lnu/4DV651/Project/MDSE-Covid-Analysis/covid19/epidemiology_EU.csv")
+epidemiology <- read.csv("./epidemiology_EU.csv")
 
 epidemiology$DateS <- as.Date(epidemiology$date, "%m/%d/%Y")
 epidemiology$Elapsed <- as.numeric(epidemiology$DateS)

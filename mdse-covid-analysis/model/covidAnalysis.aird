@@ -3,6 +3,7 @@
   <viewpoint:DAnalysis uid="_vk28UCjWEeuutt3k_Nx_Sg" selectedViews="_wG6ggCjWEeuutt3k_Nx_Sg" version="14.3.1.202003261200">
     <semanticResources>covidAnalysis.ecore</semanticResources>
     <semanticResources>covidAnalysis.genmodel</semanticResources>
+    <semanticResources>AnalyticModel.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_wG6ggCjWEeuutt3k_Nx_Sg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_wKCtACjWEeuutt3k_Nx_Sg" name="covidAnalysis" repPath="#_wJIHACjWEeuutt3k_Nx_Sg" changeId="d9db133f-b5fe-4c4b-b81d-397e80ca179f">

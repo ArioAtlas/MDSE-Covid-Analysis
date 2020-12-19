@@ -13,6 +13,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.eclipse.core.internal.runtime.Activator;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
@@ -235,24 +236,26 @@ public class UsingEmfModel {
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
 			
 			URI uri = URI.createURI("HealthData.Covid19");
-	        			
+				        			
 			resourceSet.createResource(uri).getContents().add(pool);
-			
-			URI transformationURI = URI.createURI("platform:/resource/Covid19QVT/Cov19M2MTransformation.qvto"); 
+						
+			URI transformationURI = URI.createURI("platform:/resource/Covid19QVT/transforms/DataAndConfigToAnalytic.qvto"); 
 			
 			// Define the transformation input
 			Resource inResource = resourceSet.getResource(uri, false);
 			EList<EObject> inObjects = inResource.getContents(); 
 						
 			// Create the Input and Output Models
-			ModelExtent inModel = new BasicModelExtent(inObjects);
+			ModelExtent dataModel = new BasicModelExtent(inObjects);
+			ModelExtent configModel = new BasicModelExtent(inObjects); // create new basic model for configuration model (MM2), but the argument must be changed!
 			ModelExtent outModel = new BasicModelExtent();
 						
 			// Set up execution environment and configuration properties
 			TransformationExecutor executor = new TransformationExecutor(transformationURI);
 			ExecutionContextImpl context = new ExecutionContextImpl();
 	
-			ExecutionDiagnostic result = executor.execute(context, inModel, outModel);
+			ExecutionDiagnostic result = executor.execute(context, dataModel, configModel, outModel); // update to a transformation with 2 input and 1 output
+			
 			
 			if (result.getSeverity() == Diagnostic.OK) {
 				// The objects got captured in outModel => save into resource
@@ -262,7 +265,11 @@ public class UsingEmfModel {
 						URI.createURI("HealthData.Covid19.New"), false); // TODO: Change the URI!!
 				outResource.getContents().addAll(outObjects);
 				outResource.save(Collections.emptyMap());
-			} 
+			} else {
+				System.err.println("Error in running transformation\n"+result.getMessage()); // Check if there was any issue in transformation
+				
+				System.err.println(result.getStackTrace().toString());
+			}
 						
 		} catch (IOException e) {
 			e.printStackTrace();

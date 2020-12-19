@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_hqqpcDT3Eeuo8cyz3zRmOw" selectedViews="_ifIzUDT3Eeuo8cyz3zRmOw" version="14.3.1.202003261200">
-    <semanticResources>covid19.ecore</semanticResources>
     <semanticResources>covid19.genmodel</semanticResources>
     <semanticResources>../build.properties</semanticResources>
     <semanticResources>../plugin.properties</semanticResources>
-    <semanticResources>covid19-analysis.ecore</semanticResources>
+    <semanticResources>covid19.ecore</semanticResources>
+    <semanticResources>DataPool.xmi</semanticResources>
+    <semanticResources>covid19AnalysisConfig.ecore</semanticResources>
+    <semanticResources>Config.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ifIzUDT3Eeuo8cyz3zRmOw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ijGtUDT3Eeuo8cyz3zRmOw" name="covid19" repPath="#_ih9d0DT3Eeuo8cyz3zRmOw" changeId="8dd4df6a-530d-458a-b689-1a9fbc0ccafd">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ijGtUDT3Eeuo8cyz3zRmOw" name="covid19" repPath="#_ih9d0DT3Eeuo8cyz3zRmOw" changeId="414abf2a-29e3-49c8-9e1c-e3eb8e00e5a1">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="covid19.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -28,6 +30,50 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_nssn5DT4Eeuo8cyz3zRmOw" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_nssn5TT4Eeuo8cyz3zRmOw"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_VZBUMEGFEeu2KpIbwNMvNw" type="3010" element="_VYehoUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZBUMUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZBUMkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZGzwEGFEeu2KpIbwNMvNw" type="3010" element="_VYhk8EGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZGzwUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZGzwkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZHa0EGFEeu2KpIbwNMvNw" type="3010" element="_VYizEEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZHa0UGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZHa0kGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZIB4EGFEeu2KpIbwNMvNw" type="3010" element="_VYkBMEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZIB4UGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZIB4kGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZIo8EGFEeu2KpIbwNMvNw" type="3010" element="_VYlPUEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZIo8UGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZIo8kGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZIo80GFEeu2KpIbwNMvNw" type="3010" element="_VYl2YUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZIo9EGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZIo9UGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZJQAEGFEeu2KpIbwNMvNw" type="3010" element="_VYnrkEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZJQAUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZJQAkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZJ3EEGFEeu2KpIbwNMvNw" type="3010" element="_VYoSoUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZJ3EUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZJ3EkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZKeIEGFEeu2KpIbwNMvNw" type="3010" element="_VYo5sUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZKeIUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZKeIkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZLFMEGFEeu2KpIbwNMvNw" type="3010" element="_VYqH0EGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZLFMUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZLFMkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZLFM0GFEeu2KpIbwNMvNw" type="3010" element="_VYrV8EGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZLFNEGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZLFNUGFEeu2KpIbwNMvNw"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_nsoWcTT4Eeuo8cyz3zRmOw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_nsoWcjT4Eeuo8cyz3zRmOw"/>
           </children>
@@ -41,9 +87,37 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_nstO8TT4Eeuo8cyz3zRmOw" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_nstO8jT4Eeuo8cyz3zRmOw"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_VZLsQEGFEeu2KpIbwNMvNw" type="3010" element="_VYskEEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZLsQUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZLsQkGFEeu2KpIbwNMvNw"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_nst2ADT4Eeuo8cyz3zRmOw" type="3010" element="_nsXQsDT4Eeuo8cyz3zRmOw">
               <styles xmi:type="notation:FontStyle" xmi:id="_nst2ATT4Eeuo8cyz3zRmOw" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_nst2AjT4Eeuo8cyz3zRmOw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZMTUEGFEeu2KpIbwNMvNw" type="3010" element="_VYvAUEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZMTUUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZMTUkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZM6YEGFEeu2KpIbwNMvNw" type="3010" element="_VYvnYEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZM6YUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZM6YkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZM6Y0GFEeu2KpIbwNMvNw" type="3010" element="_VYwOcEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZM6ZEGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZM6ZUGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZOvkEGFEeu2KpIbwNMvNw" type="3010" element="_VYw1gEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZOvkUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZOvkkGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZPWoEGFEeu2KpIbwNMvNw" type="3010" element="_VYxckUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZPWoUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZPWokGFEeu2KpIbwNMvNw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_VZP9sEGFEeu2KpIbwNMvNw" type="3010" element="_VYyDoUGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZP9sUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZP9skGFEeu2KpIbwNMvNw"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_nspkkTT4Eeuo8cyz3zRmOw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_nspkkjT4Eeuo8cyz3zRmOw"/>
@@ -54,6 +128,10 @@
         <children xmi:type="notation:Node" xmi:id="_nsqLoDT4Eeuo8cyz3zRmOw" type="2003" element="_nsInMDT4Eeuo8cyz3zRmOw">
           <children xmi:type="notation:Node" xmi:id="_nsqLozT4Eeuo8cyz3zRmOw" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_nsqysDT4Eeuo8cyz3zRmOw" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_VZQkwEGFEeu2KpIbwNMvNw" type="3010" element="_VYzRwEGFEeu2KpIbwNMvNw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_VZQkwUGFEeu2KpIbwNMvNw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_VZQkwkGFEeu2KpIbwNMvNw"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_nsqysTT4Eeuo8cyz3zRmOw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_nsqysjT4Eeuo8cyz3zRmOw"/>
           </children>
@@ -176,6 +254,94 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYehoUGFEeu2KpIbwNMvNw" name="diabetes_prevalence : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/diabetes_prevalence"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/diabetes_prevalence"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYgW0EGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYhk8EGFEeu2KpIbwNMvNw" name="infant_mortality_rate : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/infant_mortality_rate"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/infant_mortality_rate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYiMAEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYizEEGFEeu2KpIbwNMvNw" name="adult_male_mortality_rate : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/adult_male_mortality_rate"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/adult_male_mortality_rate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYjaIEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYkBMEGFEeu2KpIbwNMvNw" name="adult_female_mortality_rate : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/adult_female_mortality_rate"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/adult_female_mortality_rate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYkoQEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYlPUEGFEeu2KpIbwNMvNw" name="pollution_mortality_rate : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/pollution_mortality_rate"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/pollution_mortality_rate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYl2YEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYl2YUGFEeu2KpIbwNMvNw" name="comorbidity_mortality_rate : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/comorbidity_mortality_rate"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/comorbidity_mortality_rate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYmdcEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYnrkEGFEeu2KpIbwNMvNw" name="hospital_beds : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/hospital_beds"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/hospital_beds"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYoSoEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYoSoUGFEeu2KpIbwNMvNw" name="nurses : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/nurses"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/nurses"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYo5sEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYo5sUGFEeu2KpIbwNMvNw" name="physicians : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/physicians"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/physicians"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYpgwEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYqH0EGFEeu2KpIbwNMvNw" name="health_expenditure : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/health_expenditure"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/health_expenditure"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYqu4EGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYrV8EGFEeu2KpIbwNMvNw" name="out_of_pocket_health_expenditure : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/out_of_pocket_health_expenditure"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Health/out_of_pocket_health_expenditure"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYr9AEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_nsHZEDT4Eeuo8cyz3zRmOw" name="Epidemiology" tooltipText="" outgoingEdges="_nshBsDT4Eeuo8cyz3zRmOw" incomingEdges="_MnpQsDT5Eeuo8cyz3zRmOw" width="12" height="10">
       <target xmi:type="ecore:EClass" href="covid19.ecore#//Epidemiology"/>
@@ -184,7 +350,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_nsWCkDT4Eeuo8cyz3zRmOw" name="new_confirmed : EInt" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_nsWCkDT4Eeuo8cyz3zRmOw" name="new_confirmed : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_confirmed"/>
         <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_confirmed"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_nsWpoDT4Eeuo8cyz3zRmOw" labelAlignment="LEFT">
@@ -192,10 +358,66 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_nsXQsDT4Eeuo8cyz3zRmOw" name="new_deceased : EInt" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYskEEGFEeu2KpIbwNMvNw" name="date : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/date"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/date"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYtLIEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_nsXQsDT4Eeuo8cyz3zRmOw" name="new_deceased : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_deceased"/>
         <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_deceased"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_nsX3wDT4Eeuo8cyz3zRmOw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYvAUEGFEeu2KpIbwNMvNw" name="new_recovered : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_recovered"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_recovered"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYvAUUGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYvnYEGFEeu2KpIbwNMvNw" name="new_tested : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_tested"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/new_tested"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYvnYUGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYwOcEGFEeu2KpIbwNMvNw" name="total_confirmed : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_confirmed"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_confirmed"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYwOcUGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYw1gEGFEeu2KpIbwNMvNw" name="total_deceased : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_deceased"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_deceased"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYxckEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYxckUGFEeu2KpIbwNMvNw" name="total_recovered : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_recovered"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_recovered"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYyDoEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYyDoUGFEeu2KpIbwNMvNw" name="total_tested : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_tested"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19.ecore#//Epidemiology/total_tested"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYyqsEGFEeu2KpIbwNMvNw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -208,6 +430,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_VYzRwEGFEeu2KpIbwNMvNw" name=" IndexData : Index" tooltipText="">
+        <target xmi:type="ecore:EReference" href="covid19.ecore#//DataPool/IndexData"/>
+        <semanticElements xmi:type="ecore:EReference" href="covid19.ecore#//DataPool/IndexData"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_VYz40EGFEeu2KpIbwNMvNw" labelAlignment="LEFT" color="114,159,207">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_nsLDcDT4Eeuo8cyz3zRmOw" name="DataRecord" tooltipText="" incomingEdges="_nselcDT4Eeuo8cyz3zRmOw _nshBsDT4Eeuo8cyz3zRmOw" width="12" height="10">
       <target xmi:type="ecore:EClass" href="covid19.ecore#//DataRecord"/>
@@ -265,14 +495,9 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_MnpQsDT5Eeuo8cyz3zRmOw" name="[0..*] EpidemiologyData" sourceNode="_nsInMDT4Eeuo8cyz3zRmOw" targetNode="_nsHZEDT4Eeuo8cyz3zRmOw">
       <target xmi:type="ecore:EReference" href="covid19.ecore#//DataPool/EpidemiologyData"/>
       <semanticElements xmi:type="ecore:EReference" href="covid19.ecore#//DataPool/EpidemiologyData"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_MnpQsTT5Eeuo8cyz3zRmOw" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_MnpQszT5Eeuo8cyz3zRmOw" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_MnpQsjT5Eeuo8cyz3zRmOw" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_VY28IEGFEeu2KpIbwNMvNw" description="_nsdXUDT4Eeuo8cyz3zRmOw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_VY28IkGFEeu2KpIbwNMvNw" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_VY28IUGFEeu2KpIbwNMvNw" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

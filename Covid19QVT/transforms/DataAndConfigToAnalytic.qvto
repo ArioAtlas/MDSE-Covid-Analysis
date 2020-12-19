@@ -1,0 +1,21 @@
+modeltype csv "strict" uses 'http://lnu.se/dv651/covid19/csv';
+modeltype config "strict" uses 'http://lnu.se/dv651/covid19/config';
+modeltype analyze "strict" uses 'http://lnu.se/dv651/covid19/analyze';
+
+	
+
+transformation DataAndConfigToAnalytic(in dataModel : csv, in configModel:config,  out desstModel : analyze);
+
+
+main() {
+	dataModel.rootObjects()[DataPool]->map DataModel2Model();
+	configModel.rootObjects()[Config]->map ConfigModel2Model();
+}
+
+mapping DataPool::DataModel2Model() : AnalyticModel {
+	
+}
+
+mapping Config::ConfigModel2Model() : AnalyticModel {
+	
+}
