@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated covid19 -->
       <package
-            uri="http://www.example.org/covid19"
+            uri="http://lnu.se/dv651/covid19/csv"
             class="se.lnu.joa.covid.model.covid19.Covid19Package"
             genModel="model/covid19.genmodel"/>
    </extension>

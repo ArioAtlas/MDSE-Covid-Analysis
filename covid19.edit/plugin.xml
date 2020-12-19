@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated covid19 -->
       <factory
-            uri="http://www.example.org/covid19"
+            uri="http://lnu.se/dv651/covid19/csv"
             class="se.lnu.joa.covid.model.covid19.provider.Covid19ItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

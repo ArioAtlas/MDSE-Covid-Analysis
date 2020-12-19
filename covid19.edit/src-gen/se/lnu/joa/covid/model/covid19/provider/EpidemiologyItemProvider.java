@@ -44,10 +44,33 @@ public class EpidemiologyItemProvider extends DataRecordItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDatePropertyDescriptor(object);
 			addNew_confirmedPropertyDescriptor(object);
 			addNew_deceasedPropertyDescriptor(object);
+			addNew_recoveredPropertyDescriptor(object);
+			addNew_testedPropertyDescriptor(object);
+			addTotal_confirmedPropertyDescriptor(object);
+			addTotal_deceasedPropertyDescriptor(object);
+			addTotal_recoveredPropertyDescriptor(object);
+			addTotal_testedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_date_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_date_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__DATE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -63,7 +86,7 @@ public class EpidemiologyItemProvider extends DataRecordItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_new_confirmed_feature",
 								"_UI_Epidemiology_type"),
 						Covid19Package.Literals.EPIDEMIOLOGY__NEW_CONFIRMED, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -79,7 +102,103 @@ public class EpidemiologyItemProvider extends DataRecordItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_new_deceased_feature",
 								"_UI_Epidemiology_type"),
 						Covid19Package.Literals.EPIDEMIOLOGY__NEW_DECEASED, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the New recovered feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNew_recoveredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_new_recovered_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_new_recovered_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__NEW_RECOVERED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the New tested feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNew_testedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_new_tested_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_new_tested_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__NEW_TESTED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total confirmed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotal_confirmedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_total_confirmed_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_total_confirmed_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__TOTAL_CONFIRMED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total deceased feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotal_deceasedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_total_deceased_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_total_deceased_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__TOTAL_DECEASED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total recovered feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotal_recoveredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_total_recovered_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_total_recovered_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__TOTAL_RECOVERED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total tested feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotal_testedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Epidemiology_total_tested_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Epidemiology_total_tested_feature",
+								"_UI_Epidemiology_type"),
+						Covid19Package.Literals.EPIDEMIOLOGY__TOTAL_TESTED, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -128,8 +247,15 @@ public class EpidemiologyItemProvider extends DataRecordItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Epidemiology.class)) {
+		case Covid19Package.EPIDEMIOLOGY__DATE:
 		case Covid19Package.EPIDEMIOLOGY__NEW_CONFIRMED:
 		case Covid19Package.EPIDEMIOLOGY__NEW_DECEASED:
+		case Covid19Package.EPIDEMIOLOGY__NEW_RECOVERED:
+		case Covid19Package.EPIDEMIOLOGY__NEW_TESTED:
+		case Covid19Package.EPIDEMIOLOGY__TOTAL_CONFIRMED:
+		case Covid19Package.EPIDEMIOLOGY__TOTAL_DECEASED:
+		case Covid19Package.EPIDEMIOLOGY__TOTAL_RECOVERED:
+		case Covid19Package.EPIDEMIOLOGY__TOTAL_TESTED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -8,6 +8,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -233,9 +234,35 @@ public class UsingEmfModel {
 				i = i + 1;
 			}
 			
+			
+			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			
+			m.put("dataModel", new XMIResourceFactoryImpl());
+			
+			// Obtain a new resource set
+	        ResourceSet resSet = new ResourceSetImpl();
+	        
+	        // create a resource
+	        Resource resource = resSet.createResource(URI
+	                .createURI("dataModel/My2.dataModel"));
+	        
+	        // Get the first model element and cast it to the right type, in my
+	        // example everything is hierarchical included in this first node
+	        resource.getContents().add(pool);
+	        
+	        // now save the content.
+	        try {
+	            resource.save(Collections.EMPTY_MAP);
+	        } catch (IOException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+	        
+			/* Temporarily commented
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
 			
-			URI uri = URI.createURI("HealthData.Covid19");
+			URI uri = URI.createURI("platform:/resource/covid19/model/DataPool.xmi");
 				        			
 			resourceSet.createResource(uri).getContents().add(pool);
 						
@@ -255,7 +282,7 @@ public class UsingEmfModel {
 			ExecutionContextImpl context = new ExecutionContextImpl();
 	
 			ExecutionDiagnostic result = executor.execute(context, dataModel, configModel, outModel); // update to a transformation with 2 input and 1 output
-			
+			System.out.println(executor.loadTransformation());
 			
 			if (result.getSeverity() == Diagnostic.OK) {
 				// The objects got captured in outModel => save into resource
@@ -268,8 +295,9 @@ public class UsingEmfModel {
 			} else {
 				System.err.println("Error in running transformation\n"+result.getMessage()); // Check if there was any issue in transformation
 				
-				System.err.println(result.getStackTrace().toString());
 			}
+			
+			*/
 						
 		} catch (IOException e) {
 			e.printStackTrace();

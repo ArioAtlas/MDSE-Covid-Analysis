@@ -165,6 +165,29 @@ public class Covid19ItemProviderAdapterFactory extends Covid19AdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link se.lnu.joa.covid.model.covid19.Index} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IndexItemProvider indexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link se.lnu.joa.covid.model.covid19.Index}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIndexAdapter() {
+		if (indexItemProvider == null) {
+			indexItemProvider = new IndexItemProvider(this);
+		}
+
+		return indexItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,6 +294,8 @@ public class Covid19ItemProviderAdapterFactory extends Covid19AdapterFactory
 			dataPoolItemProvider.dispose();
 		if (dataRecordItemProvider != null)
 			dataRecordItemProvider.dispose();
+		if (indexItemProvider != null)
+			indexItemProvider.dispose();
 	}
 
 }

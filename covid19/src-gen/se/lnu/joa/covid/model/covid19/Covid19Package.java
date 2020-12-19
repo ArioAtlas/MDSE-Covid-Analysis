@@ -38,7 +38,7 @@ public interface Covid19Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/covid19";
+	String eNS_URI = "http://lnu.se/dv651/covid19/csv";
 
 	/**
 	 * The package namespace name.

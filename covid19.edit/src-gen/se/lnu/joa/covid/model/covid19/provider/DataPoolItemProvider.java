@@ -88,6 +88,7 @@ public class DataPoolItemProvider extends ItemProviderAdapter implements IEditin
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Covid19Package.Literals.DATA_POOL__HEALTH_DATA);
+			childrenFeatures.add(Covid19Package.Literals.DATA_POOL__INDEX_DATA);
 		}
 		return childrenFeatures;
 	}
@@ -150,6 +151,7 @@ public class DataPoolItemProvider extends ItemProviderAdapter implements IEditin
 
 		switch (notification.getFeatureID(DataPool.class)) {
 		case Covid19Package.DATA_POOL__HEALTH_DATA:
+		case Covid19Package.DATA_POOL__INDEX_DATA:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -169,6 +171,9 @@ public class DataPoolItemProvider extends ItemProviderAdapter implements IEditin
 
 		newChildDescriptors.add(createChildParameter(Covid19Package.Literals.DATA_POOL__HEALTH_DATA,
 				Covid19Factory.eINSTANCE.createHealth()));
+
+		newChildDescriptors.add(createChildParameter(Covid19Package.Literals.DATA_POOL__INDEX_DATA,
+				Covid19Factory.eINSTANCE.createIndex()));
 	}
 
 	/**
