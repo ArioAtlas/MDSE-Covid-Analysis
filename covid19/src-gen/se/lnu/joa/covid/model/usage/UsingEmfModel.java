@@ -26,6 +26,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import se.lnu.joa.covid.model.config.Config;
+import se.lnu.joa.covid.model.config.ConfigFactory;
+import se.lnu.joa.covid.model.config.ConfigPackage;
+import se.lnu.joa.covid.model.config.util.ConfigAdapterFactory;
 import se.lnu.joa.covid.model.covid19.Covid19Factory;
 import se.lnu.joa.covid.model.covid19.Covid19Package;
 import se.lnu.joa.covid.model.covid19.DataPool;
@@ -39,19 +43,23 @@ import org.eclipse.m2m.qvt.oml.*;
 
 public class UsingEmfModel {
     public static void main(String[] args) {
-    	final ResourceSet resourceSet = new ResourceSetImpl();
     	final Covid19AdapterFactory aFactory;
+    	final ConfigAdapterFactory cFactory;
     	
 		try {
 			EcorePackage.eINSTANCE.eClass();    // Makes sure EMF is up and running
 			Covid19Package.eINSTANCE.eClass(); 
+			ConfigPackage.eINSTANCE.eClass();
 			aFactory = new Covid19AdapterFactory();
+			cFactory = new ConfigAdapterFactory();
 			
 	        // Retrieve the default factory singleton
 	        Covid19Factory factory = Covid19Factory.eINSTANCE;
+	        ConfigFactory configFactory = ConfigFactory.eINSTANCE;
 	        
 	        // Create an instance of DataPool
 	        DataPool pool = factory.createDataPool();
+	        Config config = configFactory.createConfig();
 			
 	        Path indexPath = FileSystems.getDefault().getPath("index.csv");
 	        Path epidemiologyPath = FileSystems.getDefault().getPath("epidemiology.csv");
@@ -83,42 +91,6 @@ public class UsingEmfModel {
 		        // Add record to Index data
 		        pool.getIndexData().add(id);
 			}
-	        			
-			int i = 0;
-			for(Index item : pool.getIndexData()) {
-				if (i > 0) {
-					System.out.print("Key: ");
-					System.out.println(item.getKey());
-					System.out.print("Wikidata: ");
-					System.out.println(item.getWikidata());
-					System.out.print("Datacommons: ");
-					System.out.println(item.getDatacommons());
-					System.out.print("Country Code: ");
-					System.out.println(item.getCountry_code());
-					System.out.print("Country Name: ");
-					System.out.println(item.getCountry_name());
-					System.out.print("Subregion 1 code: ");
-					System.out.println(item.getSubregion1_code());
-					System.out.print("Subregion 1 name: ");
-					System.out.println(item.getSubregion1_name());
-					System.out.print("Subregion 2 code: ");
-					System.out.println(item.getSubregion2_code());
-					System.out.print("Subregion 2 name: ");
-					System.out.println(item.getSubregion2_name());
-					System.out.print("Locality code: ");
-					System.out.println(item.getLocality_code());
-					System.out.print("Locality name: ");
-					System.out.println(item.getLocality_name());
-					System.out.print("3166-1-alpha-2: ");
-					System.out.println(item.getAlpha_2());
-					System.out.print("3166-1-alpha-3: ");
-					System.out.println(item.getAlpha_3());
-					System.out.print("Aggregation Level: ");
-					System.out.println(item.getAggregation_level());
-					System.out.println("\n");
-				}
-				i = i + 1;
-			}
 			
 			// Epidemiology
 			in = new FileReader(epidemiologyPath.toString());
@@ -141,34 +113,6 @@ public class UsingEmfModel {
 		        
 		        // Add record to Epidemiology data
 		        pool.getEpidemiologyData().add(ed);
-			}
-	        			
-			i = 0;
-			for(Epidemiology item : pool.getEpidemiologyData()) {
-				if (i > 0) {
-					System.out.print("Key: ");
-					System.out.println(item.getKey());
-					System.out.print("Date: ");
-					System.out.println(item.getDate());
-					System.out.print("New Confirmed cases: ");
-					System.out.println(item.getNew_confirmed());
-					System.out.print("New Deceased cases: ");
-					System.out.println(item.getNew_deceased());
-					System.out.print("New Recovered cases: ");
-					System.out.println(item.getNew_recovered());
-					System.out.print("New Tested cases: ");
-					System.out.println(item.getNew_tested());
-					System.out.print("Total Confirmed cases: ");
-					System.out.println(item.getTotal_confirmed());
-					System.out.print("Total Deceased cases: ");
-					System.out.println(item.getTotal_deceased());
-					System.out.print("Total Recovered cases: ");
-					System.out.println(item.getTotal_recovered());
-					System.out.print("Total Tested cases: ");
-					System.out.println(item.getTotal_tested());
-					System.out.println("\n");
-				}
-				i = i + 1;
 			}
 			
 			// Health
@@ -196,66 +140,35 @@ public class UsingEmfModel {
 		        
 		        // Add record to Health data
 		        pool.getHealthData().add(hd);
-			}
-	        			
-			i = 0;
-			for(Health item : pool.getHealthData()) {
-				if (i > 0) {
-					System.out.print("Key: ");
-					System.out.println(item.getKey());
-					System.out.print("Life Expectancy: ");
-					System.out.println(item.getLife_expectancy());
-					System.out.print("Smoking Prevalence: ");
-					System.out.println(item.getSmoking_prevalence());
-					System.out.print("Diabetes Prevalence: ");
-					System.out.println(item.getDiabetes_prevalence());
-					System.out.print("Infant Morality Rate: ");
-					System.out.println(item.getInfant_mortality_rate());
-					System.out.print("Adult Male Morality Rate: ");
-					System.out.println(item.getAdult_male_mortality_rate());
-					System.out.print("Adult Female Morality Rate: ");
-					System.out.println(item.getAdult_female_mortality_rate());
-					System.out.print("Pollution Morality Rate: ");
-					System.out.println(item.getPollution_mortality_rate());
-					System.out.print("Cormobidity Morality Rate: ");
-					System.out.println(item.getComorbidity_mortality_rate());
-					System.out.print("Hospital Beds: ");
-					System.out.println(item.getHospital_beds());
-					System.out.print("Nurses: ");
-					System.out.println(item.getNurses());
-					System.out.print("Physicians: ");
-					System.out.println(item.getPhysicians());
-					System.out.print("Health Expenditure: ");
-					System.out.println(item.getHealth_expenditure());
-					System.out.print("Out of Pocket Health Expenditure: ");
-					System.out.println(item.getOut_of_pocket_health_expenditure());
-					System.out.println("\n");
-				}
-				i = i + 1;
-			}
-			
+			} 			
 			
 			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+			Resource.Factory.Registry cReg = Resource.Factory.Registry.INSTANCE;
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
+			Map<String, Object> cM = cReg.getExtensionToFactoryMap();
 			
 			m.put("dataModel", new XMIResourceFactoryImpl());
+			cM.put("configModel", new XMIResourceFactoryImpl());
 			
 			// Obtain a new resource set
 	        ResourceSet resSet = new ResourceSetImpl();
+	        ResourceSet configResourceSet = new ResourceSetImpl();
 	        
 	        // create a resource
 	        Resource resource = resSet.createResource(URI
 	                .createURI("dataModel/My2.dataModel"));
+	        Resource configResource = configResourceSet.createResource(URI.createURI("configModel/My2.configModel"));
 	        
 	        // Get the first model element and cast it to the right type, in my
 	        // example everything is hierarchical included in this first node
 	        resource.getContents().add(pool);
-	        
+	        configResource.getContents().add(config);
+	        	        
 	        // now save the content.
 	        try {
 	            resource.save(Collections.EMPTY_MAP);
+	            configResource.save(Collections.EMPTY_MAP);
 	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        }
 	        
@@ -309,3 +222,103 @@ public class UsingEmfModel {
     }
     
 }
+
+//int i = 0;
+//for(Index item : pool.getIndexData()) {
+//	if (i > 0) {
+//		System.out.print("Key: ");
+//		System.out.println(item.getKey());
+//		System.out.print("Wikidata: ");
+//		System.out.println(item.getWikidata());
+//		System.out.print("Datacommons: ");
+//		System.out.println(item.getDatacommons());
+//		System.out.print("Country Code: ");
+//		System.out.println(item.getCountry_code());
+//		System.out.print("Country Name: ");
+//		System.out.println(item.getCountry_name());
+//		System.out.print("Subregion 1 code: ");
+//		System.out.println(item.getSubregion1_code());
+//		System.out.print("Subregion 1 name: ");
+//		System.out.println(item.getSubregion1_name());
+//		System.out.print("Subregion 2 code: ");
+//		System.out.println(item.getSubregion2_code());
+//		System.out.print("Subregion 2 name: ");
+//		System.out.println(item.getSubregion2_name());
+//		System.out.print("Locality code: ");
+//		System.out.println(item.getLocality_code());
+//		System.out.print("Locality name: ");
+//		System.out.println(item.getLocality_name());
+//		System.out.print("3166-1-alpha-2: ");
+//		System.out.println(item.getAlpha_2());
+//		System.out.print("3166-1-alpha-3: ");
+//		System.out.println(item.getAlpha_3());
+//		System.out.print("Aggregation Level: ");
+//		System.out.println(item.getAggregation_level());
+//		System.out.println("\n");
+//	}
+//	i = i + 1;
+//}
+
+//i = 0;
+//for(Epidemiology item : pool.getEpidemiologyData()) {
+//	if (i > 0) {
+//		System.out.print("Key: ");
+//		System.out.println(item.getKey());
+//		System.out.print("Date: ");
+//		System.out.println(item.getDate());
+//		System.out.print("New Confirmed cases: ");
+//		System.out.println(item.getNew_confirmed());
+//		System.out.print("New Deceased cases: ");
+//		System.out.println(item.getNew_deceased());
+//		System.out.print("New Recovered cases: ");
+//		System.out.println(item.getNew_recovered());
+//		System.out.print("New Tested cases: ");
+//		System.out.println(item.getNew_tested());
+//		System.out.print("Total Confirmed cases: ");
+//		System.out.println(item.getTotal_confirmed());
+//		System.out.print("Total Deceased cases: ");
+//		System.out.println(item.getTotal_deceased());
+//		System.out.print("Total Recovered cases: ");
+//		System.out.println(item.getTotal_recovered());
+//		System.out.print("Total Tested cases: ");
+//		System.out.println(item.getTotal_tested());
+//		System.out.println("\n");
+//	}
+//	i = i + 1;
+//}
+
+//i = 0;
+//for(Health item : pool.getHealthData()) {
+//	if (i > 0) {
+//		System.out.print("Key: ");
+//		System.out.println(item.getKey());
+//		System.out.print("Life Expectancy: ");
+//		System.out.println(item.getLife_expectancy());
+//		System.out.print("Smoking Prevalence: ");
+//		System.out.println(item.getSmoking_prevalence());
+//		System.out.print("Diabetes Prevalence: ");
+//		System.out.println(item.getDiabetes_prevalence());
+//		System.out.print("Infant Morality Rate: ");
+//		System.out.println(item.getInfant_mortality_rate());
+//		System.out.print("Adult Male Morality Rate: ");
+//		System.out.println(item.getAdult_male_mortality_rate());
+//		System.out.print("Adult Female Morality Rate: ");
+//		System.out.println(item.getAdult_female_mortality_rate());
+//		System.out.print("Pollution Morality Rate: ");
+//		System.out.println(item.getPollution_mortality_rate());
+//		System.out.print("Cormobidity Morality Rate: ");
+//		System.out.println(item.getComorbidity_mortality_rate());
+//		System.out.print("Hospital Beds: ");
+//		System.out.println(item.getHospital_beds());
+//		System.out.print("Nurses: ");
+//		System.out.println(item.getNurses());
+//		System.out.print("Physicians: ");
+//		System.out.println(item.getPhysicians());
+//		System.out.print("Health Expenditure: ");
+//		System.out.println(item.getHealth_expenditure());
+//		System.out.print("Out of Pocket Health Expenditure: ");
+//		System.out.println(item.getOut_of_pocket_health_expenditure());
+//		System.out.println("\n");
+//	}
+//	i = i + 1;
+//}

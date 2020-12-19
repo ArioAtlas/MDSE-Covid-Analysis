@@ -14,4 +14,12 @@
             genModel="model/covid19.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated covid19AnalysisConfig -->
+      <package
+            uri="http://lnu.se/dv651/covid19/config"
+            class="se.lnu.joa.covid.model.config.ConfigPackage"
+            genModel="model/covid19AnalysisConfig.genmodel"/>
+   </extension>
+
 </plugin>
