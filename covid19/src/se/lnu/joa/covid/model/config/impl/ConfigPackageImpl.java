@@ -571,8 +571,12 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(visualizationTypeEEnum, VisualizationType.class, "VisualizationType");
+		addEEnumLiteral(visualizationTypeEEnum, VisualizationType.LINEAR_PLOT);
+		addEEnumLiteral(visualizationTypeEEnum, VisualizationType.SCATTER_PLOT);
 
 		initEEnum(regressionTypeEEnum, RegressionType.class, "RegressionType");
+		addEEnumLiteral(regressionTypeEEnum, RegressionType.LINNEAR);
+		addEEnumLiteral(regressionTypeEEnum, RegressionType.LOGARITHMIC);
 
 		// Create resource
 		createResource(eNS_URI);

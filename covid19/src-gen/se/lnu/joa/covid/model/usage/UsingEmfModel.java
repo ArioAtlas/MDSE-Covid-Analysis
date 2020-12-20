@@ -105,7 +105,6 @@ public class UsingEmfModel {
 	        }
 	        
 	        
-	        
 			/* Temporarily commented
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
 			
@@ -174,7 +173,7 @@ public class UsingEmfModel {
 			
 			// Create a Visualization from config file
 			Visualization vlz = configFactory.createVisualization();
-			vlz.setType(VisualizationType.get(aConfig.getVisualization().getType())); // TODO: fix String to ENUM convert issue in Visualization
+			vlz.setType(VisualizationType.get(aConfig.getVisualization().getType()));
 			vlz.setXAxis(aConfig.getVisualization().getxAxis());
 			vlz.setYAxis(aConfig.getVisualization().getyAxis());
 			vlz.setColor(aConfig.getVisualization().getColor());
@@ -197,7 +196,7 @@ public class UsingEmfModel {
 			
 			// create Regression from config file
 			Regression reg = configFactory.createRegression();
-			reg.setType(RegressionType.get(aConfig.getRegression().getType())); // TODO: fix String to ENUM convert issue in Regression
+			reg.setType(RegressionType.get(aConfig.getRegression().getType()));
 			reg.setDependentValue(aConfig.getRegression().getDependentValue());
 			reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
 			

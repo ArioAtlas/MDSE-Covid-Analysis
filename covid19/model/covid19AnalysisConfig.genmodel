@@ -9,8 +9,14 @@
   <foreignModel>covid19AnalysisConfig.ecore</foreignModel>
   <genPackages prefix="Config" basePackage="se.lnu.joa.covid.model" disposableProviderFactory="true"
       ecorePackage="covid19AnalysisConfig.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//VisualizationType"/>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//RegressionType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//VisualizationType">
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//VisualizationType/LinearPlot"/>
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//VisualizationType/ScatterPlot"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//RegressionType">
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//RegressionType/Linnear"/>
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//RegressionType/Logarithmic"/>
+    </genEnums>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Config">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/visualizatoin"/>

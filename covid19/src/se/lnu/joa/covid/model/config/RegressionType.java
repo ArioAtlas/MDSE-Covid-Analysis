@@ -18,7 +18,46 @@ import org.eclipse.emf.common.util.Enumerator;
  * @generated
  */
 public enum RegressionType implements Enumerator {
+	/**
+	 * The '<em><b>Linnear</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LINNEAR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LINNEAR(0, "Linnear", "Linnear"), /**
+	 * The '<em><b>Logarithmic</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOGARITHMIC_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LOGARITHMIC(1, "Logarithmic", "Logarithmic")
 	;
+
+	/**
+	 * The '<em><b>Linnear</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LINNEAR
+	 * @model name="Linnear"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LINNEAR_VALUE = 0;
+
+/**
+	 * The '<em><b>Logarithmic</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOGARITHMIC
+	 * @model name="Logarithmic"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LOGARITHMIC_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Regression Type</b></em>' enumerators.
@@ -28,6 +67,8 @@ public enum RegressionType implements Enumerator {
 	 */
 	private static final RegressionType[] VALUES_ARRAY =
 		new RegressionType[] {
+			LINNEAR,
+			LOGARITHMIC,
 		};
 
 	/**
@@ -84,6 +125,8 @@ public enum RegressionType implements Enumerator {
 	 */
 	public static RegressionType get(int value) {
 		switch (value) {
+			case LINNEAR_VALUE: return LINNEAR;
+			case LOGARITHMIC_VALUE: return LOGARITHMIC;
 		}
 		return null;
 	}

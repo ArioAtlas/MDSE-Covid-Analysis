@@ -18,7 +18,46 @@ import org.eclipse.emf.common.util.Enumerator;
  * @generated
  */
 public enum VisualizationType implements Enumerator {
+	/**
+	 * The '<em><b>Linear Plot</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LINEAR_PLOT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LINEAR_PLOT(0, "LinearPlot", "LinearPlot"), /**
+	 * The '<em><b>Scatter Plot</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SCATTER_PLOT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SCATTER_PLOT(1, "ScatterPlot", "ScatterPlot")
 	;
+
+	/**
+	 * The '<em><b>Linear Plot</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LINEAR_PLOT
+	 * @model name="LinearPlot"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LINEAR_PLOT_VALUE = 0;
+
+/**
+	 * The '<em><b>Scatter Plot</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SCATTER_PLOT
+	 * @model name="ScatterPlot"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SCATTER_PLOT_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Visualization Type</b></em>' enumerators.
@@ -28,6 +67,8 @@ public enum VisualizationType implements Enumerator {
 	 */
 	private static final VisualizationType[] VALUES_ARRAY =
 		new VisualizationType[] {
+			LINEAR_PLOT,
+			SCATTER_PLOT,
 		};
 
 	/**
@@ -84,6 +125,8 @@ public enum VisualizationType implements Enumerator {
 	 */
 	public static VisualizationType get(int value) {
 		switch (value) {
+			case LINEAR_PLOT_VALUE: return LINEAR_PLOT;
+			case SCATTER_PLOT_VALUE: return SCATTER_PLOT;
 		}
 		return null;
 	}

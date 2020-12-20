@@ -44,7 +44,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * @generated
 	 * @ordered
 	 */
-	protected static final VisualizationType TYPE_EDEFAULT = null;
+	protected static final VisualizationType TYPE_EDEFAULT = VisualizationType.LINEAR_PLOT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

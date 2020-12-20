@@ -37,7 +37,7 @@ public class RegressionImpl extends MinimalEObjectImpl.Container implements Regr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RegressionType TYPE_EDEFAULT = null;
+	protected static final RegressionType TYPE_EDEFAULT = RegressionType.LINNEAR;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
