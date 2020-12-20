@@ -1,0 +1,29 @@
+dataModel:
+  dataSource: path1
+  datasetName: abc.csv
+  
+visualization:
+  type: ScatterPlot
+  xAxis: total_deceased
+  yAxis: total_confirmed
+  color: new_confirmed
+  title: "Infection vs Death"
+  subTitle: "..."
+  xAxisLabel: "Total Infection"
+  yAxisLabel: "Total Deaths"
+  colorLabel: "Country"
+  caption: "Source: Google Open Data"
+  
+animation:
+  label: "Date: "
+  transitionTime: DateS
+  width: 800
+  height: 500
+  duration: 20
+  outputName: graph.gif
+  outputPath: out
+  
+regression:
+  type: Linnear
+  dependentValue: total_deceased
+  independentValue: total_confirmed

@@ -9,7 +9,9 @@ Bundle-Activator: se.lnu.joa.covid.model.covid19.provider.Covid19EditPlugin$Impl
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: se.lnu.joa.covid.model.covid19.provider
+Export-Package: se.lnu.joa.covid.model.covid19.provider,
+ config.provider,
+ se.lnu.joa.covid.model.config.provider
 Require-Bundle: org.eclipse.core.runtime,
  covid19;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

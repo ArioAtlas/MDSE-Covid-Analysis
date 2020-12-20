@@ -27,7 +27,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="VisualizationType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisualizationType">
+    <eLiterals name="LinearPlot" literal="LinearPlot"/>
+    <eLiterals name="ScatterPlot" value="1"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Animation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -42,5 +45,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependentValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="independentValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="RegressionType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RegressionType">
+    <eLiterals name="Linnear"/>
+    <eLiterals name="Logarithmic" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>

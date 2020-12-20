@@ -34,4 +34,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated covid19AnalysisConfig -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="config.presentation.ConfigModelWizardID"
+            name="%_UI_ConfigModelWizard_label"
+            class="config.presentation.ConfigModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ConfigModelFile.gif">
+         <description>%_UI_ConfigModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated covid19AnalysisConfig -->
+      <editor
+            id="config.presentation.ConfigEditorID"
+            name="%_UI_ConfigEditor_label"
+            icon="icons/full/obj16/ConfigModelFile.gif"
+            extensions="config"
+            class="config.presentation.ConfigEditor"
+            contributorClass="config.presentation.ConfigActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

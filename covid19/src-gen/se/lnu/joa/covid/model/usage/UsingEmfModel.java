@@ -1,8 +1,11 @@
 package se.lnu.joa.covid.model.usage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -26,9 +29,15 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import se.lnu.joa.covid.model.config.Animation;
 import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
 import se.lnu.joa.covid.model.config.ConfigPackage;
+import se.lnu.joa.covid.model.config.DataModel;
+import se.lnu.joa.covid.model.config.Regression;
+import se.lnu.joa.covid.model.config.RegressionType;
+import se.lnu.joa.covid.model.config.Visualization;
+import se.lnu.joa.covid.model.config.VisualizationType;
 import se.lnu.joa.covid.model.config.util.ConfigAdapterFactory;
 import se.lnu.joa.covid.model.covid19.Covid19Factory;
 import se.lnu.joa.covid.model.covid19.Covid19Package;
@@ -39,12 +48,20 @@ import se.lnu.joa.covid.model.covid19.Index;
 import se.lnu.joa.covid.model.covid19.util.Covid19AdapterFactory;
 
 import org.eclipse.m2m.qvt.oml.*;
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
 
 
 public class UsingEmfModel {
     public static void main(String[] args) {
     	final Covid19AdapterFactory aFactory;
     	final ConfigAdapterFactory cFactory;
+    	
+    	final String configFile = "config.yaml";
+    	final String indexFile = "index.csv";
+    	final String epidemiologyFile = "epidemiology.csv";
+    	final String healthFile = "health.csv";
+    
     	
 		try {
 			EcorePackage.eINSTANCE.eClass();    // Makes sure EMF is up and running
@@ -53,95 +70,10 @@ public class UsingEmfModel {
 			aFactory = new Covid19AdapterFactory();
 			cFactory = new ConfigAdapterFactory();
 			
-	        // Retrieve the default factory singleton
-	        Covid19Factory factory = Covid19Factory.eINSTANCE;
-	        ConfigFactory configFactory = ConfigFactory.eINSTANCE;
-	        
-	        // Create an instance of DataPool
-	        DataPool pool = factory.createDataPool();
-	        Config config = configFactory.createConfig();
-			
-	        Path indexPath = FileSystems.getDefault().getPath("index.csv");
-	        Path epidemiologyPath = FileSystems.getDefault().getPath("epidemiology.csv");
-	        Path healthPath = FileSystems.getDefault().getPath("health.csv");
-			
-	        // Index
-	        Reader in = new FileReader(indexPath.toString());
-			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
-			for (CSVRecord record : records) {
-			    // Create a record
-			    Index id = factory.createIndex();
-			    
-			    // Fill record with data
-		        id.setKey(record.get(0));
-		        id.setWikidata(record.get(1));
-		        id.setDatacommons(record.get(2));
-		        id.setCountry_code(record.get(3));
-		        id.setCountry_name(record.get(4));
-		        id.setSubregion1_code(record.get(5));
-		        id.setSubregion1_name(record.get(6));
-		        id.setSubregion2_code(record.get(7));
-		        id.setSubregion2_name(record.get(8));
-		        id.setLocality_code(record.get(9));
-		        id.setLocality_name(record.get(10));
-		        id.setAlpha_2(record.get(11));
-		        id.setAlpha_3(record.get(12));
-		        id.setAggregation_level(record.get(13));
-		        
-		        // Add record to Index data
-		        pool.getIndexData().add(id);
-			}
-			
-			// Epidemiology
-			in = new FileReader(epidemiologyPath.toString());
-			records = CSVFormat.EXCEL.parse(in);
-			for (CSVRecord record : records) {
-			    // Create a record
-			    Epidemiology ed = factory.createEpidemiology();
-			    
-			    // Fill record with data
-			    ed.setDate(record.get(0));
-		        ed.setKey(record.get(1));
-		        ed.setNew_confirmed(record.get(2));
-		        ed.setNew_deceased(record.get(3));
-		        ed.setNew_recovered(record.get(4));
-		        ed.setNew_tested(record.get(5));
-		        ed.setTotal_confirmed(record.get(5));
-		        ed.setTotal_deceased(record.get(6));
-		        ed.setTotal_recovered(record.get(7));
-		        ed.setTotal_tested(record.get(8));
-		        
-		        // Add record to Epidemiology data
-		        pool.getEpidemiologyData().add(ed);
-			}
-			
-			// Health
-			in = new FileReader(healthPath.toString());
-			records = CSVFormat.EXCEL.parse(in);
-			for (CSVRecord record : records) {
-			    // Create a record
-			    Health hd = factory.createHealth();
-			    
-			    // Fill record with data
-		        hd.setKey(record.get(0));
-		        hd.setLife_expectancy(record.get(1));
-		        hd.setSmoking_prevalence(record.get(2));
-		        hd.setDiabetes_prevalence(record.get(3));
-		        hd.setInfant_mortality_rate(record.get(4));
-		        hd.setAdult_male_mortality_rate(record.get(5));
-		        hd.setAdult_female_mortality_rate(record.get(6));
-		        hd.setPollution_mortality_rate(record.get(7));
-		        hd.setComorbidity_mortality_rate(record.get(8));
-		        hd.setHospital_beds(record.get(9));
-		        hd.setNurses(record.get(10));
-		        hd.setPhysicians(record.get(11));
-		        hd.setHealth_expenditure(record.get(12));
-		        hd.setOut_of_pocket_health_expenditure(record.get(13));
-		        
-		        // Add record to Health data
-		        pool.getHealthData().add(hd);
-			} 			
-			
+			// Read input files
+			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);
+	        Config config = readConfig(configFile);
+	        	        			
 			Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 			Resource.Factory.Registry cReg = Resource.Factory.Registry.INSTANCE;
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -171,6 +103,8 @@ public class UsingEmfModel {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
+	        
+	        
 	        
 			/* Temporarily commented
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
@@ -221,6 +155,157 @@ public class UsingEmfModel {
         
     }
     
+    private static Config readConfig(String configSource) {
+        ConfigFactory configFactory = ConfigFactory.eINSTANCE;
+    	Config config = configFactory.createConfig();
+    	
+    	Yaml yaml = new Yaml(new Constructor(AnalyticConfig.class));
+    	try {
+			InputStream inputStream = new FileInputStream(configSource);
+			
+			// Load YAML file to the proper POJO class
+			AnalyticConfig aConfig = yaml.load(inputStream);
+		
+						
+			// Create a DataModel from config file
+			DataModel dm = configFactory.createDataModel();
+			dm.setDataSource(aConfig.getDataModel().getDataSource());
+			dm.setDatasetName(aConfig.getDataModel().getDatasetName());
+			
+			// Create a Visualization from config file
+			Visualization vlz = configFactory.createVisualization();
+			vlz.setType(VisualizationType.get(aConfig.getVisualization().getType())); // TODO: fix String to ENUM convert issue in Visualization
+			vlz.setXAxis(aConfig.getVisualization().getxAxis());
+			vlz.setYAxis(aConfig.getVisualization().getyAxis());
+			vlz.setColor(aConfig.getVisualization().getColor());
+			vlz.setTitle(aConfig.getVisualization().getTitle());
+			vlz.setSubTitle(aConfig.getVisualization().getSubTitle());
+			vlz.setXAxisLabel(aConfig.getVisualization().getxAxisLabel());
+			vlz.setYAxisLabel(aConfig.getVisualization().getyAxisLabel());
+			vlz.setCaption(aConfig.getVisualization().getCaption());
+			 
+			// create a Animation from config file
+			Animation ani = configFactory.createAnimation();
+			ani.setLabel(aConfig.getAnimation().getLabel());
+			ani.setTransitionTime(aConfig.getAnimation().getTransitionTime());
+			ani.setWidth(aConfig.getAnimation().getWidth());
+			ani.setHeight(aConfig.getAnimation().getHeight());
+			ani.setDuration(aConfig.getAnimation().getDuration());
+			ani.setOutputName(aConfig.getAnimation().getOutputName());
+			ani.setOutputPath(aConfig.getAnimation().getOutputPath());
+			
+			
+			// create Regression from config file
+			Regression reg = configFactory.createRegression();
+			reg.setType(RegressionType.get(aConfig.getRegression().getType())); // TODO: fix String to ENUM convert issue in Regression
+			reg.setDependentValue(aConfig.getRegression().getDependentValue());
+			reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
+			
+			config.setSource(dm);
+			config.setVisualizatoin(vlz);
+			config.setAnimation(ani);
+			config.setRegression(reg);
+			
+			return config;
+			
+    	} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return null;
+    }
+    
+    private static DataPool readCsvData(String indexFile,String epidemiologyFile,String healthFile) throws IOException {
+    	Path indexPath = FileSystems.getDefault().getPath(indexFile);
+        Path epidemiologyPath = FileSystems.getDefault().getPath(epidemiologyFile);
+        Path healthPath = FileSystems.getDefault().getPath(healthFile);
+        
+        // Retrieve the default factory singleton
+        Covid19Factory factory = Covid19Factory.eINSTANCE;
+        
+        // Create an instance of DataPool
+        DataPool pool = factory.createDataPool();
+		
+        // Index
+        Reader in = new FileReader(indexPath.toString());
+		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+		for (CSVRecord record : records) {
+		    // Create a record
+		    Index id = factory.createIndex();
+		    
+		    // Fill record with data
+	        id.setKey(record.get(0));
+	        id.setWikidata(record.get(1));
+	        id.setDatacommons(record.get(2));
+	        id.setCountry_code(record.get(3));
+	        id.setCountry_name(record.get(4));
+	        id.setSubregion1_code(record.get(5));
+	        id.setSubregion1_name(record.get(6));
+	        id.setSubregion2_code(record.get(7));
+	        id.setSubregion2_name(record.get(8));
+	        id.setLocality_code(record.get(9));
+	        id.setLocality_name(record.get(10));
+	        id.setAlpha_2(record.get(11));
+	        id.setAlpha_3(record.get(12));
+	        id.setAggregation_level(record.get(13));
+	        
+	        // Add record to Index data
+	        pool.getIndexData().add(id);
+		}
+		
+		// Epidemiology
+		in = new FileReader(epidemiologyPath.toString());
+		records = CSVFormat.EXCEL.parse(in);
+		for (CSVRecord record : records) {
+		    // Create a record
+		    Epidemiology ed = factory.createEpidemiology();
+		    
+		    // Fill record with data
+		    ed.setDate(record.get(0));
+	        ed.setKey(record.get(1));
+	        ed.setNew_confirmed(record.get(2));
+	        ed.setNew_deceased(record.get(3));
+	        ed.setNew_recovered(record.get(4));
+	        ed.setNew_tested(record.get(5));
+	        ed.setTotal_confirmed(record.get(5));
+	        ed.setTotal_deceased(record.get(6));
+	        ed.setTotal_recovered(record.get(7));
+	        ed.setTotal_tested(record.get(8));
+	        
+	        // Add record to Epidemiology data
+	        pool.getEpidemiologyData().add(ed);
+		}
+		
+		// Health
+		in = new FileReader(healthPath.toString());
+		records = CSVFormat.EXCEL.parse(in);
+		for (CSVRecord record : records) {
+		    // Create a record
+		    Health hd = factory.createHealth();
+		    
+		    // Fill record with data
+	        hd.setKey(record.get(0));
+	        hd.setLife_expectancy(record.get(1));
+	        hd.setSmoking_prevalence(record.get(2));
+	        hd.setDiabetes_prevalence(record.get(3));
+	        hd.setInfant_mortality_rate(record.get(4));
+	        hd.setAdult_male_mortality_rate(record.get(5));
+	        hd.setAdult_female_mortality_rate(record.get(6));
+	        hd.setPollution_mortality_rate(record.get(7));
+	        hd.setComorbidity_mortality_rate(record.get(8));
+	        hd.setHospital_beds(record.get(9));
+	        hd.setNurses(record.get(10));
+	        hd.setPhysicians(record.get(11));
+	        hd.setHealth_expenditure(record.get(12));
+	        hd.setOut_of_pocket_health_expenditure(record.get(13));
+	        
+	        // Add record to Health data
+	        pool.getHealthData().add(hd);
+		}
+		
+		return pool;
+    }
 }
 
 //int i = 0;

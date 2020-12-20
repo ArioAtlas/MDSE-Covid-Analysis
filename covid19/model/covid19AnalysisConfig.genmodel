@@ -4,10 +4,11 @@
     editPluginClass="se.lnu.joa.covid.model.config.provider.Covid19AnalysisConfigEditPlugin"
     editorPluginClass="se.lnu.joa.covid.model.config.presentation.Covid19AnalysisConfigEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="se.lnu.joa.covid.model.config.tests.Covid19AnalysisConfigAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>covid19AnalysisConfig.ecore</foreignModel>
-  <genPackages prefix="Config" disposableProviderFactory="true" ecorePackage="covid19AnalysisConfig.ecore#/">
+  <genPackages prefix="Config" basePackage="se.lnu.joa.covid.model" disposableProviderFactory="true"
+      ecorePackage="covid19AnalysisConfig.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//VisualizationType"/>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//RegressionType"/>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Config">
