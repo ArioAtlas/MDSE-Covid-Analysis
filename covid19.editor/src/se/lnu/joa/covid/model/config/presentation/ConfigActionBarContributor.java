@@ -1,6 +1,6 @@
 /**
  */
-package config.presentation;
+package se.lnu.joa.covid.model.config.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -38,8 +38,6 @@ import org.eclipse.jface.viewers.Viewer;
 
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
-
-import se.lnu.joa.covid.model.config.presentation.Covid19AnalysisConfigEditorPlugin;
 
 /**
  * This is the action bar contributor for the Config model editor.
@@ -181,7 +179,7 @@ public class ConfigActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(Covid19AnalysisConfigEditorPlugin.INSTANCE.getString("_UI_ConfigEditor_menu"), "configMenuID");
+		IMenuManager submenuManager = new MenuManager(Covid19AnalysisConfigEditorPlugin.INSTANCE.getString("_UI_ConfigEditor_menu"), "se.lnu.joa.covid.model.configMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

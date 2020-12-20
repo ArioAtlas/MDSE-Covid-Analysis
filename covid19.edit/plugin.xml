@@ -23,7 +23,7 @@
       <!-- @generated covid19AnalysisConfig -->
       <factory
             uri="http://lnu.se/dv651/covid19/config"
-            class="config.provider.ConfigItemProviderAdapterFactory"
+            class="se.lnu.joa.covid.model.config.provider.ConfigItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

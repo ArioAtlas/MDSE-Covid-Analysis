@@ -40,9 +40,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="config.presentation.ConfigModelWizardID"
+            id="se.lnu.joa.covid.model.config.presentation.ConfigModelWizardID"
             name="%_UI_ConfigModelWizard_label"
-            class="config.presentation.ConfigModelWizard"
+            class="se.lnu.joa.covid.model.config.presentation.ConfigModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ConfigModelFile.gif">
          <description>%_UI_ConfigModelWizard_description</description>
@@ -53,12 +53,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated covid19AnalysisConfig -->
       <editor
-            id="config.presentation.ConfigEditorID"
+            id="se.lnu.joa.covid.model.config.presentation.ConfigEditorID"
             name="%_UI_ConfigEditor_label"
             icon="icons/full/obj16/ConfigModelFile.gif"
             extensions="config"
-            class="config.presentation.ConfigEditor"
-            contributorClass="config.presentation.ConfigActionBarContributor">
+            class="se.lnu.joa.covid.model.config.presentation.ConfigEditor"
+            contributorClass="se.lnu.joa.covid.model.config.presentation.ConfigActionBarContributor">
       </editor>
    </extension>
 </plugin>

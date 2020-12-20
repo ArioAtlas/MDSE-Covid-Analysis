@@ -1,6 +1,6 @@
 /**
  */
-package config.presentation;
+package se.lnu.joa.covid.model.config.presentation;
 
 
 import java.util.ArrayList;
@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import config.ConfigFactory;
-import config.ConfigPackage;
+import se.lnu.joa.covid.model.config.ConfigFactory;
+import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.provider.Covid19AnalysisConfigEditPlugin;
 
 
@@ -83,8 +83,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
-
-import se.lnu.joa.covid.model.config.presentation.Covid19AnalysisConfigEditorPlugin;
 
 
 /**

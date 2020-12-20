@@ -5,12 +5,11 @@ Bundle-SymbolicName: covid19.edit;singleton:=true
 Automatic-Module-Name: covid19.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: se.lnu.joa.covid.model.covid19.provider.Covid19EditPlugin$Implementation
+Bundle-Activator: se.lnu.joa.covid.model.config.provider.Covid19AnalysisConfigEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: se.lnu.joa.covid.model.covid19.provider,
- config.provider,
  se.lnu.joa.covid.model.config.provider
 Require-Bundle: org.eclipse.core.runtime,
  covid19;visibility:=reexport,

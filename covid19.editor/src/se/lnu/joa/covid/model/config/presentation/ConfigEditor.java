@@ -1,6 +1,6 @@
 /**
  */
-package config.presentation;
+package se.lnu.joa.covid.model.config.presentation;
 
 
 import java.io.IOException;
@@ -155,11 +155,9 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import config.provider.ConfigItemProviderAdapterFactory;
+import se.lnu.joa.covid.model.config.provider.ConfigItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import se.lnu.joa.covid.model.config.presentation.Covid19AnalysisConfigEditorPlugin;
 
 
 /**
