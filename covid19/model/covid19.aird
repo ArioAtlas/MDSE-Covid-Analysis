@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_hqqpcDT3Eeuo8cyz3zRmOw" selectedViews="_ifIzUDT3Eeuo8cyz3zRmOw" version="14.3.1.202003261200">
-    <semanticResources>covid19.genmodel</semanticResources>
     <semanticResources>../build.properties</semanticResources>
     <semanticResources>../plugin.properties</semanticResources>
-    <semanticResources>covid19.ecore</semanticResources>
     <semanticResources>DataPool.xmi</semanticResources>
     <semanticResources>covid19AnalysisConfig.ecore</semanticResources>
     <semanticResources>Config.xmi</semanticResources>
     <semanticResources>covid19AnalysisConfig.genmodel</semanticResources>
+    <semanticResources>covid19Analysis.ecore</semanticResources>
+    <semanticResources>covid19Analysis.genmodel</semanticResources>
+    <semanticResources>covid19Data.ecore</semanticResources>
+    <semanticResources>covid19Data.genmodel</semanticResources>
+    <semanticResources>../outModel/My2.configModel</semanticResources>
+    <semanticResources>../outM/ttt.configModel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ifIzUDT3Eeuo8cyz3zRmOw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ijGtUDT3Eeuo8cyz3zRmOw" name="covid19" repPath="#_ih9d0DT3Eeuo8cyz3zRmOw" changeId="414abf2a-29e3-49c8-9e1c-e3eb8e00e5a1">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="covid19.ecore#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_fjo3gUMZEeut6MdPKl_yyw" name="config class table" repPath="#_fjREEEMZEeut6MdPKl_yyw" changeId="6ce0e42d-e4ed-49ee-b4b3-b4f2405aac80">
+        <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
+        <target xmi:type="ecore:EPackage" href="covid19AnalysisConfig.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -509,4 +517,290 @@
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
     <target xmi:type="ecore:EPackage" href="covid19.ecore#/"/>
   </diagram:DSemanticDiagram>
+  <table:DTable uid="_fjREEEMZEeut6MdPKl_yyw" headerColumnWidth="244">
+    <target xmi:type="ecore:EPackage" href="covid19AnalysisConfig.ecore#/"/>
+    <lines xmi:type="table:DLine" uid="_fqGr4EMZEeut6MdPKl_yyw" label="Config">
+      <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Config"/>
+      <lines xmi:type="table:DLine" uid="_fqJvMEMZEeut6MdPKl_yyw" label="source : DataModel">
+        <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/source"/>
+        <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/source"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqcqIUMZEeut6MdPKl_yyw" label="source" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/source"/>
+          <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/source"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqMLcUMZEeut6MdPKl_yyw" label="visualizatoin : Visualization">
+        <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/visualizatoin"/>
+        <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/visualizatoin"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqdRMUMZEeut6MdPKl_yyw" label="visualizatoin" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/visualizatoin"/>
+          <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/visualizatoin"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqMLc0MZEeut6MdPKl_yyw" label="regression : Regression">
+        <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/regression"/>
+        <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/regression"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqdRM0MZEeut6MdPKl_yyw" label="regression" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/regression"/>
+          <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/regression"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqMLdUMZEeut6MdPKl_yyw" label="animation : Animation">
+        <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/animation"/>
+        <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/animation"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqd4QUMZEeut6MdPKl_yyw" label="animation" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/animation"/>
+          <semanticElements xmi:type="ecore:EReference" href="covid19AnalysisConfig.ecore#//Config/animation"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Config"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+      <cells xmi:type="table:DCell" uid="_fqV8cEMZEeut6MdPKl_yyw" label="Config" column="_fjiw4EMZEeut6MdPKl_yyw">
+        <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Config"/>
+        <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Config"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_fqH6AEMZEeut6MdPKl_yyw" label="DataModel">
+      <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//DataModel"/>
+      <lines xmi:type="table:DLine" uid="_fqMygUMZEeut6MdPKl_yyw" label="datasetName : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqefUEMZEeut6MdPKl_yyw" label="datasetName" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqOnsUMZEeut6MdPKl_yyw" label="dataSource : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqefUkMZEeut6MdPKl_yyw" label="dataSource" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//DataModel"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+      <cells xmi:type="table:DCell" uid="_fqd4Q0MZEeut6MdPKl_yyw" label="DataModel" column="_fjiw4EMZEeut6MdPKl_yyw">
+        <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//DataModel"/>
+        <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//DataModel"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_fqH6AkMZEeut6MdPKl_yyw" label="Visualization">
+      <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Visualization"/>
+      <lines xmi:type="table:DLine" uid="_fqPOwEMZEeut6MdPKl_yyw" label="type : VisualizationType">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/type"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqfGYEMZEeut6MdPKl_yyw" label="type" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/type"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/type"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqPOwkMZEeut6MdPKl_yyw" label="xAxis : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxis"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxis"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqfGYkMZEeut6MdPKl_yyw" label="xAxis" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxis"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxis"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqP10UMZEeut6MdPKl_yyw" label="yAxis : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxis"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxis"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqfGZEMZEeut6MdPKl_yyw" label="yAxis" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxis"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxis"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqP100MZEeut6MdPKl_yyw" label="color : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/color"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/color"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqftcUMZEeut6MdPKl_yyw" label="color" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/color"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/color"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqP11UMZEeut6MdPKl_yyw" label="title : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/title"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/title"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqftc0MZEeut6MdPKl_yyw" label="title" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/title"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/title"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqQc4UMZEeut6MdPKl_yyw" label="subTitle : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/subTitle"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/subTitle"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqftdUMZEeut6MdPKl_yyw" label="subTitle" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/subTitle"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/subTitle"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqQc40MZEeut6MdPKl_yyw" label="xAxisLabel : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxisLabel"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxisLabel"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqgUgUMZEeut6MdPKl_yyw" label="xAxisLabel" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxisLabel"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/xAxisLabel"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqQc5UMZEeut6MdPKl_yyw" label="yAxisLabel : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxisLabel"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxisLabel"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqg7kUMZEeut6MdPKl_yyw" label="yAxisLabel" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxisLabel"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/yAxisLabel"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRD8UMZEeut6MdPKl_yyw" label="colorLabel : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/colorLabel"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/colorLabel"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqhioUMZEeut6MdPKl_yyw" label="colorLabel" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/colorLabel"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/colorLabel"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRD80MZEeut6MdPKl_yyw" label="caption : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/caption"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/caption"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqiJsUMZEeut6MdPKl_yyw" label="caption" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/caption"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Visualization/caption"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Visualization"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+      <cells xmi:type="table:DCell" uid="_fqefVEMZEeut6MdPKl_yyw" label="Visualization" column="_fjiw4EMZEeut6MdPKl_yyw">
+        <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Visualization"/>
+        <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Visualization"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_fqH6BEMZEeut6MdPKl_yyw" label="Animation">
+      <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Animation"/>
+      <lines xmi:type="table:DLine" uid="_fqRD9UMZEeut6MdPKl_yyw" label="label : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/label"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/label"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqjX0UMZEeut6MdPKl_yyw" label="label" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/label"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/label"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRrAEMZEeut6MdPKl_yyw" label="transitionTime : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/transitionTime"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/transitionTime"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqjX00MZEeut6MdPKl_yyw" label="transitionTime" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/transitionTime"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/transitionTime"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRrAkMZEeut6MdPKl_yyw" label="width : EInt">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/width"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/width"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqj-4UMZEeut6MdPKl_yyw" label="width" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/width"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/width"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRrBEMZEeut6MdPKl_yyw" label="height : EInt">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/height"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/height"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqj-40MZEeut6MdPKl_yyw" label="height" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/height"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/height"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRrBkMZEeut6MdPKl_yyw" label="duration : EInt">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/duration"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/duration"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqkl8UMZEeut6MdPKl_yyw" label="duration" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/duration"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/duration"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqRrCEMZEeut6MdPKl_yyw" label="outputName : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputName"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputName"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqlNAEMZEeut6MdPKl_yyw" label="outputName" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputName"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputName"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqSSEUMZEeut6MdPKl_yyw" label="outputPath : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputPath"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputPath"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fqlNAkMZEeut6MdPKl_yyw" label="outputPath" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputPath"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Animation/outputPath"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Animation"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+      <cells xmi:type="table:DCell" uid="_fqiwwUMZEeut6MdPKl_yyw" label="Animation" column="_fjiw4EMZEeut6MdPKl_yyw">
+        <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Animation"/>
+        <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Animation"/>
+      </cells>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_fqIhEUMZEeut6MdPKl_yyw" label="Regression">
+      <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Regression"/>
+      <lines xmi:type="table:DLine" uid="_fqSSE0MZEeut6MdPKl_yyw" label="type : RegressionType">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/type"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fql0EUMZEeut6MdPKl_yyw" label="type" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/type"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/type"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqSSFUMZEeut6MdPKl_yyw" label="dependentValue : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/dependentValue"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/dependentValue"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fql0E0MZEeut6MdPKl_yyw" label="dependentValue" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/dependentValue"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/dependentValue"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" uid="_fqSSF0MZEeut6MdPKl_yyw" label="independentValue : EString">
+        <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/independentValue"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/independentValue"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+        <cells xmi:type="table:DCell" uid="_fql0FUMZEeut6MdPKl_yyw" label="independentValue" column="_fjiw4EMZEeut6MdPKl_yyw">
+          <target xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/independentValue"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="covid19AnalysisConfig.ecore#//Regression/independentValue"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Regression"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+      <cells xmi:type="table:DCell" uid="_fqlNBEMZEeut6MdPKl_yyw" label="Regression" column="_fjiw4EMZEeut6MdPKl_yyw">
+        <target xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Regression"/>
+        <semanticElements xmi:type="ecore:EClass" href="covid19AnalysisConfig.ecore#//Regression"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_fjiw4EMZEeut6MdPKl_yyw" label="Name" cells="_fqV8cEMZEeut6MdPKl_yyw _fqcqIUMZEeut6MdPKl_yyw _fqdRMUMZEeut6MdPKl_yyw _fqdRM0MZEeut6MdPKl_yyw _fqd4QUMZEeut6MdPKl_yyw _fqd4Q0MZEeut6MdPKl_yyw _fqefUEMZEeut6MdPKl_yyw _fqefUkMZEeut6MdPKl_yyw _fqefVEMZEeut6MdPKl_yyw _fqfGYEMZEeut6MdPKl_yyw _fqfGYkMZEeut6MdPKl_yyw _fqfGZEMZEeut6MdPKl_yyw _fqftcUMZEeut6MdPKl_yyw _fqftc0MZEeut6MdPKl_yyw _fqftdUMZEeut6MdPKl_yyw _fqgUgUMZEeut6MdPKl_yyw _fqg7kUMZEeut6MdPKl_yyw _fqhioUMZEeut6MdPKl_yyw _fqiJsUMZEeut6MdPKl_yyw _fqiwwUMZEeut6MdPKl_yyw _fqjX0UMZEeut6MdPKl_yyw _fqjX00MZEeut6MdPKl_yyw _fqj-4UMZEeut6MdPKl_yyw _fqj-40MZEeut6MdPKl_yyw _fqkl8UMZEeut6MdPKl_yyw _fqlNAEMZEeut6MdPKl_yyw _fqlNAkMZEeut6MdPKl_yyw _fqlNBEMZEeut6MdPKl_yyw _fql0EUMZEeut6MdPKl_yyw _fql0E0MZEeut6MdPKl_yyw _fql0FUMZEeut6MdPKl_yyw" width="129" featureName="name">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedColumnMappings[name='Name']"/>
+    </columns>
+    <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
+  </table:DTable>
 </xmi:XMI>

@@ -22,4 +22,20 @@
             genModel="model/covid19AnalysisConfig.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated covid19Data -->
+      <package
+            uri="http://lnu.se/dv651/covid19/csv"
+            class="se.lnu.joa.covid.model.data.DataPackage"
+            genModel="model/covid19Data.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated covid19Analysis -->
+      <package
+            uri="http://lnu.se/dv651/covid19/analyze"
+            class="se.lnu.joa.covid.model.analysis.AnalysisPackage"
+            genModel="model/covid19Analysis.genmodel"/>
+   </extension>
+
 </plugin>

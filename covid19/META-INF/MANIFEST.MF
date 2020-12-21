@@ -8,17 +8,17 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: se.lnu.joa.covid.model.config,
+Export-Package: se.lnu.joa.covid.model.data,
+ se.lnu.joa.covid.model.data.impl,
+ se.lnu.joa.covid.model.data.util,
+ se.lnu.joa.covid.model.config,
  se.lnu.joa.covid.model.config.impl,
  se.lnu.joa.covid.model.config.util,
- se.lnu.joa.covid.model.covid19,
- se.lnu.joa.covid.model.covid19.impl,
- se.lnu.joa.covid.model.covid19.util
+ se.lnu.joa.covid.model.analysis,
+ se.lnu.joa.covid.model.analysis.impl,
+ se.lnu.joa.covid.model.analysis.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.apache.commons.httpclient;bundle-version="3.1.0",
- org.eclipse.emf.ecore.xmi;bundle-version="2.16.0",
- org.eclipse.m2m.qvt.oml;bundle-version="3.10.2"
+ org.eclipse.m2m.qvt.oml
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.emf.edit.ui.provider,
- org.eclipse.jface.viewers
+Import-Package: org.eclipse.emf.ecore.xmi.impl

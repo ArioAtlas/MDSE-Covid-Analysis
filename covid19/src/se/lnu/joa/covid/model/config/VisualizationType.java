@@ -26,7 +26,9 @@ public enum VisualizationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINEAR_PLOT(0, "LinearPlot", "LinearPlot"), /**
+	LINEAR_PLOT(0, "LinearPlot", "LinearPlot"),
+
+	/**
 	 * The '<em><b>Scatter Plot</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,8 +36,7 @@ public enum VisualizationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCATTER_PLOT(1, "ScatterPlot", "ScatterPlot")
-	;
+	SCATTER_PLOT(1, "ScatterPlot", "ScatterPlot");
 
 	/**
 	 * The '<em><b>Linear Plot</b></em>' literal value.
@@ -48,7 +49,7 @@ public enum VisualizationType implements Enumerator {
 	 */
 	public static final int LINEAR_PLOT_VALUE = 0;
 
-/**
+	/**
 	 * The '<em><b>Scatter Plot</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

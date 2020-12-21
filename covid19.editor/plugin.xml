@@ -61,4 +61,58 @@
             contributorClass="se.lnu.joa.covid.model.config.presentation.ConfigActionBarContributor">
       </editor>
    </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated covid19Data -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="se.lnu.joa.covid.model.data.presentation.DataModelWizardID"
+            name="%_UI_DataModelWizard_label"
+            class="se.lnu.joa.covid.model.data.presentation.DataModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DataModelFile.gif">
+         <description>%_UI_DataModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated covid19Data -->
+      <editor
+            id="se.lnu.joa.covid.model.data.presentation.DataEditorID"
+            name="%_UI_DataEditor_label"
+            icon="icons/full/obj16/DataModelFile.gif"
+            extensions="data"
+            class="se.lnu.joa.covid.model.data.presentation.DataEditor"
+            contributorClass="se.lnu.joa.covid.model.data.presentation.DataActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated covid19Analysis -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="se.lnu.joa.covid.model.analysis.presentation.AnalysisModelWizardID"
+            name="%_UI_AnalysisModelWizard_label"
+            class="se.lnu.joa.covid.model.analysis.presentation.AnalysisModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AnalysisModelFile.gif">
+         <description>%_UI_AnalysisModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated covid19Analysis -->
+      <editor
+            id="se.lnu.joa.covid.model.analysis.presentation.AnalysisEditorID"
+            name="%_UI_AnalysisEditor_label"
+            icon="icons/full/obj16/AnalysisModelFile.gif"
+            extensions="analysis"
+            class="se.lnu.joa.covid.model.analysis.presentation.AnalysisEditor"
+            contributorClass="se.lnu.joa.covid.model.analysis.presentation.AnalysisActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

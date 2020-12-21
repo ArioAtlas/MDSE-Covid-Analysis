@@ -1,5 +1,12 @@
-transformation Cov19M2MTransformation();
+modeltype config uses config('http://lnu.se/dv651/covid19/config');
+//modeltype ANALYSIS uses analysis('http://lnu.se/dv651/covid19/analyze');
+
+transformation Cov19M2MTransformation(in configModel:config,  out desstModel : config);
 
 main() {
+	configModel.rootObjects()[Config]->map Config2Analysis();
+}
 
+mapping Config::Config2Analysis() : Config {
+	
 }

@@ -26,7 +26,9 @@ public enum RegressionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINNEAR(0, "Linnear", "Linnear"), /**
+	LINNEAR(0, "Linnear", "Linnear"),
+
+	/**
 	 * The '<em><b>Logarithmic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,8 +36,7 @@ public enum RegressionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOGARITHMIC(1, "Logarithmic", "Logarithmic")
-	;
+	LOGARITHMIC(1, "Logarithmic", "Logarithmic");
 
 	/**
 	 * The '<em><b>Linnear</b></em>' literal value.
@@ -48,7 +49,7 @@ public enum RegressionType implements Enumerator {
 	 */
 	public static final int LINNEAR_VALUE = 0;
 
-/**
+	/**
 	 * The '<em><b>Logarithmic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
