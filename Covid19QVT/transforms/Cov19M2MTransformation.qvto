@@ -1,12 +1,45 @@
-modeltype config uses config('http://lnu.se/dv651/covid19/config');
-//modeltype ANALYSIS uses analysis('http://lnu.se/dv651/covid19/analyze');
+modeltype DATA "strict" uses 'http://lnu.se/dv651/covid19/csv';
 
-transformation Cov19M2MTransformation(in configModel:config,  out desstModel : config);
+transformation DataAndConfigToAnalytic(in dataModel : DATA,  out desstModel : DATA);
 
 main() {
-	configModel.rootObjects()[Config]->map Config2Analysis();
+
+	dataModel.objects()->flatten()[DataPool] -> map DataPool2DataPool();
+	
+	log("Finishing main transformation");
+
 }
 
-mapping Config::Config2Analysis() : Config {
+mapping DataPool::DataPool2DataPool() : DataPool {
+
+	log("In DataPool2DataPool");
+	log("Amount of HealthData entries in the dataset is: " + self.HealthData->asList()->size().toString());
 	
+	self.HealthData->asList() -> forEach(health) {
+ 		result.HealthData += health.map Health2Health();
+	}
+	
+}
+
+mapping Health::Health2Health() : Health
+inherits DATA::DataRecord::DataRecord2Health {
+
+	result.life_expectancy := self.life_expectancy;
+	result.smoking_prevalence := self.smoking_prevalence;
+	result.diabetes_prevalence := self.diabetes_prevalence;
+	result.infant_mortality_rate := self.infant_mortality_rate;
+	result.adult_male_mortality_rate := self.adult_male_mortality_rate;
+	result.adult_female_mortality_rate := self.adult_female_mortality_rate;
+	result.pollution_mortality_rate := self.pollution_mortality_rate;
+	result.comorbidity_mortality_rate := self.comorbidity_mortality_rate;
+	result.hospital_beds := self.hospital_beds;
+	result.nurses := self.nurses;
+	result.physicians := self.physicians;
+	result.health_expenditure := self.health_expenditure;
+	result.out_of_pocket_health_expenditure := self.out_of_pocket_health_expenditure;
+		
+}
+
+mapping DATA::DataRecord::DataRecord2Health() : DATA::Health {
+	result.key := self.key;
 }

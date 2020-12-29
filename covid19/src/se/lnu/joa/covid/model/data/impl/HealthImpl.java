@@ -45,7 +45,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LIFE_EXPECTANCY_EDEFAULT = null;
+	protected static final double LIFE_EXPECTANCY_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getLife_expectancy() <em>Life expectancy</em>}' attribute.
@@ -55,7 +55,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String life_expectancy = LIFE_EXPECTANCY_EDEFAULT;
+	protected double life_expectancy = LIFE_EXPECTANCY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSmoking_prevalence() <em>Smoking prevalence</em>}' attribute.
@@ -65,7 +65,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SMOKING_PREVALENCE_EDEFAULT = null;
+	protected static final double SMOKING_PREVALENCE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getSmoking_prevalence() <em>Smoking prevalence</em>}' attribute.
@@ -75,7 +75,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String smoking_prevalence = SMOKING_PREVALENCE_EDEFAULT;
+	protected double smoking_prevalence = SMOKING_PREVALENCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDiabetes_prevalence() <em>Diabetes prevalence</em>}' attribute.
@@ -85,7 +85,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DIABETES_PREVALENCE_EDEFAULT = null;
+	protected static final double DIABETES_PREVALENCE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getDiabetes_prevalence() <em>Diabetes prevalence</em>}' attribute.
@@ -95,7 +95,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String diabetes_prevalence = DIABETES_PREVALENCE_EDEFAULT;
+	protected double diabetes_prevalence = DIABETES_PREVALENCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInfant_mortality_rate() <em>Infant mortality rate</em>}' attribute.
@@ -105,7 +105,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INFANT_MORTALITY_RATE_EDEFAULT = null;
+	protected static final double INFANT_MORTALITY_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getInfant_mortality_rate() <em>Infant mortality rate</em>}' attribute.
@@ -115,7 +115,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String infant_mortality_rate = INFANT_MORTALITY_RATE_EDEFAULT;
+	protected double infant_mortality_rate = INFANT_MORTALITY_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAdult_male_mortality_rate() <em>Adult male mortality rate</em>}' attribute.
@@ -125,7 +125,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADULT_MALE_MORTALITY_RATE_EDEFAULT = null;
+	protected static final double ADULT_MALE_MORTALITY_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getAdult_male_mortality_rate() <em>Adult male mortality rate</em>}' attribute.
@@ -135,7 +135,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String adult_male_mortality_rate = ADULT_MALE_MORTALITY_RATE_EDEFAULT;
+	protected double adult_male_mortality_rate = ADULT_MALE_MORTALITY_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAdult_female_mortality_rate() <em>Adult female mortality rate</em>}' attribute.
@@ -145,7 +145,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADULT_FEMALE_MORTALITY_RATE_EDEFAULT = null;
+	protected static final double ADULT_FEMALE_MORTALITY_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getAdult_female_mortality_rate() <em>Adult female mortality rate</em>}' attribute.
@@ -155,7 +155,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String adult_female_mortality_rate = ADULT_FEMALE_MORTALITY_RATE_EDEFAULT;
+	protected double adult_female_mortality_rate = ADULT_FEMALE_MORTALITY_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPollution_mortality_rate() <em>Pollution mortality rate</em>}' attribute.
@@ -165,7 +165,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLLUTION_MORTALITY_RATE_EDEFAULT = null;
+	protected static final double POLLUTION_MORTALITY_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getPollution_mortality_rate() <em>Pollution mortality rate</em>}' attribute.
@@ -175,7 +175,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String pollution_mortality_rate = POLLUTION_MORTALITY_RATE_EDEFAULT;
+	protected double pollution_mortality_rate = POLLUTION_MORTALITY_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComorbidity_mortality_rate() <em>Comorbidity mortality rate</em>}' attribute.
@@ -185,7 +185,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMORBIDITY_MORTALITY_RATE_EDEFAULT = null;
+	protected static final double COMORBIDITY_MORTALITY_RATE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getComorbidity_mortality_rate() <em>Comorbidity mortality rate</em>}' attribute.
@@ -195,7 +195,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String comorbidity_mortality_rate = COMORBIDITY_MORTALITY_RATE_EDEFAULT;
+	protected double comorbidity_mortality_rate = COMORBIDITY_MORTALITY_RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHospital_beds() <em>Hospital beds</em>}' attribute.
@@ -205,7 +205,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HOSPITAL_BEDS_EDEFAULT = null;
+	protected static final double HOSPITAL_BEDS_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getHospital_beds() <em>Hospital beds</em>}' attribute.
@@ -215,7 +215,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String hospital_beds = HOSPITAL_BEDS_EDEFAULT;
+	protected double hospital_beds = HOSPITAL_BEDS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNurses() <em>Nurses</em>}' attribute.
@@ -225,7 +225,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NURSES_EDEFAULT = null;
+	protected static final double NURSES_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getNurses() <em>Nurses</em>}' attribute.
@@ -235,7 +235,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String nurses = NURSES_EDEFAULT;
+	protected double nurses = NURSES_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPhysicians() <em>Physicians</em>}' attribute.
@@ -245,7 +245,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PHYSICIANS_EDEFAULT = null;
+	protected static final double PHYSICIANS_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getPhysicians() <em>Physicians</em>}' attribute.
@@ -255,7 +255,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String physicians = PHYSICIANS_EDEFAULT;
+	protected double physicians = PHYSICIANS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHealth_expenditure() <em>Health expenditure</em>}' attribute.
@@ -265,7 +265,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HEALTH_EXPENDITURE_EDEFAULT = null;
+	protected static final double HEALTH_EXPENDITURE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getHealth_expenditure() <em>Health expenditure</em>}' attribute.
@@ -275,7 +275,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String health_expenditure = HEALTH_EXPENDITURE_EDEFAULT;
+	protected double health_expenditure = HEALTH_EXPENDITURE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOut_of_pocket_health_expenditure() <em>Out of pocket health expenditure</em>}' attribute.
@@ -285,7 +285,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT = null;
+	protected static final double OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getOut_of_pocket_health_expenditure() <em>Out of pocket health expenditure</em>}' attribute.
@@ -295,7 +295,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * @generated
 	 * @ordered
 	 */
-	protected String out_of_pocket_health_expenditure = OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT;
+	protected double out_of_pocket_health_expenditure = OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -321,7 +321,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLife_expectancy() {
+	public double getLife_expectancy() {
 		return life_expectancy;
 	}
 
@@ -330,8 +330,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLife_expectancy(String newLife_expectancy) {
-		String oldLife_expectancy = life_expectancy;
+	public void setLife_expectancy(double newLife_expectancy) {
+		double oldLife_expectancy = life_expectancy;
 		life_expectancy = newLife_expectancy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__LIFE_EXPECTANCY, oldLife_expectancy, life_expectancy));
@@ -342,7 +342,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSmoking_prevalence() {
+	public double getSmoking_prevalence() {
 		return smoking_prevalence;
 	}
 
@@ -351,8 +351,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSmoking_prevalence(String newSmoking_prevalence) {
-		String oldSmoking_prevalence = smoking_prevalence;
+	public void setSmoking_prevalence(double newSmoking_prevalence) {
+		double oldSmoking_prevalence = smoking_prevalence;
 		smoking_prevalence = newSmoking_prevalence;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__SMOKING_PREVALENCE, oldSmoking_prevalence, smoking_prevalence));
@@ -363,7 +363,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDiabetes_prevalence() {
+	public double getDiabetes_prevalence() {
 		return diabetes_prevalence;
 	}
 
@@ -372,8 +372,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDiabetes_prevalence(String newDiabetes_prevalence) {
-		String oldDiabetes_prevalence = diabetes_prevalence;
+	public void setDiabetes_prevalence(double newDiabetes_prevalence) {
+		double oldDiabetes_prevalence = diabetes_prevalence;
 		diabetes_prevalence = newDiabetes_prevalence;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__DIABETES_PREVALENCE, oldDiabetes_prevalence, diabetes_prevalence));
@@ -384,7 +384,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getInfant_mortality_rate() {
+	public double getInfant_mortality_rate() {
 		return infant_mortality_rate;
 	}
 
@@ -393,8 +393,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInfant_mortality_rate(String newInfant_mortality_rate) {
-		String oldInfant_mortality_rate = infant_mortality_rate;
+	public void setInfant_mortality_rate(double newInfant_mortality_rate) {
+		double oldInfant_mortality_rate = infant_mortality_rate;
 		infant_mortality_rate = newInfant_mortality_rate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__INFANT_MORTALITY_RATE, oldInfant_mortality_rate, infant_mortality_rate));
@@ -405,7 +405,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAdult_male_mortality_rate() {
+	public double getAdult_male_mortality_rate() {
 		return adult_male_mortality_rate;
 	}
 
@@ -414,8 +414,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdult_male_mortality_rate(String newAdult_male_mortality_rate) {
-		String oldAdult_male_mortality_rate = adult_male_mortality_rate;
+	public void setAdult_male_mortality_rate(double newAdult_male_mortality_rate) {
+		double oldAdult_male_mortality_rate = adult_male_mortality_rate;
 		adult_male_mortality_rate = newAdult_male_mortality_rate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__ADULT_MALE_MORTALITY_RATE, oldAdult_male_mortality_rate, adult_male_mortality_rate));
@@ -426,7 +426,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAdult_female_mortality_rate() {
+	public double getAdult_female_mortality_rate() {
 		return adult_female_mortality_rate;
 	}
 
@@ -435,8 +435,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdult_female_mortality_rate(String newAdult_female_mortality_rate) {
-		String oldAdult_female_mortality_rate = adult_female_mortality_rate;
+	public void setAdult_female_mortality_rate(double newAdult_female_mortality_rate) {
+		double oldAdult_female_mortality_rate = adult_female_mortality_rate;
 		adult_female_mortality_rate = newAdult_female_mortality_rate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__ADULT_FEMALE_MORTALITY_RATE, oldAdult_female_mortality_rate, adult_female_mortality_rate));
@@ -447,7 +447,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPollution_mortality_rate() {
+	public double getPollution_mortality_rate() {
 		return pollution_mortality_rate;
 	}
 
@@ -456,8 +456,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPollution_mortality_rate(String newPollution_mortality_rate) {
-		String oldPollution_mortality_rate = pollution_mortality_rate;
+	public void setPollution_mortality_rate(double newPollution_mortality_rate) {
+		double oldPollution_mortality_rate = pollution_mortality_rate;
 		pollution_mortality_rate = newPollution_mortality_rate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__POLLUTION_MORTALITY_RATE, oldPollution_mortality_rate, pollution_mortality_rate));
@@ -468,7 +468,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComorbidity_mortality_rate() {
+	public double getComorbidity_mortality_rate() {
 		return comorbidity_mortality_rate;
 	}
 
@@ -477,8 +477,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComorbidity_mortality_rate(String newComorbidity_mortality_rate) {
-		String oldComorbidity_mortality_rate = comorbidity_mortality_rate;
+	public void setComorbidity_mortality_rate(double newComorbidity_mortality_rate) {
+		double oldComorbidity_mortality_rate = comorbidity_mortality_rate;
 		comorbidity_mortality_rate = newComorbidity_mortality_rate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__COMORBIDITY_MORTALITY_RATE, oldComorbidity_mortality_rate, comorbidity_mortality_rate));
@@ -489,7 +489,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getHospital_beds() {
+	public double getHospital_beds() {
 		return hospital_beds;
 	}
 
@@ -498,8 +498,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHospital_beds(String newHospital_beds) {
-		String oldHospital_beds = hospital_beds;
+	public void setHospital_beds(double newHospital_beds) {
+		double oldHospital_beds = hospital_beds;
 		hospital_beds = newHospital_beds;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__HOSPITAL_BEDS, oldHospital_beds, hospital_beds));
@@ -510,7 +510,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNurses() {
+	public double getNurses() {
 		return nurses;
 	}
 
@@ -519,8 +519,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNurses(String newNurses) {
-		String oldNurses = nurses;
+	public void setNurses(double newNurses) {
+		double oldNurses = nurses;
 		nurses = newNurses;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__NURSES, oldNurses, nurses));
@@ -531,7 +531,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPhysicians() {
+	public double getPhysicians() {
 		return physicians;
 	}
 
@@ -540,8 +540,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPhysicians(String newPhysicians) {
-		String oldPhysicians = physicians;
+	public void setPhysicians(double newPhysicians) {
+		double oldPhysicians = physicians;
 		physicians = newPhysicians;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__PHYSICIANS, oldPhysicians, physicians));
@@ -552,7 +552,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getHealth_expenditure() {
+	public double getHealth_expenditure() {
 		return health_expenditure;
 	}
 
@@ -561,8 +561,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHealth_expenditure(String newHealth_expenditure) {
-		String oldHealth_expenditure = health_expenditure;
+	public void setHealth_expenditure(double newHealth_expenditure) {
+		double oldHealth_expenditure = health_expenditure;
 		health_expenditure = newHealth_expenditure;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__HEALTH_EXPENDITURE, oldHealth_expenditure, health_expenditure));
@@ -573,7 +573,7 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOut_of_pocket_health_expenditure() {
+	public double getOut_of_pocket_health_expenditure() {
 		return out_of_pocket_health_expenditure;
 	}
 
@@ -582,8 +582,8 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOut_of_pocket_health_expenditure(String newOut_of_pocket_health_expenditure) {
-		String oldOut_of_pocket_health_expenditure = out_of_pocket_health_expenditure;
+	public void setOut_of_pocket_health_expenditure(double newOut_of_pocket_health_expenditure) {
+		double oldOut_of_pocket_health_expenditure = out_of_pocket_health_expenditure;
 		out_of_pocket_health_expenditure = newOut_of_pocket_health_expenditure;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE, oldOut_of_pocket_health_expenditure, out_of_pocket_health_expenditure));
@@ -636,43 +636,43 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DataPackage.HEALTH__LIFE_EXPECTANCY:
-				setLife_expectancy((String)newValue);
+				setLife_expectancy((Double)newValue);
 				return;
 			case DataPackage.HEALTH__SMOKING_PREVALENCE:
-				setSmoking_prevalence((String)newValue);
+				setSmoking_prevalence((Double)newValue);
 				return;
 			case DataPackage.HEALTH__DIABETES_PREVALENCE:
-				setDiabetes_prevalence((String)newValue);
+				setDiabetes_prevalence((Double)newValue);
 				return;
 			case DataPackage.HEALTH__INFANT_MORTALITY_RATE:
-				setInfant_mortality_rate((String)newValue);
+				setInfant_mortality_rate((Double)newValue);
 				return;
 			case DataPackage.HEALTH__ADULT_MALE_MORTALITY_RATE:
-				setAdult_male_mortality_rate((String)newValue);
+				setAdult_male_mortality_rate((Double)newValue);
 				return;
 			case DataPackage.HEALTH__ADULT_FEMALE_MORTALITY_RATE:
-				setAdult_female_mortality_rate((String)newValue);
+				setAdult_female_mortality_rate((Double)newValue);
 				return;
 			case DataPackage.HEALTH__POLLUTION_MORTALITY_RATE:
-				setPollution_mortality_rate((String)newValue);
+				setPollution_mortality_rate((Double)newValue);
 				return;
 			case DataPackage.HEALTH__COMORBIDITY_MORTALITY_RATE:
-				setComorbidity_mortality_rate((String)newValue);
+				setComorbidity_mortality_rate((Double)newValue);
 				return;
 			case DataPackage.HEALTH__HOSPITAL_BEDS:
-				setHospital_beds((String)newValue);
+				setHospital_beds((Double)newValue);
 				return;
 			case DataPackage.HEALTH__NURSES:
-				setNurses((String)newValue);
+				setNurses((Double)newValue);
 				return;
 			case DataPackage.HEALTH__PHYSICIANS:
-				setPhysicians((String)newValue);
+				setPhysicians((Double)newValue);
 				return;
 			case DataPackage.HEALTH__HEALTH_EXPENDITURE:
-				setHealth_expenditure((String)newValue);
+				setHealth_expenditure((Double)newValue);
 				return;
 			case DataPackage.HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE:
-				setOut_of_pocket_health_expenditure((String)newValue);
+				setOut_of_pocket_health_expenditure((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -738,31 +738,31 @@ public class HealthImpl extends DataRecordImpl implements Health {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DataPackage.HEALTH__LIFE_EXPECTANCY:
-				return LIFE_EXPECTANCY_EDEFAULT == null ? life_expectancy != null : !LIFE_EXPECTANCY_EDEFAULT.equals(life_expectancy);
+				return life_expectancy != LIFE_EXPECTANCY_EDEFAULT;
 			case DataPackage.HEALTH__SMOKING_PREVALENCE:
-				return SMOKING_PREVALENCE_EDEFAULT == null ? smoking_prevalence != null : !SMOKING_PREVALENCE_EDEFAULT.equals(smoking_prevalence);
+				return smoking_prevalence != SMOKING_PREVALENCE_EDEFAULT;
 			case DataPackage.HEALTH__DIABETES_PREVALENCE:
-				return DIABETES_PREVALENCE_EDEFAULT == null ? diabetes_prevalence != null : !DIABETES_PREVALENCE_EDEFAULT.equals(diabetes_prevalence);
+				return diabetes_prevalence != DIABETES_PREVALENCE_EDEFAULT;
 			case DataPackage.HEALTH__INFANT_MORTALITY_RATE:
-				return INFANT_MORTALITY_RATE_EDEFAULT == null ? infant_mortality_rate != null : !INFANT_MORTALITY_RATE_EDEFAULT.equals(infant_mortality_rate);
+				return infant_mortality_rate != INFANT_MORTALITY_RATE_EDEFAULT;
 			case DataPackage.HEALTH__ADULT_MALE_MORTALITY_RATE:
-				return ADULT_MALE_MORTALITY_RATE_EDEFAULT == null ? adult_male_mortality_rate != null : !ADULT_MALE_MORTALITY_RATE_EDEFAULT.equals(adult_male_mortality_rate);
+				return adult_male_mortality_rate != ADULT_MALE_MORTALITY_RATE_EDEFAULT;
 			case DataPackage.HEALTH__ADULT_FEMALE_MORTALITY_RATE:
-				return ADULT_FEMALE_MORTALITY_RATE_EDEFAULT == null ? adult_female_mortality_rate != null : !ADULT_FEMALE_MORTALITY_RATE_EDEFAULT.equals(adult_female_mortality_rate);
+				return adult_female_mortality_rate != ADULT_FEMALE_MORTALITY_RATE_EDEFAULT;
 			case DataPackage.HEALTH__POLLUTION_MORTALITY_RATE:
-				return POLLUTION_MORTALITY_RATE_EDEFAULT == null ? pollution_mortality_rate != null : !POLLUTION_MORTALITY_RATE_EDEFAULT.equals(pollution_mortality_rate);
+				return pollution_mortality_rate != POLLUTION_MORTALITY_RATE_EDEFAULT;
 			case DataPackage.HEALTH__COMORBIDITY_MORTALITY_RATE:
-				return COMORBIDITY_MORTALITY_RATE_EDEFAULT == null ? comorbidity_mortality_rate != null : !COMORBIDITY_MORTALITY_RATE_EDEFAULT.equals(comorbidity_mortality_rate);
+				return comorbidity_mortality_rate != COMORBIDITY_MORTALITY_RATE_EDEFAULT;
 			case DataPackage.HEALTH__HOSPITAL_BEDS:
-				return HOSPITAL_BEDS_EDEFAULT == null ? hospital_beds != null : !HOSPITAL_BEDS_EDEFAULT.equals(hospital_beds);
+				return hospital_beds != HOSPITAL_BEDS_EDEFAULT;
 			case DataPackage.HEALTH__NURSES:
-				return NURSES_EDEFAULT == null ? nurses != null : !NURSES_EDEFAULT.equals(nurses);
+				return nurses != NURSES_EDEFAULT;
 			case DataPackage.HEALTH__PHYSICIANS:
-				return PHYSICIANS_EDEFAULT == null ? physicians != null : !PHYSICIANS_EDEFAULT.equals(physicians);
+				return physicians != PHYSICIANS_EDEFAULT;
 			case DataPackage.HEALTH__HEALTH_EXPENDITURE:
-				return HEALTH_EXPENDITURE_EDEFAULT == null ? health_expenditure != null : !HEALTH_EXPENDITURE_EDEFAULT.equals(health_expenditure);
+				return health_expenditure != HEALTH_EXPENDITURE_EDEFAULT;
 			case DataPackage.HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE:
-				return OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT == null ? out_of_pocket_health_expenditure != null : !OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT.equals(out_of_pocket_health_expenditure);
+				return out_of_pocket_health_expenditure != OUT_OF_POCKET_HEALTH_EXPENDITURE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

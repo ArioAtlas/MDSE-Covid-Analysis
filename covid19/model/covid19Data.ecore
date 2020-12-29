@@ -2,36 +2,36 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="data" nsURI="http://lnu.se/dv651/covid19/csv" nsPrefix="covid19">
   <eClassifiers xsi:type="ecore:EClass" name="Health" eSuperTypes="#//DataRecord">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="life_expectancy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smoking_prevalence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diabetes_prevalence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="life_expectancy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smoking_prevalence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diabetes_prevalence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="infant_mortality_rate"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="adult_male_mortality_rate"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="adult_female_mortality_rate"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pollution_mortality_rate"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comorbidity_mortality_rate"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hospital_beds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nurses" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="physicians" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="health_expenditure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hospital_beds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nurses" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="physicians" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="health_expenditure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="out_of_pocket_health_expenditure"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Epidemiology" eSuperTypes="#//DataRecord">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_confirmed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_recovered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_confirmed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_recovered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_confirmed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_recovered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_confirmed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_deceased" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_recovered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total_tested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataPool">
     <eStructuralFeatures xsi:type="ecore:EReference" name="HealthData" upperBound="-1"
@@ -57,6 +57,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="locality_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha_2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha_3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation_level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

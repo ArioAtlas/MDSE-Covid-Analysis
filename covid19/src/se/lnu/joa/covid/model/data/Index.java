@@ -301,12 +301,12 @@ public interface Index extends DataRecord {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Aggregation level</em>' attribute.
-	 * @see #setAggregation_level(String)
+	 * @see #setAggregation_level(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getIndex_Aggregation_level()
 	 * @model
 	 * @generated
 	 */
-	String getAggregation_level();
+	int getAggregation_level();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Index#getAggregation_level <em>Aggregation level</em>}' attribute.
@@ -316,6 +316,6 @@ public interface Index extends DataRecord {
 	 * @see #getAggregation_level()
 	 * @generated
 	 */
-	void setAggregation_level(String value);
+	void setAggregation_level(int value);
 
 } // Index

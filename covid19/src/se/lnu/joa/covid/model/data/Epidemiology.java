@@ -55,12 +55,12 @@ public interface Epidemiology extends DataRecord {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New confirmed</em>' attribute.
-	 * @see #setNew_confirmed(String)
+	 * @see #setNew_confirmed(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_New_confirmed()
 	 * @model
 	 * @generated
 	 */
-	String getNew_confirmed();
+	int getNew_confirmed();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getNew_confirmed <em>New confirmed</em>}' attribute.
@@ -70,19 +70,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getNew_confirmed()
 	 * @generated
 	 */
-	void setNew_confirmed(String value);
+	void setNew_confirmed(int value);
 
 	/**
 	 * Returns the value of the '<em><b>New deceased</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New deceased</em>' attribute.
-	 * @see #setNew_deceased(String)
+	 * @see #setNew_deceased(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_New_deceased()
 	 * @model
 	 * @generated
 	 */
-	String getNew_deceased();
+	int getNew_deceased();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getNew_deceased <em>New deceased</em>}' attribute.
@@ -92,19 +92,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getNew_deceased()
 	 * @generated
 	 */
-	void setNew_deceased(String value);
+	void setNew_deceased(int value);
 
 	/**
 	 * Returns the value of the '<em><b>New recovered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New recovered</em>' attribute.
-	 * @see #setNew_recovered(String)
+	 * @see #setNew_recovered(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_New_recovered()
 	 * @model
 	 * @generated
 	 */
-	String getNew_recovered();
+	int getNew_recovered();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getNew_recovered <em>New recovered</em>}' attribute.
@@ -114,19 +114,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getNew_recovered()
 	 * @generated
 	 */
-	void setNew_recovered(String value);
+	void setNew_recovered(int value);
 
 	/**
 	 * Returns the value of the '<em><b>New tested</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New tested</em>' attribute.
-	 * @see #setNew_tested(String)
+	 * @see #setNew_tested(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_New_tested()
 	 * @model
 	 * @generated
 	 */
-	String getNew_tested();
+	int getNew_tested();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getNew_tested <em>New tested</em>}' attribute.
@@ -136,19 +136,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getNew_tested()
 	 * @generated
 	 */
-	void setNew_tested(String value);
+	void setNew_tested(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Total confirmed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Total confirmed</em>' attribute.
-	 * @see #setTotal_confirmed(String)
+	 * @see #setTotal_confirmed(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_Total_confirmed()
 	 * @model
 	 * @generated
 	 */
-	String getTotal_confirmed();
+	int getTotal_confirmed();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getTotal_confirmed <em>Total confirmed</em>}' attribute.
@@ -158,19 +158,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getTotal_confirmed()
 	 * @generated
 	 */
-	void setTotal_confirmed(String value);
+	void setTotal_confirmed(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Total deceased</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Total deceased</em>' attribute.
-	 * @see #setTotal_deceased(String)
+	 * @see #setTotal_deceased(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_Total_deceased()
 	 * @model
 	 * @generated
 	 */
-	String getTotal_deceased();
+	int getTotal_deceased();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getTotal_deceased <em>Total deceased</em>}' attribute.
@@ -180,19 +180,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getTotal_deceased()
 	 * @generated
 	 */
-	void setTotal_deceased(String value);
+	void setTotal_deceased(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Total recovered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Total recovered</em>' attribute.
-	 * @see #setTotal_recovered(String)
+	 * @see #setTotal_recovered(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_Total_recovered()
 	 * @model
 	 * @generated
 	 */
-	String getTotal_recovered();
+	int getTotal_recovered();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getTotal_recovered <em>Total recovered</em>}' attribute.
@@ -202,19 +202,19 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getTotal_recovered()
 	 * @generated
 	 */
-	void setTotal_recovered(String value);
+	void setTotal_recovered(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Total tested</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Total tested</em>' attribute.
-	 * @see #setTotal_tested(String)
+	 * @see #setTotal_tested(int)
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getEpidemiology_Total_tested()
 	 * @model
 	 * @generated
 	 */
-	String getTotal_tested();
+	int getTotal_tested();
 
 	/**
 	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.Epidemiology#getTotal_tested <em>Total tested</em>}' attribute.
@@ -224,6 +224,6 @@ public interface Epidemiology extends DataRecord {
 	 * @see #getTotal_tested()
 	 * @generated
 	 */
-	void setTotal_tested(String value);
+	void setTotal_tested(int value);
 
 } // Epidemiology

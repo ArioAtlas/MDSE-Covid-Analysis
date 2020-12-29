@@ -285,7 +285,7 @@ public class IndexImpl extends DataRecordImpl implements Index {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String AGGREGATION_LEVEL_EDEFAULT = null;
+	protected static final int AGGREGATION_LEVEL_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getAggregation_level() <em>Aggregation level</em>}' attribute.
@@ -295,7 +295,7 @@ public class IndexImpl extends DataRecordImpl implements Index {
 	 * @generated
 	 * @ordered
 	 */
-	protected String aggregation_level = AGGREGATION_LEVEL_EDEFAULT;
+	protected int aggregation_level = AGGREGATION_LEVEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -573,7 +573,7 @@ public class IndexImpl extends DataRecordImpl implements Index {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAggregation_level() {
+	public int getAggregation_level() {
 		return aggregation_level;
 	}
 
@@ -582,8 +582,8 @@ public class IndexImpl extends DataRecordImpl implements Index {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAggregation_level(String newAggregation_level) {
-		String oldAggregation_level = aggregation_level;
+	public void setAggregation_level(int newAggregation_level) {
+		int oldAggregation_level = aggregation_level;
 		aggregation_level = newAggregation_level;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.INDEX__AGGREGATION_LEVEL, oldAggregation_level, aggregation_level));
@@ -672,7 +672,7 @@ public class IndexImpl extends DataRecordImpl implements Index {
 				setAlpha_3((String)newValue);
 				return;
 			case DataPackage.INDEX__AGGREGATION_LEVEL:
-				setAggregation_level((String)newValue);
+				setAggregation_level((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -762,7 +762,7 @@ public class IndexImpl extends DataRecordImpl implements Index {
 			case DataPackage.INDEX__ALPHA_3:
 				return ALPHA_3_EDEFAULT == null ? alpha_3 != null : !ALPHA_3_EDEFAULT.equals(alpha_3);
 			case DataPackage.INDEX__AGGREGATION_LEVEL:
-				return AGGREGATION_LEVEL_EDEFAULT == null ? aggregation_level != null : !AGGREGATION_LEVEL_EDEFAULT.equals(aggregation_level);
+				return aggregation_level != AGGREGATION_LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

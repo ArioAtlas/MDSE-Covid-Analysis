@@ -84,7 +84,7 @@ public class UsingEmfModel {
 			// Obtain a new resource set
 	        ResourceSet resSet = new ResourceSetImpl();
 	        
-	        // create a resource
+	        // Create resources
 	        Resource dataResource = resSet.createResource(URI.createURI("dataModel/My2.dataModel"));
 	        Resource configResource = resSet.createResource(URI.createURI("configModel/My2.configModel"));
 	        
@@ -93,7 +93,7 @@ public class UsingEmfModel {
 	        dataResource.getContents().add(pool);
 	        configResource.getContents().add(config);
 	        	        
-	        // now save the content.
+	        // Save the content.
 	        try {
 	        	dataResource.save(Collections.EMPTY_MAP);
 	            configResource.save(Collections.EMPTY_MAP);
@@ -106,31 +106,32 @@ public class UsingEmfModel {
 	        TransformationExecutor executor = new TransformationExecutor(
 	        		URI.createURI("../Covid19QVT/transforms/Cov19M2MTransformation.qvto"));
 	        			
-			// define the transformation input
-			// create the input extent with its initial contents
+			// Define the transformation input and create the input extent with its initial contents
 			ModelExtent input = new BasicModelExtent(dataResource.getContents());
 			
-			// create an empty extent to catch the output
+			// Create an empty extent to catch the output
 			ModelExtent output = new BasicModelExtent();
 			
 			
-			// setup the execution environment details -> 
-			// configuration properties, logger, monitor object etc.
+			// Setup the execution environment details -> configuration properties, logger, monitor object etc.
 			ExecutionContextImpl context = new ExecutionContextImpl();
 			OutputStreamWriter outStream = new OutputStreamWriter(System.out);
 		    Log log = new WriterLog(outStream);
 		    context.setLog(log);
 			
-			// run the transformation assigned to the executor with the given 
+			// Run the transformation assigned to the executor with the given 
 			// input and output and execution context -> ChangeTheWorld(in, out)
 			// Remark: variable arguments count is supported
 			ExecutionDiagnostic result = executor.execute(context, input, output);
 
 			if (result.getSeverity() == Diagnostic.OK) {
 		        List<EObject> outObjects = output.getContents();
+		        
 		        URI outUri = URI.createURI("outM/ttt.configModel");
+		        
 		        Resource res = resSet.createResource(outUri);
 		        res.getContents().addAll(outObjects);
+		        
 		        try {
 		            res.save(Collections.emptyMap());
 		        } catch (IOException e) {
@@ -140,29 +141,8 @@ public class UsingEmfModel {
 		        IStatus status = BasicDiagnostic.toIStatus(result);
 		        System.err.println("Error status " + status);
 		    }
-			
-			/*// check the result for success
-			if(result.getSeverity() == Diagnostic.OK) {
-				// the output objects got captured in the output extent
-				List<EObject> outObjects = output.getContents();
-				
-				System.out.println(output.getContents());
-				
-				// save output 
-				Resource outResource = resSet.createResource(URI.createURI("outModel/My2.configModel"));
-				
-				outResource.getContents().addAll(outObjects);
-				
-				outResource.save(Collections.EMPTY_MAP);
-			} else {
-				// turn the result diagnostic into status and send it to error log			
-				
-				System.err.println("Error in running transformation\n"+result.getMessage()); // Check if there was any issue in transformation
-				System.err.println(executor.loadTransformation());
-			}
-	        */
-	        
-			/* Temporarily commented
+								        
+			/* Temporarily commented out
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
 			
 			URI uri = URI.createURI("platform:/resource/covid19/model/DataPool.xmi");
@@ -286,180 +266,288 @@ public class UsingEmfModel {
         // Index
         Reader in = new FileReader(indexPath.toString());
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+		int i = 0;
 		for (CSVRecord record : records) {
-		    // Create a record
-		    Index id = factory.createIndex();
-		    
-		    // Fill record with data
-	        id.setKey(record.get(0));
-	        id.setWikidata(record.get(1));
-	        id.setDatacommons(record.get(2));
-	        id.setCountry_code(record.get(3));
-	        id.setCountry_name(record.get(4));
-	        id.setSubregion1_code(record.get(5));
-	        id.setSubregion1_name(record.get(6));
-	        id.setSubregion2_code(record.get(7));
-	        id.setSubregion2_name(record.get(8));
-	        id.setLocality_code(record.get(9));
-	        id.setLocality_name(record.get(10));
-	        id.setAlpha_2(record.get(11));
-	        id.setAlpha_3(record.get(12));
-	        id.setAggregation_level(record.get(13));
-	        
-	        // Add record to Index data
-	        pool.getIndexData().add(id);
+			if (i > 0) {
+				// Create a record
+			    Index id = factory.createIndex();
+			    
+			    // Fill record with data
+		        id.setKey(record.get(0));
+		        id.setWikidata(record.get(1));
+		        id.setDatacommons(record.get(2));
+		        id.setCountry_code(record.get(3));
+		        id.setCountry_name(record.get(4));
+		        id.setSubregion1_code(record.get(5));
+		        id.setSubregion1_name(record.get(6));
+		        id.setSubregion2_code(record.get(7));
+		        id.setSubregion2_name(record.get(8));
+		        id.setLocality_code(record.get(9));
+		        id.setLocality_name(record.get(10));
+		        id.setAlpha_2(record.get(11));
+		        id.setAlpha_3(record.get(12));
+		        id.setAggregation_level(Integer.parseInt(record.get(13)));
+		        
+		        // Add record to Index data
+		        pool.getIndexData().add(id);
+			}
+			
+			i = i + 1;
 		}
 		
 		// Epidemiology
 		in = new FileReader(epidemiologyPath.toString());
 		records = CSVFormat.EXCEL.parse(in);
+		i = 0;
 		for (CSVRecord record : records) {
-		    // Create a record
-		    Epidemiology ed = factory.createEpidemiology();
-		    
-		    // Fill record with data
-		    ed.setDate(record.get(0));
-	        ed.setKey(record.get(1));
-	        ed.setNew_confirmed(record.get(2));
-	        ed.setNew_deceased(record.get(3));
-	        ed.setNew_recovered(record.get(4));
-	        ed.setNew_tested(record.get(5));
-	        ed.setTotal_confirmed(record.get(5));
-	        ed.setTotal_deceased(record.get(6));
-	        ed.setTotal_recovered(record.get(7));
-	        ed.setTotal_tested(record.get(8));
-	        
-	        // Add record to Epidemiology data
-	        pool.getEpidemiologyData().add(ed);
+			if (i > 0) {
+				// Create a record
+			    Epidemiology ed = factory.createEpidemiology();
+			    
+			    // Fill record with data
+			    ed.setDate(record.get(0));
+		        ed.setKey(record.get(1));
+		        
+		        if (record.get(2).equals("")) {
+		        	ed.setNew_confirmed(0);
+		        } else {
+		        	ed.setNew_confirmed(Integer.parseInt(record.get(2)));
+		        }
+		        
+		        if (record.get(3).equals("")) {
+		        	ed.setNew_deceased(0);
+		        } else {
+		        	ed.setNew_deceased(Integer.parseInt(record.get(3)));
+		        }
+		        
+		        if (record.get(4).equals("")) {
+		        	ed.setNew_recovered(0);
+		        } else {
+		        	ed.setNew_recovered(Integer.parseInt(record.get(4)));
+		        }
+		        
+		        if (record.get(5).equals("")) {
+		        	ed.setNew_tested(0);
+		        } else {
+		        	ed.setNew_tested(Integer.parseInt(record.get(5)));
+		        }
+		        
+		        if (record.get(6).equals("")) {
+		        	ed.setTotal_confirmed(0);
+		        } else {
+		        	ed.setTotal_confirmed(Integer.parseInt(record.get(6)));
+		        }
+		        
+		        if (record.get(7).equals("")) {
+		        	ed.setTotal_deceased(0);
+		        } else {
+		        	ed.setTotal_deceased(Integer.parseInt(record.get(7)));
+		        }
+		        
+		        if (record.get(8).equals("")) {
+		        	ed.setTotal_recovered(0);
+		        } else {
+		        	ed.setTotal_recovered(Integer.parseInt(record.get(8)));
+		        }
+		        
+		        if (record.get(9).equals("")) {
+		        	ed.setTotal_tested(0);
+		        } else {
+		        	ed.setTotal_tested(Integer.parseInt(record.get(9)));
+		        }
+		        		        
+		        // Add record to Epidemiology data
+		        pool.getEpidemiologyData().add(ed);
+			}
+			
+			i = i + 1;
 		}
 		
 		// Health
 		in = new FileReader(healthPath.toString());
 		records = CSVFormat.EXCEL.parse(in);
+		i = 0;
 		for (CSVRecord record : records) {
-		    // Create a record
-		    Health hd = factory.createHealth();
-		    
-		    // Fill record with data
-	        hd.setKey(record.get(0));
-	        hd.setLife_expectancy(record.get(1));
-	        hd.setSmoking_prevalence(record.get(2));
-	        hd.setDiabetes_prevalence(record.get(3));
-	        hd.setInfant_mortality_rate(record.get(4));
-	        hd.setAdult_male_mortality_rate(record.get(5));
-	        hd.setAdult_female_mortality_rate(record.get(6));
-	        hd.setPollution_mortality_rate(record.get(7));
-	        hd.setComorbidity_mortality_rate(record.get(8));
-	        hd.setHospital_beds(record.get(9));
-	        hd.setNurses(record.get(10));
-	        hd.setPhysicians(record.get(11));
-	        hd.setHealth_expenditure(record.get(12));
-	        hd.setOut_of_pocket_health_expenditure(record.get(13));
-	        
-	        // Add record to Health data
-	        pool.getHealthData().add(hd);
+			if (i > 0) {
+				// Create a record
+			    Health hd = factory.createHealth();
+			    
+			    // Fill record with data
+		        hd.setKey(record.get(0));
+		       
+		        if (record.get(1).equals("")) {
+		        	hd.setLife_expectancy(Double.NaN);
+		        } else {
+		        	hd.setLife_expectancy(Double.parseDouble(record.get(1)));
+		        }
+		        
+		        if (record.get(2).equals("")) {
+		        	hd.setSmoking_prevalence(Double.NaN);
+		        } else {
+		        	hd.setSmoking_prevalence(Double.parseDouble(record.get(2)));
+		        }
+		        
+		        if (record.get(3).equals("")) {
+		        	hd.setDiabetes_prevalence(Double.NaN);
+		        } else {
+		        	hd.setDiabetes_prevalence(Double.parseDouble(record.get(3)));
+		        }
+		        
+		        if (record.get(4).equals("")) {
+		        	hd.setInfant_mortality_rate(Double.NaN);
+		        } else {
+		        	hd.setInfant_mortality_rate(Double.parseDouble(record.get(4)));
+		        }
+		        
+		        if (record.get(5).equals("")) {
+		        	hd.setAdult_male_mortality_rate(Double.NaN);
+		        } else {
+		        	hd.setAdult_male_mortality_rate(Double.parseDouble(record.get(5)));
+		        }
+		        
+		        if (record.get(6).equals("")) {
+		        	hd.setAdult_female_mortality_rate(Double.NaN);
+		        } else {
+		        	hd.setAdult_female_mortality_rate(Double.parseDouble(record.get(6)));
+		        }
+		        
+		        if (record.get(7).equals("")) {
+		        	hd.setPollution_mortality_rate(Double.NaN);
+		        } else {
+		        	hd.setPollution_mortality_rate(Double.parseDouble(record.get(7)));
+		        }
+		        
+		        if (record.get(8).equals("")) {
+		        	hd.setComorbidity_mortality_rate(Double.NaN);
+		        } else {
+		        	hd.setComorbidity_mortality_rate(Double.parseDouble(record.get(8)));
+		        }
+		        
+		        if (record.get(9).equals("")) {
+		        	hd.setHospital_beds(Double.NaN);
+		        } else {
+		        	hd.setHospital_beds(Double.parseDouble(record.get(9)));
+		        }
+		        
+		        if (record.get(10).equals("")) {
+		        	hd.setNurses(Double.NaN);
+		        } else {
+		        	hd.setNurses(Double.parseDouble(record.get(10)));
+		        }
+		        
+		        if (record.get(11).equals("")) {
+		        	hd.setPhysicians(Double.NaN);
+		        } else {
+		        	hd.setPhysicians(Double.parseDouble(record.get(11)));
+		        }
+		        
+		        if (record.get(12).equals("")) {
+		        	hd.setHealth_expenditure(Double.NaN);
+		        } else {
+		        	hd.setHealth_expenditure(Double.parseDouble(record.get(12)));
+		        }
+		        
+		        if (record.get(13).equals("")) {
+		        	hd.setOut_of_pocket_health_expenditure(Double.NaN);
+		        } else {
+		        	hd.setOut_of_pocket_health_expenditure(Double.parseDouble(record.get(13)));
+		        }
+		        		        
+		        // Add record to Health data
+		        pool.getHealthData().add(hd);
+			}
+			
+			i = i + 1;
 		}
 		
 		return pool;
     }
 }
 
-//int i = 0;
 //for(Index item : pool.getIndexData()) {
-//	if (i > 0) {
-//		System.out.print("Key: ");
-//		System.out.println(item.getKey());
-//		System.out.print("Wikidata: ");
-//		System.out.println(item.getWikidata());
-//		System.out.print("Datacommons: ");
-//		System.out.println(item.getDatacommons());
-//		System.out.print("Country Code: ");
-//		System.out.println(item.getCountry_code());
-//		System.out.print("Country Name: ");
-//		System.out.println(item.getCountry_name());
-//		System.out.print("Subregion 1 code: ");
-//		System.out.println(item.getSubregion1_code());
-//		System.out.print("Subregion 1 name: ");
-//		System.out.println(item.getSubregion1_name());
-//		System.out.print("Subregion 2 code: ");
-//		System.out.println(item.getSubregion2_code());
-//		System.out.print("Subregion 2 name: ");
-//		System.out.println(item.getSubregion2_name());
-//		System.out.print("Locality code: ");
-//		System.out.println(item.getLocality_code());
-//		System.out.print("Locality name: ");
-//		System.out.println(item.getLocality_name());
-//		System.out.print("3166-1-alpha-2: ");
-//		System.out.println(item.getAlpha_2());
-//		System.out.print("3166-1-alpha-3: ");
-//		System.out.println(item.getAlpha_3());
-//		System.out.print("Aggregation Level: ");
-//		System.out.println(item.getAggregation_level());
-//		System.out.println("\n");
-//	}
-//	i = i + 1;
+//	System.out.print("Key: ");
+//	System.out.println(item.getKey());
+//	System.out.print("Wikidata: ");
+//	System.out.println(item.getWikidata());
+//	System.out.print("Datacommons: ");
+//	System.out.println(item.getDatacommons());
+//	System.out.print("Country Code: ");
+//	System.out.println(item.getCountry_code());
+//	System.out.print("Country Name: ");
+//	System.out.println(item.getCountry_name());
+//	System.out.print("Subregion 1 code: ");
+//	System.out.println(item.getSubregion1_code());
+//	System.out.print("Subregion 1 name: ");
+//	System.out.println(item.getSubregion1_name());
+//	System.out.print("Subregion 2 code: ");
+//	System.out.println(item.getSubregion2_code());
+//	System.out.print("Subregion 2 name: ");
+//	System.out.println(item.getSubregion2_name());
+//	System.out.print("Locality code: ");
+//	System.out.println(item.getLocality_code());
+//	System.out.print("Locality name: ");
+//	System.out.println(item.getLocality_name());
+//	System.out.print("3166-1-alpha-2: ");
+//	System.out.println(item.getAlpha_2());
+//	System.out.print("3166-1-alpha-3: ");
+//	System.out.println(item.getAlpha_3());
+//	System.out.print("Aggregation Level: ");
+//	System.out.println(item.getAggregation_level());
+//	System.out.println("\n");
 //}
 
-//i = 0;
 //for(Epidemiology item : pool.getEpidemiologyData()) {
-//	if (i > 0) {
-//		System.out.print("Key: ");
-//		System.out.println(item.getKey());
-//		System.out.print("Date: ");
-//		System.out.println(item.getDate());
-//		System.out.print("New Confirmed cases: ");
-//		System.out.println(item.getNew_confirmed());
-//		System.out.print("New Deceased cases: ");
-//		System.out.println(item.getNew_deceased());
-//		System.out.print("New Recovered cases: ");
-//		System.out.println(item.getNew_recovered());
-//		System.out.print("New Tested cases: ");
-//		System.out.println(item.getNew_tested());
-//		System.out.print("Total Confirmed cases: ");
-//		System.out.println(item.getTotal_confirmed());
-//		System.out.print("Total Deceased cases: ");
-//		System.out.println(item.getTotal_deceased());
-//		System.out.print("Total Recovered cases: ");
-//		System.out.println(item.getTotal_recovered());
-//		System.out.print("Total Tested cases: ");
-//		System.out.println(item.getTotal_tested());
-//		System.out.println("\n");
-//	}
-//	i = i + 1;
+//	System.out.print("Key: ");
+//	System.out.println(item.getKey());
+//	System.out.print("Date: ");
+//	System.out.println(item.getDate());
+//	System.out.print("New Confirmed cases: ");
+//	System.out.println(item.getNew_confirmed());
+//	System.out.print("New Deceased cases: ");
+//	System.out.println(item.getNew_deceased());
+//	System.out.print("New Recovered cases: ");
+//	System.out.println(item.getNew_recovered());
+//	System.out.print("New Tested cases: ");
+//	System.out.println(item.getNew_tested());
+//	System.out.print("Total Confirmed cases: ");
+//	System.out.println(item.getTotal_confirmed());
+//	System.out.print("Total Deceased cases: ");
+//	System.out.println(item.getTotal_deceased());
+//	System.out.print("Total Recovered cases: ");
+//	System.out.println(item.getTotal_recovered());
+//	System.out.print("Total Tested cases: ");
+//	System.out.println(item.getTotal_tested());
+//	System.out.println("\n");
 //}
 
-//i = 0;
 //for(Health item : pool.getHealthData()) {
-//	if (i > 0) {
-//		System.out.print("Key: ");
-//		System.out.println(item.getKey());
-//		System.out.print("Life Expectancy: ");
-//		System.out.println(item.getLife_expectancy());
-//		System.out.print("Smoking Prevalence: ");
-//		System.out.println(item.getSmoking_prevalence());
-//		System.out.print("Diabetes Prevalence: ");
-//		System.out.println(item.getDiabetes_prevalence());
-//		System.out.print("Infant Morality Rate: ");
-//		System.out.println(item.getInfant_mortality_rate());
-//		System.out.print("Adult Male Morality Rate: ");
-//		System.out.println(item.getAdult_male_mortality_rate());
-//		System.out.print("Adult Female Morality Rate: ");
-//		System.out.println(item.getAdult_female_mortality_rate());
-//		System.out.print("Pollution Morality Rate: ");
-//		System.out.println(item.getPollution_mortality_rate());
-//		System.out.print("Cormobidity Morality Rate: ");
-//		System.out.println(item.getComorbidity_mortality_rate());
-//		System.out.print("Hospital Beds: ");
-//		System.out.println(item.getHospital_beds());
-//		System.out.print("Nurses: ");
-//		System.out.println(item.getNurses());
-//		System.out.print("Physicians: ");
-//		System.out.println(item.getPhysicians());
-//		System.out.print("Health Expenditure: ");
-//		System.out.println(item.getHealth_expenditure());
-//		System.out.print("Out of Pocket Health Expenditure: ");
-//		System.out.println(item.getOut_of_pocket_health_expenditure());
-//		System.out.println("\n");
-//	}
-//	i = i + 1;
+//	System.out.print("Key: ");
+//	System.out.println(item.getKey());
+//	System.out.print("Life Expectancy: ");
+//	System.out.println(item.getLife_expectancy());
+//	System.out.print("Smoking Prevalence: ");
+//	System.out.println(item.getSmoking_prevalence());
+//	System.out.print("Diabetes Prevalence: ");
+//	System.out.println(item.getDiabetes_prevalence());
+//	System.out.print("Infant Morality Rate: ");
+//	System.out.println(item.getInfant_mortality_rate());
+//	System.out.print("Adult Male Morality Rate: ");
+//	System.out.println(item.getAdult_male_mortality_rate());
+//	System.out.print("Adult Female Morality Rate: ");
+//	System.out.println(item.getAdult_female_mortality_rate());
+//	System.out.print("Pollution Morality Rate: ");
+//	System.out.println(item.getPollution_mortality_rate());
+//	System.out.print("Cormobidity Morality Rate: ");
+//	System.out.println(item.getComorbidity_mortality_rate());
+//	System.out.print("Hospital Beds: ");
+//	System.out.println(item.getHospital_beds());
+//	System.out.print("Nurses: ");
+//	System.out.println(item.getNurses());
+//	System.out.print("Physicians: ");
+//	System.out.println(item.getPhysicians());
+//	System.out.print("Health Expenditure: ");
+//	System.out.println(item.getHealth_expenditure());
+//	System.out.print("Out of Pocket Health Expenditure: ");
+//	System.out.println(item.getOut_of_pocket_health_expenditure());
+//	System.out.println("\n");
 //}

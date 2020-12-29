@@ -628,30 +628,30 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(healthEClass, Health.class, "Health", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHealth_Life_expectancy(), ecorePackage.getEString(), "life_expectancy", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Smoking_prevalence(), ecorePackage.getEString(), "smoking_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Diabetes_prevalence(), ecorePackage.getEString(), "diabetes_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Infant_mortality_rate(), ecorePackage.getEString(), "infant_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Adult_male_mortality_rate(), ecorePackage.getEString(), "adult_male_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Adult_female_mortality_rate(), ecorePackage.getEString(), "adult_female_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Pollution_mortality_rate(), ecorePackage.getEString(), "pollution_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Comorbidity_mortality_rate(), ecorePackage.getEString(), "comorbidity_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Hospital_beds(), ecorePackage.getEString(), "hospital_beds", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Nurses(), ecorePackage.getEString(), "nurses", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Physicians(), ecorePackage.getEString(), "physicians", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Health_expenditure(), ecorePackage.getEString(), "health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Out_of_pocket_health_expenditure(), ecorePackage.getEString(), "out_of_pocket_health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Life_expectancy(), ecorePackage.getEDouble(), "life_expectancy", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Smoking_prevalence(), ecorePackage.getEDouble(), "smoking_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Diabetes_prevalence(), ecorePackage.getEDouble(), "diabetes_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Infant_mortality_rate(), ecorePackage.getEDouble(), "infant_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Adult_male_mortality_rate(), ecorePackage.getEDouble(), "adult_male_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Adult_female_mortality_rate(), ecorePackage.getEDouble(), "adult_female_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Pollution_mortality_rate(), ecorePackage.getEDouble(), "pollution_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Comorbidity_mortality_rate(), ecorePackage.getEDouble(), "comorbidity_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Hospital_beds(), ecorePackage.getEDouble(), "hospital_beds", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Nurses(), ecorePackage.getEDouble(), "nurses", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Physicians(), ecorePackage.getEDouble(), "physicians", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Health_expenditure(), ecorePackage.getEDouble(), "health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHealth_Out_of_pocket_health_expenditure(), ecorePackage.getEDouble(), "out_of_pocket_health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(epidemiologyEClass, Epidemiology.class, "Epidemiology", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEpidemiology_Date(), ecorePackage.getEString(), "date", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_confirmed(), ecorePackage.getEString(), "new_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_deceased(), ecorePackage.getEString(), "new_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_recovered(), ecorePackage.getEString(), "new_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_tested(), ecorePackage.getEString(), "new_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_confirmed(), ecorePackage.getEString(), "total_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_deceased(), ecorePackage.getEString(), "total_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_recovered(), ecorePackage.getEString(), "total_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_tested(), ecorePackage.getEString(), "total_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_New_confirmed(), ecorePackage.getEInt(), "new_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_New_deceased(), ecorePackage.getEInt(), "new_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_New_recovered(), ecorePackage.getEInt(), "new_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_New_tested(), ecorePackage.getEInt(), "new_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_Total_confirmed(), ecorePackage.getEInt(), "total_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_Total_deceased(), ecorePackage.getEInt(), "total_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_Total_recovered(), ecorePackage.getEInt(), "total_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEpidemiology_Total_tested(), ecorePackage.getEInt(), "total_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataPoolEClass, DataPool.class, "DataPool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataPool_HealthData(), this.getHealth(), null, "HealthData", null, 0, -1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -674,7 +674,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		initEAttribute(getIndex_Locality_name(), ecorePackage.getEString(), "locality_name", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndex_Alpha_2(), ecorePackage.getEString(), "alpha_2", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndex_Alpha_3(), ecorePackage.getEString(), "alpha_3", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Aggregation_level(), ecorePackage.getEString(), "aggregation_level", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndex_Aggregation_level(), ecorePackage.getEInt(), "aggregation_level", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

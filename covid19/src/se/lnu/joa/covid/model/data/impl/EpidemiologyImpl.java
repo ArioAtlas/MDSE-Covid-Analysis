@@ -61,7 +61,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEW_CONFIRMED_EDEFAULT = null;
+	protected static final int NEW_CONFIRMED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNew_confirmed() <em>New confirmed</em>}' attribute.
@@ -71,7 +71,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String new_confirmed = NEW_CONFIRMED_EDEFAULT;
+	protected int new_confirmed = NEW_CONFIRMED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNew_deceased() <em>New deceased</em>}' attribute.
@@ -81,7 +81,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEW_DECEASED_EDEFAULT = null;
+	protected static final int NEW_DECEASED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNew_deceased() <em>New deceased</em>}' attribute.
@@ -91,7 +91,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String new_deceased = NEW_DECEASED_EDEFAULT;
+	protected int new_deceased = NEW_DECEASED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNew_recovered() <em>New recovered</em>}' attribute.
@@ -101,7 +101,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEW_RECOVERED_EDEFAULT = null;
+	protected static final int NEW_RECOVERED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNew_recovered() <em>New recovered</em>}' attribute.
@@ -111,7 +111,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String new_recovered = NEW_RECOVERED_EDEFAULT;
+	protected int new_recovered = NEW_RECOVERED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNew_tested() <em>New tested</em>}' attribute.
@@ -121,7 +121,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEW_TESTED_EDEFAULT = null;
+	protected static final int NEW_TESTED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNew_tested() <em>New tested</em>}' attribute.
@@ -131,7 +131,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String new_tested = NEW_TESTED_EDEFAULT;
+	protected int new_tested = NEW_TESTED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotal_confirmed() <em>Total confirmed</em>}' attribute.
@@ -141,7 +141,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOTAL_CONFIRMED_EDEFAULT = null;
+	protected static final int TOTAL_CONFIRMED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getTotal_confirmed() <em>Total confirmed</em>}' attribute.
@@ -151,7 +151,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String total_confirmed = TOTAL_CONFIRMED_EDEFAULT;
+	protected int total_confirmed = TOTAL_CONFIRMED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotal_deceased() <em>Total deceased</em>}' attribute.
@@ -161,7 +161,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOTAL_DECEASED_EDEFAULT = null;
+	protected static final int TOTAL_DECEASED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getTotal_deceased() <em>Total deceased</em>}' attribute.
@@ -171,7 +171,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String total_deceased = TOTAL_DECEASED_EDEFAULT;
+	protected int total_deceased = TOTAL_DECEASED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotal_recovered() <em>Total recovered</em>}' attribute.
@@ -181,7 +181,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOTAL_RECOVERED_EDEFAULT = null;
+	protected static final int TOTAL_RECOVERED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getTotal_recovered() <em>Total recovered</em>}' attribute.
@@ -191,7 +191,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String total_recovered = TOTAL_RECOVERED_EDEFAULT;
+	protected int total_recovered = TOTAL_RECOVERED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotal_tested() <em>Total tested</em>}' attribute.
@@ -201,7 +201,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOTAL_TESTED_EDEFAULT = null;
+	protected static final int TOTAL_TESTED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getTotal_tested() <em>Total tested</em>}' attribute.
@@ -211,7 +211,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * @generated
 	 * @ordered
 	 */
-	protected String total_tested = TOTAL_TESTED_EDEFAULT;
+	protected int total_tested = TOTAL_TESTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNew_confirmed() {
+	public int getNew_confirmed() {
 		return new_confirmed;
 	}
 
@@ -267,8 +267,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNew_confirmed(String newNew_confirmed) {
-		String oldNew_confirmed = new_confirmed;
+	public void setNew_confirmed(int newNew_confirmed) {
+		int oldNew_confirmed = new_confirmed;
 		new_confirmed = newNew_confirmed;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__NEW_CONFIRMED, oldNew_confirmed, new_confirmed));
@@ -279,7 +279,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNew_deceased() {
+	public int getNew_deceased() {
 		return new_deceased;
 	}
 
@@ -288,8 +288,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNew_deceased(String newNew_deceased) {
-		String oldNew_deceased = new_deceased;
+	public void setNew_deceased(int newNew_deceased) {
+		int oldNew_deceased = new_deceased;
 		new_deceased = newNew_deceased;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__NEW_DECEASED, oldNew_deceased, new_deceased));
@@ -300,7 +300,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNew_recovered() {
+	public int getNew_recovered() {
 		return new_recovered;
 	}
 
@@ -309,8 +309,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNew_recovered(String newNew_recovered) {
-		String oldNew_recovered = new_recovered;
+	public void setNew_recovered(int newNew_recovered) {
+		int oldNew_recovered = new_recovered;
 		new_recovered = newNew_recovered;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__NEW_RECOVERED, oldNew_recovered, new_recovered));
@@ -321,7 +321,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNew_tested() {
+	public int getNew_tested() {
 		return new_tested;
 	}
 
@@ -330,8 +330,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNew_tested(String newNew_tested) {
-		String oldNew_tested = new_tested;
+	public void setNew_tested(int newNew_tested) {
+		int oldNew_tested = new_tested;
 		new_tested = newNew_tested;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__NEW_TESTED, oldNew_tested, new_tested));
@@ -342,7 +342,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTotal_confirmed() {
+	public int getTotal_confirmed() {
 		return total_confirmed;
 	}
 
@@ -351,8 +351,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTotal_confirmed(String newTotal_confirmed) {
-		String oldTotal_confirmed = total_confirmed;
+	public void setTotal_confirmed(int newTotal_confirmed) {
+		int oldTotal_confirmed = total_confirmed;
 		total_confirmed = newTotal_confirmed;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__TOTAL_CONFIRMED, oldTotal_confirmed, total_confirmed));
@@ -363,7 +363,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTotal_deceased() {
+	public int getTotal_deceased() {
 		return total_deceased;
 	}
 
@@ -372,8 +372,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTotal_deceased(String newTotal_deceased) {
-		String oldTotal_deceased = total_deceased;
+	public void setTotal_deceased(int newTotal_deceased) {
+		int oldTotal_deceased = total_deceased;
 		total_deceased = newTotal_deceased;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__TOTAL_DECEASED, oldTotal_deceased, total_deceased));
@@ -384,7 +384,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTotal_recovered() {
+	public int getTotal_recovered() {
 		return total_recovered;
 	}
 
@@ -393,8 +393,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTotal_recovered(String newTotal_recovered) {
-		String oldTotal_recovered = total_recovered;
+	public void setTotal_recovered(int newTotal_recovered) {
+		int oldTotal_recovered = total_recovered;
 		total_recovered = newTotal_recovered;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__TOTAL_RECOVERED, oldTotal_recovered, total_recovered));
@@ -405,7 +405,7 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTotal_tested() {
+	public int getTotal_tested() {
 		return total_tested;
 	}
 
@@ -414,8 +414,8 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTotal_tested(String newTotal_tested) {
-		String oldTotal_tested = total_tested;
+	public void setTotal_tested(int newTotal_tested) {
+		int oldTotal_tested = total_tested;
 		total_tested = newTotal_tested;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.EPIDEMIOLOGY__TOTAL_TESTED, oldTotal_tested, total_tested));
@@ -463,28 +463,28 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 				setDate((String)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__NEW_CONFIRMED:
-				setNew_confirmed((String)newValue);
+				setNew_confirmed((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__NEW_DECEASED:
-				setNew_deceased((String)newValue);
+				setNew_deceased((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__NEW_RECOVERED:
-				setNew_recovered((String)newValue);
+				setNew_recovered((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__NEW_TESTED:
-				setNew_tested((String)newValue);
+				setNew_tested((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_CONFIRMED:
-				setTotal_confirmed((String)newValue);
+				setTotal_confirmed((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_DECEASED:
-				setTotal_deceased((String)newValue);
+				setTotal_deceased((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_RECOVERED:
-				setTotal_recovered((String)newValue);
+				setTotal_recovered((Integer)newValue);
 				return;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_TESTED:
-				setTotal_tested((String)newValue);
+				setTotal_tested((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -540,21 +540,21 @@ public class EpidemiologyImpl extends DataRecordImpl implements Epidemiology {
 			case DataPackage.EPIDEMIOLOGY__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case DataPackage.EPIDEMIOLOGY__NEW_CONFIRMED:
-				return NEW_CONFIRMED_EDEFAULT == null ? new_confirmed != null : !NEW_CONFIRMED_EDEFAULT.equals(new_confirmed);
+				return new_confirmed != NEW_CONFIRMED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__NEW_DECEASED:
-				return NEW_DECEASED_EDEFAULT == null ? new_deceased != null : !NEW_DECEASED_EDEFAULT.equals(new_deceased);
+				return new_deceased != NEW_DECEASED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__NEW_RECOVERED:
-				return NEW_RECOVERED_EDEFAULT == null ? new_recovered != null : !NEW_RECOVERED_EDEFAULT.equals(new_recovered);
+				return new_recovered != NEW_RECOVERED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__NEW_TESTED:
-				return NEW_TESTED_EDEFAULT == null ? new_tested != null : !NEW_TESTED_EDEFAULT.equals(new_tested);
+				return new_tested != NEW_TESTED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_CONFIRMED:
-				return TOTAL_CONFIRMED_EDEFAULT == null ? total_confirmed != null : !TOTAL_CONFIRMED_EDEFAULT.equals(total_confirmed);
+				return total_confirmed != TOTAL_CONFIRMED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_DECEASED:
-				return TOTAL_DECEASED_EDEFAULT == null ? total_deceased != null : !TOTAL_DECEASED_EDEFAULT.equals(total_deceased);
+				return total_deceased != TOTAL_DECEASED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_RECOVERED:
-				return TOTAL_RECOVERED_EDEFAULT == null ? total_recovered != null : !TOTAL_RECOVERED_EDEFAULT.equals(total_recovered);
+				return total_recovered != TOTAL_RECOVERED_EDEFAULT;
 			case DataPackage.EPIDEMIOLOGY__TOTAL_TESTED:
-				return TOTAL_TESTED_EDEFAULT == null ? total_tested != null : !TOTAL_TESTED_EDEFAULT.equals(total_tested);
+				return total_tested != TOTAL_TESTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
