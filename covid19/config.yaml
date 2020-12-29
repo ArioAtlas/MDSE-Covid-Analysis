@@ -24,6 +24,6 @@ animation:
   outputPath: out
   
 regression:
-  type: Linnear
+  type: Logarithmic
   dependentValue: total_deceased
   independentValue: total_confirmed
