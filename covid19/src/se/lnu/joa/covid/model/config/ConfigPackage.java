@@ -77,13 +77,13 @@ public interface ConfigPackage extends EPackage {
 	int CONFIG__SOURCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Visualizatoin</b></em>' containment reference.
+	 * The feature id for the '<em><b>Visualization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG__VISUALIZATOIN = 1;
+	int CONFIG__VISUALIZATION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Regression</b></em>' containment reference.
@@ -474,15 +474,15 @@ public interface ConfigPackage extends EPackage {
 	EReference getConfig_Source();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Config#getVisualizatoin <em>Visualizatoin</em>}'.
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Config#getVisualization <em>Visualization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Visualizatoin</em>'.
-	 * @see se.lnu.joa.covid.model.config.Config#getVisualizatoin()
+	 * @return the meta object for the containment reference '<em>Visualization</em>'.
+	 * @see se.lnu.joa.covid.model.config.Config#getVisualization()
 	 * @see #getConfig()
 	 * @generated
 	 */
-	EReference getConfig_Visualizatoin();
+	EReference getConfig_Visualization();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Config#getRegression <em>Regression</em>}'.
@@ -850,12 +850,12 @@ public interface ConfigPackage extends EPackage {
 		EReference CONFIG__SOURCE = eINSTANCE.getConfig_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Visualizatoin</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Visualization</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONFIG__VISUALIZATOIN = eINSTANCE.getConfig_Visualizatoin();
+		EReference CONFIG__VISUALIZATION = eINSTANCE.getConfig_Visualization();
 
 		/**
 		 * The meta object literal for the '<em><b>Regression</b></em>' containment reference feature.

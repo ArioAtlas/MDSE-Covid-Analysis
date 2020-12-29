@@ -19,7 +19,7 @@
     </genEnums>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Config">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/source"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/visualizatoin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/visualization"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/regression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Config/animation"/>
     </genClasses>

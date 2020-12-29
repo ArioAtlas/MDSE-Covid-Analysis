@@ -27,7 +27,7 @@ import se.lnu.joa.covid.model.config.Visualization;
  * </p>
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.ConfigImpl#getSource <em>Source</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.config.impl.ConfigImpl#getVisualizatoin <em>Visualizatoin</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.impl.ConfigImpl#getVisualization <em>Visualization</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.ConfigImpl#getRegression <em>Regression</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.ConfigImpl#getAnimation <em>Animation</em>}</li>
  * </ul>
@@ -46,14 +46,14 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	protected DataModel source;
 
 	/**
-	 * The cached value of the '{@link #getVisualizatoin() <em>Visualizatoin</em>}' containment reference.
+	 * The cached value of the '{@link #getVisualization() <em>Visualization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVisualizatoin()
+	 * @see #getVisualization()
 	 * @generated
 	 * @ordered
 	 */
-	protected Visualization visualizatoin;
+	protected Visualization visualization;
 
 	/**
 	 * The cached value of the '{@link #getRegression() <em>Regression</em>}' containment reference.
@@ -142,8 +142,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Visualization getVisualizatoin() {
-		return visualizatoin;
+	public Visualization getVisualization() {
+		return visualization;
 	}
 
 	/**
@@ -151,11 +151,11 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetVisualizatoin(Visualization newVisualizatoin, NotificationChain msgs) {
-		Visualization oldVisualizatoin = visualizatoin;
-		visualizatoin = newVisualizatoin;
+	public NotificationChain basicSetVisualization(Visualization newVisualization, NotificationChain msgs) {
+		Visualization oldVisualization = visualization;
+		visualization = newVisualization;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG__VISUALIZATOIN, oldVisualizatoin, newVisualizatoin);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG__VISUALIZATION, oldVisualization, newVisualization);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -166,18 +166,18 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVisualizatoin(Visualization newVisualizatoin) {
-		if (newVisualizatoin != visualizatoin) {
+	public void setVisualization(Visualization newVisualization) {
+		if (newVisualization != visualization) {
 			NotificationChain msgs = null;
-			if (visualizatoin != null)
-				msgs = ((InternalEObject)visualizatoin).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConfigPackage.CONFIG__VISUALIZATOIN, null, msgs);
-			if (newVisualizatoin != null)
-				msgs = ((InternalEObject)newVisualizatoin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConfigPackage.CONFIG__VISUALIZATOIN, null, msgs);
-			msgs = basicSetVisualizatoin(newVisualizatoin, msgs);
+			if (visualization != null)
+				msgs = ((InternalEObject)visualization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConfigPackage.CONFIG__VISUALIZATION, null, msgs);
+			if (newVisualization != null)
+				msgs = ((InternalEObject)newVisualization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConfigPackage.CONFIG__VISUALIZATION, null, msgs);
+			msgs = basicSetVisualization(newVisualization, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG__VISUALIZATOIN, newVisualizatoin, newVisualizatoin));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.CONFIG__VISUALIZATION, newVisualization, newVisualization));
 	}
 
 	/**
@@ -276,8 +276,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		switch (featureID) {
 			case ConfigPackage.CONFIG__SOURCE:
 				return basicSetSource(null, msgs);
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
-				return basicSetVisualizatoin(null, msgs);
+			case ConfigPackage.CONFIG__VISUALIZATION:
+				return basicSetVisualization(null, msgs);
 			case ConfigPackage.CONFIG__REGRESSION:
 				return basicSetRegression(null, msgs);
 			case ConfigPackage.CONFIG__ANIMATION:
@@ -296,8 +296,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		switch (featureID) {
 			case ConfigPackage.CONFIG__SOURCE:
 				return getSource();
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
-				return getVisualizatoin();
+			case ConfigPackage.CONFIG__VISUALIZATION:
+				return getVisualization();
 			case ConfigPackage.CONFIG__REGRESSION:
 				return getRegression();
 			case ConfigPackage.CONFIG__ANIMATION:
@@ -317,8 +317,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			case ConfigPackage.CONFIG__SOURCE:
 				setSource((DataModel)newValue);
 				return;
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
-				setVisualizatoin((Visualization)newValue);
+			case ConfigPackage.CONFIG__VISUALIZATION:
+				setVisualization((Visualization)newValue);
 				return;
 			case ConfigPackage.CONFIG__REGRESSION:
 				setRegression((Regression)newValue);
@@ -341,8 +341,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 			case ConfigPackage.CONFIG__SOURCE:
 				setSource((DataModel)null);
 				return;
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
-				setVisualizatoin((Visualization)null);
+			case ConfigPackage.CONFIG__VISUALIZATION:
+				setVisualization((Visualization)null);
 				return;
 			case ConfigPackage.CONFIG__REGRESSION:
 				setRegression((Regression)null);
@@ -364,8 +364,8 @@ public class ConfigImpl extends MinimalEObjectImpl.Container implements Config {
 		switch (featureID) {
 			case ConfigPackage.CONFIG__SOURCE:
 				return source != null;
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
-				return visualizatoin != null;
+			case ConfigPackage.CONFIG__VISUALIZATION:
+				return visualization != null;
 			case ConfigPackage.CONFIG__REGRESSION:
 				return regression != null;
 			case ConfigPackage.CONFIG__ANIMATION:

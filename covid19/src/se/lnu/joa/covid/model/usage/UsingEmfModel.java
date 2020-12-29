@@ -238,7 +238,7 @@ public class UsingEmfModel {
 			reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
 			
 			config.setSource(dm);
-			config.setVisualizatoin(vlz);
+			config.setVisualization(vlz);
 			config.setAnimation(ani);
 			config.setRegression(reg);
 			

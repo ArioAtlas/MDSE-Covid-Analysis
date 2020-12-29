@@ -4,7 +4,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Config">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//DataModel"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="visualizatoin" eType="#//Visualization"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" eType="#//Visualization"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regression" eType="#//Regression"
         containment="true"/>

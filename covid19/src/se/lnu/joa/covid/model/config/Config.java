@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.config.Config#getSource <em>Source</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.config.Config#getVisualizatoin <em>Visualizatoin</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.Config#getVisualization <em>Visualization</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.Config#getRegression <em>Regression</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.Config#getAnimation <em>Animation</em>}</li>
  * </ul>
@@ -47,26 +47,26 @@ public interface Config extends EObject {
 	void setSource(DataModel value);
 
 	/**
-	 * Returns the value of the '<em><b>Visualizatoin</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Visualization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visualizatoin</em>' containment reference.
-	 * @see #setVisualizatoin(Visualization)
-	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getConfig_Visualizatoin()
+	 * @return the value of the '<em>Visualization</em>' containment reference.
+	 * @see #setVisualization(Visualization)
+	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getConfig_Visualization()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Visualization getVisualizatoin();
+	Visualization getVisualization();
 
 	/**
-	 * Sets the value of the '{@link se.lnu.joa.covid.model.config.Config#getVisualizatoin <em>Visualizatoin</em>}' containment reference.
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.config.Config#getVisualization <em>Visualization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visualizatoin</em>' containment reference.
-	 * @see #getVisualizatoin()
+	 * @param value the new value of the '<em>Visualization</em>' containment reference.
+	 * @see #getVisualization()
 	 * @generated
 	 */
-	void setVisualizatoin(Visualization value);
+	void setVisualization(Visualization value);
 
 	/**
 	 * Returns the value of the '<em><b>Regression</b></em>' containment reference.
