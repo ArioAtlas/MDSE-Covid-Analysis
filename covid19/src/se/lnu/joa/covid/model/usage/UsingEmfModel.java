@@ -18,10 +18,8 @@ import org.apache.commons.csv.CSVRecord;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -42,20 +40,16 @@ import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
 import se.lnu.joa.covid.model.config.Visualization;
 import se.lnu.joa.covid.model.config.VisualizationType;
-import se.lnu.joa.covid.model.config.util.ConfigAdapterFactory;
 import se.lnu.joa.covid.model.data.DataFactory;
 import se.lnu.joa.covid.model.data.DataPackage;
 import se.lnu.joa.covid.model.data.DataPool;
 import se.lnu.joa.covid.model.data.Epidemiology;
 import se.lnu.joa.covid.model.data.Health;
 import se.lnu.joa.covid.model.data.Index;
-import se.lnu.joa.covid.model.data.util.DataAdapterFactory;
 
 
 public class UsingEmfModel {
     public static void main(String[] args) {
-    	final DataAdapterFactory aFactory;
-    	final ConfigAdapterFactory cFactory;
     	
     	final String configFile = "config.yaml";
     	final String indexFile = "index.csv";
@@ -67,8 +61,6 @@ public class UsingEmfModel {
 			EcorePackage.eINSTANCE.eClass();    // Makes sure EMF is up and running
 			DataPackage.eINSTANCE.eClass(); 
 			ConfigPackage.eINSTANCE.eClass();
-			aFactory = new DataAdapterFactory();
-			cFactory = new ConfigAdapterFactory();
 			
 			// Read input files
 			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);

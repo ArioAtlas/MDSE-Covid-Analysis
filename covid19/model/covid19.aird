@@ -12,7 +12,6 @@
     <semanticResources>covid19Data.ecore</semanticResources>
     <semanticResources>covid19Data.genmodel</semanticResources>
     <semanticResources>../outModel/My2.configModel</semanticResources>
-    <semanticResources>../outM/ttt.configModel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ifIzUDT3Eeuo8cyz3zRmOw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ijGtUDT3Eeuo8cyz3zRmOw" name="covid19" repPath="#_ih9d0DT3Eeuo8cyz3zRmOw" changeId="414abf2a-29e3-49c8-9e1c-e3eb8e00e5a1">
