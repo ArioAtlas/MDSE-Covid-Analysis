@@ -78,7 +78,7 @@ public class ConfigItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConfigPackage.Literals.CONFIG__SOURCE);
-			childrenFeatures.add(ConfigPackage.Literals.CONFIG__VISUALIZATOIN);
+			childrenFeatures.add(ConfigPackage.Literals.CONFIG__VISUALIZATION);
 			childrenFeatures.add(ConfigPackage.Literals.CONFIG__REGRESSION);
 			childrenFeatures.add(ConfigPackage.Literals.CONFIG__ANIMATION);
 		}
@@ -134,7 +134,7 @@ public class ConfigItemProvider
 
 		switch (notification.getFeatureID(Config.class)) {
 			case ConfigPackage.CONFIG__SOURCE:
-			case ConfigPackage.CONFIG__VISUALIZATOIN:
+			case ConfigPackage.CONFIG__VISUALIZATION:
 			case ConfigPackage.CONFIG__REGRESSION:
 			case ConfigPackage.CONFIG__ANIMATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -161,7 +161,7 @@ public class ConfigItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ConfigPackage.Literals.CONFIG__VISUALIZATOIN,
+				(ConfigPackage.Literals.CONFIG__VISUALIZATION,
 				 ConfigFactory.eINSTANCE.createVisualization()));
 
 		newChildDescriptors.add
