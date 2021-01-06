@@ -280,6 +280,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -289,6 +290,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLabel(String newLabel) {
 		String oldLabel = label;
 		label = newLabel;
@@ -301,6 +303,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTransitionTime() {
 		return transitionTime;
 	}
@@ -310,6 +313,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTransitionTime(String newTransitionTime) {
 		String oldTransitionTime = transitionTime;
 		transitionTime = newTransitionTime;
@@ -322,6 +326,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getShadowWake() {
 		return shadowWake;
 	}
@@ -331,6 +336,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setShadowWake(float newShadowWake) {
 		float oldShadowWake = shadowWake;
 		shadowWake = newShadowWake;
@@ -343,6 +349,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getWidth() {
 		return width;
 	}
@@ -352,6 +359,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWidth(int newWidth) {
 		int oldWidth = width;
 		width = newWidth;
@@ -364,6 +372,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getHeight() {
 		return height;
 	}
@@ -373,6 +382,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHeight(int newHeight) {
 		int oldHeight = height;
 		height = newHeight;
@@ -385,6 +395,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getDuration() {
 		return duration;
 	}
@@ -394,6 +405,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDuration(int newDuration) {
 		int oldDuration = duration;
 		duration = newDuration;
@@ -406,6 +418,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getFps() {
 		return fps;
 	}
@@ -415,6 +428,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFps(int newFps) {
 		int oldFps = fps;
 		fps = newFps;
@@ -427,6 +441,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getEndPause() {
 		return endPause;
 	}
@@ -436,6 +451,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEndPause(int newEndPause) {
 		int oldEndPause = endPause;
 		endPause = newEndPause;
@@ -448,6 +464,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getResolution() {
 		return resolution;
 	}
@@ -457,6 +474,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResolution(int newResolution) {
 		int oldResolution = resolution;
 		resolution = newResolution;
@@ -469,6 +487,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getOutputPath() {
 		return outputPath;
 	}
@@ -478,6 +497,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutputPath(String newOutputPath) {
 		String oldOutputPath = outputPath;
 		outputPath = newOutputPath;
@@ -490,6 +510,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getOutputName() {
 		return outputName;
 	}
@@ -499,6 +520,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutputName(String newOutputName) {
 		String oldOutputName = outputName;
 		outputName = newOutputName;

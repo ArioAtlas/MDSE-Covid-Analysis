@@ -181,6 +181,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnalyticModel() {
 		return analyticModelEClass;
 	}
@@ -190,6 +191,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnalyticModel_DataSource() {
 		return (EAttribute)analyticModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -199,6 +201,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnalyticModel_DatasetName() {
 		return (EAttribute)analyticModelEClass.getEStructuralFeatures().get(1);
 	}
@@ -208,6 +211,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnalyticModel_Regression() {
 		return (EReference)analyticModelEClass.getEStructuralFeatures().get(2);
 	}
@@ -217,6 +221,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnalyticModel_Visualization() {
 		return (EReference)analyticModelEClass.getEStructuralFeatures().get(3);
 	}
@@ -226,6 +231,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVisualization() {
 		return visualizationEClass;
 	}
@@ -235,6 +241,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_XAxis() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(0);
 	}
@@ -244,6 +251,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_YAxis() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(1);
 	}
@@ -253,6 +261,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_Color() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(2);
 	}
@@ -262,6 +271,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_Title() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(3);
 	}
@@ -271,6 +281,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_SubTitle() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(4);
 	}
@@ -280,6 +291,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_XAxisLabel() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(5);
 	}
@@ -289,6 +301,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_YAxisLabel() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(6);
 	}
@@ -298,6 +311,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_ColorLabel() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(7);
 	}
@@ -307,6 +321,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getVisualization_Scale_x() {
 		return (EReference)visualizationEClass.getEStructuralFeatures().get(8);
 	}
@@ -316,6 +331,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getVisualization_Scale_y() {
 		return (EReference)visualizationEClass.getEStructuralFeatures().get(9);
 	}
@@ -325,6 +341,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVisualization_Caption() {
 		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(10);
 	}
@@ -334,6 +351,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRegression() {
 		return regressionEClass;
 	}
@@ -343,6 +361,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegression_DependentValue() {
 		return (EAttribute)regressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -352,6 +371,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegression_IndependentValue() {
 		return (EAttribute)regressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -361,6 +381,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLinnearRegression() {
 		return linnearRegressionEClass;
 	}
@@ -370,6 +391,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLogarithmicRegression() {
 		return logarithmicRegressionEClass;
 	}
@@ -379,6 +401,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLinearPlot() {
 		return linearPlotEClass;
 	}
@@ -388,6 +411,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLinearPlot_LineSize() {
 		return (EAttribute)linearPlotEClass.getEStructuralFeatures().get(0);
 	}
@@ -397,6 +421,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLinearPlot_LineAlpha() {
 		return (EAttribute)linearPlotEClass.getEStructuralFeatures().get(1);
 	}
@@ -406,6 +431,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLinearPlot_Animation() {
 		return (EReference)linearPlotEClass.getEStructuralFeatures().get(2);
 	}
@@ -415,6 +441,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getScatterPlot() {
 		return scatterPlotEClass;
 	}
@@ -424,6 +451,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScatterPlot_Alpha() {
 		return (EAttribute)scatterPlotEClass.getEStructuralFeatures().get(0);
 	}
@@ -433,6 +461,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScatterPlot_Stroke() {
 		return (EAttribute)scatterPlotEClass.getEStructuralFeatures().get(1);
 	}
@@ -442,6 +471,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScatterPlot_Animation() {
 		return (EReference)scatterPlotEClass.getEStructuralFeatures().get(2);
 	}
@@ -451,6 +481,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnimation() {
 		return animationEClass;
 	}
@@ -460,6 +491,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Label() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(0);
 	}
@@ -469,6 +501,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_TransitionTime() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(1);
 	}
@@ -478,6 +511,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_ShadowWake() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(2);
 	}
@@ -487,6 +521,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Width() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(3);
 	}
@@ -496,6 +531,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Height() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(4);
 	}
@@ -505,6 +541,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Duration() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(5);
 	}
@@ -514,6 +551,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Fps() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(6);
 	}
@@ -523,6 +561,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_EndPause() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(7);
 	}
@@ -532,6 +571,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_Resolution() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(8);
 	}
@@ -541,6 +581,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_OutputPath() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(9);
 	}
@@ -550,6 +591,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnimation_OutputName() {
 		return (EAttribute)animationEClass.getEStructuralFeatures().get(10);
 	}
@@ -559,6 +601,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLog10Scale() {
 		return log10ScaleEClass;
 	}
@@ -568,6 +611,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqrtScale() {
 		return sqrtScaleEClass;
 	}
@@ -577,6 +621,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDateScale() {
 		return dateScaleEClass;
 	}
@@ -586,6 +631,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDateScale_Format() {
 		return (EAttribute)dateScaleEClass.getEStructuralFeatures().get(0);
 	}
@@ -595,6 +641,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDateScale_Breaks() {
 		return (EAttribute)dateScaleEClass.getEStructuralFeatures().get(1);
 	}
@@ -604,6 +651,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getScale() {
 		return scaleEClass;
 	}
@@ -613,6 +661,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnalysisFactory getAnalysisFactory() {
 		return (AnalysisFactory)getEFactoryInstance();
 	}

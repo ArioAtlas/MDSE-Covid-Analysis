@@ -111,6 +111,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getAlpha() {
 		return alpha;
 	}
@@ -120,6 +121,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAlpha(float newAlpha) {
 		float oldAlpha = alpha;
 		alpha = newAlpha;
@@ -132,6 +134,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getStroke() {
 		return stroke;
 	}
@@ -141,6 +144,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStroke(float newStroke) {
 		float oldStroke = stroke;
 		stroke = newStroke;
@@ -153,6 +157,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Animation> getAnimation() {
 		if (animation == null) {
 			animation = new EObjectContainmentEList<Animation>(Animation.class, this, AnalysisPackage.SCATTER_PLOT__ANIMATION);

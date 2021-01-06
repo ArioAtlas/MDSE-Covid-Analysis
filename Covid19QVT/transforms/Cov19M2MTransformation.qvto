@@ -1,6 +1,9 @@
 modeltype DATA "strict" uses 'http://lnu.se/dv651/covid19/csv';
+modeltype CONFIG "strict" uses 'http://lnu.se/dv651/covid19/config';
+modeltype ANALYSIS "strict" uses 'http://lnu.se/dv651/covid19/analysis';
+	
 
-transformation DataAndConfigToAnalytic(in dataModel : DATA,  out desstModel : DATA);
+transformation Cov19M2MTransformation(in dataModel : DATA,  out desstModel : DATA);
 
 main() {
 

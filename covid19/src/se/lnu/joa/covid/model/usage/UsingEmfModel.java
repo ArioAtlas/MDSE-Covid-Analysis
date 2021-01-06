@@ -31,6 +31,7 @@ import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
+import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.config.Animation;
 import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
@@ -61,6 +62,7 @@ public class UsingEmfModel {
 			EcorePackage.eINSTANCE.eClass();    // Makes sure EMF is up and running
 			DataPackage.eINSTANCE.eClass(); 
 			ConfigPackage.eINSTANCE.eClass();
+			AnalysisPackage.eINSTANCE.eClass();
 			
 			// Read input files
 			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);

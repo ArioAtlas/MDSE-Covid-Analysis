@@ -38,7 +38,7 @@ public interface AnalysisPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://lnu.se/dv651/covid19/analyze";
+	String eNS_URI = "http://lnu.se/dv651/covid19/analysis";
 
 	/**
 	 * The package namespace name.

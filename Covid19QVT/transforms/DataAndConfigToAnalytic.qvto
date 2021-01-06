@@ -1,10 +1,10 @@
-modeltype csv "strict" uses 'http://lnu.se/dv651/covid19/csv';
-modeltype config "strict" uses 'http://lnu.se/dv651/covid19/config';
-modeltype analyze "strict" uses 'http://lnu.se/dv651/covid19/analyze';
+modeltype CSV "strict" uses 'http://lnu.se/dv651/covid19/csv';
+modeltype CONFIG "strict" uses 'http://lnu.se/dv651/covid19/config';
+modeltype ANALYSIS "strict" uses 'http://lnu.se/dv651/covid19/analysis';
 
 	
 
-transformation DataAndConfigToAnalytic(in dataModel : csv, in configModel:config,  out desstModel : analyze);
+transformation DataAndConfigToAnalytic(in dataModel : CSV, in configModel:CONFIG,  out desstModel : ANALYSIS);
 
 
 main() {

@@ -263,6 +263,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getXAxis() {
 		return xAxis;
 	}
@@ -272,6 +273,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setXAxis(String newXAxis) {
 		String oldXAxis = xAxis;
 		xAxis = newXAxis;
@@ -284,6 +286,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getYAxis() {
 		return yAxis;
 	}
@@ -293,6 +296,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setYAxis(String newYAxis) {
 		String oldYAxis = yAxis;
 		yAxis = newYAxis;
@@ -305,6 +309,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getColor() {
 		return color;
 	}
@@ -314,6 +319,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setColor(String newColor) {
 		String oldColor = color;
 		color = newColor;
@@ -326,6 +332,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTitle() {
 		return title;
 	}
@@ -335,6 +342,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
@@ -347,6 +355,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSubTitle() {
 		return subTitle;
 	}
@@ -356,6 +365,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubTitle(String newSubTitle) {
 		String oldSubTitle = subTitle;
 		subTitle = newSubTitle;
@@ -368,6 +378,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getXAxisLabel() {
 		return xAxisLabel;
 	}
@@ -377,6 +388,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setXAxisLabel(String newXAxisLabel) {
 		String oldXAxisLabel = xAxisLabel;
 		xAxisLabel = newXAxisLabel;
@@ -389,6 +401,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getYAxisLabel() {
 		return yAxisLabel;
 	}
@@ -398,6 +411,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setYAxisLabel(String newYAxisLabel) {
 		String oldYAxisLabel = yAxisLabel;
 		yAxisLabel = newYAxisLabel;
@@ -410,6 +424,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getColorLabel() {
 		return colorLabel;
 	}
@@ -419,6 +434,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setColorLabel(String newColorLabel) {
 		String oldColorLabel = colorLabel;
 		colorLabel = newColorLabel;
@@ -431,6 +447,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scale getScale_x() {
 		return scale_x;
 	}
@@ -455,6 +472,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScale_x(Scale newScale_x) {
 		if (newScale_x != scale_x) {
 			NotificationChain msgs = null;
@@ -474,6 +492,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scale getScale_y() {
 		return scale_y;
 	}
@@ -498,6 +517,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScale_y(Scale newScale_y) {
 		if (newScale_y != scale_y) {
 			NotificationChain msgs = null;
@@ -517,6 +537,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCaption() {
 		return caption;
 	}
@@ -526,6 +547,7 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCaption(String newCaption) {
 		String oldCaption = caption;
 		caption = newCaption;

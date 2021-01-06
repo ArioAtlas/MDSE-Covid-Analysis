@@ -111,6 +111,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getLineSize() {
 		return lineSize;
 	}
@@ -120,6 +121,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLineSize(float newLineSize) {
 		float oldLineSize = lineSize;
 		lineSize = newLineSize;
@@ -132,6 +134,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getLineAlpha() {
 		return lineAlpha;
 	}
@@ -141,6 +144,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLineAlpha(float newLineAlpha) {
 		float oldLineAlpha = lineAlpha;
 		lineAlpha = newLineAlpha;
@@ -153,6 +157,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Animation> getAnimation() {
 		if (animation == null) {
 			animation = new EObjectContainmentEList<Animation>(Animation.class, this, AnalysisPackage.LINEAR_PLOT__ANIMATION);

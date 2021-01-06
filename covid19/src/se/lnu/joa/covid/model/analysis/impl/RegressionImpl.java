@@ -91,6 +91,7 @@ public class RegressionImpl extends MinimalEObjectImpl.Container implements Regr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDependentValue() {
 		return dependentValue;
 	}
@@ -100,6 +101,7 @@ public class RegressionImpl extends MinimalEObjectImpl.Container implements Regr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDependentValue(String newDependentValue) {
 		String oldDependentValue = dependentValue;
 		dependentValue = newDependentValue;
@@ -112,6 +114,7 @@ public class RegressionImpl extends MinimalEObjectImpl.Container implements Regr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getIndependentValue() {
 		return independentValue;
 	}
@@ -121,6 +124,7 @@ public class RegressionImpl extends MinimalEObjectImpl.Container implements Regr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIndependentValue(String newIndependentValue) {
 		String oldIndependentValue = independentValue;
 		independentValue = newIndependentValue;

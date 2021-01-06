@@ -124,6 +124,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDataSource() {
 		return dataSource;
 	}
@@ -133,6 +134,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataSource(String newDataSource) {
 		String oldDataSource = dataSource;
 		dataSource = newDataSource;
@@ -145,6 +147,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDatasetName() {
 		return datasetName;
 	}
@@ -154,6 +157,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDatasetName(String newDatasetName) {
 		String oldDatasetName = datasetName;
 		datasetName = newDatasetName;
@@ -166,6 +170,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Regression> getRegression() {
 		if (regression == null) {
 			regression = new EObjectContainmentEList<Regression>(Regression.class, this, AnalysisPackage.ANALYTIC_MODEL__REGRESSION);
@@ -178,6 +183,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Visualization> getVisualization() {
 		if (visualization == null) {
 			visualization = new EObjectContainmentEList<Visualization>(Visualization.class, this, AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION);

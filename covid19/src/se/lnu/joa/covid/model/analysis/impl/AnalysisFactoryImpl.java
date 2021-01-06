@@ -78,6 +78,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnalyticModel createAnalyticModel() {
 		AnalyticModelImpl analyticModel = new AnalyticModelImpl();
 		return analyticModel;
@@ -88,6 +89,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Visualization createVisualization() {
 		VisualizationImpl visualization = new VisualizationImpl();
 		return visualization;
@@ -98,6 +100,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Regression createRegression() {
 		RegressionImpl regression = new RegressionImpl();
 		return regression;
@@ -108,6 +111,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LinnearRegression createLinnearRegression() {
 		LinnearRegressionImpl linnearRegression = new LinnearRegressionImpl();
 		return linnearRegression;
@@ -118,6 +122,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LogarithmicRegression createLogarithmicRegression() {
 		LogarithmicRegressionImpl logarithmicRegression = new LogarithmicRegressionImpl();
 		return logarithmicRegression;
@@ -128,6 +133,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LinearPlot createLinearPlot() {
 		LinearPlotImpl linearPlot = new LinearPlotImpl();
 		return linearPlot;
@@ -138,6 +144,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ScatterPlot createScatterPlot() {
 		ScatterPlotImpl scatterPlot = new ScatterPlotImpl();
 		return scatterPlot;
@@ -148,6 +155,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Animation createAnimation() {
 		AnimationImpl animation = new AnimationImpl();
 		return animation;
@@ -158,6 +166,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Log10Scale createLog10Scale() {
 		Log10ScaleImpl log10Scale = new Log10ScaleImpl();
 		return log10Scale;
@@ -168,6 +177,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqrtScale createSqrtScale() {
 		SqrtScaleImpl sqrtScale = new SqrtScaleImpl();
 		return sqrtScale;
@@ -178,6 +188,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DateScale createDateScale() {
 		DateScaleImpl dateScale = new DateScaleImpl();
 		return dateScale;
@@ -188,6 +199,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scale createScale() {
 		ScaleImpl scale = new ScaleImpl();
 		return scale;
@@ -198,6 +210,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnalysisPackage getAnalysisPackage() {
 		return (AnalysisPackage)getEPackage();
 	}

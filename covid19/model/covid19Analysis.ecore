@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="analysis" nsURI="http://lnu.se/dv651/covid19/analyze" nsPrefix="covid19">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="analysis" nsURI="http://lnu.se/dv651/covid19/analysis" nsPrefix="covid19">
   <eClassifiers xsi:type="ecore:EClass" name="AnalyticModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="datasetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

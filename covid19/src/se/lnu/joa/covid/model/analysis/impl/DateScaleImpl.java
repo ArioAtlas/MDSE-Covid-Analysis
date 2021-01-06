@@ -90,6 +90,7 @@ public class DateScaleImpl extends ScaleImpl implements DateScale {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFormat() {
 		return format;
 	}
@@ -99,6 +100,7 @@ public class DateScaleImpl extends ScaleImpl implements DateScale {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
@@ -111,6 +113,7 @@ public class DateScaleImpl extends ScaleImpl implements DateScale {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getBreaks() {
 		return breaks;
 	}
@@ -120,6 +123,7 @@ public class DateScaleImpl extends ScaleImpl implements DateScale {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBreaks(String newBreaks) {
 		String oldBreaks = breaks;
 		breaks = newBreaks;

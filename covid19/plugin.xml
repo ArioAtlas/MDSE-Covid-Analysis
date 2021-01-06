@@ -25,7 +25,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated covid19Analysis -->
       <package
-            uri="http://lnu.se/dv651/covid19/analyze"
+            uri="http://lnu.se/dv651/covid19/analysis"
             class="se.lnu.joa.covid.model.analysis.AnalysisPackage"
             genModel="model/covid19Analysis.genmodel"/>
    </extension>
