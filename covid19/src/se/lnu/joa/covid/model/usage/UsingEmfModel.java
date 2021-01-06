@@ -72,10 +72,14 @@ public class UsingEmfModel {
 	        //validation of Animation height
 	        BasicDiagnostic chain = new BasicDiagnostic();
 	        config.getAnimation().validate(chain, new HashMap<Object, Object>());
-	        if(chain.getChildren().get(0).getSeverity() != Diagnostic.OK)
+	        if(!chain.getChildren().isEmpty())
 	        {
-	        	System.out.println(chain.getChildren().get(0).getMessage());
+	        	if(chain.getChildren().get(0).getSeverity() != Diagnostic.OK)
+		        {
+	        		System.out.println(chain.getChildren().get(0).getMessage());
+		        }
 	        }
+	        
 
 	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
