@@ -2,15 +2,23 @@
  */
 package se.lnu.joa.covid.model.config.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import se.lnu.joa.covid.model.config.Animation;
 import se.lnu.joa.covid.model.config.ConfigPackage;
+import se.lnu.joa.covid.model.config.util.ConfigValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -341,6 +349,28 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context) {
+		boolean valid = true;
+		
+		if (diagnostic != null) {
+			if(getHeight() < 0)
+			{
+				valid = false;
+				diagnostic.add(new BasicDiagnostic(Diagnostic.WARNING,
+						ConfigValidator.DIAGNOSTIC_SOURCE,
+						ConfigValidator.ANIMATION__VALIDATE, "Error: Height cannot be below zero. Found height:" + getHeight(),
+						new Object[] { this }));
+			}
+		}
+		
+		return valid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -454,6 +484,21 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 				return OUTPUT_PATH_EDEFAULT == null ? outputPath != null : !OUTPUT_PATH_EDEFAULT.equals(outputPath);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ConfigPackage.ANIMATION___VALIDATE__DIAGNOSTICCHAIN_MAP:
+				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -5,9 +5,12 @@ package se.lnu.joa.covid.model.config.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import se.lnu.joa.covid.model.config.Animation;
@@ -19,6 +22,7 @@ import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
 import se.lnu.joa.covid.model.config.Visualization;
 import se.lnu.joa.covid.model.config.VisualizationType;
+import se.lnu.joa.covid.model.config.util.ConfigValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -128,6 +132,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
 		// Initialize created meta-data
 		theConfigPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theConfigPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ConfigValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theConfigPackage.freeze();
@@ -385,6 +398,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAnimation__Validate__DiagnosticChain_Map() {
+		return animationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRegression() {
 		return regressionEClass;
 	}
@@ -492,6 +514,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(animationEClass, ANIMATION__DURATION);
 		createEAttribute(animationEClass, ANIMATION__OUTPUT_NAME);
 		createEAttribute(animationEClass, ANIMATION__OUTPUT_PATH);
+		createEOperation(animationEClass, ANIMATION___VALIDATE__DIAGNOSTICCHAIN_MAP);
 
 		regressionEClass = createEClass(REGRESSION);
 		createEAttribute(regressionEClass, REGRESSION__TYPE);
@@ -563,6 +586,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getAnimation_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnimation_OutputName(), ecorePackage.getEString(), "outputName", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnimation_OutputPath(), ecorePackage.getEString(), "outputPath", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getAnimation__Validate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostic", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(regressionEClass, Regression.class, "Regression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRegression_Type(), this.getRegressionType(), "type", null, 0, 1, Regression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
