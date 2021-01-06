@@ -10,6 +10,7 @@ import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -67,13 +68,23 @@ public class UsingEmfModel {
 			// Read input files
 			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);
 	        Config config = readConfig(configFile);
-	        	        			
+	        
+	        //validation of Animation height
+	        BasicDiagnostic chain = new BasicDiagnostic();
+	        config.getAnimation().validate(chain, new HashMap<Object, Object>());
+	        if(chain.getChildren().get(0).getSeverity() != Diagnostic.OK)
+	        {
+	        	System.out.println(chain.getChildren().get(0).getMessage());
+	        }
+
+	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 			
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
 			
 			m.put("dataModel", new XMIResourceFactoryImpl());
 			m.put("configModel", new XMIResourceFactoryImpl());
+			
 			
 			// Obtain a new resource set
 	        ResourceSet resSet = new ResourceSetImpl();
@@ -112,11 +123,14 @@ public class UsingEmfModel {
 			OutputStreamWriter outStream = new OutputStreamWriter(System.out);
 		    Log log = new WriterLog(outStream);
 		    context.setLog(log);
+		    
 			
+		    
 			// Run the transformation assigned to the executor with the given 
 			// input and output and execution context -> ChangeTheWorld(in, out)
 			// Remark: variable arguments count is supported
 			ExecutionDiagnostic result = executor.execute(context, input, output);
+			
 
 			if (result.getSeverity() == Diagnostic.OK) {
 		        List<EObject> outObjects = output.getContents();
@@ -223,6 +237,7 @@ public class UsingEmfModel {
 			ani.setDuration(aConfig.getAnimation().getDuration());
 			ani.setOutputName(aConfig.getAnimation().getOutputName());
 			ani.setOutputPath(aConfig.getAnimation().getOutputPath());
+			//ani.validate(diagnostic, context);
 			
 			
 			// create Regression from config file

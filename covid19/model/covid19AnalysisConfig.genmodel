@@ -47,6 +47,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Animation/duration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Animation/outputName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Animation/outputPath"/>
+      <genOperations ecoreOperation="covid19AnalysisConfig.ecore#//Animation/validate">
+        <genParameters ecoreParameter="covid19AnalysisConfig.ecore#//Animation/validate/diagnostic"/>
+        <genParameters ecoreParameter="covid19AnalysisConfig.ecore#//Animation/validate/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Regression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Regression/type"/>

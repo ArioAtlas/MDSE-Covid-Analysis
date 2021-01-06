@@ -2,6 +2,8 @@
  */
 package se.lnu.joa.covid.model.config;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -180,5 +182,13 @@ public interface Animation extends EObject {
 	 * @generated
 	 */
 	void setOutputPath(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context);
 
 } // Animation

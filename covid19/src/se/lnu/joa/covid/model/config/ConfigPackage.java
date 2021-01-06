@@ -5,6 +5,7 @@ package se.lnu.joa.covid.model.config;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -368,13 +369,22 @@ public interface ConfigPackage extends EPackage {
 	int ANIMATION_FEATURE_COUNT = 7;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANIMATION___VALIDATE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Animation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANIMATION_OPERATION_COUNT = 0;
+	int ANIMATION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.RegressionImpl <em>Regression</em>}' class.
@@ -746,6 +756,16 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getAnimation_OutputPath();
 
 	/**
+	 * Returns the meta object for the '{@link se.lnu.joa.covid.model.config.Animation#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Validate</em>' operation.
+	 * @see se.lnu.joa.covid.model.config.Animation#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAnimation__Validate__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Regression <em>Regression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1054,6 +1074,14 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ANIMATION__OUTPUT_PATH = eINSTANCE.getAnimation_OutputPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ANIMATION___VALIDATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAnimation__Validate__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.RegressionImpl <em>Regression</em>}' class.
