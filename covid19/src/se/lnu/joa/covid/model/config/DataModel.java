@@ -3,6 +3,7 @@
 package se.lnu.joa.covid.model.config;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -1,0 +1,127 @@
+modeltype DATA "strict" uses 'http://lnu.se/dv651/covid19/csv';
+modeltype CONFIG "strict" uses 'http://lnu.se/dv651/covid19/config';
+modeltype ANALYSIS "strict" uses 'http://lnu.se/dv651/covid19/analysis';
+
+transformation CsvToCsvTransformation(in inputCsv : DATA, in configModel : CONFIG, out analysisModel : ANALYSIS);
+
+main() {
+	log("Csv2Csv M2M Transformation has been started!");
+	
+	configModel.objects()->flatten()[Config] -> map ConfigToAnalysis();
+}
+
+mapping Config::ConfigToAnalysis() : AnalyticModel {
+	log("In ConfigToAnalysis");
+	
+	result.dataSource := self.source.map DataModel2DataSource();
+		
+	switch {
+			case (self.visualization.type = CONFIG::VisualizationType::LinearPlot) result.visualization := self.visualization.map Visualization2LinearPlot();
+			case (self.visualization.type = CONFIG::VisualizationType::ScatterPlot) result.visualization := self.visualization.map Visualization2ScatterPlot();
+			else result.visualization := self.visualization.map Visualization2Visualization();
+		};
+		
+	switch {
+		case (self.regression.type = CONFIG::RegressionType::Linnear) result.regression := self.regression.map Regression2LinnearRegression();
+		case (self.regression.type = CONFIG::RegressionType::Logarithmic) result.regression := self.regression.map Regression2LogarithmicRegression();
+		else result.regression := self.regression.map Regression2Regression();
+	}
+}
+
+mapping DataModel::DataModel2DataSource() : DataSource {
+	log("In DataModel2DataSource");
+	
+	result.name := self.datasetName;
+	result.path := self.dataSource;
+		
+	self.columns->asList()->forEach(col){
+		result.headers += col;
+	};
+	
+	log("\tSet datsource name, path, and headers");
+	
+}
+
+mapping CONFIG::Visualization::Visualization2Visualization() : ANALYSIS::Visualization {
+	log("In Visualization2Visualization");
+
+	result.xAxis := self.xAxis;
+	result.yAxis := self.yAxis;
+	result.color := self.color;
+	result.title := self.title;
+	result.subTitle := self.subTitle;
+	result.xAxisLabel := self.xAxisLabel;
+	result.yAxisLabel := self.yAxisLabel;
+	result.colorLabel := self.colorLabel;
+	result.caption := self.caption;
+}
+
+mapping CONFIG::Visualization::Visualization2LinearPlot() : ANALYSIS::LinearPlot {
+	log("In Visualization2LinearPlot");
+	
+	result.xAxis := self.xAxis;
+	result.yAxis := self.yAxis;
+	result.color := self.color;
+	result.title := self.title;
+	result.subTitle := self.subTitle;
+	result.xAxisLabel := self.xAxisLabel;
+	result.yAxisLabel := self.yAxisLabel;
+	result.colorLabel := self.colorLabel;
+	result.caption := self.caption;
+}
+
+mapping CONFIG::Visualization::Visualization2ScatterPlot() : ANALYSIS::ScatterPlot {
+	log("In Visualization2ScatterPlot");
+
+	result.xAxis := self.xAxis;
+	result.yAxis := self.yAxis;
+	result.color := self.color;
+	result.title := self.title;
+	result.subTitle := self.subTitle;
+	result.xAxisLabel := self.xAxisLabel;
+	result.yAxisLabel := self.yAxisLabel;
+	result.colorLabel := self.colorLabel;
+	result.caption := self.caption;
+	
+}
+
+
+// TODO: Add this to transformation later
+mapping CONFIG::Animation::name() : ANALYSIS::Animation {
+	result.label := self.label;
+	result.transitionTime := self.transitionTime;
+	result.width := self.width;
+	result.height := self.height;
+	result.duration := self.duration;
+	result.outputName := self.outputName;
+	result.outputPath := self.outputPath;
+	result.shadowWake := 0;
+	result.fps := 30;
+	result.endPause := 10;
+	result.resolution := 100;
+}
+
+mapping CONFIG::Regression::Regression2Regression() : ANALYSIS::Regression {
+	log("In Regression2Regression");
+	
+	result.dependentValue := self.dependentValue;
+	result.independentValue := self.independentValue;
+}
+
+mapping CONFIG::Regression::Regression2LinnearRegression() : ANALYSIS::LinnearRegression {
+	log("In Regression2LinnearRegression");
+	
+	result.dependentValue := self.dependentValue;
+	result.independentValue := self.independentValue;
+}
+
+mapping CONFIG::Regression::Regression2LogarithmicRegression() : ANALYSIS::LogarithmicRegression {
+	log("In Regression2LogarithmicRegression");
+	
+	result.dependentValue := self.dependentValue;
+	result.independentValue := self.independentValue;
+}
+
+
+
+

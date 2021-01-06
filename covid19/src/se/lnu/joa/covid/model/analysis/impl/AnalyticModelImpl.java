@@ -2,22 +2,13 @@
  */
 package se.lnu.joa.covid.model.analysis.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.AnalyticModel;
 import se.lnu.joa.covid.model.analysis.DataSource;
@@ -41,24 +32,24 @@ import se.lnu.joa.covid.model.analysis.Visualization;
  */
 public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements AnalyticModel {
 	/**
-	 * The cached value of the '{@link #getRegression() <em>Regression</em>}' containment reference list.
+	 * The cached value of the '{@link #getRegression() <em>Regression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRegression()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Regression> regression;
+	protected Regression regression;
 
 	/**
-	 * The cached value of the '{@link #getVisualization() <em>Visualization</em>}' containment reference list.
+	 * The cached value of the '{@link #getVisualization() <em>Visualization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVisualization()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Visualization> visualization;
+	protected Visualization visualization;
 
 	/**
 	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' containment reference.
@@ -87,6 +78,96 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	@Override
 	protected EClass eStaticClass() {
 		return AnalysisPackage.Literals.ANALYTIC_MODEL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Regression getRegression() {
+		return regression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRegression(Regression newRegression, NotificationChain msgs) {
+		Regression oldRegression = regression;
+		regression = newRegression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__REGRESSION, oldRegression, newRegression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRegression(Regression newRegression) {
+		if (newRegression != regression) {
+			NotificationChain msgs = null;
+			if (regression != null)
+				msgs = ((InternalEObject)regression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__REGRESSION, null, msgs);
+			if (newRegression != null)
+				msgs = ((InternalEObject)newRegression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__REGRESSION, null, msgs);
+			msgs = basicSetRegression(newRegression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__REGRESSION, newRegression, newRegression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Visualization getVisualization() {
+		return visualization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVisualization(Visualization newVisualization, NotificationChain msgs) {
+		Visualization oldVisualization = visualization;
+		visualization = newVisualization;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION, oldVisualization, newVisualization);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVisualization(Visualization newVisualization) {
+		if (newVisualization != visualization) {
+			NotificationChain msgs = null;
+			if (visualization != null)
+				msgs = ((InternalEObject)visualization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION, null, msgs);
+			if (newVisualization != null)
+				msgs = ((InternalEObject)newVisualization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION, null, msgs);
+			msgs = basicSetVisualization(newVisualization, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION, newVisualization, newVisualization));
 	}
 
 	/**
@@ -140,38 +221,12 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * @generated
 	 */
 	@Override
-	public EList<Regression> getRegression() {
-		if (regression == null) {
-			regression = new EObjectContainmentEList<Regression>(Regression.class, this, AnalysisPackage.ANALYTIC_MODEL__REGRESSION);
-		}
-		return regression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Visualization> getVisualization() {
-		if (visualization == null) {
-			visualization = new EObjectContainmentEList<Visualization>(Visualization.class, this, AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION);
-		}
-		return visualization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
-				return ((InternalEList<?>)getRegression()).basicRemove(otherEnd, msgs);
+				return basicSetRegression(null, msgs);
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
-				return ((InternalEList<?>)getVisualization()).basicRemove(otherEnd, msgs);
+				return basicSetVisualization(null, msgs);
 			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
 				return basicSetDataSource(null, msgs);
 		}
@@ -206,12 +261,10 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
-				getRegression().clear();
-				getRegression().addAll((Collection<? extends Regression>)newValue);
+				setRegression((Regression)newValue);
 				return;
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
-				getVisualization().clear();
-				getVisualization().addAll((Collection<? extends Visualization>)newValue);
+				setVisualization((Visualization)newValue);
 				return;
 			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
 				setDataSource((DataSource)newValue);
@@ -229,10 +282,10 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
-				getRegression().clear();
+				setRegression((Regression)null);
 				return;
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
-				getVisualization().clear();
+				setVisualization((Visualization)null);
 				return;
 			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
 				setDataSource((DataSource)null);
@@ -250,9 +303,9 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
-				return regression != null && !regression.isEmpty();
+				return regression != null;
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
-				return visualization != null && !visualization.isEmpty();
+				return visualization != null;
 			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
 				return dataSource != null;
 		}

@@ -2,8 +2,6 @@
  */
 package se.lnu.joa.covid.model.analysis;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,6 +24,50 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AnalyticModel extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Regression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Regression</em>' containment reference.
+	 * @see #setRegression(Regression)
+	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_Regression()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Regression getRegression();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression <em>Regression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Regression</em>' containment reference.
+	 * @see #getRegression()
+	 * @generated
+	 */
+	void setRegression(Regression value);
+
+	/**
+	 * Returns the value of the '<em><b>Visualization</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Visualization</em>' containment reference.
+	 * @see #setVisualization(Visualization)
+	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_Visualization()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Visualization getVisualization();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization <em>Visualization</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Visualization</em>' containment reference.
+	 * @see #getVisualization()
+	 * @generated
+	 */
+	void setVisualization(Visualization value);
+
+	/**
 	 * Returns the value of the '<em><b>Data Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,29 +88,5 @@ public interface AnalyticModel extends EObject {
 	 * @generated
 	 */
 	void setDataSource(DataSource value);
-
-	/**
-	 * Returns the value of the '<em><b>Regression</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.Regression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Regression</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_Regression()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Regression> getRegression();
-
-	/**
-	 * Returns the value of the '<em><b>Visualization</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.Visualization}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visualization</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_Visualization()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Visualization> getVisualization();
 
 } // AnalyticModel

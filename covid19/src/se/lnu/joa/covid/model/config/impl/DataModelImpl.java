@@ -3,15 +3,18 @@
 package se.lnu.joa.covid.model.config.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
 

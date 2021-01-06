@@ -114,10 +114,12 @@ public class UsingEmfModel {
 	        
 	        // create executor for the QVT transformation	        
 	        TransformationExecutor executor = new TransformationExecutor(
-	        		URI.createURI("../Covid19QVT/transforms/Cov19M2MTransformation.qvto"));
+	        		URI.createURI("../Covid19QVT/transforms/CsvToCsvTransformation.qvto"));
 	        			
 			// Define the transformation input and create the input extent with its initial contents
-			ModelExtent input = new BasicModelExtent(dataResource.getContents());
+			ModelExtent input1 = new BasicModelExtent(dataResource.getContents());
+			ModelExtent input2 = new BasicModelExtent(configResource.getContents());
+
 			
 			// Create an empty extent to catch the output
 			ModelExtent output = new BasicModelExtent();
@@ -134,7 +136,7 @@ public class UsingEmfModel {
 			// Run the transformation assigned to the executor with the given 
 			// input and output and execution context -> ChangeTheWorld(in, out)
 			// Remark: variable arguments count is supported
-			ExecutionDiagnostic result = executor.execute(context, input, output);
+			ExecutionDiagnostic result = executor.execute(context, input1, input2, output);
 			
 
 			if (result.getSeverity() == Diagnostic.OK) {

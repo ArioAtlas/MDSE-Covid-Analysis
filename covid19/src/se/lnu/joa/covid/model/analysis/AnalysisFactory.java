@@ -148,15 +148,6 @@ public interface AnalysisFactory extends EFactory {
 	DataRow createDataRow();
 
 	/**
-	 * Returns a new object of class '<em>Data Header</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Header</em>'.
-	 * @generated
-	 */
-	DataHeader createDataHeader();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -2,10 +2,10 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="analysis" nsURI="http://lnu.se/dv651/covid19/analysis" nsPrefix="covid19">
   <eClassifiers xsi:type="ecore:EClass" name="AnalyticModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="regression" upperBound="-1"
-        eType="#//Regression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" upperBound="-1"
-        eType="#//Visualization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regression" eType="#//Regression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" eType="#//Visualization"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataSource" eType="#//DataSource"
         containment="true"/>
   </eClassifiers>
@@ -65,17 +65,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataSource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
-        eType="#//DataHeader" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="#//DataRow"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="headers" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataRow">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataHeader">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="names" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

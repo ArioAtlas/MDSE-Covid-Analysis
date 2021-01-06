@@ -63,14 +63,11 @@
     <genClasses ecoreClass="covid19Analysis.ecore#//DataSource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataSource/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataSource/path"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//DataSource/headers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//DataSource/rows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataSource/headers"/>
     </genClasses>
     <genClasses ecoreClass="covid19Analysis.ecore#//DataRow">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataRow/columns"/>
-    </genClasses>
-    <genClasses ecoreClass="covid19Analysis.ecore#//DataHeader">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataHeader/names"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

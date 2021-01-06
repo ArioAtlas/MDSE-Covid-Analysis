@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
-import se.lnu.joa.covid.model.analysis.DataHeader;
 import se.lnu.joa.covid.model.analysis.DataRow;
 import se.lnu.joa.covid.model.analysis.DataSource;
 
@@ -33,8 +33,8 @@ import se.lnu.joa.covid.model.analysis.DataSource;
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getPath <em>Path</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getHeaders <em>Headers</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getRows <em>Rows</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getHeaders <em>Headers</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,16 +81,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	protected String path = PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHeaders()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataHeader> headers;
-
-	/**
 	 * The cached value of the '{@link #getRows() <em>Rows</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,6 +89,16 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * @ordered
 	 */
 	protected EList<DataRow> rows;
+
+	/**
+	 * The cached value of the '{@link #getHeaders() <em>Headers</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHeaders()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> headers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,19 +171,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * @generated
 	 */
 	@Override
-	public EList<DataHeader> getHeaders() {
-		if (headers == null) {
-			headers = new EObjectContainmentEList<DataHeader>(DataHeader.class, this, AnalysisPackage.DATA_SOURCE__HEADERS);
-		}
-		return headers;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<DataRow> getRows() {
 		if (rows == null) {
 			rows = new EObjectContainmentEList<DataRow>(DataRow.class, this, AnalysisPackage.DATA_SOURCE__ROWS);
@@ -197,10 +184,21 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * @generated
 	 */
 	@Override
+	public EList<String> getHeaders() {
+		if (headers == null) {
+			headers = new EDataTypeUniqueEList<String>(String.class, this, AnalysisPackage.DATA_SOURCE__HEADERS);
+		}
+		return headers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_SOURCE__HEADERS:
-				return ((InternalEList<?>)getHeaders()).basicRemove(otherEnd, msgs);
 			case AnalysisPackage.DATA_SOURCE__ROWS:
 				return ((InternalEList<?>)getRows()).basicRemove(otherEnd, msgs);
 		}
@@ -219,10 +217,10 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 				return getName();
 			case AnalysisPackage.DATA_SOURCE__PATH:
 				return getPath();
-			case AnalysisPackage.DATA_SOURCE__HEADERS:
-				return getHeaders();
 			case AnalysisPackage.DATA_SOURCE__ROWS:
 				return getRows();
+			case AnalysisPackage.DATA_SOURCE__HEADERS:
+				return getHeaders();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,13 +240,13 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 			case AnalysisPackage.DATA_SOURCE__PATH:
 				setPath((String)newValue);
 				return;
-			case AnalysisPackage.DATA_SOURCE__HEADERS:
-				getHeaders().clear();
-				getHeaders().addAll((Collection<? extends DataHeader>)newValue);
-				return;
 			case AnalysisPackage.DATA_SOURCE__ROWS:
 				getRows().clear();
 				getRows().addAll((Collection<? extends DataRow>)newValue);
+				return;
+			case AnalysisPackage.DATA_SOURCE__HEADERS:
+				getHeaders().clear();
+				getHeaders().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -268,11 +266,11 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 			case AnalysisPackage.DATA_SOURCE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
-			case AnalysisPackage.DATA_SOURCE__HEADERS:
-				getHeaders().clear();
-				return;
 			case AnalysisPackage.DATA_SOURCE__ROWS:
 				getRows().clear();
+				return;
+			case AnalysisPackage.DATA_SOURCE__HEADERS:
+				getHeaders().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -290,10 +288,10 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AnalysisPackage.DATA_SOURCE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-			case AnalysisPackage.DATA_SOURCE__HEADERS:
-				return headers != null && !headers.isEmpty();
 			case AnalysisPackage.DATA_SOURCE__ROWS:
 				return rows != null && !rows.isEmpty();
+			case AnalysisPackage.DATA_SOURCE__HEADERS:
+				return headers != null && !headers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,6 +310,8 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 		result.append(name);
 		result.append(", path: ");
 		result.append(path);
+		result.append(", headers: ");
+		result.append(headers);
 		result.append(')');
 		return result.toString();
 	}

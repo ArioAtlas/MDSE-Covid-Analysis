@@ -13,7 +13,6 @@ import se.lnu.joa.covid.model.analysis.AnalysisFactory;
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.AnalyticModel;
 import se.lnu.joa.covid.model.analysis.Animation;
-import se.lnu.joa.covid.model.analysis.DataHeader;
 import se.lnu.joa.covid.model.analysis.DataRow;
 import se.lnu.joa.covid.model.analysis.DataSource;
 import se.lnu.joa.covid.model.analysis.DateScale;
@@ -133,13 +132,6 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	private EClass dataRowEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataHeaderEClass = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -216,16 +208,6 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getAnalyticModel_DataSource() {
-		return (EReference)analyticModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAnalyticModel_Regression() {
 		return (EReference)analyticModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -238,6 +220,16 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	@Override
 	public EReference getAnalyticModel_Visualization() {
 		return (EReference)analyticModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnalyticModel_DataSource() {
+		return (EReference)analyticModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -706,7 +698,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getDataSource_Headers() {
+	public EReference getDataSource_Rows() {
 		return (EReference)dataSourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -716,8 +708,8 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getDataSource_Rows() {
-		return (EReference)dataSourceEClass.getEStructuralFeatures().get(3);
+	public EAttribute getDataSource_Headers() {
+		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -738,26 +730,6 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	@Override
 	public EAttribute getDataRow_Columns() {
 		return (EAttribute)dataRowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDataHeader() {
-		return dataHeaderEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDataHeader_Names() {
-		return (EAttribute)dataHeaderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -851,14 +823,11 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		dataSourceEClass = createEClass(DATA_SOURCE);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__NAME);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__PATH);
-		createEReference(dataSourceEClass, DATA_SOURCE__HEADERS);
 		createEReference(dataSourceEClass, DATA_SOURCE__ROWS);
+		createEAttribute(dataSourceEClass, DATA_SOURCE__HEADERS);
 
 		dataRowEClass = createEClass(DATA_ROW);
 		createEAttribute(dataRowEClass, DATA_ROW__COLUMNS);
-
-		dataHeaderEClass = createEClass(DATA_HEADER);
-		createEAttribute(dataHeaderEClass, DATA_HEADER__NAMES);
 	}
 
 	/**
@@ -899,8 +868,8 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(analyticModelEClass, AnalyticModel.class, "AnalyticModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalyticModel_Regression(), this.getRegression(), null, "regression", null, 0, -1, AnalyticModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalyticModel_Visualization(), this.getVisualization(), null, "visualization", null, 0, -1, AnalyticModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyticModel_Regression(), this.getRegression(), null, "regression", null, 0, 1, AnalyticModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyticModel_Visualization(), this.getVisualization(), null, "visualization", null, 0, 1, AnalyticModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalyticModel_DataSource(), this.getDataSource(), null, "dataSource", null, 0, 1, AnalyticModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationEClass, Visualization.class, "Visualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -960,14 +929,11 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataSource_Headers(), this.getDataHeader(), null, "headers", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSource_Rows(), this.getDataRow(), null, "rows", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataSource_Headers(), ecorePackage.getEString(), "headers", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataRowEClass, DataRow.class, "DataRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataRow_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, DataRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataHeaderEClass, DataHeader.class, "DataHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataHeader_Names(), ecorePackage.getEString(), "names", null, 0, -1, DataHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

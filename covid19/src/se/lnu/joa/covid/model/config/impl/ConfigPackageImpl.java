@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import se.lnu.joa.covid.model.config.Animation;
@@ -22,6 +22,7 @@ import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
 import se.lnu.joa.covid.model.config.Visualization;
 import se.lnu.joa.covid.model.config.VisualizationType;
+
 import se.lnu.joa.covid.model.config.util.ConfigValidator;
 
 /**

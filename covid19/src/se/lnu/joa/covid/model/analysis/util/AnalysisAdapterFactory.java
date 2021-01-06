@@ -124,10 +124,6 @@ public class AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createDataRowAdapter();
 			}
 			@Override
-			public Adapter caseDataHeader(DataHeader object) {
-				return createDataHeaderAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -340,20 +336,6 @@ public class AnalysisAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataRowAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.analysis.DataHeader <em>Data Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.analysis.DataHeader
-	 * @generated
-	 */
-	public Adapter createDataHeaderAdapter() {
 		return null;
 	}
 

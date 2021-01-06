@@ -67,7 +67,7 @@ public interface AnalysisPackage extends EPackage {
 	int ANALYTIC_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Regression</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Regression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,7 +76,7 @@ public interface AnalysisPackage extends EPackage {
 	int ANALYTIC_MODEL__REGRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Visualization</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Visualization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -941,7 +941,6 @@ public interface AnalysisPackage extends EPackage {
 	 */
 	int DATE_SCALE_OPERATION_COUNT = SCALE_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl <em>Data Source</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -971,22 +970,22 @@ public interface AnalysisPackage extends EPackage {
 	int DATA_SOURCE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Headers</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE__HEADERS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Rows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE__ROWS = 3;
+	int DATA_SOURCE__ROWS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Headers</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SOURCE__HEADERS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -1043,43 +1042,6 @@ public interface AnalysisPackage extends EPackage {
 	 */
 	int DATA_ROW_OPERATION_COUNT = 0;
 
-	/**
-	 * The meta object id for the '{@link se.lnu.joa.covid.model.analysis.impl.DataHeaderImpl <em>Data Header</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see se.lnu.joa.covid.model.analysis.impl.DataHeaderImpl
-	 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataHeader()
-	 * @generated
-	 */
-	int DATA_HEADER = 14;
-
-	/**
-	 * The feature id for the '<em><b>Names</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_HEADER__NAMES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Data Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_HEADER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Data Header</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_HEADER_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.AnalyticModel <em>Analytic Model</em>}'.
@@ -1092,6 +1054,28 @@ public interface AnalysisPackage extends EPackage {
 	EClass getAnalyticModel();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression <em>Regression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Regression</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression()
+	 * @see #getAnalyticModel()
+	 * @generated
+	 */
+	EReference getAnalyticModel_Regression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization <em>Visualization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Visualization</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization()
+	 * @see #getAnalyticModel()
+	 * @generated
+	 */
+	EReference getAnalyticModel_Visualization();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDataSource <em>Data Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1101,28 +1085,6 @@ public interface AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalyticModel_DataSource();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression <em>Regression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Regression</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression()
-	 * @see #getAnalyticModel()
-	 * @generated
-	 */
-	EReference getAnalyticModel_Regression();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization <em>Visualization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Visualization</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization()
-	 * @see #getAnalyticModel()
-	 * @generated
-	 */
-	EReference getAnalyticModel_Visualization();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.Visualization <em>Visualization</em>}'.
@@ -1619,17 +1581,6 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getDataSource_Path();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getHeaders <em>Headers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Headers</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataSource#getHeaders()
-	 * @see #getDataSource()
-	 * @generated
-	 */
-	EReference getDataSource_Headers();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getRows <em>Rows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1639,6 +1590,17 @@ public interface AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataSource_Rows();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.analysis.DataSource#getHeaders <em>Headers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Headers</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataSource#getHeaders()
+	 * @see #getDataSource()
+	 * @generated
+	 */
+	EAttribute getDataSource_Headers();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.DataRow <em>Data Row</em>}'.
@@ -1660,27 +1622,6 @@ public interface AnalysisPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataRow_Columns();
-
-	/**
-	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.DataHeader <em>Data Header</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Header</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataHeader
-	 * @generated
-	 */
-	EClass getDataHeader();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.analysis.DataHeader#getNames <em>Names</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Names</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataHeader#getNames()
-	 * @see #getDataHeader()
-	 * @generated
-	 */
-	EAttribute getDataHeader_Names();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1716,15 +1657,7 @@ public interface AnalysisPackage extends EPackage {
 		EClass ANALYTIC_MODEL = eINSTANCE.getAnalyticModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Source</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ANALYTIC_MODEL__DATA_SOURCE = eINSTANCE.getAnalyticModel_DataSource();
-
-		/**
-		 * The meta object literal for the '<em><b>Regression</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Regression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1732,12 +1665,20 @@ public interface AnalysisPackage extends EPackage {
 		EReference ANALYTIC_MODEL__REGRESSION = eINSTANCE.getAnalyticModel_Regression();
 
 		/**
-		 * The meta object literal for the '<em><b>Visualization</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Visualization</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ANALYTIC_MODEL__VISUALIZATION = eINSTANCE.getAnalyticModel_Visualization();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Source</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYTIC_MODEL__DATA_SOURCE = eINSTANCE.getAnalyticModel_DataSource();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.VisualizationImpl <em>Visualization</em>}' class.
@@ -2132,20 +2073,20 @@ public interface AnalysisPackage extends EPackage {
 		EAttribute DATA_SOURCE__PATH = eINSTANCE.getDataSource_Path();
 
 		/**
-		 * The meta object literal for the '<em><b>Headers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_SOURCE__HEADERS = eINSTANCE.getDataSource_Headers();
-
-		/**
 		 * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DATA_SOURCE__ROWS = eINSTANCE.getDataSource_Rows();
+
+		/**
+		 * The meta object literal for the '<em><b>Headers</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_SOURCE__HEADERS = eINSTANCE.getDataSource_Headers();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.DataRowImpl <em>Data Row</em>}' class.
@@ -2164,24 +2105,6 @@ public interface AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_ROW__COLUMNS = eINSTANCE.getDataRow_Columns();
-
-		/**
-		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.DataHeaderImpl <em>Data Header</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see se.lnu.joa.covid.model.analysis.impl.DataHeaderImpl
-		 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataHeader()
-		 * @generated
-		 */
-		EClass DATA_HEADER = eINSTANCE.getDataHeader();
-
-		/**
-		 * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_HEADER__NAMES = eINSTANCE.getDataHeader_Names();
 
 	}
 

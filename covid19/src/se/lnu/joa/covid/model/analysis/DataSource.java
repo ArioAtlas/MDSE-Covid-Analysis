@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.analysis.DataSource#getName <em>Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.DataSource#getPath <em>Path</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.DataSource#getHeaders <em>Headers</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.DataSource#getRows <em>Rows</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.DataSource#getHeaders <em>Headers</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getDataSource()
@@ -71,18 +71,6 @@ public interface DataSource extends EObject {
 	void setPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Headers</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.DataHeader}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Headers</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getDataSource_Headers()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DataHeader> getHeaders();
-
-	/**
 	 * Returns the value of the '<em><b>Rows</b></em>' containment reference list.
 	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.DataRow}.
 	 * <!-- begin-user-doc -->
@@ -93,5 +81,17 @@ public interface DataSource extends EObject {
 	 * @generated
 	 */
 	EList<DataRow> getRows();
+
+	/**
+	 * Returns the value of the '<em><b>Headers</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Headers</em>' attribute list.
+	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getDataSource_Headers()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getHeaders();
 
 } // DataSource
