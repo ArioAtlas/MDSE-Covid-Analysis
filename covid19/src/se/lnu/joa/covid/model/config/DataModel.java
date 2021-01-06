@@ -2,6 +2,7 @@
  */
 package se.lnu.joa.covid.model.config;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getDataSource <em>Data Source</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getColumns <em>Columns</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.config.ConfigPackage#getDataModel()
@@ -65,5 +67,17 @@ public interface DataModel extends EObject {
 	 * @generated
 	 */
 	void setDataSource(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Columns</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Columns</em>' attribute list.
+	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getDataModel_Columns()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getColumns();
 
 } // DataModel

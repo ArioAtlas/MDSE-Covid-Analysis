@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:Config xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:covid19="http://lnu.se/dv651/covid19/config">
-  <source datasetName="abc.csv" dataSource="path1"/>
+  <source datasetName="abc.csv" dataSource="path1">
+    <columns>c1</columns>
+    <columns>c2</columns>
+    <columns>c3</columns>
+    <columns>c4</columns>
+  </source>
   <visualization type="ScatterPlot" xAxis="total_deceased" yAxis="total_confirmed" color="new_confirmed" title="Infection vs Death" subTitle="..." xAxisLabel="Total Infection" yAxisLabel="Total Deaths" caption="Source: Google Open Data"/>
   <regression type="Logarithmic" dependentValue="total_deceased" independentValue="total_confirmed"/>
   <animation label="Date: " transitionTime="DateS" width="800" height="500" duration="20" outputName="graph.gif" outputPath="out"/>

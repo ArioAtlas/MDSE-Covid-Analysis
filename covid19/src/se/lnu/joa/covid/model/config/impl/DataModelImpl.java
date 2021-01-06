@@ -2,13 +2,16 @@
  */
 package se.lnu.joa.covid.model.config.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
 
@@ -22,6 +25,7 @@ import se.lnu.joa.covid.model.config.DataModel;
  * <ul>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getDataSource <em>Data Source</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getColumns <em>Columns</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +70,16 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * @ordered
 	 */
 	protected String dataSource = DATA_SOURCE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumns()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> columns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +147,18 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getColumns() {
+		if (columns == null) {
+			columns = new EDataTypeUniqueEList<String>(String.class, this, ConfigPackage.DATA_MODEL__COLUMNS);
+		}
+		return columns;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +166,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return getDatasetName();
 			case ConfigPackage.DATA_MODEL__DATA_SOURCE:
 				return getDataSource();
+			case ConfigPackage.DATA_MODEL__COLUMNS:
+				return getColumns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -149,6 +177,7 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -157,6 +186,10 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return;
 			case ConfigPackage.DATA_MODEL__DATA_SOURCE:
 				setDataSource((String)newValue);
+				return;
+			case ConfigPackage.DATA_MODEL__COLUMNS:
+				getColumns().clear();
+				getColumns().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +209,9 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 			case ConfigPackage.DATA_MODEL__DATA_SOURCE:
 				setDataSource(DATA_SOURCE_EDEFAULT);
 				return;
+			case ConfigPackage.DATA_MODEL__COLUMNS:
+				getColumns().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +228,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return DATASET_NAME_EDEFAULT == null ? datasetName != null : !DATASET_NAME_EDEFAULT.equals(datasetName);
 			case ConfigPackage.DATA_MODEL__DATA_SOURCE:
 				return DATA_SOURCE_EDEFAULT == null ? dataSource != null : !DATA_SOURCE_EDEFAULT.equals(dataSource);
+			case ConfigPackage.DATA_MODEL__COLUMNS:
+				return columns != null && !columns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +248,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 		result.append(datasetName);
 		result.append(", dataSource: ");
 		result.append(dataSource);
+		result.append(", columns: ");
+		result.append(columns);
 		result.append(')');
 		return result.toString();
 	}

@@ -151,13 +151,22 @@ public interface ConfigPackage extends EPackage {
 	int DATA_MODEL__DATA_SOURCE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Columns</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__COLUMNS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL_FEATURE_COUNT = 2;
+	int DATA_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Data Model</em>' class.
@@ -549,6 +558,17 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getDataModel_DataSource();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.config.DataModel#getColumns <em>Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Columns</em>'.
+	 * @see se.lnu.joa.covid.model.config.DataModel#getColumns()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EAttribute getDataModel_Columns();
+
+	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Visualization <em>Visualization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -918,6 +938,14 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_MODEL__DATA_SOURCE = eINSTANCE.getDataModel_DataSource();
+
+		/**
+		 * The meta object literal for the '<em><b>Columns</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_MODEL__COLUMNS = eINSTANCE.getDataModel_Columns();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl <em>Visualization</em>}' class.

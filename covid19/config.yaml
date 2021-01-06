@@ -1,6 +1,11 @@
 dataModel:
   dataSource: path1
   datasetName: abc.csv
+  columns:
+    - c1
+    - c2
+    - c3
+    - c4
   
 visualization:
   type: ScatterPlot

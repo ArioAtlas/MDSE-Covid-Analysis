@@ -227,6 +227,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDataModel_Columns() {
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVisualization() {
 		return visualizationEClass;
 	}
@@ -493,6 +502,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		dataModelEClass = createEClass(DATA_MODEL);
 		createEAttribute(dataModelEClass, DATA_MODEL__DATASET_NAME);
 		createEAttribute(dataModelEClass, DATA_MODEL__DATA_SOURCE);
+		createEAttribute(dataModelEClass, DATA_MODEL__COLUMNS);
 
 		visualizationEClass = createEClass(VISUALIZATION);
 		createEAttribute(visualizationEClass, VISUALIZATION__TYPE);
@@ -565,6 +575,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataModel_DatasetName(), ecorePackage.getEString(), "datasetName", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_DataSource(), ecorePackage.getEString(), "dataSource", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationEClass, Visualization.class, "Visualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualization_Type(), this.getVisualizationType(), "type", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

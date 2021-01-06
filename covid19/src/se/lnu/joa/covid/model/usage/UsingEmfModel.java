@@ -9,6 +9,7 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -219,6 +220,8 @@ public class UsingEmfModel {
 			DataModel dm = configFactory.createDataModel();
 			dm.setDataSource(aConfig.getDataModel().getDataSource());
 			dm.setDatasetName(aConfig.getDataModel().getDatasetName());
+			dm.getColumns().addAll(Arrays.asList(aConfig.getDataModel().getColumns()));
+			
 			
 			// Create a Visualization from config file
 			Visualization vlz = configFactory.createVisualization();

@@ -26,6 +26,7 @@
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//DataModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/columns"/>
     </genClasses>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Visualization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Visualization/type"/>
