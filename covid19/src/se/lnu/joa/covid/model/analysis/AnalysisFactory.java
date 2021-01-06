@@ -130,6 +130,33 @@ public interface AnalysisFactory extends EFactory {
 	Scale createScale();
 
 	/**
+	 * Returns a new object of class '<em>Data Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Source</em>'.
+	 * @generated
+	 */
+	DataSource createDataSource();
+
+	/**
+	 * Returns a new object of class '<em>Data Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Row</em>'.
+	 * @generated
+	 */
+	DataRow createDataRow();
+
+	/**
+	 * Returns a new object of class '<em>Data Header</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Header</em>'.
+	 * @generated
+	 */
+	DataHeader createDataHeader();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

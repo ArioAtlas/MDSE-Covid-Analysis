@@ -15,10 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDataSource <em>Data Source</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getRegression <em>Regression</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getVisualization <em>Visualization</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel()
@@ -27,48 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AnalyticModel extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Data Source</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Source</em>' attribute.
-	 * @see #setDataSource(String)
+	 * @return the value of the '<em>Data Source</em>' containment reference.
+	 * @see #setDataSource(DataSource)
 	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_DataSource()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getDataSource();
+	DataSource getDataSource();
 
 	/**
-	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDataSource <em>Data Source</em>}' attribute.
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDataSource <em>Data Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Source</em>' attribute.
+	 * @param value the new value of the '<em>Data Source</em>' containment reference.
 	 * @see #getDataSource()
 	 * @generated
 	 */
-	void setDataSource(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Dataset Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dataset Name</em>' attribute.
-	 * @see #setDatasetName(String)
-	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getAnalyticModel_DatasetName()
-	 * @model
-	 * @generated
-	 */
-	String getDatasetName();
-
-	/**
-	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.AnalyticModel#getDatasetName <em>Dataset Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dataset Name</em>' attribute.
-	 * @see #getDatasetName()
-	 * @generated
-	 */
-	void setDatasetName(String value);
+	void setDataSource(DataSource value);
 
 	/**
 	 * Returns the value of the '<em><b>Regression</b></em>' containment reference list.

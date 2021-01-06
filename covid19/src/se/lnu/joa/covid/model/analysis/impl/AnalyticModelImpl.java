@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.AnalyticModel;
+import se.lnu.joa.covid.model.analysis.DataSource;
 import se.lnu.joa.covid.model.analysis.Regression;
 import se.lnu.joa.covid.model.analysis.Visualization;
 
@@ -31,55 +32,14 @@ import se.lnu.joa.covid.model.analysis.Visualization;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.AnalyticModelImpl#getDataSource <em>Data Source</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.AnalyticModelImpl#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.AnalyticModelImpl#getRegression <em>Regression</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.AnalyticModelImpl#getVisualization <em>Visualization</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.impl.AnalyticModelImpl#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements AnalyticModel {
-	/**
-	 * The default value of the '{@link #getDataSource() <em>Data Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSource = DATA_SOURCE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDatasetName() <em>Dataset Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatasetName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATASET_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDatasetName() <em>Dataset Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatasetName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String datasetName = DATASET_NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getRegression() <em>Regression</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -99,6 +59,16 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * @ordered
 	 */
 	protected EList<Visualization> visualization;
+
+	/**
+	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,7 +95,7 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * @generated
 	 */
 	@Override
-	public String getDataSource() {
+	public DataSource getDataSource() {
 		return dataSource;
 	}
 
@@ -134,12 +104,14 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setDataSource(String newDataSource) {
-		String oldDataSource = dataSource;
+	public NotificationChain basicSetDataSource(DataSource newDataSource, NotificationChain msgs) {
+		DataSource oldDataSource = dataSource;
 		dataSource = newDataSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE, oldDataSource, dataSource));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE, oldDataSource, newDataSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -148,21 +120,18 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * @generated
 	 */
 	@Override
-	public String getDatasetName() {
-		return datasetName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDatasetName(String newDatasetName) {
-		String oldDatasetName = datasetName;
-		datasetName = newDatasetName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__DATASET_NAME, oldDatasetName, datasetName));
+	public void setDataSource(DataSource newDataSource) {
+		if (newDataSource != dataSource) {
+			NotificationChain msgs = null;
+			if (dataSource != null)
+				msgs = ((InternalEObject)dataSource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE, null, msgs);
+			if (newDataSource != null)
+				msgs = ((InternalEObject)newDataSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE, null, msgs);
+			msgs = basicSetDataSource(newDataSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE, newDataSource, newDataSource));
 	}
 
 	/**
@@ -203,6 +172,8 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 				return ((InternalEList<?>)getRegression()).basicRemove(otherEnd, msgs);
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
 				return ((InternalEList<?>)getVisualization()).basicRemove(otherEnd, msgs);
+			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
+				return basicSetDataSource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -215,14 +186,12 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
-				return getDataSource();
-			case AnalysisPackage.ANALYTIC_MODEL__DATASET_NAME:
-				return getDatasetName();
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
 				return getRegression();
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
 				return getVisualization();
+			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
+				return getDataSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,12 +205,6 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
-				setDataSource((String)newValue);
-				return;
-			case AnalysisPackage.ANALYTIC_MODEL__DATASET_NAME:
-				setDatasetName((String)newValue);
-				return;
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
 				getRegression().clear();
 				getRegression().addAll((Collection<? extends Regression>)newValue);
@@ -249,6 +212,9 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
 				getVisualization().clear();
 				getVisualization().addAll((Collection<? extends Visualization>)newValue);
+				return;
+			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
+				setDataSource((DataSource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -262,17 +228,14 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
-				setDataSource(DATA_SOURCE_EDEFAULT);
-				return;
-			case AnalysisPackage.ANALYTIC_MODEL__DATASET_NAME:
-				setDatasetName(DATASET_NAME_EDEFAULT);
-				return;
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
 				getRegression().clear();
 				return;
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
 				getVisualization().clear();
+				return;
+			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
+				setDataSource((DataSource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,34 +249,14 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
-				return DATA_SOURCE_EDEFAULT == null ? dataSource != null : !DATA_SOURCE_EDEFAULT.equals(dataSource);
-			case AnalysisPackage.ANALYTIC_MODEL__DATASET_NAME:
-				return DATASET_NAME_EDEFAULT == null ? datasetName != null : !DATASET_NAME_EDEFAULT.equals(datasetName);
 			case AnalysisPackage.ANALYTIC_MODEL__REGRESSION:
 				return regression != null && !regression.isEmpty();
 			case AnalysisPackage.ANALYTIC_MODEL__VISUALIZATION:
 				return visualization != null && !visualization.isEmpty();
+			case AnalysisPackage.ANALYTIC_MODEL__DATA_SOURCE:
+				return dataSource != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (dataSource: ");
-		result.append(dataSource);
-		result.append(", datasetName: ");
-		result.append(datasetName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AnalyticModelImpl

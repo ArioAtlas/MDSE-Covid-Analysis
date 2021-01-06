@@ -7,10 +7,9 @@
   <genPackages prefix="Analysis" basePackage="se.lnu.joa.covid.model" disposableProviderFactory="true"
       ecorePackage="covid19Analysis.ecore#/">
     <genClasses ecoreClass="covid19Analysis.ecore#//AnalyticModel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//AnalyticModel/dataSource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//AnalyticModel/datasetName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//AnalyticModel/regression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//AnalyticModel/visualization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference covid19Analysis.ecore#//AnalyticModel/dataSource"/>
     </genClasses>
     <genClasses ecoreClass="covid19Analysis.ecore#//Visualization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//Visualization/xAxis"/>
@@ -61,5 +60,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DateScale/breaks"/>
     </genClasses>
     <genClasses ecoreClass="covid19Analysis.ecore#//Scale"/>
+    <genClasses ecoreClass="covid19Analysis.ecore#//DataSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataSource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataSource/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//DataSource/headers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//DataSource/rows"/>
+    </genClasses>
+    <genClasses ecoreClass="covid19Analysis.ecore#//DataRow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataRow/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="covid19Analysis.ecore#//DataHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataHeader/names"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
