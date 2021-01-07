@@ -88,6 +88,22 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 				return createRegressionAdapter();
 			}
 			@Override
+			public Adapter caseAxis(Axis object) {
+				return createAxisAdapter();
+			}
+			@Override
+			public Adapter caseAxes(Axes object) {
+				return createAxesAdapter();
+			}
+			@Override
+			public Adapter caseVisualizationInfo(VisualizationInfo object) {
+				return createVisualizationInfoAdapter();
+			}
+			@Override
+			public Adapter caseScale(Scale object) {
+				return createScaleAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -174,6 +190,62 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRegressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.config.Axis <em>Axis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.config.Axis
+	 * @generated
+	 */
+	public Adapter createAxisAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.config.Axes <em>Axes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.config.Axes
+	 * @generated
+	 */
+	public Adapter createAxesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.config.VisualizationInfo <em>Visualization Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.config.VisualizationInfo
+	 * @generated
+	 */
+	public Adapter createVisualizationInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.config.Scale <em>Scale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.config.Scale
+	 * @generated
+	 */
+	public Adapter createScaleAdapter() {
 		return null;
 	}
 

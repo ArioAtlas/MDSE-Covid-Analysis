@@ -6,7 +6,16 @@
     <columns>c3</columns>
     <columns>c4</columns>
   </source>
-  <visualization type="ScatterPlot" xAxis="total_deceased" yAxis="total_confirmed" color="new_confirmed" title="Infection vs Death" subTitle="..." xAxisLabel="Total Infection" yAxisLabel="Total Deaths" caption="Source: Google Open Data"/>
+  <visualization type="ScatterPlot">
+    <axes>
+      <x label="Total Infection" column="total_deceased">
+        <scale/>
+      </x>
+      <y label="Total Infection" column="total_deceased"/>
+      <z label="Total Infection" column="total_deceased"/>
+    </axes>
+    <info title="Infection vs Death" subTitle="..." caption="Source: Google Open Data"/>
+  </visualization>
   <regression type="Logarithmic" dependentValue="total_deceased" independentValue="total_confirmed"/>
   <animation label="Date: " transitionTime="DateS" width="800" height="500" duration="20" outputName="graph.gif" outputPath="out"/>
 </covid19:Config>

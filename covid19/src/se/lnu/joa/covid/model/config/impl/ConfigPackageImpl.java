@@ -14,13 +14,18 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import se.lnu.joa.covid.model.config.Animation;
+import se.lnu.joa.covid.model.config.Axes;
+import se.lnu.joa.covid.model.config.Axis;
 import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
 import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
+import se.lnu.joa.covid.model.config.Scale;
+import se.lnu.joa.covid.model.config.ScaleType;
 import se.lnu.joa.covid.model.config.Visualization;
+import se.lnu.joa.covid.model.config.VisualizationInfo;
 import se.lnu.joa.covid.model.config.VisualizationType;
 
 import se.lnu.joa.covid.model.config.util.ConfigValidator;
@@ -72,6 +77,34 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass axisEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass axesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass visualizationInfoEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scaleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum visualizationTypeEEnum = null;
 
 	/**
@@ -80,6 +113,13 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	private EEnum regressionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum scaleTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -255,8 +295,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVisualization_XAxis() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(1);
+	public EReference getVisualization_Axes() {
+		return (EReference)visualizationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -264,71 +304,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVisualization_YAxis() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_Color() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_Title() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_SubTitle() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_XAxisLabel() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_YAxisLabel() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_ColorLabel() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVisualization_Caption() {
-		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(9);
+	public EReference getVisualization_Info() {
+		return (EReference)visualizationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -453,6 +430,150 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAxis() {
+		return axisEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAxis_Label() {
+		return (EAttribute)axisEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAxis_Column() {
+		return (EAttribute)axisEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAxis_Scale() {
+		return (EReference)axisEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAxes() {
+		return axesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAxes_X() {
+		return (EReference)axesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAxes_Y() {
+		return (EReference)axesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAxes_Z() {
+		return (EReference)axesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVisualizationInfo() {
+		return visualizationInfoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVisualizationInfo_Title() {
+		return (EAttribute)visualizationInfoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVisualizationInfo_SubTitle() {
+		return (EAttribute)visualizationInfoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVisualizationInfo_Caption() {
+		return (EAttribute)visualizationInfoEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getScale() {
+		return scaleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScale_Type() {
+		return (EAttribute)scaleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScale_Format() {
+		return (EAttribute)scaleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScale_Breaks() {
+		return (EAttribute)scaleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getVisualizationType() {
 		return visualizationTypeEEnum;
 	}
@@ -464,6 +585,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 */
 	public EEnum getRegressionType() {
 		return regressionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getScaleType() {
+		return scaleTypeEEnum;
 	}
 
 	/**
@@ -507,15 +637,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
 		visualizationEClass = createEClass(VISUALIZATION);
 		createEAttribute(visualizationEClass, VISUALIZATION__TYPE);
-		createEAttribute(visualizationEClass, VISUALIZATION__XAXIS);
-		createEAttribute(visualizationEClass, VISUALIZATION__YAXIS);
-		createEAttribute(visualizationEClass, VISUALIZATION__COLOR);
-		createEAttribute(visualizationEClass, VISUALIZATION__TITLE);
-		createEAttribute(visualizationEClass, VISUALIZATION__SUB_TITLE);
-		createEAttribute(visualizationEClass, VISUALIZATION__XAXIS_LABEL);
-		createEAttribute(visualizationEClass, VISUALIZATION__YAXIS_LABEL);
-		createEAttribute(visualizationEClass, VISUALIZATION__COLOR_LABEL);
-		createEAttribute(visualizationEClass, VISUALIZATION__CAPTION);
+		createEReference(visualizationEClass, VISUALIZATION__AXES);
+		createEReference(visualizationEClass, VISUALIZATION__INFO);
 
 		animationEClass = createEClass(ANIMATION);
 		createEAttribute(animationEClass, ANIMATION__LABEL);
@@ -532,9 +655,30 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(regressionEClass, REGRESSION__DEPENDENT_VALUE);
 		createEAttribute(regressionEClass, REGRESSION__INDEPENDENT_VALUE);
 
+		axisEClass = createEClass(AXIS);
+		createEAttribute(axisEClass, AXIS__LABEL);
+		createEAttribute(axisEClass, AXIS__COLUMN);
+		createEReference(axisEClass, AXIS__SCALE);
+
+		axesEClass = createEClass(AXES);
+		createEReference(axesEClass, AXES__X);
+		createEReference(axesEClass, AXES__Y);
+		createEReference(axesEClass, AXES__Z);
+
+		visualizationInfoEClass = createEClass(VISUALIZATION_INFO);
+		createEAttribute(visualizationInfoEClass, VISUALIZATION_INFO__TITLE);
+		createEAttribute(visualizationInfoEClass, VISUALIZATION_INFO__SUB_TITLE);
+		createEAttribute(visualizationInfoEClass, VISUALIZATION_INFO__CAPTION);
+
+		scaleEClass = createEClass(SCALE);
+		createEAttribute(scaleEClass, SCALE__TYPE);
+		createEAttribute(scaleEClass, SCALE__FORMAT);
+		createEAttribute(scaleEClass, SCALE__BREAKS);
+
 		// Create enums
 		visualizationTypeEEnum = createEEnum(VISUALIZATION_TYPE);
 		regressionTypeEEnum = createEEnum(REGRESSION_TYPE);
+		scaleTypeEEnum = createEEnum(SCALE_TYPE);
 	}
 
 	/**
@@ -580,15 +724,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
 		initEClass(visualizationEClass, Visualization.class, "Visualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualization_Type(), this.getVisualizationType(), "type", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_XAxis(), ecorePackage.getEString(), "xAxis", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_YAxis(), ecorePackage.getEString(), "yAxis", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_Color(), ecorePackage.getEString(), "color", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_Title(), ecorePackage.getEString(), "title", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_SubTitle(), ecorePackage.getEString(), "subTitle", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_XAxisLabel(), ecorePackage.getEString(), "xAxisLabel", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_YAxisLabel(), ecorePackage.getEString(), "yAxisLabel", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_ColorLabel(), ecorePackage.getEString(), "colorLabel", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualization_Caption(), ecorePackage.getEString(), "caption", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualization_Axes(), this.getAxes(), null, "axes", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualization_Info(), this.getVisualizationInfo(), null, "info", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(animationEClass, Animation.class, "Animation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnimation_Label(), ecorePackage.getEString(), "label", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -613,6 +750,26 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getRegression_DependentValue(), ecorePackage.getEString(), "dependentValue", null, 0, 1, Regression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegression_IndependentValue(), ecorePackage.getEString(), "independentValue", null, 0, 1, Regression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(axisEClass, Axis.class, "Axis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAxis_Label(), ecorePackage.getEString(), "label", null, 0, 1, Axis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAxis_Column(), ecorePackage.getEString(), "column", null, 0, 1, Axis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAxis_Scale(), this.getScale(), null, "scale", null, 0, 1, Axis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(axesEClass, Axes.class, "Axes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAxes_X(), this.getAxis(), null, "x", null, 0, 1, Axes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAxes_Y(), this.getAxis(), null, "y", null, 0, 1, Axes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAxes_Z(), this.getAxis(), null, "z", null, 0, 1, Axes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(visualizationInfoEClass, VisualizationInfo.class, "VisualizationInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVisualizationInfo_Title(), ecorePackage.getEString(), "title", null, 0, 1, VisualizationInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVisualizationInfo_SubTitle(), ecorePackage.getEString(), "subTitle", null, 0, 1, VisualizationInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVisualizationInfo_Caption(), ecorePackage.getEString(), "caption", null, 0, 1, VisualizationInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(scaleEClass, Scale.class, "Scale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getScale_Type(), this.getScaleType(), "type", null, 0, 1, Scale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScale_Format(), ecorePackage.getEString(), "format", null, 0, 1, Scale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScale_Breaks(), ecorePackage.getEString(), "breaks", null, 0, 1, Scale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(visualizationTypeEEnum, VisualizationType.class, "VisualizationType");
 		addEEnumLiteral(visualizationTypeEEnum, VisualizationType.LINEAR_PLOT);
@@ -621,6 +778,11 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEEnum(regressionTypeEEnum, RegressionType.class, "RegressionType");
 		addEEnumLiteral(regressionTypeEEnum, RegressionType.LINNEAR);
 		addEEnumLiteral(regressionTypeEEnum, RegressionType.LOGARITHMIC);
+
+		initEEnum(scaleTypeEEnum, ScaleType.class, "ScaleType");
+		addEEnumLiteral(scaleTypeEEnum, ScaleType.LOG10);
+		addEEnumLiteral(scaleTypeEEnum, ScaleType.SQRT);
+		addEEnumLiteral(scaleTypeEEnum, ScaleType.DATE);
 
 		// Create resource
 		createResource(eNS_URI);

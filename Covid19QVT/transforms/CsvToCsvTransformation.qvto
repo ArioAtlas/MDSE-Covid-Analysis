@@ -8,8 +8,13 @@ main() {
 	log("Csv2Csv M2M Transformation has been started!");
 	
 	configModel.objects()->flatten()[Config] -> map ConfigToAnalysis();
+	inputCsv.objects()->flatten()[DataPool] -> map DataPool2AnalyticModel();
 }
 
+
+//
+// Config Model To Analysis Model Transformations
+//
 mapping Config::ConfigToAnalysis() : AnalyticModel {
 	log("In ConfigToAnalysis");
 	
@@ -25,7 +30,8 @@ mapping Config::ConfigToAnalysis() : AnalyticModel {
 		case (self.regression.type = CONFIG::RegressionType::Linnear) result.regression := self.regression.map Regression2LinnearRegression();
 		case (self.regression.type = CONFIG::RegressionType::Logarithmic) result.regression := self.regression.map Regression2LogarithmicRegression();
 		else result.regression := self.regression.map Regression2Regression();
-	}
+	};
+		
 }
 
 mapping DataModel::DataModel2DataSource() : DataSource {
@@ -45,49 +51,81 @@ mapping DataModel::DataModel2DataSource() : DataSource {
 mapping CONFIG::Visualization::Visualization2Visualization() : ANALYSIS::Visualization {
 	log("In Visualization2Visualization");
 
-	result.xAxis := self.xAxis;
-	result.yAxis := self.yAxis;
-	result.color := self.color;
-	result.title := self.title;
-	result.subTitle := self.subTitle;
-	result.xAxisLabel := self.xAxisLabel;
-	result.yAxisLabel := self.yAxisLabel;
-	result.colorLabel := self.colorLabel;
-	result.caption := self.caption;
+	result.xAxis := self.axes.x.column;
+	result.yAxis := self.axes.y.column;
+	result.color := self.axes.z.column;
+	result.title := self.info.title;
+	result.subTitle := self.info.subTitle;
+	result.xAxisLabel := self.axes.x.label;
+	result.yAxisLabel := self.axes.y.label;
+	result.colorLabel := self.axes.z.label;
+	result.caption := self.info.caption;
+	
+	switch {
+		case(self.axes.x.scale.type = CONFIG::ScaleType::Log10) result.scale_x := self.axes.x.scale.map Scale2Log10Scale();
+		case(self.axes.x.scale.type = CONFIG::ScaleType::Sqrt) result.scale_x := self.axes.x.scale.map Scale2SqrtScale();
+		case(self.axes.x.scale.type = CONFIG::ScaleType::Date) result.scale_x := self.axes.x.scale.map Scale2DateScale();
+	};
+	
+	switch {
+		case(self.axes.y.scale.type = CONFIG::ScaleType::Log10) result.scale_y := self.axes.y.scale.map Scale2Log10Scale();
+		case(self.axes.y.scale.type = CONFIG::ScaleType::Sqrt) result.scale_y := self.axes.y.scale.map Scale2SqrtScale();
+		case(self.axes.y.scale.type = CONFIG::ScaleType::Date) result.scale_y := self.axes.y.scale.map Scale2DateScale();
+	};
+	
 }
 
-mapping CONFIG::Visualization::Visualization2LinearPlot() : ANALYSIS::LinearPlot {
+mapping CONFIG::Scale::Scale2Scale() : ANALYSIS::Scale {
+	log("In Scale2Scale");
+	
+}
+
+mapping CONFIG::Scale::Scale2Log10Scale() : ANALYSIS::Log10Scale 
+inherits CONFIG::Scale::Scale2Scale {
+	log("In Scale2Log10Scale");
+	
+}
+
+mapping CONFIG::Scale::Scale2SqrtScale() : ANALYSIS::SqrtScale 
+inherits CONFIG::Scale::Scale2Scale {
+	log("In Scale2SqrtScale");
+	
+}
+
+mapping CONFIG::Scale::Scale2DateScale() : ANALYSIS::DateScale 
+inherits CONFIG::Scale::Scale2Scale {
+	log("In Scale2DateScale");
+	
+	result.format := self.format;
+	result.breaks := self.breaks;
+}
+
+mapping CONFIG::Visualization::Visualization2LinearPlot() : ANALYSIS::LinearPlot 
+inherits CONFIG::Visualization::Visualization2Visualization {
 	log("In Visualization2LinearPlot");
 	
-	result.xAxis := self.xAxis;
-	result.yAxis := self.yAxis;
-	result.color := self.color;
-	result.title := self.title;
-	result.subTitle := self.subTitle;
-	result.xAxisLabel := self.xAxisLabel;
-	result.yAxisLabel := self.yAxisLabel;
-	result.colorLabel := self.colorLabel;
-	result.caption := self.caption;
-}
-
-mapping CONFIG::Visualization::Visualization2ScatterPlot() : ANALYSIS::ScatterPlot {
-	log("In Visualization2ScatterPlot");
-
-	result.xAxis := self.xAxis;
-	result.yAxis := self.yAxis;
-	result.color := self.color;
-	result.title := self.title;
-	result.subTitle := self.subTitle;
-	result.xAxisLabel := self.xAxisLabel;
-	result.yAxisLabel := self.yAxisLabel;
-	result.colorLabel := self.colorLabel;
-	result.caption := self.caption;
+	result.lineSize := 1.2;
+	result.lineAlpha := 1.8;
+	
+	result.animation := self.container().oclAsType(CONFIG::Config).animation.map Animation2Animation();
 	
 }
 
+mapping CONFIG::Visualization::Visualization2ScatterPlot() : ANALYSIS::ScatterPlot 
+inherits CONFIG::Visualization::Visualization2Visualization {
+	log("In Visualization2ScatterPlot");
+	
+	result.alpha := 0.7;
+	result.stroke := 0;
+	
+	result.animation := self.container().oclAsType(CONFIG::Config).animation.map Animation2Animation();
 
-// TODO: Add this to transformation later
-mapping CONFIG::Animation::name() : ANALYSIS::Animation {
+}
+
+
+mapping CONFIG::Animation::Animation2Animation() : ANALYSIS::Animation {
+	log("In Animation2Animation");
+
 	result.label := self.label;
 	result.transitionTime := self.transitionTime;
 	result.width := self.width;
@@ -95,11 +133,12 @@ mapping CONFIG::Animation::name() : ANALYSIS::Animation {
 	result.duration := self.duration;
 	result.outputName := self.outputName;
 	result.outputPath := self.outputPath;
-	result.shadowWake := 0;
+	result.shadowWake := 0.1;
 	result.fps := 30;
-	result.endPause := 10;
+	result.endPause := 60;
 	result.resolution := 100;
 }
+
 
 mapping CONFIG::Regression::Regression2Regression() : ANALYSIS::Regression {
 	log("In Regression2Regression");
@@ -108,20 +147,26 @@ mapping CONFIG::Regression::Regression2Regression() : ANALYSIS::Regression {
 	result.independentValue := self.independentValue;
 }
 
-mapping CONFIG::Regression::Regression2LinnearRegression() : ANALYSIS::LinnearRegression {
+mapping CONFIG::Regression::Regression2LinnearRegression() : ANALYSIS::LinnearRegression 
+inherits CONFIG::Regression::Regression2Regression {
 	log("In Regression2LinnearRegression");
-	
-	result.dependentValue := self.dependentValue;
-	result.independentValue := self.independentValue;
+
 }
 
-mapping CONFIG::Regression::Regression2LogarithmicRegression() : ANALYSIS::LogarithmicRegression {
+mapping CONFIG::Regression::Regression2LogarithmicRegression() : ANALYSIS::LogarithmicRegression 
+inherits CONFIG::Regression::Regression2Regression {
 	log("In Regression2LogarithmicRegression");
 	
-	result.dependentValue := self.dependentValue;
-	result.independentValue := self.independentValue;
 }
 
 
+//
+// Data Model To Analysis Model Transformations
+//
+mapping DATA::DataPool::DataPool2AnalyticModel() : AnalyticModel {
+	log("In DataPool2AnalyticModel");
+	
+	log(result.dataSource.name);
+}
 
 

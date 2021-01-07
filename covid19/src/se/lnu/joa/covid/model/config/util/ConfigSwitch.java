@@ -96,6 +96,30 @@ public class ConfigSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConfigPackage.AXIS: {
+				Axis axis = (Axis)theEObject;
+				T result = caseAxis(axis);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConfigPackage.AXES: {
+				Axes axes = (Axes)theEObject;
+				T result = caseAxes(axes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConfigPackage.VISUALIZATION_INFO: {
+				VisualizationInfo visualizationInfo = (VisualizationInfo)theEObject;
+				T result = caseVisualizationInfo(visualizationInfo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConfigPackage.SCALE: {
+				Scale scale = (Scale)theEObject;
+				T result = caseScale(scale);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -172,6 +196,66 @@ public class ConfigSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRegression(Regression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Axis</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Axis</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAxis(Axis object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Axes</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Axes</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAxes(Axes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Visualization Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Visualization Info</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVisualizationInfo(VisualizationInfo object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scale</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scale</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScale(Scale object) {
 		return null;
 	}
 

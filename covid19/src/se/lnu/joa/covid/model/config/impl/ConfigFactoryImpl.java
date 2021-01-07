@@ -62,6 +62,10 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 			case ConfigPackage.VISUALIZATION: return createVisualization();
 			case ConfigPackage.ANIMATION: return createAnimation();
 			case ConfigPackage.REGRESSION: return createRegression();
+			case ConfigPackage.AXIS: return createAxis();
+			case ConfigPackage.AXES: return createAxes();
+			case ConfigPackage.VISUALIZATION_INFO: return createVisualizationInfo();
+			case ConfigPackage.SCALE: return createScale();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,6 +83,8 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 				return createVisualizationTypeFromString(eDataType, initialValue);
 			case ConfigPackage.REGRESSION_TYPE:
 				return createRegressionTypeFromString(eDataType, initialValue);
+			case ConfigPackage.SCALE_TYPE:
+				return createScaleTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -96,6 +102,8 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 				return convertVisualizationTypeToString(eDataType, instanceValue);
 			case ConfigPackage.REGRESSION_TYPE:
 				return convertRegressionTypeToString(eDataType, instanceValue);
+			case ConfigPackage.SCALE_TYPE:
+				return convertScaleTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -156,6 +164,46 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Axis createAxis() {
+		AxisImpl axis = new AxisImpl();
+		return axis;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Axes createAxes() {
+		AxesImpl axes = new AxesImpl();
+		return axes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VisualizationInfo createVisualizationInfo() {
+		VisualizationInfoImpl visualizationInfo = new VisualizationInfoImpl();
+		return visualizationInfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scale createScale() {
+		ScaleImpl scale = new ScaleImpl();
+		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VisualizationType createVisualizationTypeFromString(EDataType eDataType, String initialValue) {
 		VisualizationType result = VisualizationType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -188,6 +236,26 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	 * @generated
 	 */
 	public String convertRegressionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScaleType createScaleTypeFromString(EDataType eDataType, String initialValue) {
+		ScaleType result = ScaleType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertScaleTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

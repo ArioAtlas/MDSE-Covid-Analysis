@@ -9,16 +9,23 @@ dataModel:
   
 visualization:
   type: ScatterPlot
-  xAxis: total_deceased
-  yAxis: total_confirmed
-  color: new_confirmed
-  title: "Infection vs Death"
-  subTitle: "..."
-  xAxisLabel: "Total Infection"
-  yAxisLabel: "Total Deaths"
-  colorLabel: "Country"
-  caption: "Source: Google Open Data"
-  
+  axes:
+    x:
+      label: "Total Infection"
+      column: total_deceased
+      scale: 
+        type: Log10
+    y:
+      label: "Total Deaths"
+      column: total_confirmed
+    z:
+      label: "Country"
+      column: new_confirmed
+  info:
+    title: "Infection vs Death"
+    subTitle: "..."
+    caption: "Source: Google Open Data"
+
 animation:
   label: "Date: "
   transitionTime: DateS

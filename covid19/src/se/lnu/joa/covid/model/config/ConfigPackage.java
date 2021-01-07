@@ -197,85 +197,22 @@ public interface ConfigPackage extends EPackage {
 	int VISUALIZATION__TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>XAxis</b></em>' attribute.
+	 * The feature id for the '<em><b>Axes</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION__XAXIS = 1;
+	int VISUALIZATION__AXES = 1;
 
 	/**
-	 * The feature id for the '<em><b>YAxis</b></em>' attribute.
+	 * The feature id for the '<em><b>Info</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION__YAXIS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__COLOR = 3;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__TITLE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Sub Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__SUB_TITLE = 5;
-
-	/**
-	 * The feature id for the '<em><b>XAxis Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__XAXIS_LABEL = 6;
-
-	/**
-	 * The feature id for the '<em><b>YAxis Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__YAXIS_LABEL = 7;
-
-	/**
-	 * The feature id for the '<em><b>Color Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__COLOR_LABEL = 8;
-
-	/**
-	 * The feature id for the '<em><b>Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISUALIZATION__CAPTION = 9;
+	int VISUALIZATION__INFO = 2;
 
 	/**
 	 * The number of structural features of the '<em>Visualization</em>' class.
@@ -284,7 +221,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_FEATURE_COUNT = 10;
+	int VISUALIZATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Visualization</em>' class.
@@ -451,6 +388,226 @@ public interface ConfigPackage extends EPackage {
 	int REGRESSION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.AxisImpl <em>Axis</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.impl.AxisImpl
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getAxis()
+	 * @generated
+	 */
+	int AXIS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS__LABEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS__COLUMN = 1;
+
+	/**
+	 * The feature id for the '<em><b>Scale</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS__SCALE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Axis</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Axis</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXIS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.AxesImpl <em>Axes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.impl.AxesImpl
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getAxes()
+	 * @generated
+	 */
+	int AXES = 6;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXES__X = 0;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXES__Y = 1;
+
+	/**
+	 * The feature id for the '<em><b>Z</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXES__Z = 2;
+
+	/**
+	 * The number of structural features of the '<em>Axes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXES_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Axes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AXES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.VisualizationInfoImpl <em>Visualization Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.impl.VisualizationInfoImpl
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getVisualizationInfo()
+	 * @generated
+	 */
+	int VISUALIZATION_INFO = 7;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_INFO__TITLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sub Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_INFO__SUB_TITLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_INFO__CAPTION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Visualization Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_INFO_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Visualization Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_INFO_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.ScaleImpl <em>Scale</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.impl.ScaleImpl
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getScale()
+	 * @generated
+	 */
+	int SCALE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALE__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALE__FORMAT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Breaks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALE__BREAKS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Scale</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Scale</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,7 +615,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getVisualizationType()
 	 * @generated
 	 */
-	int VISUALIZATION_TYPE = 5;
+	int VISUALIZATION_TYPE = 9;
 
 	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.RegressionType <em>Regression Type</em>}' enum.
@@ -468,7 +625,18 @@ public interface ConfigPackage extends EPackage {
 	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getRegressionType()
 	 * @generated
 	 */
-	int REGRESSION_TYPE = 6;
+	int REGRESSION_TYPE = 10;
+
+
+	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.ScaleType <em>Scale Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.ScaleType
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getScaleType()
+	 * @generated
+	 */
+	int SCALE_TYPE = 11;
 
 
 	/**
@@ -590,103 +758,26 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getVisualization_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getXAxis <em>XAxis</em>}'.
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Visualization#getAxes <em>Axes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>XAxis</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getXAxis()
+	 * @return the meta object for the containment reference '<em>Axes</em>'.
+	 * @see se.lnu.joa.covid.model.config.Visualization#getAxes()
 	 * @see #getVisualization()
 	 * @generated
 	 */
-	EAttribute getVisualization_XAxis();
+	EReference getVisualization_Axes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getYAxis <em>YAxis</em>}'.
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Visualization#getInfo <em>Info</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>YAxis</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getYAxis()
+	 * @return the meta object for the containment reference '<em>Info</em>'.
+	 * @see se.lnu.joa.covid.model.config.Visualization#getInfo()
 	 * @see #getVisualization()
 	 * @generated
 	 */
-	EAttribute getVisualization_YAxis();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getColor <em>Color</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Color</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getColor()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_Color();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getTitle()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getSubTitle <em>Sub Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sub Title</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getSubTitle()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_SubTitle();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getXAxisLabel <em>XAxis Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>XAxis Label</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getXAxisLabel()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_XAxisLabel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getYAxisLabel <em>YAxis Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>YAxis Label</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getYAxisLabel()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_YAxisLabel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getColorLabel <em>Color Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Color Label</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getColorLabel()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_ColorLabel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getCaption <em>Caption</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Caption</em>'.
-	 * @see se.lnu.joa.covid.model.config.Visualization#getCaption()
-	 * @see #getVisualization()
-	 * @generated
-	 */
-	EAttribute getVisualization_Caption();
+	EReference getVisualization_Info();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Animation <em>Animation</em>}'.
@@ -829,6 +920,178 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getRegression_IndependentValue();
 
 	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Axis <em>Axis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Axis</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axis
+	 * @generated
+	 */
+	EClass getAxis();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Axis#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axis#getLabel()
+	 * @see #getAxis()
+	 * @generated
+	 */
+	EAttribute getAxis_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Axis#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axis#getColumn()
+	 * @see #getAxis()
+	 * @generated
+	 */
+	EAttribute getAxis_Column();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Axis#getScale <em>Scale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Scale</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axis#getScale()
+	 * @see #getAxis()
+	 * @generated
+	 */
+	EReference getAxis_Scale();
+
+	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Axes <em>Axes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Axes</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axes
+	 * @generated
+	 */
+	EClass getAxes();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Axes#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>X</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axes#getX()
+	 * @see #getAxes()
+	 * @generated
+	 */
+	EReference getAxes_X();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Axes#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Y</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axes#getY()
+	 * @see #getAxes()
+	 * @generated
+	 */
+	EReference getAxes_Y();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.config.Axes#getZ <em>Z</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Z</em>'.
+	 * @see se.lnu.joa.covid.model.config.Axes#getZ()
+	 * @see #getAxes()
+	 * @generated
+	 */
+	EReference getAxes_Z();
+
+	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.VisualizationInfo <em>Visualization Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Visualization Info</em>'.
+	 * @see se.lnu.joa.covid.model.config.VisualizationInfo
+	 * @generated
+	 */
+	EClass getVisualizationInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.VisualizationInfo#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see se.lnu.joa.covid.model.config.VisualizationInfo#getTitle()
+	 * @see #getVisualizationInfo()
+	 * @generated
+	 */
+	EAttribute getVisualizationInfo_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.VisualizationInfo#getSubTitle <em>Sub Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sub Title</em>'.
+	 * @see se.lnu.joa.covid.model.config.VisualizationInfo#getSubTitle()
+	 * @see #getVisualizationInfo()
+	 * @generated
+	 */
+	EAttribute getVisualizationInfo_SubTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.VisualizationInfo#getCaption <em>Caption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Caption</em>'.
+	 * @see se.lnu.joa.covid.model.config.VisualizationInfo#getCaption()
+	 * @see #getVisualizationInfo()
+	 * @generated
+	 */
+	EAttribute getVisualizationInfo_Caption();
+
+	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Scale <em>Scale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scale</em>'.
+	 * @see se.lnu.joa.covid.model.config.Scale
+	 * @generated
+	 */
+	EClass getScale();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Scale#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see se.lnu.joa.covid.model.config.Scale#getType()
+	 * @see #getScale()
+	 * @generated
+	 */
+	EAttribute getScale_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Scale#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see se.lnu.joa.covid.model.config.Scale#getFormat()
+	 * @see #getScale()
+	 * @generated
+	 */
+	EAttribute getScale_Format();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Scale#getBreaks <em>Breaks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Breaks</em>'.
+	 * @see se.lnu.joa.covid.model.config.Scale#getBreaks()
+	 * @see #getScale()
+	 * @generated
+	 */
+	EAttribute getScale_Breaks();
+
+	/**
 	 * Returns the meta object for enum '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -847,6 +1110,16 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getRegressionType();
+
+	/**
+	 * Returns the meta object for enum '{@link se.lnu.joa.covid.model.config.ScaleType <em>Scale Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Scale Type</em>'.
+	 * @see se.lnu.joa.covid.model.config.ScaleType
+	 * @generated
+	 */
+	EEnum getScaleType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -966,76 +1239,20 @@ public interface ConfigPackage extends EPackage {
 		EAttribute VISUALIZATION__TYPE = eINSTANCE.getVisualization_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>XAxis</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Axes</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VISUALIZATION__XAXIS = eINSTANCE.getVisualization_XAxis();
+		EReference VISUALIZATION__AXES = eINSTANCE.getVisualization_Axes();
 
 		/**
-		 * The meta object literal for the '<em><b>YAxis</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VISUALIZATION__YAXIS = eINSTANCE.getVisualization_YAxis();
-
-		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__COLOR = eINSTANCE.getVisualization_Color();
-
-		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__TITLE = eINSTANCE.getVisualization_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__SUB_TITLE = eINSTANCE.getVisualization_SubTitle();
-
-		/**
-		 * The meta object literal for the '<em><b>XAxis Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__XAXIS_LABEL = eINSTANCE.getVisualization_XAxisLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>YAxis Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__YAXIS_LABEL = eINSTANCE.getVisualization_YAxisLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Color Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__COLOR_LABEL = eINSTANCE.getVisualization_ColorLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Caption</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VISUALIZATION__CAPTION = eINSTANCE.getVisualization_Caption();
+		EReference VISUALIZATION__INFO = eINSTANCE.getVisualization_Info();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.AnimationImpl <em>Animation</em>}' class.
@@ -1146,6 +1363,142 @@ public interface ConfigPackage extends EPackage {
 		EAttribute REGRESSION__INDEPENDENT_VALUE = eINSTANCE.getRegression_IndependentValue();
 
 		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.AxisImpl <em>Axis</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.impl.AxisImpl
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getAxis()
+		 * @generated
+		 */
+		EClass AXIS = eINSTANCE.getAxis();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AXIS__LABEL = eINSTANCE.getAxis_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AXIS__COLUMN = eINSTANCE.getAxis_Column();
+
+		/**
+		 * The meta object literal for the '<em><b>Scale</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AXIS__SCALE = eINSTANCE.getAxis_Scale();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.AxesImpl <em>Axes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.impl.AxesImpl
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getAxes()
+		 * @generated
+		 */
+		EClass AXES = eINSTANCE.getAxes();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AXES__X = eINSTANCE.getAxes_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AXES__Y = eINSTANCE.getAxes_Y();
+
+		/**
+		 * The meta object literal for the '<em><b>Z</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AXES__Z = eINSTANCE.getAxes_Z();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.VisualizationInfoImpl <em>Visualization Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.impl.VisualizationInfoImpl
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getVisualizationInfo()
+		 * @generated
+		 */
+		EClass VISUALIZATION_INFO = eINSTANCE.getVisualizationInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_INFO__TITLE = eINSTANCE.getVisualizationInfo_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_INFO__SUB_TITLE = eINSTANCE.getVisualizationInfo_SubTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Caption</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION_INFO__CAPTION = eINSTANCE.getVisualizationInfo_Caption();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.ScaleImpl <em>Scale</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.impl.ScaleImpl
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getScale()
+		 * @generated
+		 */
+		EClass SCALE = eINSTANCE.getScale();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALE__TYPE = eINSTANCE.getScale_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALE__FORMAT = eINSTANCE.getScale_Format();
+
+		/**
+		 * The meta object literal for the '<em><b>Breaks</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALE__BREAKS = eINSTANCE.getScale_Breaks();
+
+		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1164,6 +1517,16 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum REGRESSION_TYPE = eINSTANCE.getRegressionType();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.ScaleType <em>Scale Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.ScaleType
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getScaleType()
+		 * @generated
+		 */
+		EEnum SCALE_TYPE = eINSTANCE.getScaleType();
 
 	}
 

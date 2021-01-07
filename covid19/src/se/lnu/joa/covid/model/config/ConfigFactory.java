@@ -67,6 +67,42 @@ public interface ConfigFactory extends EFactory {
 	Regression createRegression();
 
 	/**
+	 * Returns a new object of class '<em>Axis</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Axis</em>'.
+	 * @generated
+	 */
+	Axis createAxis();
+
+	/**
+	 * Returns a new object of class '<em>Axes</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Axes</em>'.
+	 * @generated
+	 */
+	Axes createAxes();
+
+	/**
+	 * Returns a new object of class '<em>Visualization Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Visualization Info</em>'.
+	 * @generated
+	 */
+	VisualizationInfo createVisualizationInfo();
+
+	/**
+	 * Returns a new object of class '<em>Scale</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scale</em>'.
+	 * @generated
+	 */
+	Scale createScale();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

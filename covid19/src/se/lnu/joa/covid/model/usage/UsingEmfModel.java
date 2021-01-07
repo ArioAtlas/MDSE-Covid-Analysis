@@ -35,13 +35,18 @@ import org.yaml.snakeyaml.constructor.Constructor;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.config.Animation;
+import se.lnu.joa.covid.model.config.Axes;
+import se.lnu.joa.covid.model.config.Axis;
 import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
 import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
+import se.lnu.joa.covid.model.config.Scale;
+import se.lnu.joa.covid.model.config.ScaleType;
 import se.lnu.joa.covid.model.config.Visualization;
+import se.lnu.joa.covid.model.config.VisualizationInfo;
 import se.lnu.joa.covid.model.config.VisualizationType;
 import se.lnu.joa.covid.model.data.DataFactory;
 import se.lnu.joa.covid.model.data.DataPackage;
@@ -69,19 +74,6 @@ public class UsingEmfModel {
 			// Read input files
 			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);
 	        Config config = readConfig(configFile);
-	        
-	        //validation of Animation height
-	        BasicDiagnostic chain = new BasicDiagnostic();
-	        config.getAnimation().validate(chain, new HashMap<Object, Object>());
-	        if(!chain.getChildren().isEmpty())
-	        {
-	        	if(chain.getChildren().get(0).getSeverity() != Diagnostic.OK)
-		        {
-	        		System.out.println(chain.getChildren().get(0).getMessage());
-		        }
-	        }
-	        
-
 	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 			
@@ -223,41 +215,108 @@ public class UsingEmfModel {
 			dm.setDataSource(aConfig.getDataModel().getDataSource());
 			dm.setDatasetName(aConfig.getDataModel().getDatasetName());
 			dm.getColumns().addAll(Arrays.asList(aConfig.getDataModel().getColumns()));
+			config.setSource(dm);
 			
 			
 			// Create a Visualization from config file
 			Visualization vlz = configFactory.createVisualization();
 			vlz.setType(VisualizationType.get(aConfig.getVisualization().getType()));
-			vlz.setXAxis(aConfig.getVisualization().getxAxis());
-			vlz.setYAxis(aConfig.getVisualization().getyAxis());
-			vlz.setColor(aConfig.getVisualization().getColor());
-			vlz.setTitle(aConfig.getVisualization().getTitle());
-			vlz.setSubTitle(aConfig.getVisualization().getSubTitle());
-			vlz.setXAxisLabel(aConfig.getVisualization().getxAxisLabel());
-			vlz.setYAxisLabel(aConfig.getVisualization().getyAxisLabel());
-			vlz.setCaption(aConfig.getVisualization().getCaption());
+			
+			// Setup Axes
+			if(aConfig.getVisualization().getAxes()!=null) {
+				Axes axes = configFactory.createAxes();
+				
+				if(aConfig.getVisualization().getAxes().getX()!=null) {
+					Axis ax = configFactory.createAxis();
+					ax.setColumn(aConfig.getVisualization().getAxes().getX().getColumn());
+					ax.setLabel(aConfig.getVisualization().getAxes().getX().getLabel());
+					
+					if(aConfig.getVisualization().getAxes().getX().getScale()!=null) {
+						Scale xScale = configFactory.createScale();
+						xScale.setType(ScaleType.get(aConfig.getVisualization().getAxes().getX().getScale().getType()));
+						xScale.setFormat(aConfig.getVisualization().getAxes().getX().getScale().getFormat());
+						xScale.setBreaks(aConfig.getVisualization().getAxes().getX().getScale().getBreaks());
+						ax.setScale(xScale);
+					}
+					
+					axes.setX(ax);
+				}
+				
+				if(aConfig.getVisualization().getAxes().getY()!=null) {
+					Axis ay = configFactory.createAxis();
+					ay.setColumn(aConfig.getVisualization().getAxes().getX().getColumn());
+					ay.setLabel(aConfig.getVisualization().getAxes().getX().getLabel());
+					
+					if(aConfig.getVisualization().getAxes().getY().getScale()!=null) {
+						Scale yScale = configFactory.createScale();
+						yScale.setType(ScaleType.get(aConfig.getVisualization().getAxes().getY().getScale().getType()));
+						yScale.setFormat(aConfig.getVisualization().getAxes().getY().getScale().getFormat());
+						yScale.setBreaks(aConfig.getVisualization().getAxes().getY().getScale().getBreaks());
+						ay.setScale(yScale);
+					}
+					
+					axes.setY(ay);
+				}
+
+				if(aConfig.getVisualization().getAxes().getZ()!=null) {
+					Axis az = configFactory.createAxis();
+					az.setColumn(aConfig.getVisualization().getAxes().getX().getColumn());
+					az.setLabel(aConfig.getVisualization().getAxes().getX().getLabel());
+					
+					if(aConfig.getVisualization().getAxes().getZ().getScale()!=null) {
+						Scale zScale = configFactory.createScale();
+						zScale.setType(ScaleType.get(aConfig.getVisualization().getAxes().getZ().getScale().getType()));
+						zScale.setFormat(aConfig.getVisualization().getAxes().getZ().getScale().getFormat());
+						zScale.setBreaks(aConfig.getVisualization().getAxes().getZ().getScale().getBreaks());
+						az.setScale(zScale);
+					}
+					
+					axes.setZ(az);
+				}
+				
+				vlz.setAxes(axes);
+			}
+			
+			if(aConfig.getVisualization().getInfo()!=null) {
+				VisualizationInfo vInfo = configFactory.createVisualizationInfo();
+				vInfo.setTitle(aConfig.getVisualization().getInfo().getTitle());
+				vInfo.setSubTitle(aConfig.getVisualization().getInfo().getSubTitle());
+				vInfo.setCaption(aConfig.getVisualization().getInfo().getCaption());
+				vlz.setInfo(vInfo);
+				
+			}
+			config.setVisualization(vlz);
 			 
 			// create a Animation from config file
-			Animation ani = configFactory.createAnimation();
-			ani.setLabel(aConfig.getAnimation().getLabel());
-			ani.setTransitionTime(aConfig.getAnimation().getTransitionTime());
-			ani.setWidth(aConfig.getAnimation().getWidth());
-			ani.setHeight(aConfig.getAnimation().getHeight());
-			ani.setDuration(aConfig.getAnimation().getDuration());
-			ani.setOutputName(aConfig.getAnimation().getOutputName());
-			ani.setOutputPath(aConfig.getAnimation().getOutputPath());
-			//ani.validate(diagnostic, context);
-			
+			if(aConfig.getAnimation()!=null) {
+				Animation ani = configFactory.createAnimation();
+				ani.setLabel(aConfig.getAnimation().getLabel());
+				ani.setTransitionTime(aConfig.getAnimation().getTransitionTime());
+				ani.setWidth(aConfig.getAnimation().getWidth());
+				ani.setHeight(aConfig.getAnimation().getHeight());
+				ani.setDuration(aConfig.getAnimation().getDuration());
+				ani.setOutputName(aConfig.getAnimation().getOutputName());
+				ani.setOutputPath(aConfig.getAnimation().getOutputPath());
+				//ani.validate(diagnostic, context);
+				config.setAnimation(ani);
+				
+				//validation of Animation height
+		        BasicDiagnostic chain = new BasicDiagnostic();
+		        config.getAnimation().validate(chain, new HashMap<Object, Object>());
+		        if(!chain.getChildren().isEmpty())
+		        {
+		        	if(chain.getChildren().get(0).getSeverity() != Diagnostic.OK)
+			        {
+		        		System.out.println(chain.getChildren().get(0).getMessage());
+			        }
+		        }
+			}
 			
 			// create Regression from config file
 			Regression reg = configFactory.createRegression();
 			reg.setType(RegressionType.get(aConfig.getRegression().getType()));
 			reg.setDependentValue(aConfig.getRegression().getDependentValue());
 			reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
-			
-			config.setSource(dm);
-			config.setVisualization(vlz);
-			config.setAnimation(ani);
 			config.setRegression(reg);
 			
 			return config;

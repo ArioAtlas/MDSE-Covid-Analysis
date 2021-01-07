@@ -103,10 +103,20 @@ public class ConfigValidator extends EObjectValidator {
 				return validateAnimation((Animation)value, diagnostics, context);
 			case ConfigPackage.REGRESSION:
 				return validateRegression((Regression)value, diagnostics, context);
+			case ConfigPackage.AXIS:
+				return validateAxis((Axis)value, diagnostics, context);
+			case ConfigPackage.AXES:
+				return validateAxes((Axes)value, diagnostics, context);
+			case ConfigPackage.VISUALIZATION_INFO:
+				return validateVisualizationInfo((VisualizationInfo)value, diagnostics, context);
+			case ConfigPackage.SCALE:
+				return validateScale((Scale)value, diagnostics, context);
 			case ConfigPackage.VISUALIZATION_TYPE:
 				return validateVisualizationType((VisualizationType)value, diagnostics, context);
 			case ConfigPackage.REGRESSION_TYPE:
 				return validateRegressionType((RegressionType)value, diagnostics, context);
+			case ConfigPackage.SCALE_TYPE:
+				return validateScaleType((ScaleType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -182,6 +192,42 @@ public class ConfigValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateAxis(Axis axis, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(axis, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAxes(Axes axes, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(axes, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVisualizationInfo(VisualizationInfo visualizationInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(visualizationInfo, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScale(Scale scale, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(scale, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateVisualizationType(VisualizationType visualizationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -192,6 +238,15 @@ public class ConfigValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRegressionType(RegressionType regressionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScaleType(ScaleType scaleType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

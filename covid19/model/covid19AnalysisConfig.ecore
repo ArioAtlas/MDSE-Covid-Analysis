@@ -19,15 +19,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Visualization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//VisualizationType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xAxis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yAxis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xAxisLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yAxisLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="axes" eType="#//Axes" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="info" eType="#//VisualizationInfo"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VisualizationType">
     <eLiterals name="LinearPlot" literal="LinearPlot"/>
@@ -59,5 +53,31 @@
   <eClassifiers xsi:type="ecore:EEnum" name="RegressionType">
     <eLiterals name="Linnear"/>
     <eLiterals name="Logarithmic" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Axis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="column" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scale" eType="#//Scale"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Axes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" eType="#//Axis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="y" eType="#//Axis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="z" eType="#//Axis" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualizationInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scale">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ScaleType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="breaks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScaleType">
+    <eLiterals name="Log10"/>
+    <eLiterals name="Sqrt" value="1"/>
+    <eLiterals name="Date" value="2"/>
   </eClassifiers>
 </ecore:EPackage>
