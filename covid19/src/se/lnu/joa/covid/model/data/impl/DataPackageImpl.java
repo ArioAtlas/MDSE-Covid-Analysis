@@ -12,10 +12,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import se.lnu.joa.covid.model.data.DataFactory;
 import se.lnu.joa.covid.model.data.DataPackage;
 import se.lnu.joa.covid.model.data.DataPool;
-import se.lnu.joa.covid.model.data.DataRecord;
-import se.lnu.joa.covid.model.data.Epidemiology;
-import se.lnu.joa.covid.model.data.Health;
-import se.lnu.joa.covid.model.data.Index;
+import se.lnu.joa.covid.model.data.DataSet;
+import se.lnu.joa.covid.model.data.DataSource;
+import se.lnu.joa.covid.model.data.DateSet;
+import se.lnu.joa.covid.model.data.DoubleSet;
+import se.lnu.joa.covid.model.data.IntSet;
+import se.lnu.joa.covid.model.data.StringSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,20 +31,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass healthEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass epidemiologyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass dataPoolEClass = null;
 
 	/**
@@ -50,14 +38,42 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataRecordEClass = null;
+	private EClass dataSourceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass indexEClass = null;
+	private EClass dataSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass intSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass doubleSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateSetEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -125,222 +141,6 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHealth() {
-		return healthEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Life_expectancy() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Smoking_prevalence() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Diabetes_prevalence() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Infant_mortality_rate() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Adult_male_mortality_rate() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Adult_female_mortality_rate() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Pollution_mortality_rate() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Comorbidity_mortality_rate() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Hospital_beds() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Nurses() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Physicians() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Health_expenditure() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getHealth_Out_of_pocket_health_expenditure() {
-		return (EAttribute)healthEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEpidemiology() {
-		return epidemiologyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_Date() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_New_confirmed() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_New_deceased() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_New_recovered() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_New_tested() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_Total_confirmed() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_Total_deceased() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_Total_recovered() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEpidemiology_Total_tested() {
-		return (EAttribute)epidemiologyEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDataPool() {
 		return dataPoolEClass;
 	}
@@ -350,8 +150,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataPool_HealthData() {
-		return (EReference)dataPoolEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDataPool_Name() {
+		return (EAttribute)dataPoolEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -359,7 +159,7 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataPool_EpidemiologyData() {
+	public EReference getDataPool_Sources() {
 		return (EReference)dataPoolEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -368,8 +168,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataPool_IndexData() {
-		return (EReference)dataPoolEClass.getEStructuralFeatures().get(2);
+	public EClass getDataSource() {
+		return dataSourceEClass;
 	}
 
 	/**
@@ -377,8 +177,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDataRecord() {
-		return dataRecordEClass;
+	public EAttribute getDataSource_Name() {
+		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -386,8 +186,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataRecord_Key() {
-		return (EAttribute)dataRecordEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDataSource_Path() {
+		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -395,8 +195,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIndex() {
-		return indexEClass;
+	public EReference getDataSource_Data() {
+		return (EReference)dataSourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -404,8 +204,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Wikidata() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(0);
+	public EClass getDataSet() {
+		return dataSetEClass;
 	}
 
 	/**
@@ -413,8 +213,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Datacommons() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDataSet_Title() {
+		return (EAttribute)dataSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -422,8 +222,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Country_code() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(2);
+	public EClass getIntSet() {
+		return intSetEClass;
 	}
 
 	/**
@@ -431,8 +231,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Country_name() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(3);
+	public EAttribute getIntSet_Values() {
+		return (EAttribute)intSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -440,8 +240,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Subregion1_code() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(4);
+	public EClass getDoubleSet() {
+		return doubleSetEClass;
 	}
 
 	/**
@@ -449,8 +249,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Subregion1_name() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(5);
+	public EAttribute getDoubleSet_Values() {
+		return (EAttribute)doubleSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -458,8 +258,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Subregion2_code() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(6);
+	public EClass getStringSet() {
+		return stringSetEClass;
 	}
 
 	/**
@@ -467,8 +267,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Subregion2_name() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(7);
+	public EAttribute getStringSet_Values() {
+		return (EAttribute)stringSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -476,8 +276,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Locality_code() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(8);
+	public EClass getDateSet() {
+		return dateSetEClass;
 	}
 
 	/**
@@ -485,35 +285,8 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndex_Locality_name() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIndex_Alpha_2() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIndex_Alpha_3() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIndex_Aggregation_level() {
-		return (EAttribute)indexEClass.getEStructuralFeatures().get(12);
+	public EAttribute getDateSet_Values() {
+		return (EAttribute)dateSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -544,54 +317,29 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		healthEClass = createEClass(HEALTH);
-		createEAttribute(healthEClass, HEALTH__LIFE_EXPECTANCY);
-		createEAttribute(healthEClass, HEALTH__SMOKING_PREVALENCE);
-		createEAttribute(healthEClass, HEALTH__DIABETES_PREVALENCE);
-		createEAttribute(healthEClass, HEALTH__INFANT_MORTALITY_RATE);
-		createEAttribute(healthEClass, HEALTH__ADULT_MALE_MORTALITY_RATE);
-		createEAttribute(healthEClass, HEALTH__ADULT_FEMALE_MORTALITY_RATE);
-		createEAttribute(healthEClass, HEALTH__POLLUTION_MORTALITY_RATE);
-		createEAttribute(healthEClass, HEALTH__COMORBIDITY_MORTALITY_RATE);
-		createEAttribute(healthEClass, HEALTH__HOSPITAL_BEDS);
-		createEAttribute(healthEClass, HEALTH__NURSES);
-		createEAttribute(healthEClass, HEALTH__PHYSICIANS);
-		createEAttribute(healthEClass, HEALTH__HEALTH_EXPENDITURE);
-		createEAttribute(healthEClass, HEALTH__OUT_OF_POCKET_HEALTH_EXPENDITURE);
-
-		epidemiologyEClass = createEClass(EPIDEMIOLOGY);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__DATE);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__NEW_CONFIRMED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__NEW_DECEASED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__NEW_RECOVERED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__NEW_TESTED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_CONFIRMED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_DECEASED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_RECOVERED);
-		createEAttribute(epidemiologyEClass, EPIDEMIOLOGY__TOTAL_TESTED);
-
 		dataPoolEClass = createEClass(DATA_POOL);
-		createEReference(dataPoolEClass, DATA_POOL__HEALTH_DATA);
-		createEReference(dataPoolEClass, DATA_POOL__EPIDEMIOLOGY_DATA);
-		createEReference(dataPoolEClass, DATA_POOL__INDEX_DATA);
+		createEAttribute(dataPoolEClass, DATA_POOL__NAME);
+		createEReference(dataPoolEClass, DATA_POOL__SOURCES);
 
-		dataRecordEClass = createEClass(DATA_RECORD);
-		createEAttribute(dataRecordEClass, DATA_RECORD__KEY);
+		dataSourceEClass = createEClass(DATA_SOURCE);
+		createEAttribute(dataSourceEClass, DATA_SOURCE__NAME);
+		createEAttribute(dataSourceEClass, DATA_SOURCE__PATH);
+		createEReference(dataSourceEClass, DATA_SOURCE__DATA);
 
-		indexEClass = createEClass(INDEX);
-		createEAttribute(indexEClass, INDEX__WIKIDATA);
-		createEAttribute(indexEClass, INDEX__DATACOMMONS);
-		createEAttribute(indexEClass, INDEX__COUNTRY_CODE);
-		createEAttribute(indexEClass, INDEX__COUNTRY_NAME);
-		createEAttribute(indexEClass, INDEX__SUBREGION1_CODE);
-		createEAttribute(indexEClass, INDEX__SUBREGION1_NAME);
-		createEAttribute(indexEClass, INDEX__SUBREGION2_CODE);
-		createEAttribute(indexEClass, INDEX__SUBREGION2_NAME);
-		createEAttribute(indexEClass, INDEX__LOCALITY_CODE);
-		createEAttribute(indexEClass, INDEX__LOCALITY_NAME);
-		createEAttribute(indexEClass, INDEX__ALPHA_2);
-		createEAttribute(indexEClass, INDEX__ALPHA_3);
-		createEAttribute(indexEClass, INDEX__AGGREGATION_LEVEL);
+		dataSetEClass = createEClass(DATA_SET);
+		createEAttribute(dataSetEClass, DATA_SET__TITLE);
+
+		intSetEClass = createEClass(INT_SET);
+		createEAttribute(intSetEClass, INT_SET__VALUES);
+
+		doubleSetEClass = createEClass(DOUBLE_SET);
+		createEAttribute(doubleSetEClass, DOUBLE_SET__VALUES);
+
+		stringSetEClass = createEClass(STRING_SET);
+		createEAttribute(stringSetEClass, STRING_SET__VALUES);
+
+		dateSetEClass = createEClass(DATE_SET);
+		createEAttribute(dateSetEClass, DATE_SET__VALUES);
 	}
 
 	/**
@@ -622,59 +370,35 @@ public class DataPackageImpl extends EPackageImpl implements DataPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		healthEClass.getESuperTypes().add(this.getDataRecord());
-		epidemiologyEClass.getESuperTypes().add(this.getDataRecord());
-		indexEClass.getESuperTypes().add(this.getDataRecord());
+		intSetEClass.getESuperTypes().add(this.getDataSet());
+		doubleSetEClass.getESuperTypes().add(this.getDataSet());
+		stringSetEClass.getESuperTypes().add(this.getDataSet());
+		dateSetEClass.getESuperTypes().add(this.getDataSet());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(healthEClass, Health.class, "Health", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHealth_Life_expectancy(), ecorePackage.getEDouble(), "life_expectancy", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Smoking_prevalence(), ecorePackage.getEDouble(), "smoking_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Diabetes_prevalence(), ecorePackage.getEDouble(), "diabetes_prevalence", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Infant_mortality_rate(), ecorePackage.getEDouble(), "infant_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Adult_male_mortality_rate(), ecorePackage.getEDouble(), "adult_male_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Adult_female_mortality_rate(), ecorePackage.getEDouble(), "adult_female_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Pollution_mortality_rate(), ecorePackage.getEDouble(), "pollution_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Comorbidity_mortality_rate(), ecorePackage.getEDouble(), "comorbidity_mortality_rate", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Hospital_beds(), ecorePackage.getEDouble(), "hospital_beds", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Nurses(), ecorePackage.getEDouble(), "nurses", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Physicians(), ecorePackage.getEDouble(), "physicians", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Health_expenditure(), ecorePackage.getEDouble(), "health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHealth_Out_of_pocket_health_expenditure(), ecorePackage.getEDouble(), "out_of_pocket_health_expenditure", null, 0, 1, Health.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(epidemiologyEClass, Epidemiology.class, "Epidemiology", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEpidemiology_Date(), ecorePackage.getEString(), "date", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_confirmed(), ecorePackage.getEInt(), "new_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_deceased(), ecorePackage.getEInt(), "new_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_recovered(), ecorePackage.getEInt(), "new_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_New_tested(), ecorePackage.getEInt(), "new_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_confirmed(), ecorePackage.getEInt(), "total_confirmed", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_deceased(), ecorePackage.getEInt(), "total_deceased", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_recovered(), ecorePackage.getEInt(), "total_recovered", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEpidemiology_Total_tested(), ecorePackage.getEInt(), "total_tested", null, 0, 1, Epidemiology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(dataPoolEClass, DataPool.class, "DataPool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataPool_HealthData(), this.getHealth(), null, "HealthData", null, 0, -1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataPool_EpidemiologyData(), this.getEpidemiology(), null, "EpidemiologyData", null, 0, -1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataPool_IndexData(), this.getIndex(), null, "IndexData", null, 0, -1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataPool_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataPool_Sources(), this.getDataSource(), null, "sources", null, 0, -1, DataPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataRecordEClass, DataRecord.class, "DataRecord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataRecord_Key(), ecorePackage.getEString(), "key", null, 0, 1, DataRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSource_Data(), this.getDataSet(), null, "data", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(indexEClass, Index.class, "Index", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIndex_Wikidata(), ecorePackage.getEString(), "wikidata", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Datacommons(), ecorePackage.getEString(), "datacommons", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Country_code(), ecorePackage.getEString(), "country_code", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Country_name(), ecorePackage.getEString(), "country_name", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Subregion1_code(), ecorePackage.getEString(), "subregion1_code", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Subregion1_name(), ecorePackage.getEString(), "subregion1_name", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Subregion2_code(), ecorePackage.getEString(), "subregion2_code", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Subregion2_name(), ecorePackage.getEString(), "subregion2_name", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Locality_code(), ecorePackage.getEString(), "locality_code", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Locality_name(), ecorePackage.getEString(), "locality_name", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Alpha_2(), ecorePackage.getEString(), "alpha_2", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Alpha_3(), ecorePackage.getEString(), "alpha_3", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIndex_Aggregation_level(), ecorePackage.getEInt(), "aggregation_level", null, 0, 1, Index.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataSetEClass, DataSet.class, "DataSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataSet_Title(), ecorePackage.getEString(), "title", null, 0, 1, DataSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(intSetEClass, IntSet.class, "IntSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntSet_Values(), ecorePackage.getEInt(), "values", null, 0, -1, IntSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(doubleSetEClass, DoubleSet.class, "DoubleSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDoubleSet_Values(), ecorePackage.getEDouble(), "values", null, 0, -1, DoubleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(stringSetEClass, StringSet.class, "StringSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringSet_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(dateSetEClass, DateSet.class, "DateSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDateSet_Values(), ecorePackage.getEDate(), "values", null, 0, -1, DateSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

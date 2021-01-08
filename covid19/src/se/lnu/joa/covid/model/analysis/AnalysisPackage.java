@@ -970,22 +970,13 @@ public interface AnalysisPackage extends EPackage {
 	int DATA_SOURCE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Rows</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Data</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE__ROWS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Headers</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE__HEADERS = 3;
+	int DATA_SOURCE__DATA = 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -994,7 +985,7 @@ public interface AnalysisPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE_FEATURE_COUNT = 4;
+	int DATA_SOURCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Data Source</em>' class.
@@ -1006,41 +997,50 @@ public interface AnalysisPackage extends EPackage {
 	int DATA_SOURCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link se.lnu.joa.covid.model.analysis.impl.DataRowImpl <em>Data Row</em>}' class.
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.analysis.impl.DataColumnImpl <em>Data Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see se.lnu.joa.covid.model.analysis.impl.DataRowImpl
-	 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataRow()
+	 * @see se.lnu.joa.covid.model.analysis.impl.DataColumnImpl
+	 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataColumn()
 	 * @generated
 	 */
-	int DATA_ROW = 13;
+	int DATA_COLUMN = 13;
 
 	/**
-	 * The feature id for the '<em><b>Columns</b></em>' attribute list.
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ROW__COLUMNS = 0;
+	int DATA_COLUMN__HEADER = 0;
 
 	/**
-	 * The number of structural features of the '<em>Data Row</em>' class.
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ROW_FEATURE_COUNT = 1;
+	int DATA_COLUMN__VALUES = 1;
 
 	/**
-	 * The number of operations of the '<em>Data Row</em>' class.
+	 * The number of structural features of the '<em>Data Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ROW_OPERATION_COUNT = 0;
+	int DATA_COLUMN_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Data Column</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_COLUMN_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1581,47 +1581,47 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getDataSource_Path();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getRows <em>Rows</em>}'.
+	 * Returns the meta object for the reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rows</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataSource#getRows()
+	 * @return the meta object for the reference list '<em>Data</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataSource#getData()
 	 * @see #getDataSource()
 	 * @generated
 	 */
-	EReference getDataSource_Rows();
+	EReference getDataSource_Data();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.analysis.DataSource#getHeaders <em>Headers</em>}'.
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.DataColumn <em>Data Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Headers</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataSource#getHeaders()
-	 * @see #getDataSource()
+	 * @return the meta object for class '<em>Data Column</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn
 	 * @generated
 	 */
-	EAttribute getDataSource_Headers();
+	EClass getDataColumn();
 
 	/**
-	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.DataRow <em>Data Row</em>}'.
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.analysis.DataColumn#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Row</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataRow
+	 * @return the meta object for the attribute '<em>Header</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn#getHeader()
+	 * @see #getDataColumn()
 	 * @generated
 	 */
-	EClass getDataRow();
+	EAttribute getDataColumn_Header();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.analysis.DataRow#getColumns <em>Columns</em>}'.
+	 * Returns the meta object for the attribute list '{@link se.lnu.joa.covid.model.analysis.DataColumn#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Columns</em>'.
-	 * @see se.lnu.joa.covid.model.analysis.DataRow#getColumns()
-	 * @see #getDataRow()
+	 * @return the meta object for the attribute list '<em>Values</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn#getValues()
+	 * @see #getDataColumn()
 	 * @generated
 	 */
-	EAttribute getDataRow_Columns();
+	EAttribute getDataColumn_Values();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2073,38 +2073,38 @@ public interface AnalysisPackage extends EPackage {
 		EAttribute DATA_SOURCE__PATH = eINSTANCE.getDataSource_Path();
 
 		/**
-		 * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_SOURCE__ROWS = eINSTANCE.getDataSource_Rows();
+		EReference DATA_SOURCE__DATA = eINSTANCE.getDataSource_Data();
 
 		/**
-		 * The meta object literal for the '<em><b>Headers</b></em>' attribute list feature.
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.DataColumnImpl <em>Data Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.analysis.impl.DataColumnImpl
+		 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataColumn()
 		 * @generated
 		 */
-		EAttribute DATA_SOURCE__HEADERS = eINSTANCE.getDataSource_Headers();
+		EClass DATA_COLUMN = eINSTANCE.getDataColumn();
 
 		/**
-		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.DataRowImpl <em>Data Row</em>}' class.
+		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see se.lnu.joa.covid.model.analysis.impl.DataRowImpl
-		 * @see se.lnu.joa.covid.model.analysis.impl.AnalysisPackageImpl#getDataRow()
 		 * @generated
 		 */
-		EClass DATA_ROW = eINSTANCE.getDataRow();
+		EAttribute DATA_COLUMN__HEADER = eINSTANCE.getDataColumn_Header();
 
 		/**
-		 * The meta object literal for the '<em><b>Columns</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_ROW__COLUMNS = eINSTANCE.getDataRow_Columns();
+		EAttribute DATA_COLUMN__VALUES = eINSTANCE.getDataColumn_Values();
 
 	}
 

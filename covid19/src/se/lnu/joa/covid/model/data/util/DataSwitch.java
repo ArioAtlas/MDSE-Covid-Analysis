@@ -66,71 +66,54 @@ public class DataSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case DataPackage.HEALTH: {
-				Health health = (Health)theEObject;
-				T result = caseHealth(health);
-				if (result == null) result = caseDataRecord(health);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DataPackage.EPIDEMIOLOGY: {
-				Epidemiology epidemiology = (Epidemiology)theEObject;
-				T result = caseEpidemiology(epidemiology);
-				if (result == null) result = caseDataRecord(epidemiology);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case DataPackage.DATA_POOL: {
 				DataPool dataPool = (DataPool)theEObject;
 				T result = caseDataPool(dataPool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataPackage.DATA_RECORD: {
-				DataRecord dataRecord = (DataRecord)theEObject;
-				T result = caseDataRecord(dataRecord);
+			case DataPackage.DATA_SOURCE: {
+				DataSource dataSource = (DataSource)theEObject;
+				T result = caseDataSource(dataSource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataPackage.INDEX: {
-				Index index = (Index)theEObject;
-				T result = caseIndex(index);
-				if (result == null) result = caseDataRecord(index);
+			case DataPackage.DATA_SET: {
+				DataSet dataSet = (DataSet)theEObject;
+				T result = caseDataSet(dataSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataPackage.INT_SET: {
+				IntSet intSet = (IntSet)theEObject;
+				T result = caseIntSet(intSet);
+				if (result == null) result = caseDataSet(intSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataPackage.DOUBLE_SET: {
+				DoubleSet doubleSet = (DoubleSet)theEObject;
+				T result = caseDoubleSet(doubleSet);
+				if (result == null) result = caseDataSet(doubleSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataPackage.STRING_SET: {
+				StringSet stringSet = (StringSet)theEObject;
+				T result = caseStringSet(stringSet);
+				if (result == null) result = caseDataSet(stringSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataPackage.DATE_SET: {
+				DateSet dateSet = (DateSet)theEObject;
+				T result = caseDateSet(dateSet);
+				if (result == null) result = caseDataSet(dateSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Health</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Health</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHealth(Health object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Epidemiology</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Epidemiology</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEpidemiology(Epidemiology object) {
-		return null;
 	}
 
 	/**
@@ -149,32 +132,92 @@ public class DataSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Record</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Source</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Record</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Source</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataRecord(DataRecord object) {
+	public T caseDataSource(DataSource object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Index</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Index</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Set</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIndex(Index object) {
+	public T caseDataSet(DataSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Int Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Int Set</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntSet(IntSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Double Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Double Set</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDoubleSet(DoubleSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Set</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringSet(StringSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Date Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Date Set</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDateSet(DateSet object) {
 		return null;
 	}
 

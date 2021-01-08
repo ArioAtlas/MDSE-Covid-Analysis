@@ -69,7 +69,7 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 			case AnalysisPackage.DATE_SCALE: return createDateScale();
 			case AnalysisPackage.SCALE: return createScale();
 			case AnalysisPackage.DATA_SOURCE: return createDataSource();
-			case AnalysisPackage.DATA_ROW: return createDataRow();
+			case AnalysisPackage.DATA_COLUMN: return createDataColumn();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -224,9 +224,9 @@ public class AnalysisFactoryImpl extends EFactoryImpl implements AnalysisFactory
 	 * @generated
 	 */
 	@Override
-	public DataRow createDataRow() {
-		DataRowImpl dataRow = new DataRowImpl();
-		return dataRow;
+	public DataColumn createDataColumn() {
+		DataColumnImpl dataColumn = new DataColumnImpl();
+		return dataColumn;
 	}
 
 	/**

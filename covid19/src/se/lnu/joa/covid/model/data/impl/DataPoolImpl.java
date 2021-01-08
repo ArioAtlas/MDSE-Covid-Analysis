@@ -4,6 +4,7 @@ package se.lnu.joa.covid.model.data.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -18,9 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.data.DataPackage;
 import se.lnu.joa.covid.model.data.DataPool;
-import se.lnu.joa.covid.model.data.Epidemiology;
-import se.lnu.joa.covid.model.data.Health;
-import se.lnu.joa.covid.model.data.Index;
+import se.lnu.joa.covid.model.data.DataSource;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,43 +30,42 @@ import se.lnu.joa.covid.model.data.Index;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.data.impl.DataPoolImpl#getHealthData <em>Health Data</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.data.impl.DataPoolImpl#getEpidemiologyData <em>Epidemiology Data</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.data.impl.DataPoolImpl#getIndexData <em>Index Data</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataPoolImpl#getName <em>Name</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataPoolImpl#getSources <em>Sources</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPool {
 	/**
-	 * The cached value of the '{@link #getHealthData() <em>Health Data</em>}' containment reference list.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHealthData()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Health> healthData;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEpidemiologyData() <em>Epidemiology Data</em>}' containment reference list.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEpidemiologyData()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Epidemiology> epidemiologyData;
+	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIndexData() <em>Index Data</em>}' containment reference list.
+	 * The cached value of the '{@link #getSources() <em>Sources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIndexData()
+	 * @see #getSources()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Index> indexData;
+	protected EList<DataSource> sources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +91,8 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Health> getHealthData() {
-		if (healthData == null) {
-			healthData = new EObjectContainmentEList<Health>(Health.class, this, DataPackage.DATA_POOL__HEALTH_DATA);
-		}
-		return healthData;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -104,11 +100,11 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Epidemiology> getEpidemiologyData() {
-		if (epidemiologyData == null) {
-			epidemiologyData = new EObjectContainmentEList<Epidemiology>(Epidemiology.class, this, DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA);
-		}
-		return epidemiologyData;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_POOL__NAME, oldName, name));
 	}
 
 	/**
@@ -116,11 +112,11 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Index> getIndexData() {
-		if (indexData == null) {
-			indexData = new EObjectContainmentEList<Index>(Index.class, this, DataPackage.DATA_POOL__INDEX_DATA);
+	public EList<DataSource> getSources() {
+		if (sources == null) {
+			sources = new EObjectContainmentEList<DataSource>(DataSource.class, this, DataPackage.DATA_POOL__SOURCES);
 		}
-		return indexData;
+		return sources;
 	}
 
 	/**
@@ -131,12 +127,8 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DataPackage.DATA_POOL__HEALTH_DATA:
-				return ((InternalEList<?>)getHealthData()).basicRemove(otherEnd, msgs);
-			case DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA:
-				return ((InternalEList<?>)getEpidemiologyData()).basicRemove(otherEnd, msgs);
-			case DataPackage.DATA_POOL__INDEX_DATA:
-				return ((InternalEList<?>)getIndexData()).basicRemove(otherEnd, msgs);
+			case DataPackage.DATA_POOL__SOURCES:
+				return ((InternalEList<?>)getSources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,12 +141,10 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.DATA_POOL__HEALTH_DATA:
-				return getHealthData();
-			case DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA:
-				return getEpidemiologyData();
-			case DataPackage.DATA_POOL__INDEX_DATA:
-				return getIndexData();
+			case DataPackage.DATA_POOL__NAME:
+				return getName();
+			case DataPackage.DATA_POOL__SOURCES:
+				return getSources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,17 +158,12 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.DATA_POOL__HEALTH_DATA:
-				getHealthData().clear();
-				getHealthData().addAll((Collection<? extends Health>)newValue);
+			case DataPackage.DATA_POOL__NAME:
+				setName((String)newValue);
 				return;
-			case DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA:
-				getEpidemiologyData().clear();
-				getEpidemiologyData().addAll((Collection<? extends Epidemiology>)newValue);
-				return;
-			case DataPackage.DATA_POOL__INDEX_DATA:
-				getIndexData().clear();
-				getIndexData().addAll((Collection<? extends Index>)newValue);
+			case DataPackage.DATA_POOL__SOURCES:
+				getSources().clear();
+				getSources().addAll((Collection<? extends DataSource>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,14 +177,11 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_POOL__HEALTH_DATA:
-				getHealthData().clear();
+			case DataPackage.DATA_POOL__NAME:
+				setName(NAME_EDEFAULT);
 				return;
-			case DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA:
-				getEpidemiologyData().clear();
-				return;
-			case DataPackage.DATA_POOL__INDEX_DATA:
-				getIndexData().clear();
+			case DataPackage.DATA_POOL__SOURCES:
+				getSources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,14 +195,28 @@ public class DataPoolImpl extends MinimalEObjectImpl.Container implements DataPo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_POOL__HEALTH_DATA:
-				return healthData != null && !healthData.isEmpty();
-			case DataPackage.DATA_POOL__EPIDEMIOLOGY_DATA:
-				return epidemiologyData != null && !epidemiologyData.isEmpty();
-			case DataPackage.DATA_POOL__INDEX_DATA:
-				return indexData != null && !indexData.isEmpty();
+			case DataPackage.DATA_POOL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DataPackage.DATA_POOL__SOURCES:
+				return sources != null && !sources.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataPoolImpl

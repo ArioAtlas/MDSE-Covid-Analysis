@@ -1,5 +1,6 @@
 package se.lnu.joa.covid.model.usage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -7,13 +8,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -32,6 +38,7 @@ import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.reader.StreamReader;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.config.Animation;
@@ -51,18 +58,20 @@ import se.lnu.joa.covid.model.config.VisualizationType;
 import se.lnu.joa.covid.model.data.DataFactory;
 import se.lnu.joa.covid.model.data.DataPackage;
 import se.lnu.joa.covid.model.data.DataPool;
-import se.lnu.joa.covid.model.data.Epidemiology;
-import se.lnu.joa.covid.model.data.Health;
-import se.lnu.joa.covid.model.data.Index;
+import se.lnu.joa.covid.model.data.DataSet;
+import se.lnu.joa.covid.model.data.DataSource;
+import se.lnu.joa.covid.model.data.DateSet;
+import se.lnu.joa.covid.model.data.DoubleSet;
+import se.lnu.joa.covid.model.data.IntSet;
+import se.lnu.joa.covid.model.data.StringSet;
 
 
 public class UsingEmfModel {
     public static void main(String[] args) {
     	
     	final String configFile = "config.yaml";
-    	final String indexFile = "index.csv";
-    	final String epidemiologyFile = "epidemiology.csv";
-    	final String healthFile = "health.csv";
+    	final String[] dataFile = {"index.csv","epidemiology.csv","health.csv"};
+
     
     	
 		try {
@@ -72,7 +81,7 @@ public class UsingEmfModel {
 			AnalysisPackage.eINSTANCE.eClass();
 			
 			// Read input files
-			DataPool pool = readCsvData(indexFile, epidemiologyFile, healthFile);
+			DataPool pool = readCsvData(dataFile);
 	        Config config = readConfig(configFile);
 	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -148,51 +157,14 @@ public class UsingEmfModel {
 		        IStatus status = BasicDiagnostic.toIStatus(result);
 		        System.err.println("Error status " + status);
 		    }
-								        
-			/* Temporarily commented out
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("Covid19", new XMIResourceFactoryImpl());
-			
-			URI uri = URI.createURI("platform:/resource/covid19/model/DataPool.xmi");
-				        			
-			resourceSet.createResource(uri).getContents().add(pool);
-						
-			URI transformationURI = URI.createURI("platform:/resource/Covid19QVT/transforms/DataAndConfigToAnalytic.qvto"); 
-			
-			// Define the transformation input
-			Resource inResource = resourceSet.getResource(uri, false);
-			EList<EObject> inObjects = inResource.getContents(); 
-						
-			// Create the Input and Output Models
-			ModelExtent dataModel = new BasicModelExtent(inObjects);
-			ModelExtent configModel = new BasicModelExtent(inObjects); // create new basic model for configuration model (MM2), but the argument must be changed!
-			ModelExtent outModel = new BasicModelExtent();
-						
-			// Set up execution environment and configuration properties
-			TransformationExecutor executor = new TransformationExecutor(transformationURI);
-			ExecutionContextImpl context = new ExecutionContextImpl();
-	
-			ExecutionDiagnostic result = executor.execute(context, dataModel, configModel, outModel); // update to a transformation with 2 input and 1 output
-			System.out.println(executor.loadTransformation());
-			
-			if (result.getSeverity() == Diagnostic.OK) {
-				// The objects got captured in outModel => save into resource
-				List<EObject> outObjects = outModel.getContents();
-				ResourceSet resourceSet2 = new ResourceSetImpl();
-				Resource outResource = resourceSet2.getResource(
-						URI.createURI("HealthData.Covid19.New"), false); // TODO: Change the URI!!
-				outResource.getContents().addAll(outObjects);
-				outResource.save(Collections.emptyMap());
-			} else {
-				System.err.println("Error in running transformation\n"+result.getMessage()); // Check if there was any issue in transformation
-				
-			}
-			
-			*/
 						
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			e.printStackTrace();
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
     	
         
@@ -329,302 +301,146 @@ public class UsingEmfModel {
     	return null;
     }
     
-    private static DataPool readCsvData(String indexFile,String epidemiologyFile,String healthFile) throws IOException {
-    	Path indexPath = FileSystems.getDefault().getPath(indexFile);
-        Path epidemiologyPath = FileSystems.getDefault().getPath(epidemiologyFile);
-        Path healthPath = FileSystems.getDefault().getPath(healthFile);
-        
+    private static DataPool readCsvData(String[] dataFiles) throws IOException, ParseException {
+
         // Retrieve the default factory singleton
         DataFactory factory = DataFactory.eINSTANCE;
         
         // Create an instance of DataPool
         DataPool pool = factory.createDataPool();
-		
-        // Index
-        Reader in = new FileReader(indexPath.toString());
-		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
-		int i = 0;
-		for (CSVRecord record : records) {
-			if (i > 0) {
-				// Create a record
-			    Index id = factory.createIndex();
-			    
-			    // Fill record with data
-		        id.setKey(record.get(0));
-		        id.setWikidata(record.get(1));
-		        id.setDatacommons(record.get(2));
-		        id.setCountry_code(record.get(3));
-		        id.setCountry_name(record.get(4));
-		        id.setSubregion1_code(record.get(5));
-		        id.setSubregion1_name(record.get(6));
-		        id.setSubregion2_code(record.get(7));
-		        id.setSubregion2_name(record.get(8));
-		        id.setLocality_code(record.get(9));
-		        id.setLocality_name(record.get(10));
-		        id.setAlpha_2(record.get(11));
-		        id.setAlpha_3(record.get(12));
-		        id.setAggregation_level(Integer.parseInt(record.get(13)));
-		        
-		        // Add record to Index data
-		        pool.getIndexData().add(id);
-			}
-			
-			i = i + 1;
-		}
-		
-		// Epidemiology
-		in = new FileReader(epidemiologyPath.toString());
-		records = CSVFormat.EXCEL.parse(in);
-		i = 0;
-		for (CSVRecord record : records) {
-			if (i > 0) {
-				// Create a record
-			    Epidemiology ed = factory.createEpidemiology();
-			    
-			    // Fill record with data
-			    ed.setDate(record.get(0));
-		        ed.setKey(record.get(1));
-		        
-		        if (record.get(2).equals("")) {
-		        	ed.setNew_confirmed(0);
-		        } else {
-		        	ed.setNew_confirmed(Integer.parseInt(record.get(2)));
-		        }
-		        
-		        if (record.get(3).equals("")) {
-		        	ed.setNew_deceased(0);
-		        } else {
-		        	ed.setNew_deceased(Integer.parseInt(record.get(3)));
-		        }
-		        
-		        if (record.get(4).equals("")) {
-		        	ed.setNew_recovered(0);
-		        } else {
-		        	ed.setNew_recovered(Integer.parseInt(record.get(4)));
-		        }
-		        
-		        if (record.get(5).equals("")) {
-		        	ed.setNew_tested(0);
-		        } else {
-		        	ed.setNew_tested(Integer.parseInt(record.get(5)));
-		        }
-		        
-		        if (record.get(6).equals("")) {
-		        	ed.setTotal_confirmed(0);
-		        } else {
-		        	ed.setTotal_confirmed(Integer.parseInt(record.get(6)));
-		        }
-		        
-		        if (record.get(7).equals("")) {
-		        	ed.setTotal_deceased(0);
-		        } else {
-		        	ed.setTotal_deceased(Integer.parseInt(record.get(7)));
-		        }
-		        
-		        if (record.get(8).equals("")) {
-		        	ed.setTotal_recovered(0);
-		        } else {
-		        	ed.setTotal_recovered(Integer.parseInt(record.get(8)));
-		        }
-		        
-		        if (record.get(9).equals("")) {
-		        	ed.setTotal_tested(0);
-		        } else {
-		        	ed.setTotal_tested(Integer.parseInt(record.get(9)));
-		        }
-		        		        
-		        // Add record to Epidemiology data
-		        pool.getEpidemiologyData().add(ed);
-			}
-			
-			i = i + 1;
-		}
-		
-		// Health
-		in = new FileReader(healthPath.toString());
-		records = CSVFormat.EXCEL.parse(in);
-		i = 0;
-		for (CSVRecord record : records) {
-			if (i > 0) {
-				// Create a record
-			    Health hd = factory.createHealth();
-			    
-			    // Fill record with data
-		        hd.setKey(record.get(0));
-		       
-		        if (record.get(1).equals("")) {
-		        	hd.setLife_expectancy(Double.NaN);
-		        } else {
-		        	hd.setLife_expectancy(Double.parseDouble(record.get(1)));
-		        }
-		        
-		        if (record.get(2).equals("")) {
-		        	hd.setSmoking_prevalence(Double.NaN);
-		        } else {
-		        	hd.setSmoking_prevalence(Double.parseDouble(record.get(2)));
-		        }
-		        
-		        if (record.get(3).equals("")) {
-		        	hd.setDiabetes_prevalence(Double.NaN);
-		        } else {
-		        	hd.setDiabetes_prevalence(Double.parseDouble(record.get(3)));
-		        }
-		        
-		        if (record.get(4).equals("")) {
-		        	hd.setInfant_mortality_rate(Double.NaN);
-		        } else {
-		        	hd.setInfant_mortality_rate(Double.parseDouble(record.get(4)));
-		        }
-		        
-		        if (record.get(5).equals("")) {
-		        	hd.setAdult_male_mortality_rate(Double.NaN);
-		        } else {
-		        	hd.setAdult_male_mortality_rate(Double.parseDouble(record.get(5)));
-		        }
-		        
-		        if (record.get(6).equals("")) {
-		        	hd.setAdult_female_mortality_rate(Double.NaN);
-		        } else {
-		        	hd.setAdult_female_mortality_rate(Double.parseDouble(record.get(6)));
-		        }
-		        
-		        if (record.get(7).equals("")) {
-		        	hd.setPollution_mortality_rate(Double.NaN);
-		        } else {
-		        	hd.setPollution_mortality_rate(Double.parseDouble(record.get(7)));
-		        }
-		        
-		        if (record.get(8).equals("")) {
-		        	hd.setComorbidity_mortality_rate(Double.NaN);
-		        } else {
-		        	hd.setComorbidity_mortality_rate(Double.parseDouble(record.get(8)));
-		        }
-		        
-		        if (record.get(9).equals("")) {
-		        	hd.setHospital_beds(Double.NaN);
-		        } else {
-		        	hd.setHospital_beds(Double.parseDouble(record.get(9)));
-		        }
-		        
-		        if (record.get(10).equals("")) {
-		        	hd.setNurses(Double.NaN);
-		        } else {
-		        	hd.setNurses(Double.parseDouble(record.get(10)));
-		        }
-		        
-		        if (record.get(11).equals("")) {
-		        	hd.setPhysicians(Double.NaN);
-		        } else {
-		        	hd.setPhysicians(Double.parseDouble(record.get(11)));
-		        }
-		        
-		        if (record.get(12).equals("")) {
-		        	hd.setHealth_expenditure(Double.NaN);
-		        } else {
-		        	hd.setHealth_expenditure(Double.parseDouble(record.get(12)));
-		        }
-		        
-		        if (record.get(13).equals("")) {
-		        	hd.setOut_of_pocket_health_expenditure(Double.NaN);
-		        } else {
-		        	hd.setOut_of_pocket_health_expenditure(Double.parseDouble(record.get(13)));
-		        }
-		        		        
-		        // Add record to Health data
-		        pool.getHealthData().add(hd);
-			}
-			
-			i = i + 1;
-		}
-		
+        
+        // create a file reader object
+        Reader in;
+        
+        for(int i=0; i<dataFiles.length; i++) {
+        	File f = new File(dataFiles[i]);
+        	
+        	if(f.exists()) {
+        		in = new FileReader(dataFiles[i].toString());
+           
+            	DataSource source = factory.createDataSource();
+            	source.setName(f.getName());
+            	source.setPath(f.getAbsolutePath());
+            	
+            	
+            	Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+            	
+            	if(records.iterator().hasNext()) {
+            		CSVRecord headers = records.iterator().next();
+            		List<String> titles = new ArrayList<>();
+            		
+            		for(String title : headers) {
+            			titles.add(title);
+            		}
+            		
+            		int k = 0;
+            		for (CSVRecord record : records) {
+        				int c = 0;
+            			for(String data : record) {
+            				if(k==0) {
+            					switch (getDataType(data)) {
+								case INT:
+									IntSet iSet = factory.createIntSet();
+									iSet.getValues().add(Integer.parseInt(data));
+									iSet.setTitle(titles.get(c));
+									source.getData().add(iSet);
+									break;
+								case DOUBLE:
+									DoubleSet dSet = factory.createDoubleSet();
+									dSet.getValues().add(Double.parseDouble(data));
+									dSet.setTitle(titles.get(c));
+									source.getData().add(dSet);
+									break;
+								case DATE:
+									DateSet tSet = factory.createDateSet();
+									tSet.getValues().add(new SimpleDateFormat("yyyy-MM-dd").parse(data));
+									tSet.setTitle(titles.get(c));
+									source.getData().add(tSet);
+									break;
+								case STRING:
+									StringSet sSet = factory.createStringSet();
+									sSet.getValues().add(data);
+									sSet.setTitle(titles.get(c));
+									source.getData().add(sSet);
+									break;
+								}
+            				}else {
+            					DataSet ds = source.getData().get(c);
+            					if(ds instanceof StringSet) {
+            						((StringSet) ds).getValues().add(data);
+            					}else if(ds instanceof IntSet) {
+            						try {
+            							((IntSet) ds).getValues().add(Integer.parseInt(data));
+            						}catch (Exception e) {
+            							((IntSet) ds).getValues().add(null);
+									}
+            					}else if(ds instanceof DoubleSet) {
+            						try {
+            							((DoubleSet) ds).getValues().add(Double.parseDouble(data));
+            						}catch (Exception e) {
+            							((DoubleSet) ds).getValues().add(null);
+									}
+            					}else if(ds instanceof DateSet) {
+            						((DateSet) ds).getValues().add(new SimpleDateFormat("yyyy-MM-dd").parse(data));
+            					}
+            				}
+            				c++;
+            			}
+            			
+            			/*
+        				// Create a record
+        			    Index id = factory.cre();
+        			    
+        			    // Fill record with data
+        		        id.setKey(record.get(0));
+        		        id.setWikidata(record.get(1));
+        		        id.setDatacommons(record.get(2));
+        		        id.setCountry_code(record.get(3));
+        		        id.setCountry_name(record.get(4));
+        		        id.setSubregion1_code(record.get(5));
+        		        id.setSubregion1_name(record.get(6));
+        		        id.setSubregion2_code(record.get(7));
+        		        id.setSubregion2_name(record.get(8));
+        		        id.setLocality_code(record.get(9));
+        		        id.setLocality_name(record.get(10));
+        		        id.setAlpha_2(record.get(11));
+        		        id.setAlpha_3(record.get(12));
+        		        id.setAggregation_level(Integer.parseInt(record.get(13)));*/
+            		
+            			k++;
+            		}
+            	}
+            	
+        		
+        		
+            	
+            	
+            	// Add the new data source to the data pool 
+            	pool.getSources().add(source);
+        	}
+        }
+	
 		return pool;
     }
+    
+	static DataTypes getDataType(String value) {
+    	try {
+	    	Integer.parseInt(value);
+	    	return DataTypes.INT;
+    	}catch (Exception e) {
+			// TODO: handle exception
+		}try {
+	    	Double.parseDouble(value);
+	    	return DataTypes.DOUBLE;
+    	}catch (Exception e) {
+			// TODO: handle exception
+		}try {
+			if(value.matches("\\d{4}-\\d{2}-\\d{2}"))
+				return DataTypes.DATE;
+    	}catch (Exception e) {
+			// TODO: handle exception
+    		
+		}
+		return DataTypes.STRING;
+    }
 }
-
-//for(Index item : pool.getIndexData()) {
-//	System.out.print("Key: ");
-//	System.out.println(item.getKey());
-//	System.out.print("Wikidata: ");
-//	System.out.println(item.getWikidata());
-//	System.out.print("Datacommons: ");
-//	System.out.println(item.getDatacommons());
-//	System.out.print("Country Code: ");
-//	System.out.println(item.getCountry_code());
-//	System.out.print("Country Name: ");
-//	System.out.println(item.getCountry_name());
-//	System.out.print("Subregion 1 code: ");
-//	System.out.println(item.getSubregion1_code());
-//	System.out.print("Subregion 1 name: ");
-//	System.out.println(item.getSubregion1_name());
-//	System.out.print("Subregion 2 code: ");
-//	System.out.println(item.getSubregion2_code());
-//	System.out.print("Subregion 2 name: ");
-//	System.out.println(item.getSubregion2_name());
-//	System.out.print("Locality code: ");
-//	System.out.println(item.getLocality_code());
-//	System.out.print("Locality name: ");
-//	System.out.println(item.getLocality_name());
-//	System.out.print("3166-1-alpha-2: ");
-//	System.out.println(item.getAlpha_2());
-//	System.out.print("3166-1-alpha-3: ");
-//	System.out.println(item.getAlpha_3());
-//	System.out.print("Aggregation Level: ");
-//	System.out.println(item.getAggregation_level());
-//	System.out.println("\n");
-//}
-
-//for(Epidemiology item : pool.getEpidemiologyData()) {
-//	System.out.print("Key: ");
-//	System.out.println(item.getKey());
-//	System.out.print("Date: ");
-//	System.out.println(item.getDate());
-//	System.out.print("New Confirmed cases: ");
-//	System.out.println(item.getNew_confirmed());
-//	System.out.print("New Deceased cases: ");
-//	System.out.println(item.getNew_deceased());
-//	System.out.print("New Recovered cases: ");
-//	System.out.println(item.getNew_recovered());
-//	System.out.print("New Tested cases: ");
-//	System.out.println(item.getNew_tested());
-//	System.out.print("Total Confirmed cases: ");
-//	System.out.println(item.getTotal_confirmed());
-//	System.out.print("Total Deceased cases: ");
-//	System.out.println(item.getTotal_deceased());
-//	System.out.print("Total Recovered cases: ");
-//	System.out.println(item.getTotal_recovered());
-//	System.out.print("Total Tested cases: ");
-//	System.out.println(item.getTotal_tested());
-//	System.out.println("\n");
-//}
-
-//for(Health item : pool.getHealthData()) {
-//	System.out.print("Key: ");
-//	System.out.println(item.getKey());
-//	System.out.print("Life Expectancy: ");
-//	System.out.println(item.getLife_expectancy());
-//	System.out.print("Smoking Prevalence: ");
-//	System.out.println(item.getSmoking_prevalence());
-//	System.out.print("Diabetes Prevalence: ");
-//	System.out.println(item.getDiabetes_prevalence());
-//	System.out.print("Infant Morality Rate: ");
-//	System.out.println(item.getInfant_mortality_rate());
-//	System.out.print("Adult Male Morality Rate: ");
-//	System.out.println(item.getAdult_male_mortality_rate());
-//	System.out.print("Adult Female Morality Rate: ");
-//	System.out.println(item.getAdult_female_mortality_rate());
-//	System.out.print("Pollution Morality Rate: ");
-//	System.out.println(item.getPollution_mortality_rate());
-//	System.out.print("Cormobidity Morality Rate: ");
-//	System.out.println(item.getComorbidity_mortality_rate());
-//	System.out.print("Hospital Beds: ");
-//	System.out.println(item.getHospital_beds());
-//	System.out.print("Nurses: ");
-//	System.out.println(item.getNurses());
-//	System.out.print("Physicians: ");
-//	System.out.println(item.getPhysicians());
-//	System.out.print("Health Expenditure: ");
-//	System.out.println(item.getHealth_expenditure());
-//	System.out.print("Out of Pocket Health Expenditure: ");
-//	System.out.println(item.getOut_of_pocket_health_expenditure());
-//	System.out.println("\n");
-//}

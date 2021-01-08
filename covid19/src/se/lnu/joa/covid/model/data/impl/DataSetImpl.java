@@ -1,50 +1,57 @@
 /**
  */
-package se.lnu.joa.covid.model.analysis.impl;
+package se.lnu.joa.covid.model.data.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
-import se.lnu.joa.covid.model.analysis.AnalysisPackage;
-import se.lnu.joa.covid.model.analysis.DataRow;
+import se.lnu.joa.covid.model.data.DataPackage;
+import se.lnu.joa.covid.model.data.DataSet;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Row</b></em>'.
+ * An implementation of the model object '<em><b>Set</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataRowImpl#getColumns <em>Columns</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataSetImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow {
+public class DataSetImpl extends MinimalEObjectImpl.Container implements DataSet {
 	/**
-	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' attribute list.
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getColumns()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> columns;
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataRowImpl() {
+	protected DataSetImpl() {
 		super();
 	}
 
@@ -55,7 +62,7 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AnalysisPackage.Literals.DATA_ROW;
+		return DataPackage.Literals.DATA_SET;
 	}
 
 	/**
@@ -63,12 +70,20 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<String> getColumns() {
-		if (columns == null) {
-			columns = new EDataTypeUniqueEList<String>(String.class, this, AnalysisPackage.DATA_ROW__COLUMNS);
-		}
-		return columns;
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_SET__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -79,8 +94,8 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_ROW__COLUMNS:
-				return getColumns();
+			case DataPackage.DATA_SET__TITLE:
+				return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -90,13 +105,11 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_ROW__COLUMNS:
-				getColumns().clear();
-				getColumns().addAll((Collection<? extends String>)newValue);
+			case DataPackage.DATA_SET__TITLE:
+				setTitle((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,8 +123,8 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_ROW__COLUMNS:
-				getColumns().clear();
+			case DataPackage.DATA_SET__TITLE:
+				setTitle(TITLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -125,8 +138,8 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_ROW__COLUMNS:
-				return columns != null && !columns.isEmpty();
+			case DataPackage.DATA_SET__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -141,10 +154,10 @@ public class DataRowImpl extends MinimalEObjectImpl.Container implements DataRow
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (columns: ");
-		result.append(columns);
+		result.append(" (title: ");
+		result.append(title);
 		result.append(')');
 		return result.toString();
 	}
 
-} //DataRowImpl
+} //DataSetImpl

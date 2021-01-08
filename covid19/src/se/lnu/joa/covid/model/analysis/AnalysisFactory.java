@@ -139,13 +139,13 @@ public interface AnalysisFactory extends EFactory {
 	DataSource createDataSource();
 
 	/**
-	 * Returns a new object of class '<em>Data Row</em>'.
+	 * Returns a new object of class '<em>Data Column</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Row</em>'.
+	 * @return a new object of class '<em>Data Column</em>'.
 	 * @generated
 	 */
-	DataRow createDataRow();
+	DataColumn createDataColumn();
 
 	/**
 	 * Returns the package supported by this factory.

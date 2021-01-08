@@ -151,9 +151,9 @@ public class AnalysisSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AnalysisPackage.DATA_ROW: {
-				DataRow dataRow = (DataRow)theEObject;
-				T result = caseDataRow(dataRow);
+			case AnalysisPackage.DATA_COLUMN: {
+				DataColumn dataColumn = (DataColumn)theEObject;
+				T result = caseDataColumn(dataColumn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -357,17 +357,17 @@ public class AnalysisSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Row</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Column</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Row</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Column</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataRow(DataRow object) {
+	public T caseDataColumn(DataColumn object) {
 		return null;
 	}
 

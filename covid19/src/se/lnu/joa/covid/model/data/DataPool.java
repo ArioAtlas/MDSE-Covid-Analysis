@@ -15,9 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.data.DataPool#getHealthData <em>Health Data</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.data.DataPool#getEpidemiologyData <em>Epidemiology Data</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.data.DataPool#getIndexData <em>Index Data</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.DataPool#getName <em>Name</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.DataPool#getSources <em>Sources</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool()
@@ -26,39 +25,37 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DataPool extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Health Data</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.data.Health}.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Health Data</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool_HealthData()
-	 * @model containment="true"
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool_Name()
+	 * @model
 	 * @generated
 	 */
-	EList<Health> getHealthData();
+	String getName();
 
 	/**
-	 * Returns the value of the '<em><b>Epidemiology Data</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.data.Epidemiology}.
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.data.DataPool#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Epidemiology Data</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool_EpidemiologyData()
-	 * @model containment="true"
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	EList<Epidemiology> getEpidemiologyData();
+	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Index Data</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.data.Index}.
+	 * Returns the value of the '<em><b>Sources</b></em>' containment reference list.
+	 * The list contents are of type {@link se.lnu.joa.covid.model.data.DataSource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Index Data</em>' containment reference list.
-	 * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool_IndexData()
+	 * @return the value of the '<em>Sources</em>' containment reference list.
+	 * @see se.lnu.joa.covid.model.data.DataPackage#getDataPool_Sources()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Index> getIndexData();
+	EList<DataSource> getSources();
 
 } // DataPool

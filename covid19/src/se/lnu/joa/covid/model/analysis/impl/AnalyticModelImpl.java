@@ -4,11 +4,13 @@ package se.lnu.joa.covid.model.analysis.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.AnalyticModel;
 import se.lnu.joa.covid.model.analysis.DataSource;
@@ -256,7 +258,6 @@ public class AnalyticModelImpl extends MinimalEObjectImpl.Container implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

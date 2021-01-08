@@ -13,7 +13,7 @@ import se.lnu.joa.covid.model.analysis.AnalysisFactory;
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.AnalyticModel;
 import se.lnu.joa.covid.model.analysis.Animation;
-import se.lnu.joa.covid.model.analysis.DataRow;
+import se.lnu.joa.covid.model.analysis.DataColumn;
 import se.lnu.joa.covid.model.analysis.DataSource;
 import se.lnu.joa.covid.model.analysis.DateScale;
 import se.lnu.joa.covid.model.analysis.LinearPlot;
@@ -129,7 +129,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataRowEClass = null;
+	private EClass dataColumnEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -698,7 +698,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getDataSource_Rows() {
+	public EReference getDataSource_Data() {
 		return (EReference)dataSourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -708,8 +708,8 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataSource_Headers() {
-		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(3);
+	public EClass getDataColumn() {
+		return dataColumnEClass;
 	}
 
 	/**
@@ -718,8 +718,8 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getDataRow() {
-		return dataRowEClass;
+	public EAttribute getDataColumn_Header() {
+		return (EAttribute)dataColumnEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -728,8 +728,8 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataRow_Columns() {
-		return (EAttribute)dataRowEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDataColumn_Values() {
+		return (EAttribute)dataColumnEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -823,11 +823,11 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		dataSourceEClass = createEClass(DATA_SOURCE);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__NAME);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__PATH);
-		createEReference(dataSourceEClass, DATA_SOURCE__ROWS);
-		createEAttribute(dataSourceEClass, DATA_SOURCE__HEADERS);
+		createEReference(dataSourceEClass, DATA_SOURCE__DATA);
 
-		dataRowEClass = createEClass(DATA_ROW);
-		createEAttribute(dataRowEClass, DATA_ROW__COLUMNS);
+		dataColumnEClass = createEClass(DATA_COLUMN);
+		createEAttribute(dataColumnEClass, DATA_COLUMN__HEADER);
+		createEAttribute(dataColumnEClass, DATA_COLUMN__VALUES);
 	}
 
 	/**
@@ -929,11 +929,11 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSource_Path(), ecorePackage.getEString(), "path", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataSource_Rows(), this.getDataRow(), null, "rows", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataSource_Headers(), ecorePackage.getEString(), "headers", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSource_Data(), this.getDataColumn(), null, "data", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataRowEClass, DataRow.class, "DataRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataRow_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, DataRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataColumnEClass, DataColumn.class, "DataColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataColumn_Values(), ecorePackage.getEString(), "values", null, 0, -1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

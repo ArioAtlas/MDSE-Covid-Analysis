@@ -56,34 +56,16 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DataPackage.HEALTH: return createHealth();
-			case DataPackage.EPIDEMIOLOGY: return createEpidemiology();
 			case DataPackage.DATA_POOL: return createDataPool();
-			case DataPackage.DATA_RECORD: return createDataRecord();
-			case DataPackage.INDEX: return createIndex();
+			case DataPackage.DATA_SOURCE: return createDataSource();
+			case DataPackage.DATA_SET: return createDataSet();
+			case DataPackage.INT_SET: return createIntSet();
+			case DataPackage.DOUBLE_SET: return createDoubleSet();
+			case DataPackage.STRING_SET: return createStringSet();
+			case DataPackage.DATE_SET: return createDateSet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Health createHealth() {
-		HealthImpl health = new HealthImpl();
-		return health;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Epidemiology createEpidemiology() {
-		EpidemiologyImpl epidemiology = new EpidemiologyImpl();
-		return epidemiology;
 	}
 
 	/**
@@ -101,9 +83,9 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataRecord createDataRecord() {
-		DataRecordImpl dataRecord = new DataRecordImpl();
-		return dataRecord;
+	public DataSource createDataSource() {
+		DataSourceImpl dataSource = new DataSourceImpl();
+		return dataSource;
 	}
 
 	/**
@@ -111,9 +93,49 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Index createIndex() {
-		IndexImpl index = new IndexImpl();
-		return index;
+	public DataSet createDataSet() {
+		DataSetImpl dataSet = new DataSetImpl();
+		return dataSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntSet createIntSet() {
+		IntSetImpl intSet = new IntSetImpl();
+		return intSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleSet createDoubleSet() {
+		DoubleSetImpl doubleSet = new DoubleSetImpl();
+		return doubleSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringSet createStringSet() {
+		StringSetImpl stringSet = new StringSetImpl();
+		return stringSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateSet createDateSet() {
+		DateSetImpl dateSet = new DateSetImpl();
+		return dateSet;
 	}
 
 	/**

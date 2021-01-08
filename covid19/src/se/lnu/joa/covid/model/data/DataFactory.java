@@ -22,24 +22,6 @@ public interface DataFactory extends EFactory {
 	DataFactory eINSTANCE = se.lnu.joa.covid.model.data.impl.DataFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Health</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Health</em>'.
-	 * @generated
-	 */
-	Health createHealth();
-
-	/**
-	 * Returns a new object of class '<em>Epidemiology</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Epidemiology</em>'.
-	 * @generated
-	 */
-	Epidemiology createEpidemiology();
-
-	/**
 	 * Returns a new object of class '<em>Pool</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,22 +31,58 @@ public interface DataFactory extends EFactory {
 	DataPool createDataPool();
 
 	/**
-	 * Returns a new object of class '<em>Record</em>'.
+	 * Returns a new object of class '<em>Source</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Record</em>'.
+	 * @return a new object of class '<em>Source</em>'.
 	 * @generated
 	 */
-	DataRecord createDataRecord();
+	DataSource createDataSource();
 
 	/**
-	 * Returns a new object of class '<em>Index</em>'.
+	 * Returns a new object of class '<em>Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Index</em>'.
+	 * @return a new object of class '<em>Set</em>'.
 	 * @generated
 	 */
-	Index createIndex();
+	DataSet createDataSet();
+
+	/**
+	 * Returns a new object of class '<em>Int Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Int Set</em>'.
+	 * @generated
+	 */
+	IntSet createIntSet();
+
+	/**
+	 * Returns a new object of class '<em>Double Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Double Set</em>'.
+	 * @generated
+	 */
+	DoubleSet createDoubleSet();
+
+	/**
+	 * Returns a new object of class '<em>String Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Set</em>'.
+	 * @generated
+	 */
+	StringSet createStringSet();
+
+	/**
+	 * Returns a new object of class '<em>Date Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Set</em>'.
+	 * @generated
+	 */
+	DateSet createDateSet();
 
 	/**
 	 * Returns the package supported by this factory.

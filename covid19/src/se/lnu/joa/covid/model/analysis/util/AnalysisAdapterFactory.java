@@ -120,8 +120,8 @@ public class AnalysisAdapterFactory extends AdapterFactoryImpl {
 				return createDataSourceAdapter();
 			}
 			@Override
-			public Adapter caseDataRow(DataRow object) {
-				return createDataRowAdapter();
+			public Adapter caseDataColumn(DataColumn object) {
+				return createDataColumnAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -326,16 +326,16 @@ public class AnalysisAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.analysis.DataRow <em>Data Row</em>}'.
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.analysis.DataColumn <em>Data Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.analysis.DataRow
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn
 	 * @generated
 	 */
-	public Adapter createDataRowAdapter() {
+	public Adapter createDataColumnAdapter() {
 		return null;
 	}
 

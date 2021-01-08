@@ -2,56 +2,47 @@
  */
 package se.lnu.joa.covid.model.data.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import se.lnu.joa.covid.model.data.DataPackage;
-import se.lnu.joa.covid.model.data.DataRecord;
+import se.lnu.joa.covid.model.data.StringSet;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Record</b></em>'.
+ * An implementation of the model object '<em><b>String Set</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.data.impl.DataRecordImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.StringSetImpl#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DataRecordImpl extends MinimalEObjectImpl.Container implements DataRecord {
+public class StringSetImpl extends DataSetImpl implements StringSet {
 	/**
-	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKey()
+	 * @see #getValues()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String key = KEY_EDEFAULT;
+	protected EList<String> values;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataRecordImpl() {
+	protected StringSetImpl() {
 		super();
 	}
 
@@ -62,7 +53,7 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataPackage.Literals.DATA_RECORD;
+		return DataPackage.Literals.STRING_SET;
 	}
 
 	/**
@@ -70,20 +61,11 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getKey() {
-		return key;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKey(String newKey) {
-		String oldKey = key;
-		key = newKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RECORD__KEY, oldKey, key));
+	public EList<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeEList<String>(String.class, this, DataPackage.STRING_SET__VALUES);
+		}
+		return values;
 	}
 
 	/**
@@ -94,8 +76,8 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataPackage.DATA_RECORD__KEY:
-				return getKey();
+			case DataPackage.STRING_SET__VALUES:
+				return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,11 +87,13 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataPackage.DATA_RECORD__KEY:
-				setKey((String)newValue);
+			case DataPackage.STRING_SET__VALUES:
+				getValues().clear();
+				getValues().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +107,8 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RECORD__KEY:
-				setKey(KEY_EDEFAULT);
+			case DataPackage.STRING_SET__VALUES:
+				getValues().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +122,8 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataPackage.DATA_RECORD__KEY:
-				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+			case DataPackage.STRING_SET__VALUES:
+				return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +138,10 @@ public class DataRecordImpl extends MinimalEObjectImpl.Container implements Data
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (key: ");
-		result.append(key);
+		result.append(" (values: ");
+		result.append(values);
 		result.append(')');
 		return result.toString();
 	}
 
-} //DataRecordImpl
+} //StringSetImpl

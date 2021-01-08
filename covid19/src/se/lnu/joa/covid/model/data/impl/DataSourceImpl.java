@@ -1,35 +1,38 @@
 /**
  */
-package se.lnu.joa.covid.model.analysis.impl;
+package se.lnu.joa.covid.model.data.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import se.lnu.joa.covid.model.analysis.AnalysisPackage;
-import se.lnu.joa.covid.model.analysis.DataColumn;
-import se.lnu.joa.covid.model.analysis.DataSource;
+import se.lnu.joa.covid.model.data.DataPackage;
+import se.lnu.joa.covid.model.data.DataSet;
+import se.lnu.joa.covid.model.data.DataSource;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Data Source</b></em>'.
+ * An implementation of the model object '<em><b>Source</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getName <em>Name</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getPath <em>Path</em>}</li>
- *   <li>{@link se.lnu.joa.covid.model.analysis.impl.DataSourceImpl#getData <em>Data</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataSourceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataSourceImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.data.impl.DataSourceImpl#getData <em>Data</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,14 +79,14 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	protected String path = PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getData()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataColumn> data;
+	protected EList<DataSet> data;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +104,7 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AnalysisPackage.Literals.DATA_SOURCE;
+		return DataPackage.Literals.DATA_SOURCE;
 	}
 
 	/**
@@ -109,7 +112,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -119,12 +121,11 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.DATA_SOURCE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_SOURCE__NAME, oldName, name));
 	}
 
 	/**
@@ -132,7 +133,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getPath() {
 		return path;
 	}
@@ -142,12 +142,11 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setPath(String newPath) {
 		String oldPath = path;
 		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.DATA_SOURCE__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_SOURCE__PATH, oldPath, path));
 	}
 
 	/**
@@ -155,10 +154,9 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<DataColumn> getData() {
+	public EList<DataSet> getData() {
 		if (data == null) {
-			data = new EObjectResolvingEList<DataColumn>(DataColumn.class, this, AnalysisPackage.DATA_SOURCE__DATA);
+			data = new EObjectContainmentEList<DataSet>(DataSet.class, this, DataPackage.DATA_SOURCE__DATA);
 		}
 		return data;
 	}
@@ -169,13 +167,27 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DataPackage.DATA_SOURCE__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_SOURCE__NAME:
+			case DataPackage.DATA_SOURCE__NAME:
 				return getName();
-			case AnalysisPackage.DATA_SOURCE__PATH:
+			case DataPackage.DATA_SOURCE__PATH:
 				return getPath();
-			case AnalysisPackage.DATA_SOURCE__DATA:
+			case DataPackage.DATA_SOURCE__DATA:
 				return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -190,15 +202,15 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_SOURCE__NAME:
+			case DataPackage.DATA_SOURCE__NAME:
 				setName((String)newValue);
 				return;
-			case AnalysisPackage.DATA_SOURCE__PATH:
+			case DataPackage.DATA_SOURCE__PATH:
 				setPath((String)newValue);
 				return;
-			case AnalysisPackage.DATA_SOURCE__DATA:
+			case DataPackage.DATA_SOURCE__DATA:
 				getData().clear();
-				getData().addAll((Collection<? extends DataColumn>)newValue);
+				getData().addAll((Collection<? extends DataSet>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,13 +224,13 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_SOURCE__NAME:
+			case DataPackage.DATA_SOURCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AnalysisPackage.DATA_SOURCE__PATH:
+			case DataPackage.DATA_SOURCE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
-			case AnalysisPackage.DATA_SOURCE__DATA:
+			case DataPackage.DATA_SOURCE__DATA:
 				getData().clear();
 				return;
 		}
@@ -233,11 +245,11 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AnalysisPackage.DATA_SOURCE__NAME:
+			case DataPackage.DATA_SOURCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AnalysisPackage.DATA_SOURCE__PATH:
+			case DataPackage.DATA_SOURCE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-			case AnalysisPackage.DATA_SOURCE__DATA:
+			case DataPackage.DATA_SOURCE__DATA:
 				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);

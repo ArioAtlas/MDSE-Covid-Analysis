@@ -68,24 +68,32 @@ public class DataAdapterFactory extends AdapterFactoryImpl {
 	protected DataSwitch<Adapter> modelSwitch =
 		new DataSwitch<Adapter>() {
 			@Override
-			public Adapter caseHealth(Health object) {
-				return createHealthAdapter();
-			}
-			@Override
-			public Adapter caseEpidemiology(Epidemiology object) {
-				return createEpidemiologyAdapter();
-			}
-			@Override
 			public Adapter caseDataPool(DataPool object) {
 				return createDataPoolAdapter();
 			}
 			@Override
-			public Adapter caseDataRecord(DataRecord object) {
-				return createDataRecordAdapter();
+			public Adapter caseDataSource(DataSource object) {
+				return createDataSourceAdapter();
 			}
 			@Override
-			public Adapter caseIndex(Index object) {
-				return createIndexAdapter();
+			public Adapter caseDataSet(DataSet object) {
+				return createDataSetAdapter();
+			}
+			@Override
+			public Adapter caseIntSet(IntSet object) {
+				return createIntSetAdapter();
+			}
+			@Override
+			public Adapter caseDoubleSet(DoubleSet object) {
+				return createDoubleSetAdapter();
+			}
+			@Override
+			public Adapter caseStringSet(StringSet object) {
+				return createStringSetAdapter();
+			}
+			@Override
+			public Adapter caseDateSet(DateSet object) {
+				return createDateSetAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -108,34 +116,6 @@ public class DataAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.Health <em>Health</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.data.Health
-	 * @generated
-	 */
-	public Adapter createHealthAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.Epidemiology <em>Epidemiology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.data.Epidemiology
-	 * @generated
-	 */
-	public Adapter createEpidemiologyAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DataPool <em>Pool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -150,30 +130,86 @@ public class DataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DataRecord <em>Record</em>}'.
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DataSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.data.DataRecord
+	 * @see se.lnu.joa.covid.model.data.DataSource
 	 * @generated
 	 */
-	public Adapter createDataRecordAdapter() {
+	public Adapter createDataSourceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.Index <em>Index</em>}'.
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DataSet <em>Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see se.lnu.joa.covid.model.data.Index
+	 * @see se.lnu.joa.covid.model.data.DataSet
 	 * @generated
 	 */
-	public Adapter createIndexAdapter() {
+	public Adapter createDataSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.IntSet <em>Int Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.data.IntSet
+	 * @generated
+	 */
+	public Adapter createIntSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DoubleSet <em>Double Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.data.DoubleSet
+	 * @generated
+	 */
+	public Adapter createDoubleSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.StringSet <em>String Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.data.StringSet
+	 * @generated
+	 */
+	public Adapter createStringSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link se.lnu.joa.covid.model.data.DateSet <em>Date Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see se.lnu.joa.covid.model.data.DateSet
+	 * @generated
+	 */
+	public Adapter createDateSetAdapter() {
 		return null;
 	}
 

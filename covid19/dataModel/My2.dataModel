@@ -1,47 +1,613 @@
 <?xml version="1.0" encoding="ASCII"?>
-<covid19:DataPool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:covid19="http://lnu.se/dv651/covid19/csv">
-  <HealthData key="AD" life_expectancy="NaN" smoking_prevalence="33.5" diabetes_prevalence="7.7" infant_mortality_rate="2.7" adult_male_mortality_rate="NaN" adult_female_mortality_rate="NaN" pollution_mortality_rate="NaN" comorbidity_mortality_rate="NaN" hospital_beds="NaN" nurses="4.0128" physicians="3.3333" health_expenditure="4040.786621" out_of_pocket_health_expenditure="1688.12146"/>
-  <HealthData key="AE" life_expectancy="77.814" smoking_prevalence="28.9" diabetes_prevalence="16.3" infant_mortality_rate="6.5" adult_male_mortality_rate="69.555" adult_female_mortality_rate="44.863" pollution_mortality_rate="54.7" comorbidity_mortality_rate="16.8" hospital_beds="NaN" nurses="5.7271" physicians="2.5278" health_expenditure="1357.017456" out_of_pocket_health_expenditure="256.034485"/>
-  <HealthData key="AF" life_expectancy="64.486" smoking_prevalence="NaN" diabetes_prevalence="9.2" infant_mortality_rate="47.9" adult_male_mortality_rate="237.554" adult_female_mortality_rate="192.532" pollution_mortality_rate="211.1" comorbidity_mortality_rate="29.8" hospital_beds="0.5" nurses="0.1755" physicians="0.2782" health_expenditure="67.12265" out_of_pocket_health_expenditure="50.665913"/>
-  <HealthData key="CM" life_expectancy="58.921" smoking_prevalence="NaN" diabetes_prevalence="6.0" infant_mortality_rate="50.6" adult_male_mortality_rate="317.692" adult_female_mortality_rate="281.332" pollution_mortality_rate="208.1" comorbidity_mortality_rate="21.6" hospital_beds="NaN" nurses="NaN" physicians="NaN" health_expenditure="67.811813" out_of_pocket_health_expenditure="48.117634"/>
-  <HealthData key="CN" life_expectancy="76.704" smoking_prevalence="25.6" diabetes_prevalence="9.2" infant_mortality_rate="7.4" adult_male_mortality_rate="93.777" adult_female_mortality_rate="60.272" pollution_mortality_rate="112.7" comorbidity_mortality_rate="17.0" hospital_beds="NaN" nurses="2.6621" physicians="1.9798" health_expenditure="440.825623" out_of_pocket_health_expenditure="158.919449"/>
-  <HealthData key="GA" life_expectancy="66.187" smoking_prevalence="NaN" diabetes_prevalence="6.0" infant_mortality_rate="32.7" adult_male_mortality_rate="238.333" adult_female_mortality_rate="182.317" pollution_mortality_rate="76.0" comorbidity_mortality_rate="14.4" hospital_beds="NaN" nurses="2.946" physicians="0.6819" health_expenditure="204.492249" out_of_pocket_health_expenditure="51.442871"/>
-  <HealthData key="GB" life_expectancy="81.3" smoking_prevalence="22.3" diabetes_prevalence="3.9" infant_mortality_rate="3.6" adult_male_mortality_rate="86.107" adult_female_mortality_rate="55.36" pollution_mortality_rate="13.8" comorbidity_mortality_rate="10.9" hospital_beds="NaN" nurses="8.1723" physicians="2.8117" health_expenditure="3858.674316" out_of_pocket_health_expenditure="615.721802"/>
-  <HealthData key="IE" life_expectancy="82.3" smoking_prevalence="24.3" diabetes_prevalence="3.2" infant_mortality_rate="3.1" adult_male_mortality_rate="71.299" adult_female_mortality_rate="41.591" pollution_mortality_rate="11.9" comorbidity_mortality_rate="10.3" hospital_beds="NaN" nurses="16.0996" physicians="3.3125" health_expenditure="4976.862305" out_of_pocket_health_expenditure="611.214233"/>
-  <HealthData key="IL" life_expectancy="82.802439" smoking_prevalence="25.2" diabetes_prevalence="9.7" infant_mortality_rate="3.0" adult_male_mortality_rate="70.873" adult_female_mortality_rate="39.638" pollution_mortality_rate="15.4" comorbidity_mortality_rate="9.6" hospital_beds="NaN" nurses="5.7002" physicians="4.6249" health_expenditure="3144.626221" out_of_pocket_health_expenditure="699.707214"/>
-  <HealthData key="SE" life_expectancy="82.6" smoking_prevalence="18.8" diabetes_prevalence="4.8" infant_mortality_rate="2.2" adult_male_mortality_rate="62.062" adult_female_mortality_rate="38.431" pollution_mortality_rate="7.2" comorbidity_mortality_rate="9.1" hospital_beds="NaN" nurses="11.8164" physicians="3.984" health_expenditure="5904.583984" out_of_pocket_health_expenditure="887.612732"/>
-  <HealthData key="US" life_expectancy="78.539024" smoking_prevalence="21.8" diabetes_prevalence="10.8" infant_mortality_rate="5.6" adult_male_mortality_rate="139.141" adult_female_mortality_rate="81.935" pollution_mortality_rate="13.3" comorbidity_mortality_rate="14.6" hospital_beds="NaN" nurses="14.548" physicians="2.612" health_expenditure="10246.138672" out_of_pocket_health_expenditure="1126.349976"/>
-  <EpidemiologyData key="AD" date="2020-06-03" new_confirmed="1" total_confirmed="852" total_deceased="51"/>
-  <EpidemiologyData key="AE" date="2020-06-03" new_confirmed="659" new_deceased="3" new_tested="52996" total_confirmed="37018" total_deceased="273" total_tested="2429054"/>
-  <EpidemiologyData key="AF" date="2020-06-03" new_confirmed="787" new_deceased="6" total_confirmed="18057" total_deceased="304"/>
-  <EpidemiologyData key="CM" date="2020-06-03" new_confirmed="204" new_deceased="3" total_confirmed="6789" total_deceased="203"/>
-  <EpidemiologyData key="CN" date="2020-06-03" new_confirmed="-1" new_recovered="2" total_confirmed="84602" total_deceased="4645" total_recovered="79826"/>
-  <EpidemiologyData key="GA" date="2020-06-03" new_confirmed="53" new_deceased="1" total_confirmed="2955" total_deceased="21"/>
-  <EpidemiologyData key="GB" date="2020-06-03" new_confirmed="1362" new_deceased="155" new_tested="143443" total_confirmed="260682" total_deceased="38587" total_tested="4011931"/>
-  <EpidemiologyData key="IE" date="2020-06-03" new_confirmed="31" new_deceased="5" new_tested="3099" total_confirmed="25142" total_deceased="1664" total_tested="354322"/>
-  <EpidemiologyData key="IL" date="2020-06-03" new_confirmed="118" new_tested="14899" total_confirmed="17495" total_deceased="291" total_tested="623073"/>
-  <EpidemiologyData key="SE" date="2020-06-03" new_confirmed="1046" new_deceased="38" total_confirmed="41249" total_deceased="4819"/>
-  <EpidemiologyData key="US" date="2020-06-03" new_confirmed="21368" new_deceased="1005" new_tested="621190" total_confirmed="1874156" total_deceased="111499" total_tested="21252598"/>
-  <EpidemiologyData key="AD" date="2020-10-03" total_confirmed="2110" total_deceased="53"/>
-  <EpidemiologyData key="AE" date="2020-10-03" new_confirmed="1041" new_tested="108906" total_confirmed="98801" total_deceased="426" total_tested="10129865"/>
-  <EpidemiologyData key="AF" date="2020-10-03" new_confirmed="44" total_confirmed="39341" total_deceased="1464"/>
-  <EpidemiologyData key="CM" date="2020-10-03" total_confirmed="20924" total_deceased="420"/>
-  <EpidemiologyData key="CN" date="2020-10-03" new_confirmed="19" new_recovered="16" total_confirmed="91101" total_deceased="4746" total_recovered="85984"/>
-  <EpidemiologyData key="GA" date="2020-10-03" total_confirmed="8797" total_deceased="54"/>
-  <EpidemiologyData key="GB" date="2020-10-03" new_confirmed="11550" new_deceased="66" new_tested="288746" total_confirmed="527814" total_deceased="42494" total_tested="25614228"/>
-  <EpidemiologyData key="IE" date="2020-10-03" new_confirmed="364" new_tested="11295" total_confirmed="38032" total_deceased="1810" total_tested="1233281"/>
-  <EpidemiologyData key="IL" date="2020-10-03" new_confirmed="2332" new_deceased="37" new_tested="26458" total_confirmed="266775" total_deceased="1719" total_tested="3920661"/>
-  <EpidemiologyData key="SE" date="2020-10-03" new_confirmed="461" new_tested="18580" total_confirmed="95642" total_deceased="5895"/>
-  <EpidemiologyData key="US" date="2020-10-03" new_confirmed="36092" new_deceased="349" new_tested="626252" total_confirmed="7402515" total_deceased="210006" total_tested="120823891"/>
-  <IndexData key="AD" wikidata="Q228" datacommons="country/AND" country_code="AD" country_name="Andorra" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="AD" alpha_3="AND"/>
-  <IndexData key="AE" wikidata="Q878" datacommons="country/ARE" country_code="AE" country_name="United Arab Emirates" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="AE" alpha_3="ARE"/>
-  <IndexData key="AF" wikidata="Q889" datacommons="country/AFG" country_code="AF" country_name="Afghanistan" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="AF" alpha_3="AFG"/>
-  <IndexData key="CM" wikidata="Q1009" datacommons="country/CMR" country_code="CM" country_name="Cameroon" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="CM" alpha_3="CMR"/>
-  <IndexData key="CN" wikidata="Q148" datacommons="country/CHN" country_code="CN" country_name="China" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="CN" alpha_3="CHN"/>
-  <IndexData key="GA" wikidata="Q1000" datacommons="country/GAB" country_code="GA" country_name="Gabon" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="GA" alpha_3="GAB"/>
-  <IndexData key="GB" wikidata="Q145" datacommons="country/GBR" country_code="GB" country_name="United Kingdom" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="GB" alpha_3="GBR"/>
-  <IndexData key="IE" wikidata="Q22890" datacommons="" country_code="IE" country_name="Ireland" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="IE" alpha_3="IRL"/>
-  <IndexData key="IL" wikidata="Q801" datacommons="country/ISR" country_code="IL" country_name="Israel" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="IL" alpha_3="ISR"/>
-  <IndexData key="SE" wikidata="Q34" datacommons="country/SWE" country_code="SE" country_name="Sweden" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="SE" alpha_3="SWE"/>
-  <IndexData key="US" wikidata="Q30" datacommons="country/USA" country_code="US" country_name="United States of America" subregion1_code="" subregion1_name="" subregion2_code="" subregion2_name="" locality_code="" locality_name="" alpha_2="US" alpha_3="USA"/>
+<covid19:DataPool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/csv">
+  <sources name="index.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/index.csv">
+    <data xsi:type="covid19:StringSet" title="key">
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="wikidata">
+      <values>Q228</values>
+      <values>Q878</values>
+      <values>Q889</values>
+      <values>Q1009</values>
+      <values>Q148</values>
+      <values>Q1000</values>
+      <values>Q145</values>
+      <values>Q22890</values>
+      <values>Q801</values>
+      <values>Q34</values>
+      <values>Q30</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="datacommons">
+      <values>country/AND</values>
+      <values>country/ARE</values>
+      <values>country/AFG</values>
+      <values>country/CMR</values>
+      <values>country/CHN</values>
+      <values>country/GAB</values>
+      <values>country/GBR</values>
+      <values></values>
+      <values>country/ISR</values>
+      <values>country/SWE</values>
+      <values>country/USA</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="country_code">
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="country_name">
+      <values>Andorra</values>
+      <values>United Arab Emirates</values>
+      <values>Afghanistan</values>
+      <values>Cameroon</values>
+      <values>China</values>
+      <values>Gabon</values>
+      <values>United Kingdom</values>
+      <values>Ireland</values>
+      <values>Israel</values>
+      <values>Sweden</values>
+      <values>United States of America</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="subregion1_code">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="subregion1_name">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="subregion2_code">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="subregion2_name">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="locality_code">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="locality_name">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="3166-1-alpha-2">
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="3166-1-alpha-3">
+      <values>AND</values>
+      <values>ARE</values>
+      <values>AFG</values>
+      <values>CMR</values>
+      <values>CHN</values>
+      <values>GAB</values>
+      <values>GBR</values>
+      <values>IRL</values>
+      <values>ISR</values>
+      <values>SWE</values>
+      <values>USA</values>
+    </data>
+    <data xsi:type="covid19:IntSet" title="aggregation_level">
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+    </data>
+  </sources>
+  <sources name="epidemiology.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/epidemiology.csv">
+    <data xsi:type="covid19:DateSet" title="date">
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-06-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+      <values>2020-10-03T00:00:00.000+0200</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="key">
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+    </data>
+    <data xsi:type="covid19:IntSet" title="new_confirmed">
+      <values>1</values>
+      <values>659</values>
+      <values>787</values>
+      <values>204</values>
+      <values>-1</values>
+      <values>53</values>
+      <values>1362</values>
+      <values>31</values>
+      <values>118</values>
+      <values>1046</values>
+      <values>21368</values>
+      <values>0</values>
+      <values>1041</values>
+      <values>44</values>
+      <values>0</values>
+      <values>19</values>
+      <values>0</values>
+      <values>11550</values>
+      <values>364</values>
+      <values>2332</values>
+      <values>461</values>
+      <values>36092</values>
+    </data>
+    <data xsi:type="covid19:IntSet" title="new_deceased">
+      <values>0</values>
+      <values>3</values>
+      <values>6</values>
+      <values>3</values>
+      <values>0</values>
+      <values>1</values>
+      <values>155</values>
+      <values>5</values>
+      <values>0</values>
+      <values>38</values>
+      <values>1005</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>66</values>
+      <values>0</values>
+      <values>37</values>
+      <values>0</values>
+      <values>349</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="new_recovered">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>2</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>16</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="new_tested">
+      <values></values>
+      <values>52996</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>143443</values>
+      <values>3099</values>
+      <values>14899</values>
+      <values></values>
+      <values>621190</values>
+      <values></values>
+      <values>108906</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>288746</values>
+      <values>11295</values>
+      <values>26458</values>
+      <values>18580</values>
+      <values>626252</values>
+    </data>
+    <data xsi:type="covid19:IntSet" title="total_confirmed">
+      <values>852</values>
+      <values>37018</values>
+      <values>18057</values>
+      <values>6789</values>
+      <values>84602</values>
+      <values>2955</values>
+      <values>260682</values>
+      <values>25142</values>
+      <values>17495</values>
+      <values>41249</values>
+      <values>1874156</values>
+      <values>2110</values>
+      <values>98801</values>
+      <values>39341</values>
+      <values>20924</values>
+      <values>91101</values>
+      <values>8797</values>
+      <values>527814</values>
+      <values>38032</values>
+      <values>266775</values>
+      <values>95642</values>
+      <values>7402515</values>
+    </data>
+    <data xsi:type="covid19:IntSet" title="total_deceased">
+      <values>51</values>
+      <values>273</values>
+      <values>304</values>
+      <values>203</values>
+      <values>4645</values>
+      <values>21</values>
+      <values>38587</values>
+      <values>1664</values>
+      <values>291</values>
+      <values>4819</values>
+      <values>111499</values>
+      <values>53</values>
+      <values>426</values>
+      <values>1464</values>
+      <values>420</values>
+      <values>4746</values>
+      <values>54</values>
+      <values>42494</values>
+      <values>1810</values>
+      <values>1719</values>
+      <values>5895</values>
+      <values>210006</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="total_recovered">
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>79826</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>85984</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="total_tested">
+      <values></values>
+      <values>2429054</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>4011931</values>
+      <values>354322</values>
+      <values>623073</values>
+      <values></values>
+      <values>21252598</values>
+      <values></values>
+      <values>10129865</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values>25614228</values>
+      <values>1233281</values>
+      <values>3920661</values>
+      <values></values>
+      <values>120823891</values>
+    </data>
+  </sources>
+  <sources name="health.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/health.csv">
+    <data xsi:type="covid19:StringSet" title="key">
+      <values>AD</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>CN</values>
+      <values>GA</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>IL</values>
+      <values>SE</values>
+      <values>US</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="life_expectancy">
+      <values></values>
+      <values>77.814</values>
+      <values>64.486</values>
+      <values>58.921</values>
+      <values>76.704</values>
+      <values>66.187</values>
+      <values>81.3</values>
+      <values>82.3</values>
+      <values>82.802439</values>
+      <values>82.6</values>
+      <values>78.539024</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="smoking_prevalence">
+      <values>33.5</values>
+      <values>28.9</values>
+      <values xsi:nil="true"/>
+      <values xsi:nil="true"/>
+      <values>25.6</values>
+      <values xsi:nil="true"/>
+      <values>22.3</values>
+      <values>24.3</values>
+      <values>25.2</values>
+      <values>18.8</values>
+      <values>21.8</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="diabetes_prevalence">
+      <values>7.7</values>
+      <values>16.3</values>
+      <values>9.2</values>
+      <values>6.0</values>
+      <values>9.2</values>
+      <values>6.0</values>
+      <values>3.9</values>
+      <values>3.2</values>
+      <values>9.7</values>
+      <values>4.8</values>
+      <values>10.8</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="infant_mortality_rate">
+      <values>2.7</values>
+      <values>6.5</values>
+      <values>47.9</values>
+      <values>50.6</values>
+      <values>7.4</values>
+      <values>32.7</values>
+      <values>3.6</values>
+      <values>3.1</values>
+      <values>3.0</values>
+      <values>2.2</values>
+      <values>5.6</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="adult_male_mortality_rate">
+      <values></values>
+      <values>69.555</values>
+      <values>237.554</values>
+      <values>317.692</values>
+      <values>93.777</values>
+      <values>238.333</values>
+      <values>86.107</values>
+      <values>71.299</values>
+      <values>70.873</values>
+      <values>62.062</values>
+      <values>139.141</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="adult_female_mortality_rate">
+      <values></values>
+      <values>44.863</values>
+      <values>192.532</values>
+      <values>281.332</values>
+      <values>60.272</values>
+      <values>182.317</values>
+      <values>55.36</values>
+      <values>41.591</values>
+      <values>39.638</values>
+      <values>38.431</values>
+      <values>81.935</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="pollution_mortality_rate">
+      <values></values>
+      <values>54.7</values>
+      <values>211.1</values>
+      <values>208.1</values>
+      <values>112.7</values>
+      <values>76.0</values>
+      <values>13.8</values>
+      <values>11.9</values>
+      <values>15.4</values>
+      <values>7.2</values>
+      <values>13.3</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="comorbidity_mortality_rate">
+      <values></values>
+      <values>16.8</values>
+      <values>29.8</values>
+      <values>21.6</values>
+      <values>17.0</values>
+      <values>14.4</values>
+      <values>10.9</values>
+      <values>10.3</values>
+      <values>9.6</values>
+      <values>9.1</values>
+      <values>14.6</values>
+    </data>
+    <data xsi:type="covid19:StringSet" title="hospital_beds">
+      <values></values>
+      <values></values>
+      <values>0.5</values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+      <values></values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="nurses">
+      <values>4.0128</values>
+      <values>5.7271</values>
+      <values>0.1755</values>
+      <values xsi:nil="true"/>
+      <values>2.6621</values>
+      <values>2.946</values>
+      <values>8.1723</values>
+      <values>16.0996</values>
+      <values>5.7002</values>
+      <values>11.8164</values>
+      <values>14.548</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="physicians">
+      <values>3.3333</values>
+      <values>2.5278</values>
+      <values>0.2782</values>
+      <values xsi:nil="true"/>
+      <values>1.9798</values>
+      <values>0.6819</values>
+      <values>2.8117</values>
+      <values>3.3125</values>
+      <values>4.6249</values>
+      <values>3.984</values>
+      <values>2.612</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="health_expenditure">
+      <values>4040.786621</values>
+      <values>1357.017456</values>
+      <values>67.12265</values>
+      <values>67.811813</values>
+      <values>440.825623</values>
+      <values>204.492249</values>
+      <values>3858.674316</values>
+      <values>4976.862305</values>
+      <values>3144.626221</values>
+      <values>5904.583984</values>
+      <values>10246.138672</values>
+    </data>
+    <data xsi:type="covid19:DoubleSet" title="out_of_pocket_health_expenditure">
+      <values>1688.12146</values>
+      <values>256.034485</values>
+      <values>50.665913</values>
+      <values>48.117634</values>
+      <values>158.919449</values>
+      <values>51.442871</values>
+      <values>615.721802</values>
+      <values>611.214233</values>
+      <values>699.707214</values>
+      <values>887.612732</values>
+      <values>1126.349976</values>
+    </data>
+  </sources>
 </covid19:DataPool>
