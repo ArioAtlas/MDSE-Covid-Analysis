@@ -5,15 +5,18 @@ package se.lnu.joa.covid.model.analysis.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.DataColumn;
@@ -76,7 +79,7 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	protected String path = PATH_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
+	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getData()
@@ -158,9 +161,23 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public EList<DataColumn> getData() {
 		if (data == null) {
-			data = new EObjectResolvingEList<DataColumn>(DataColumn.class, this, AnalysisPackage.DATA_SOURCE__DATA);
+			data = new EObjectContainmentEList<DataColumn>(DataColumn.class, this, AnalysisPackage.DATA_SOURCE__DATA);
 		}
 		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AnalysisPackage.DATA_SOURCE__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

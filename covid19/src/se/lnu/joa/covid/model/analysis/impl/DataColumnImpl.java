@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.DataColumn;
@@ -113,7 +113,7 @@ public class DataColumnImpl extends MinimalEObjectImpl.Container implements Data
 	@Override
 	public EList<String> getValues() {
 		if (values == null) {
-			values = new EDataTypeUniqueEList<String>(String.class, this, AnalysisPackage.DATA_COLUMN__VALUES);
+			values = new EDataTypeEList<String>(String.class, this, AnalysisPackage.DATA_COLUMN__VALUES);
 		}
 		return values;
 	}

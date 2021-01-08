@@ -8,18 +8,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -38,7 +34,6 @@ import org.eclipse.m2m.qvt.oml.util.Log;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
-import org.yaml.snakeyaml.reader.StreamReader;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.config.Animation;
@@ -88,16 +83,14 @@ public class UsingEmfModel {
 			
 			Map<String, Object> m = reg.getExtensionToFactoryMap();
 			
-			m.put("dataModel", new XMIResourceFactoryImpl());
-			m.put("configModel", new XMIResourceFactoryImpl());
-			
+			m.put("model", new XMIResourceFactoryImpl());			
 			
 			// Obtain a new resource set
 	        ResourceSet resSet = new ResourceSetImpl();
 	        
 	        // Create resources
-	        Resource dataResource = resSet.createResource(URI.createURI("dataModel/My2.dataModel"));
-	        Resource configResource = resSet.createResource(URI.createURI("configModel/My2.configModel"));
+	        Resource dataResource = resSet.createResource(URI.createURI("generatedModels/data.model"));
+	        Resource configResource = resSet.createResource(URI.createURI("generatedModels/config.model"));
 	        
 	        // Get the first model element and cast it to the right type, in my
 	        // example everything is hierarchical included in this first node
@@ -115,7 +108,7 @@ public class UsingEmfModel {
 	        
 	        // create executor for the QVT transformation	        
 	        TransformationExecutor executor = new TransformationExecutor(
-	        		URI.createURI("../Covid19QVT/transforms/CsvToCsvTransformation.qvto"));
+	        		URI.createURI("../Covid19QVT/transforms/DataAndConfigToAnalytic.qvto"));
 	        			
 			// Define the transformation input and create the input extent with its initial contents
 			ModelExtent input1 = new BasicModelExtent(dataResource.getContents());
@@ -143,7 +136,7 @@ public class UsingEmfModel {
 			if (result.getSeverity() == Diagnostic.OK) {
 		        List<EObject> outObjects = output.getContents();
 		        
-		        URI outUri = URI.createURI("outM/ttt.configModel");
+		        URI outUri = URI.createURI("generatedModels/analysis.model");
 		        
 		        Resource res = resSet.createResource(outUri);
 		        res.getContents().addAll(outObjects);
@@ -319,7 +312,7 @@ public class UsingEmfModel {
         		in = new FileReader(dataFiles[i].toString());
            
             	DataSource source = factory.createDataSource();
-            	source.setName(f.getName());
+            	source.setName(f.getName().replace(".csv", ""));
             	source.setPath(f.getAbsolutePath());
             	
             	

@@ -53,7 +53,7 @@ public interface DataColumn extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getDataColumn_Values()
-	 * @model
+	 * @model unique="false" ordered="false"
 	 * @generated
 	 */
 	EList<String> getValues();

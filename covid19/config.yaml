@@ -2,10 +2,12 @@ dataModel:
   dataSource: path1
   datasetName: abc.csv
   columns:
-    - c1
-    - c2
-    - c3
-    - c4
+    - key
+    - date
+    - new_confirmed
+    - new_deceased
+    - total_confirmed
+    - total_deceased
   
 visualization:
   type: ScatterPlot

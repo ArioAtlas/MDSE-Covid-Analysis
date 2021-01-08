@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:Config xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:covid19="http://lnu.se/dv651/covid19/config">
   <source datasetName="abc.csv" dataSource="path1">
-    <columns>lifexx</columns>
-    <columns>c2</columns>
-    <columns>c3</columns>
-    <columns>c4</columns>
+    <columns>key</columns>
+    <columns>date</columns>
+    <columns>new_confirmed</columns>
+    <columns>new_deceased</columns>
+    <columns>total_confirmed</columns>
+    <columns>total_deceased</columns>
   </source>
   <visualization type="ScatterPlot">
     <axes>

@@ -970,7 +970,7 @@ public interface AnalysisPackage extends EPackage {
 	int DATA_SOURCE__PATH = 1;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1581,10 +1581,10 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getDataSource_Path();
 
 	/**
-	 * Returns the meta object for the reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getData <em>Data</em>}'.
+	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.DataSource#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Data</em>'.
+	 * @return the meta object for the containment reference list '<em>Data</em>'.
 	 * @see se.lnu.joa.covid.model.analysis.DataSource#getData()
 	 * @see #getDataSource()
 	 * @generated
@@ -2073,7 +2073,7 @@ public interface AnalysisPackage extends EPackage {
 		EAttribute DATA_SOURCE__PATH = eINSTANCE.getDataSource_Path();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

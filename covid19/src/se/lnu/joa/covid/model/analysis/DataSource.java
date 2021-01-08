@@ -70,13 +70,13 @@ public interface DataSource extends EObject {
 	void setPath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' reference list.
+	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.
 	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.DataColumn}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' reference list.
+	 * @return the value of the '<em>Data</em>' containment reference list.
 	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getDataSource_Data()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<DataColumn> getData();

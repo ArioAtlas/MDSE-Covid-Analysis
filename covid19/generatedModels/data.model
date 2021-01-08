@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:DataPool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/csv">
-  <sources name="index.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/index.csv">
+  <sources name="index" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/index.csv">
     <data xsi:type="covid19:StringSet" title="key">
       <values>AD</values>
       <values>AE</values>
@@ -184,7 +184,7 @@
       <values>0</values>
     </data>
   </sources>
-  <sources name="epidemiology.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/epidemiology.csv">
+  <sources name="epidemiology" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/epidemiology.csv">
     <data xsi:type="covid19:DateSet" title="date">
       <values>2020-06-03T00:00:00.000+0200</values>
       <values>2020-06-03T00:00:00.000+0200</values>
@@ -426,7 +426,7 @@
       <values>120823891</values>
     </data>
   </sources>
-  <sources name="health.csv" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/health.csv">
+  <sources name="health" path="/home/omid/LNU/4DV651/MDSE-Covid-Analysis/covid19/health.csv">
     <data xsi:type="covid19:StringSet" title="key">
       <values>AD</values>
       <values>AE</values>

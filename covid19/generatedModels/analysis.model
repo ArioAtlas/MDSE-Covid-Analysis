@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ASCII"?>
+<covid19:AnalyticModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/analysis">
+  <regression xsi:type="covid19:LogarithmicRegression" dependentValue="total_deceased" independentValue="total_confirmed"/>
+  <visualization xsi:type="covid19:ScatterPlot" xAxis="total_deceased" yAxis="total_deceased" color="total_deceased" title="Infection vs Death" subTitle="..." xAxisLabel="Total Infection" yAxisLabel="Total Infection" colorLabel="Total Infection" caption="Source: Google Open Data" alpha="0.7">
+    <scale_x xsi:type="covid19:Log10Scale"/>
+    <animation label="Date: " transitionTime="DateS" shadowWake="0.1" width="800" height="500" duration="20" fps="30" endPause="60" resolution="100" outputPath="out" outputName="graph.gif"/>
+  </visualization>
+  <dataSource name="abc.csv" path="path1">
+    <data header="key">
+      <values>SE</values>
+      <values>AD</values>
+      <values>IL</values>
+      <values>AE</values>
+      <values>AF</values>
+      <values>CM</values>
+      <values>GA</values>
+      <values>CN</values>
+      <values>GB</values>
+      <values>IE</values>
+      <values>US</values>
+    </data>
+    <data header="date">
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Sat Oct 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+      <values>Wed Jun 03 00:00:00 CEST 2020</values>
+    </data>
+    <data header="new_confirmed">
+      <values>-1</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>1</values>
+      <values>204</values>
+      <values>44</values>
+      <values>364</values>
+      <values>461</values>
+      <values>1041</values>
+      <values>1362</values>
+      <values>659</values>
+      <values>787</values>
+      <values>19</values>
+      <values>53</values>
+      <values>118</values>
+      <values>1046</values>
+      <values>21368</values>
+      <values>2332</values>
+      <values>36092</values>
+      <values>11550</values>
+      <values>31</values>
+    </data>
+    <data header="new_deceased">
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>0</values>
+      <values>1</values>
+      <values>66</values>
+      <values>3</values>
+      <values>3</values>
+      <values>5</values>
+      <values>37</values>
+      <values>6</values>
+      <values>38</values>
+      <values>155</values>
+      <values>1005</values>
+      <values>349</values>
+    </data>
+    <data header="total_confirmed">
+      <values>41249</values>
+      <values>7402515</values>
+      <values>6789</values>
+      <values>18057</values>
+      <values>260682</values>
+      <values>2955</values>
+      <values>39341</values>
+      <values>527814</values>
+      <values>1874156</values>
+      <values>98801</values>
+      <values>38032</values>
+      <values>266775</values>
+      <values>852</values>
+      <values>25142</values>
+      <values>17495</values>
+      <values>37018</values>
+      <values>84602</values>
+      <values>95642</values>
+      <values>20924</values>
+      <values>91101</values>
+      <values>8797</values>
+      <values>2110</values>
+    </data>
+    <data header="total_deceased">
+      <values>1664</values>
+      <values>291</values>
+      <values>420</values>
+      <values>4645</values>
+      <values>5895</values>
+      <values>111499</values>
+      <values>426</values>
+      <values>4746</values>
+      <values>203</values>
+      <values>304</values>
+      <values>273</values>
+      <values>1810</values>
+      <values>51</values>
+      <values>4819</values>
+      <values>21</values>
+      <values>53</values>
+      <values>210006</values>
+      <values>54</values>
+      <values>1719</values>
+      <values>1464</values>
+      <values>38587</values>
+      <values>42494</values>
+    </data>
+  </dataSource>
+</covid19:AnalyticModel>

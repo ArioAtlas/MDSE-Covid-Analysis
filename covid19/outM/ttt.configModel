@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<covid19:AnalyticModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/analysis">
-  <regression xsi:type="covid19:LogarithmicRegression" dependentValue="total_deceased" independentValue="total_confirmed"/>
-  <visualization xsi:type="covid19:ScatterPlot" xAxis="total_deceased" yAxis="total_deceased" color="total_deceased" title="Infection vs Death" subTitle="..." xAxisLabel="Total Infection" yAxisLabel="Total Infection" colorLabel="Total Infection" caption="Source: Google Open Data" alpha="0.7">
-    <scale_x xsi:type="covid19:Log10Scale"/>
-    <animation label="Date: " transitionTime="DateS" shadowWake="0.1" width="800" height="500" duration="20" fps="30" endPause="60" resolution="100" outputPath="out" outputName="graph.gif"/>
-  </visualization>
-  <dataSource name="abc.csv" path="path1"/>
-</covid19:AnalyticModel>
