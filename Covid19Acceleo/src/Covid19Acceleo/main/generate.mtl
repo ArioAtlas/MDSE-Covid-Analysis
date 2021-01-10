@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module generate('http://lnu.se/dv651/covid19/analysis')]
+
+
+[template public generate(a : AnalyticModel)]
+[comment @main/]
+[a.dataSource.generateCsvDataFile()/]
+[file (a.visualization.title, false, 'UTF-8')]
+	hi it is a test [a.visualization.caption/]
+[/file]
+[/template]
+
+
+[template public generateCsvDataFile(source : DataSource) post (trim())]
+[comment Generate a CSV file with the data in AnalysisModel.DataSource /]
+[file (source.name + '.csv', false, 'UTF-8')][source.generateCsvContent()/][/file]
+	
+[/template]
+
+[template public generateCsvContent(source : DataSource) post (trim())]
+[comment  Generate CSV file content including Headers and Data/]
+[source.generateCsvHeaders()/]
+[source.generateCsvRows()/]
+[/template]
+
+[template public generateCsvHeaders(source : DataSource) post (trim())]
+[comment  Create Hedaer for the Columns  /]
+[for (dc : DataColumn | source.data) separator (',')][dc.header/][/for]
+[/template]
+
+[template public generateCsvRows(source : DataSource) post (trim())]
+[comment  Retrive Data cells and write them out in correct format  /]
+[for ( s:String | source.data->at(1).values)]
+[for (h : String | source.data.header) separator (',') {j:Integer = i;}][getCellValue(source,j,i)/][/for]
+[/for]
+[/template]
+
+[query public getCellValue(source : DataSource, i : Integer, j : Integer) : String = self.data->at(j).values->asSequence()->at(i) /]
+
+
