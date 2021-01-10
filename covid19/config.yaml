@@ -1,6 +1,6 @@
 dataModel:
   dataSource: path1
-  datasetName: abc.csv
+  datasetName: abc
   columns:
     - key
     - date

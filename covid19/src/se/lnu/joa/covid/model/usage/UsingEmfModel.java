@@ -1,5 +1,6 @@
 package se.lnu.joa.covid.model.usage;
 
+import Covid19Acceleo.main.Generate;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,6 +22,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -146,6 +148,20 @@ public class UsingEmfModel {
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        }
+		        
+		        try {
+					final File outputDir = new File("outputDir/");
+					List<String> arguments = new ArrayList<String>();
+					/*fc is an instance of a EMF Compare Comparison object
+					 * the nsURI for it is http://www.eclipse.org/emf/compare
+					 */
+					Generate generator = new Generate(outUri, outputDir, arguments);                                 
+					            generator.doGenerate(new BasicMonitor());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+		        
 		    } else {
 		        IStatus status = BasicDiagnostic.toIStatus(result);
 		        System.err.println("Error status " + status);

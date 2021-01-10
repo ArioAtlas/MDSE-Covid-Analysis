@@ -5,7 +5,7 @@
     <scale_x xsi:type="covid19:Log10Scale"/>
     <animation label="Date: " transitionTime="DateS" shadowWake="0.1" width="800" height="500" duration="20" fps="30" endPause="60" resolution="100" outputPath="out" outputName="graph.gif"/>
   </visualization>
-  <dataSource name="abc.csv" path="path1">
+  <dataSource name="abc" path="path1">
     <data header="key">
       <values>SE</values>
       <values>AD</values>

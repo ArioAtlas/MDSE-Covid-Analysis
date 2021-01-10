@@ -19,6 +19,8 @@ Export-Package: se.lnu.joa.covid.model.data,
  se.lnu.joa.covid.model.analysis.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.m2m.qvt.oml
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.acceleo.engine,
+ Covid19Acceleo
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
