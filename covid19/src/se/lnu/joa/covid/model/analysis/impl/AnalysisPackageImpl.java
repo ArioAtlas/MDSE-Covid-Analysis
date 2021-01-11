@@ -488,6 +488,16 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getScatterPlot_Size() {
+		return (EAttribute)scatterPlotEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAnimation() {
 		return animationEClass;
 	}
@@ -738,6 +748,36 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDataColumn_Type() {
+		return (EAttribute)dataColumnEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataColumn_Format() {
+		return (EAttribute)dataColumnEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataColumn_Filter() {
+		return (EAttribute)dataColumnEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AnalysisFactory getAnalysisFactory() {
 		return (AnalysisFactory)getEFactoryInstance();
 	}
@@ -796,6 +836,7 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		createEAttribute(scatterPlotEClass, SCATTER_PLOT__ALPHA);
 		createEAttribute(scatterPlotEClass, SCATTER_PLOT__STROKE);
 		createEReference(scatterPlotEClass, SCATTER_PLOT__ANIMATION);
+		createEAttribute(scatterPlotEClass, SCATTER_PLOT__SIZE);
 
 		animationEClass = createEClass(ANIMATION);
 		createEAttribute(animationEClass, ANIMATION__LABEL);
@@ -828,6 +869,9 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		dataColumnEClass = createEClass(DATA_COLUMN);
 		createEAttribute(dataColumnEClass, DATA_COLUMN__HEADER);
 		createEAttribute(dataColumnEClass, DATA_COLUMN__VALUES);
+		createEAttribute(dataColumnEClass, DATA_COLUMN__TYPE);
+		createEAttribute(dataColumnEClass, DATA_COLUMN__FORMAT);
+		createEAttribute(dataColumnEClass, DATA_COLUMN__FILTER);
 	}
 
 	/**
@@ -896,12 +940,13 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 		initEClass(linearPlotEClass, LinearPlot.class, "LinearPlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLinearPlot_LineSize(), ecorePackage.getEFloat(), "lineSize", null, 0, 1, LinearPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLinearPlot_LineAlpha(), ecorePackage.getEFloat(), "lineAlpha", null, 0, 1, LinearPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLinearPlot_Animation(), this.getAnimation(), null, "animation", null, 0, -1, LinearPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLinearPlot_Animation(), this.getAnimation(), null, "animation", null, 0, 1, LinearPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scatterPlotEClass, ScatterPlot.class, "ScatterPlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScatterPlot_Alpha(), ecorePackage.getEFloat(), "alpha", null, 0, 1, ScatterPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScatterPlot_Stroke(), ecorePackage.getEFloat(), "stroke", null, 0, 1, ScatterPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScatterPlot_Animation(), this.getAnimation(), null, "animation", null, 0, -1, ScatterPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScatterPlot_Animation(), this.getAnimation(), null, "animation", null, 0, 1, ScatterPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScatterPlot_Size(), ecorePackage.getEString(), "size", null, 0, 1, ScatterPlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(animationEClass, Animation.class, "Animation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnimation_Label(), ecorePackage.getEString(), "label", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -933,7 +978,10 @@ public class AnalysisPackageImpl extends EPackageImpl implements AnalysisPackage
 
 		initEClass(dataColumnEClass, DataColumn.class, "DataColumn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataColumn_Header(), ecorePackage.getEString(), "header", null, 0, 1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataColumn_Values(), ecorePackage.getEString(), "values", null, 0, -1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDataColumn_Values(), ecorePackage.getEString(), "values", null, 0, -1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataColumn_Type(), ecorePackage.getEString(), "type", null, 0, 1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataColumn_Format(), ecorePackage.getEString(), "format", null, 0, 1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataColumn_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, DataColumn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

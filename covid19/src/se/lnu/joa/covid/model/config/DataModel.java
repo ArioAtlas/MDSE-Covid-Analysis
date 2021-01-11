@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getDataSource <em>Data Source</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getColumns <em>Columns</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getFilters <em>Filters</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.DataModel#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.config.ConfigPackage#getDataModel()
@@ -80,5 +82,39 @@ public interface DataModel extends EObject {
 	 * @generated
 	 */
 	EList<String> getColumns();
+
+	/**
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link se.lnu.joa.covid.model.config.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filters</em>' containment reference list.
+	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getDataModel_Filters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Filter> getFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Date Format</em>' attribute.
+	 * @see #setDateFormat(String)
+	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getDataModel_DateFormat()
+	 * @model
+	 * @generated
+	 */
+	String getDateFormat();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.config.DataModel#getDateFormat <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date Format</em>' attribute.
+	 * @see #getDateFormat()
+	 * @generated
+	 */
+	void setDateFormat(String value);
 
 } // DataModel

@@ -504,7 +504,7 @@ public interface AnalysisPackage extends EPackage {
 	int LINEAR_PLOT__LINE_ALPHA = VISUALIZATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Animation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Animation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -658,7 +658,7 @@ public interface AnalysisPackage extends EPackage {
 	int SCATTER_PLOT__STROKE = VISUALIZATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Animation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Animation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -667,13 +667,22 @@ public interface AnalysisPackage extends EPackage {
 	int SCATTER_PLOT__ANIMATION = VISUALIZATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCATTER_PLOT__SIZE = VISUALIZATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Scatter Plot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCATTER_PLOT_FEATURE_COUNT = VISUALIZATION_FEATURE_COUNT + 3;
+	int SCATTER_PLOT_FEATURE_COUNT = VISUALIZATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Scatter Plot</em>' class.
@@ -1025,13 +1034,40 @@ public interface AnalysisPackage extends EPackage {
 	int DATA_COLUMN__VALUES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_COLUMN__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_COLUMN__FORMAT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_COLUMN__FILTER = 4;
+
+	/**
 	 * The number of structural features of the '<em>Data Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_COLUMN_FEATURE_COUNT = 2;
+	int DATA_COLUMN_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Data Column</em>' class.
@@ -1302,10 +1338,10 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getLinearPlot_LineAlpha();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.LinearPlot#getAnimation <em>Animation</em>}'.
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.analysis.LinearPlot#getAnimation <em>Animation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Animation</em>'.
+	 * @return the meta object for the containment reference '<em>Animation</em>'.
 	 * @see se.lnu.joa.covid.model.analysis.LinearPlot#getAnimation()
 	 * @see #getLinearPlot()
 	 * @generated
@@ -1345,15 +1381,26 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getScatterPlot_Stroke();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getAnimation <em>Animation</em>}'.
+	 * Returns the meta object for the containment reference '{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getAnimation <em>Animation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Animation</em>'.
+	 * @return the meta object for the containment reference '<em>Animation</em>'.
 	 * @see se.lnu.joa.covid.model.analysis.ScatterPlot#getAnimation()
 	 * @see #getScatterPlot()
 	 * @generated
 	 */
 	EReference getScatterPlot_Animation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.ScatterPlot#getSize()
+	 * @see #getScatterPlot()
+	 * @generated
+	 */
+	EAttribute getScatterPlot_Size();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.analysis.Animation <em>Animation</em>}'.
@@ -1624,6 +1671,39 @@ public interface AnalysisPackage extends EPackage {
 	EAttribute getDataColumn_Values();
 
 	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.analysis.DataColumn#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn#getType()
+	 * @see #getDataColumn()
+	 * @generated
+	 */
+	EAttribute getDataColumn_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.analysis.DataColumn#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn#getFormat()
+	 * @see #getDataColumn()
+	 * @generated
+	 */
+	EAttribute getDataColumn_Format();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.analysis.DataColumn#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see se.lnu.joa.covid.model.analysis.DataColumn#getFilter()
+	 * @see #getDataColumn()
+	 * @generated
+	 */
+	EAttribute getDataColumn_Filter();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1851,7 +1931,7 @@ public interface AnalysisPackage extends EPackage {
 		EAttribute LINEAR_PLOT__LINE_ALPHA = eINSTANCE.getLinearPlot_LineAlpha();
 
 		/**
-		 * The meta object literal for the '<em><b>Animation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Animation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1885,12 +1965,20 @@ public interface AnalysisPackage extends EPackage {
 		EAttribute SCATTER_PLOT__STROKE = eINSTANCE.getScatterPlot_Stroke();
 
 		/**
-		 * The meta object literal for the '<em><b>Animation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Animation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SCATTER_PLOT__ANIMATION = eINSTANCE.getScatterPlot_Animation();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCATTER_PLOT__SIZE = eINSTANCE.getScatterPlot_Size();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.analysis.impl.AnimationImpl <em>Animation</em>}' class.
@@ -2105,6 +2193,30 @@ public interface AnalysisPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_COLUMN__VALUES = eINSTANCE.getDataColumn_Values();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_COLUMN__TYPE = eINSTANCE.getDataColumn_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_COLUMN__FORMAT = eINSTANCE.getDataColumn_Format();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_COLUMN__FILTER = eINSTANCE.getDataColumn_Filter();
 
 	}
 

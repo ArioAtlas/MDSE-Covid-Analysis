@@ -160,13 +160,31 @@ public interface ConfigPackage extends EPackage {
 	int DATA_MODEL__COLUMNS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__FILTERS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__DATE_FORMAT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL_FEATURE_COUNT = 3;
+	int DATA_MODEL_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Data Model</em>' class.
@@ -215,13 +233,22 @@ public interface ConfigPackage extends EPackage {
 	int VISUALIZATION__INFO = 2;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION__SIZE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Visualization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISUALIZATION_FEATURE_COUNT = 3;
+	int VISUALIZATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Visualization</em>' class.
@@ -608,6 +635,52 @@ public interface ConfigPackage extends EPackage {
 	int SCALE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.impl.FilterImpl <em>Filter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see se.lnu.joa.covid.model.config.impl.FilterImpl
+	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getFilter()
+	 * @generated
+	 */
+	int FILTER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,7 +688,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getVisualizationType()
 	 * @generated
 	 */
-	int VISUALIZATION_TYPE = 9;
+	int VISUALIZATION_TYPE = 10;
 
 	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.RegressionType <em>Regression Type</em>}' enum.
@@ -625,8 +698,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getRegressionType()
 	 * @generated
 	 */
-	int REGRESSION_TYPE = 10;
-
+	int REGRESSION_TYPE = 11;
 
 	/**
 	 * The meta object id for the '{@link se.lnu.joa.covid.model.config.ScaleType <em>Scale Type</em>}' enum.
@@ -636,7 +708,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getScaleType()
 	 * @generated
 	 */
-	int SCALE_TYPE = 11;
+	int SCALE_TYPE = 12;
 
 
 	/**
@@ -737,6 +809,28 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getDataModel_Columns();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link se.lnu.joa.covid.model.config.DataModel#getFilters <em>Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Filters</em>'.
+	 * @see se.lnu.joa.covid.model.config.DataModel#getFilters()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EReference getDataModel_Filters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.DataModel#getDateFormat <em>Date Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date Format</em>'.
+	 * @see se.lnu.joa.covid.model.config.DataModel#getDateFormat()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EAttribute getDataModel_DateFormat();
+
+	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Visualization <em>Visualization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,6 +872,17 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVisualization_Info();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Visualization#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see se.lnu.joa.covid.model.config.Visualization#getSize()
+	 * @see #getVisualization()
+	 * @generated
+	 */
+	EAttribute getVisualization_Size();
 
 	/**
 	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Animation <em>Animation</em>}'.
@@ -1092,6 +1197,38 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getScale_Breaks();
 
 	/**
+	 * Returns the meta object for class '{@link se.lnu.joa.covid.model.config.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Filter</em>'.
+	 * @see se.lnu.joa.covid.model.config.Filter
+	 * @generated
+	 */
+	EClass getFilter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Filter#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see se.lnu.joa.covid.model.config.Filter#getKey()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EAttribute getFilter_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link se.lnu.joa.covid.model.config.Filter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see se.lnu.joa.covid.model.config.Filter#getValue()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EAttribute getFilter_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1221,6 +1358,22 @@ public interface ConfigPackage extends EPackage {
 		EAttribute DATA_MODEL__COLUMNS = eINSTANCE.getDataModel_Columns();
 
 		/**
+		 * The meta object literal for the '<em><b>Filters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_MODEL__FILTERS = eINSTANCE.getDataModel_Filters();
+
+		/**
+		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_MODEL__DATE_FORMAT = eINSTANCE.getDataModel_DateFormat();
+
+		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl <em>Visualization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1253,6 +1406,14 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VISUALIZATION__INFO = eINSTANCE.getVisualization_Info();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VISUALIZATION__SIZE = eINSTANCE.getVisualization_Size();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.AnimationImpl <em>Animation</em>}' class.
@@ -1497,6 +1658,32 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCALE__BREAKS = eINSTANCE.getScale_Breaks();
+
+		/**
+		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.impl.FilterImpl <em>Filter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see se.lnu.joa.covid.model.config.impl.FilterImpl
+		 * @see se.lnu.joa.covid.model.config.impl.ConfigPackageImpl#getFilter()
+		 * @generated
+		 */
+		EClass FILTER = eINSTANCE.getFilter();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILTER__KEY = eINSTANCE.getFilter_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILTER__VALUE = eINSTANCE.getFilter_Value();
 
 		/**
 		 * The meta object literal for the '{@link se.lnu.joa.covid.model.config.VisualizationType <em>Visualization Type</em>}' enum.

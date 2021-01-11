@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -45,6 +44,7 @@ import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
+import se.lnu.joa.covid.model.config.Filter;
 import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
 import se.lnu.joa.covid.model.config.Scale;
@@ -67,8 +67,7 @@ public class UsingEmfModel {
     public static void main(String[] args) {
     	
     	final String configFile = "config.yaml";
-    	final String[] dataFile = {"index.csv","epidemiology.csv","health.csv"};
-
+    	final File folder = new File("./data_pool");
     
     	
 		try {
@@ -78,7 +77,7 @@ public class UsingEmfModel {
 			AnalysisPackage.eINSTANCE.eClass();
 			
 			// Read input files
-			DataPool pool = readCsvData(dataFile);
+			DataPool pool = readCsvData(folder);
 	        Config config = readConfig(configFile);
 	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -195,7 +194,14 @@ public class UsingEmfModel {
 			DataModel dm = configFactory.createDataModel();
 			dm.setDataSource(aConfig.getDataModel().getDataSource());
 			dm.setDatasetName(aConfig.getDataModel().getDatasetName());
-			dm.getColumns().addAll(Arrays.asList(aConfig.getDataModel().getColumns()));
+			dm.getColumns().addAll(aConfig.getDataModel().getColumns());
+			for (DataFilter filter : aConfig.getDataModel().getFilters()) {
+				Filter f = configFactory.createFilter();
+				f.setKey(filter.getKey());
+				f.setValue(filter.getValue());
+				dm.getFilters().add(f);
+			}
+			dm.setDateFormat(aConfig.getDataModel().getDateformat());
 			config.setSource(dm);
 			
 			
@@ -225,8 +231,8 @@ public class UsingEmfModel {
 				
 				if(aConfig.getVisualization().getAxes().getY()!=null) {
 					Axis ay = configFactory.createAxis();
-					ay.setColumn(aConfig.getVisualization().getAxes().getX().getColumn());
-					ay.setLabel(aConfig.getVisualization().getAxes().getX().getLabel());
+					ay.setColumn(aConfig.getVisualization().getAxes().getY().getColumn());
+					ay.setLabel(aConfig.getVisualization().getAxes().getY().getLabel());
 					
 					if(aConfig.getVisualization().getAxes().getY().getScale()!=null) {
 						Scale yScale = configFactory.createScale();
@@ -241,8 +247,8 @@ public class UsingEmfModel {
 
 				if(aConfig.getVisualization().getAxes().getZ()!=null) {
 					Axis az = configFactory.createAxis();
-					az.setColumn(aConfig.getVisualization().getAxes().getX().getColumn());
-					az.setLabel(aConfig.getVisualization().getAxes().getX().getLabel());
+					az.setColumn(aConfig.getVisualization().getAxes().getZ().getColumn());
+					az.setLabel(aConfig.getVisualization().getAxes().getZ().getLabel());
 					
 					if(aConfig.getVisualization().getAxes().getZ().getScale()!=null) {
 						Scale zScale = configFactory.createScale();
@@ -265,6 +271,10 @@ public class UsingEmfModel {
 				vInfo.setCaption(aConfig.getVisualization().getInfo().getCaption());
 				vlz.setInfo(vInfo);
 				
+			}
+			
+			if(aConfig.getVisualization().getSize()!=null) {
+				vlz.setSize(aConfig.getVisualization().getSize());
 			}
 			config.setVisualization(vlz);
 			 
@@ -294,11 +304,13 @@ public class UsingEmfModel {
 			}
 			
 			// create Regression from config file
-			Regression reg = configFactory.createRegression();
-			reg.setType(RegressionType.get(aConfig.getRegression().getType()));
-			reg.setDependentValue(aConfig.getRegression().getDependentValue());
-			reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
-			config.setRegression(reg);
+			if(aConfig.getRegression()!=null){
+				Regression reg = configFactory.createRegression();
+				reg.setType(RegressionType.get(aConfig.getRegression().getType()));
+				reg.setDependentValue(aConfig.getRegression().getDependentValue());
+				reg.setIndependentValue(aConfig.getRegression().getIndependentValue());
+				config.setRegression(reg);
+			}
 			
 			return config;
 			
@@ -310,7 +322,7 @@ public class UsingEmfModel {
     	return null;
     }
     
-    private static DataPool readCsvData(String[] dataFiles) throws IOException, ParseException {
+    private static DataPool readCsvData(File folder) throws IOException, ParseException {
 
         // Retrieve the default factory singleton
         DataFactory factory = DataFactory.eINSTANCE;
@@ -321,15 +333,16 @@ public class UsingEmfModel {
         // create a file reader object
         Reader in;
         
-        for(int i=0; i<dataFiles.length; i++) {
-        	File f = new File(dataFiles[i]);
-        	
-        	if(f.exists()) {
-        		in = new FileReader(dataFiles[i].toString());
+        List<File> dataFiles = listFilesForFolder(folder);
+        
+        for(int i=0; i<dataFiles.size(); i++) {
+        	        	
+        	if(dataFiles.get(i).exists()) {
+        		in = new FileReader(dataFiles.get(i).toString());
            
             	DataSource source = factory.createDataSource();
-            	source.setName(f.getName().replace(".csv", ""));
-            	source.setPath(f.getAbsolutePath());
+            	source.setName(dataFiles.get(i).getName().replace(".csv", ""));
+            	source.setPath(dataFiles.get(i).getAbsolutePath());
             	
             	
             	Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
@@ -362,7 +375,7 @@ public class UsingEmfModel {
 									break;
 								case DATE:
 									DateSet tSet = factory.createDateSet();
-									tSet.getValues().add(new SimpleDateFormat("yyyy-MM-dd").parse(data));
+									tSet.getValues().add(data.replace('/', '-'));
 									tSet.setTitle(titles.get(c));
 									source.getData().add(tSet);
 									break;
@@ -390,39 +403,15 @@ public class UsingEmfModel {
             							((DoubleSet) ds).getValues().add(null);
 									}
             					}else if(ds instanceof DateSet) {
-            						((DateSet) ds).getValues().add(new SimpleDateFormat("yyyy-MM-dd").parse(data));
+            						((DateSet) ds).getValues().add(data.replace('/', '-'));
             					}
             				}
             				c++;
             			}
-            			
-            			/*
-        				// Create a record
-        			    Index id = factory.cre();
-        			    
-        			    // Fill record with data
-        		        id.setKey(record.get(0));
-        		        id.setWikidata(record.get(1));
-        		        id.setDatacommons(record.get(2));
-        		        id.setCountry_code(record.get(3));
-        		        id.setCountry_name(record.get(4));
-        		        id.setSubregion1_code(record.get(5));
-        		        id.setSubregion1_name(record.get(6));
-        		        id.setSubregion2_code(record.get(7));
-        		        id.setSubregion2_name(record.get(8));
-        		        id.setLocality_code(record.get(9));
-        		        id.setLocality_name(record.get(10));
-        		        id.setAlpha_2(record.get(11));
-        		        id.setAlpha_3(record.get(12));
-        		        id.setAggregation_level(Integer.parseInt(record.get(13)));*/
             		
             			k++;
             		}
-            	}
-            	
-        		
-        		
-            	
+            	} 
             	
             	// Add the new data source to the data pool 
             	pool.getSources().add(source);
@@ -444,7 +433,7 @@ public class UsingEmfModel {
     	}catch (Exception e) {
 			// TODO: handle exception
 		}try {
-			if(value.matches("\\d{4}-\\d{2}-\\d{2}"))
+			if(value.matches("\\d{1,4}(-|\\/)\\d{1,2}(-|\\/)\\d{1,4}"))
 				return DataTypes.DATE;
     	}catch (Exception e) {
 			// TODO: handle exception
@@ -452,4 +441,18 @@ public class UsingEmfModel {
 		}
 		return DataTypes.STRING;
     }
+	
+	public static List<File> listFilesForFolder(final File folder) {
+		List<File> files = new ArrayList<>();
+	    for (final File fileEntry : folder.listFiles()) {
+	        if (fileEntry.isDirectory()) {
+	            files.addAll(listFilesForFolder(fileEntry));
+	        } else {
+	            files.add(fileEntry);
+	        }
+	    }
+	    
+	    return files;
+	}
+
 }

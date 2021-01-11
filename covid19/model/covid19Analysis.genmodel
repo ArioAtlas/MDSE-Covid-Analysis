@@ -39,6 +39,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//ScatterPlot/alpha"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//ScatterPlot/stroke"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference covid19Analysis.ecore#//ScatterPlot/animation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//ScatterPlot/size"/>
     </genClasses>
     <genClasses ecoreClass="covid19Analysis.ecore#//Animation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//Animation/label"/>
@@ -68,6 +69,9 @@
     <genClasses ecoreClass="covid19Analysis.ecore#//DataColumn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataColumn/header"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataColumn/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataColumn/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataColumn/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19Analysis.ecore#//DataColumn/filter"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -37,7 +37,7 @@ public class ScaleImpl extends MinimalEObjectImpl.Container implements Scale {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ScaleType TYPE_EDEFAULT = ScaleType.LOG10;
+	protected static final ScaleType TYPE_EDEFAULT = ScaleType.RANGE;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

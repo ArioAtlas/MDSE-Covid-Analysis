@@ -28,7 +28,7 @@ public interface IntSet extends DataSet {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getIntSet_Values()
-	 * @model unique="false" ordered="false"
+	 * @model unique="false"
 	 * @generated
 	 */
 	EList<Integer> getValues();

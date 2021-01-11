@@ -3,7 +3,6 @@
 package se.lnu.joa.covid.model.data.impl;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -36,7 +35,7 @@ public class DateSetImpl extends DataSetImpl implements DateSet {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Date> values;
+	protected EList<String> values;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,9 +61,9 @@ public class DateSetImpl extends DataSetImpl implements DateSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Date> getValues() {
+	public EList<String> getValues() {
 		if (values == null) {
-			values = new EDataTypeEList<Date>(Date.class, this, DataPackage.DATE_SET__VALUES);
+			values = new EDataTypeEList<String>(String.class, this, DataPackage.DATE_SET__VALUES);
 		}
 		return values;
 	}
@@ -94,7 +93,7 @@ public class DateSetImpl extends DataSetImpl implements DateSet {
 		switch (featureID) {
 			case DataPackage.DATE_SET__VALUES:
 				getValues().clear();
-				getValues().addAll((Collection<? extends Date>)newValue);
+				getValues().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

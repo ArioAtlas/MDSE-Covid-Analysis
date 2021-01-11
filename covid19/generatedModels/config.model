@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:Config xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:covid19="http://lnu.se/dv651/covid19/config">
-  <source datasetName="abc" dataSource="path1">
+  <source datasetName="test3" dataSource="path1" dateFormat="%m-%d-%Y">
     <columns>key</columns>
     <columns>date</columns>
     <columns>new_confirmed</columns>
@@ -10,14 +10,11 @@
   </source>
   <visualization type="ScatterPlot">
     <axes>
-      <x label="Total Infection" column="total_deceased">
-        <scale/>
-      </x>
-      <y label="Total Infection" column="total_deceased"/>
-      <z label="Total Infection" column="total_deceased"/>
+      <x label="Days Passed" column="date_d"/>
+      <y label="Total Infection" column="total_confirmed"/>
+      <z label="Country" column="key"/>
     </axes>
-    <info title="Infection vs Death" subTitle="..." caption="Source: Google Open Data"/>
+    <info title="Infection over Time in Europe" subTitle="" caption="Source: Google Open Data"/>
   </visualization>
   <regression type="Logarithmic" dependentValue="total_deceased" independentValue="total_confirmed"/>
-  <animation label="Date: " transitionTime="DateS" width="800" height="500" duration="20" outputName="graph.gif" outputPath="out"/>
 </covid19:Config>

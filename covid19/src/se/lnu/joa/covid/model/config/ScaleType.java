@@ -19,14 +19,24 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ScaleType implements Enumerator {
 	/**
-	 * The '<em><b>Log10</b></em>' literal object.
+	 * The '<em><b>Range</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LOG10_VALUE
+	 * @see #RANGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LOG10(0, "Log10", "Log10"),
+	RANGE(0, "Range", "Range"),
+
+	/**
+	 * The '<em><b>Log</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOG_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LOG(1, "Log", "Log"),
 
 	/**
 	 * The '<em><b>Sqrt</b></em>' literal object.
@@ -36,7 +46,7 @@ public enum ScaleType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SQRT(1, "Sqrt", "Sqrt"),
+	SQRT(2, "Sqrt", "Sqrt"),
 
 	/**
 	 * The '<em><b>Date</b></em>' literal object.
@@ -46,18 +56,29 @@ public enum ScaleType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATE(2, "Date", "Date");
+	DATE(3, "Date", "Date");
 
 	/**
-	 * The '<em><b>Log10</b></em>' literal value.
+	 * The '<em><b>Range</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LOG10
-	 * @model name="Log10"
+	 * @see #RANGE
+	 * @model name="Range"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LOG10_VALUE = 0;
+	public static final int RANGE_VALUE = 0;
+
+	/**
+	 * The '<em><b>Log</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LOG
+	 * @model name="Log"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LOG_VALUE = 1;
 
 	/**
 	 * The '<em><b>Sqrt</b></em>' literal value.
@@ -68,7 +89,7 @@ public enum ScaleType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SQRT_VALUE = 1;
+	public static final int SQRT_VALUE = 2;
 
 	/**
 	 * The '<em><b>Date</b></em>' literal value.
@@ -79,7 +100,7 @@ public enum ScaleType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DATE_VALUE = 2;
+	public static final int DATE_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Scale Type</b></em>' enumerators.
@@ -89,7 +110,8 @@ public enum ScaleType implements Enumerator {
 	 */
 	private static final ScaleType[] VALUES_ARRAY =
 		new ScaleType[] {
-			LOG10,
+			RANGE,
+			LOG,
 			SQRT,
 			DATE,
 		};
@@ -148,7 +170,8 @@ public enum ScaleType implements Enumerator {
 	 */
 	public static ScaleType get(int value) {
 		switch (value) {
-			case LOG10_VALUE: return LOG10;
+			case RANGE_VALUE: return RANGE;
+			case LOG_VALUE: return LOG;
 			case SQRT_VALUE: return SQRT;
 			case DATE_VALUE: return DATE;
 		}

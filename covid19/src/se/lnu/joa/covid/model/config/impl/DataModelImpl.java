@@ -5,18 +5,23 @@ package se.lnu.joa.covid.model.config.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
+import se.lnu.joa.covid.model.config.Filter;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +34,8 @@ import se.lnu.joa.covid.model.config.DataModel;
  *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getDatasetName <em>Dataset Name</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getDataSource <em>Data Source</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getColumns <em>Columns</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.impl.DataModelImpl#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +90,36 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * @ordered
 	 */
 	protected EList<String> columns;
+
+	/**
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Filter> filters;
+
+	/**
+	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATE_FORMAT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,6 +199,53 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Filter> getFilters() {
+		if (filters == null) {
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, ConfigPackage.DATA_MODEL__FILTERS);
+		}
+		return filters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDateFormat() {
+		return dateFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDateFormat(String newDateFormat) {
+		String oldDateFormat = dateFormat;
+		dateFormat = newDateFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.DATA_MODEL__DATE_FORMAT, oldDateFormat, dateFormat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConfigPackage.DATA_MODEL__FILTERS:
+				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -171,6 +255,10 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return getDataSource();
 			case ConfigPackage.DATA_MODEL__COLUMNS:
 				return getColumns();
+			case ConfigPackage.DATA_MODEL__FILTERS:
+				return getFilters();
+			case ConfigPackage.DATA_MODEL__DATE_FORMAT:
+				return getDateFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,6 +282,13 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				getColumns().clear();
 				getColumns().addAll((Collection<? extends String>)newValue);
 				return;
+			case ConfigPackage.DATA_MODEL__FILTERS:
+				getFilters().clear();
+				getFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case ConfigPackage.DATA_MODEL__DATE_FORMAT:
+				setDateFormat((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -215,6 +310,12 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 			case ConfigPackage.DATA_MODEL__COLUMNS:
 				getColumns().clear();
 				return;
+			case ConfigPackage.DATA_MODEL__FILTERS:
+				getFilters().clear();
+				return;
+			case ConfigPackage.DATA_MODEL__DATE_FORMAT:
+				setDateFormat(DATE_FORMAT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,6 +334,10 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 				return DATA_SOURCE_EDEFAULT == null ? dataSource != null : !DATA_SOURCE_EDEFAULT.equals(dataSource);
 			case ConfigPackage.DATA_MODEL__COLUMNS:
 				return columns != null && !columns.isEmpty();
+			case ConfigPackage.DATA_MODEL__FILTERS:
+				return filters != null && !filters.isEmpty();
+			case ConfigPackage.DATA_MODEL__DATE_FORMAT:
+				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -253,6 +358,8 @@ public class DataModelImpl extends MinimalEObjectImpl.Container implements DataM
 		result.append(dataSource);
 		result.append(", columns: ");
 		result.append(columns);
+		result.append(", dateFormat: ");
+		result.append(dateFormat);
 		result.append(')');
 		return result.toString();
 	}

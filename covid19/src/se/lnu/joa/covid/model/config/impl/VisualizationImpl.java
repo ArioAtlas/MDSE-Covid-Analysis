@@ -3,11 +3,11 @@
 package se.lnu.joa.covid.model.config.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -28,6 +28,7 @@ import se.lnu.joa.covid.model.config.VisualizationType;
  *   <li>{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl#getType <em>Type</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl#getAxes <em>Axes</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl#getInfo <em>Info</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.impl.VisualizationImpl#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +73,26 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * @ordered
 	 */
 	protected VisualizationInfo info;
+
+	/**
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected String size = SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,6 +225,27 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSize() {
+		return size;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSize(String newSize) {
+		String oldSize = size;
+		size = newSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.VISUALIZATION__SIZE, oldSize, size));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -229,6 +271,8 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 				return getAxes();
 			case ConfigPackage.VISUALIZATION__INFO:
 				return getInfo();
+			case ConfigPackage.VISUALIZATION__SIZE:
+				return getSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,6 +293,9 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 				return;
 			case ConfigPackage.VISUALIZATION__INFO:
 				setInfo((VisualizationInfo)newValue);
+				return;
+			case ConfigPackage.VISUALIZATION__SIZE:
+				setSize((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,6 +318,9 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 			case ConfigPackage.VISUALIZATION__INFO:
 				setInfo((VisualizationInfo)null);
 				return;
+			case ConfigPackage.VISUALIZATION__SIZE:
+				setSize(SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -289,6 +339,8 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 				return axes != null;
 			case ConfigPackage.VISUALIZATION__INFO:
 				return info != null;
+			case ConfigPackage.VISUALIZATION__SIZE:
+				return SIZE_EDEFAULT == null ? size != null : !SIZE_EDEFAULT.equals(size);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -305,6 +357,8 @@ public class VisualizationImpl extends MinimalEObjectImpl.Container implements V
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", size: ");
+		result.append(size);
 		result.append(')');
 		return result.toString();
 	}

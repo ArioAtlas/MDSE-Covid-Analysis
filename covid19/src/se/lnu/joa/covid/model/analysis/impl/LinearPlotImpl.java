@@ -2,20 +2,13 @@
  */
 package se.lnu.joa.covid.model.analysis.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.Animation;
@@ -78,14 +71,14 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	protected float lineAlpha = LINE_ALPHA_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnimation() <em>Animation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnimation() <em>Animation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnimation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Animation> animation;
+	protected Animation animation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,11 +151,43 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * @generated
 	 */
 	@Override
-	public EList<Animation> getAnimation() {
-		if (animation == null) {
-			animation = new EObjectContainmentEList<Animation>(Animation.class, this, AnalysisPackage.LINEAR_PLOT__ANIMATION);
-		}
+	public Animation getAnimation() {
 		return animation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAnimation(Animation newAnimation, NotificationChain msgs) {
+		Animation oldAnimation = animation;
+		animation = newAnimation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnalysisPackage.LINEAR_PLOT__ANIMATION, oldAnimation, newAnimation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAnimation(Animation newAnimation) {
+		if (newAnimation != animation) {
+			NotificationChain msgs = null;
+			if (animation != null)
+				msgs = ((InternalEObject)animation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.LINEAR_PLOT__ANIMATION, null, msgs);
+			if (newAnimation != null)
+				msgs = ((InternalEObject)newAnimation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.LINEAR_PLOT__ANIMATION, null, msgs);
+			msgs = basicSetAnimation(newAnimation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.LINEAR_PLOT__ANIMATION, newAnimation, newAnimation));
 	}
 
 	/**
@@ -174,7 +199,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AnalysisPackage.LINEAR_PLOT__ANIMATION:
-				return ((InternalEList<?>)getAnimation()).basicRemove(otherEnd, msgs);
+				return basicSetAnimation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -202,7 +227,6 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -213,8 +237,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 				setLineAlpha((Float)newValue);
 				return;
 			case AnalysisPackage.LINEAR_PLOT__ANIMATION:
-				getAnimation().clear();
-				getAnimation().addAll((Collection<? extends Animation>)newValue);
+				setAnimation((Animation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,7 +258,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 				setLineAlpha(LINE_ALPHA_EDEFAULT);
 				return;
 			case AnalysisPackage.LINEAR_PLOT__ANIMATION:
-				getAnimation().clear();
+				setAnimation((Animation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -254,7 +277,7 @@ public class LinearPlotImpl extends VisualizationImpl implements LinearPlot {
 			case AnalysisPackage.LINEAR_PLOT__LINE_ALPHA:
 				return lineAlpha != LINE_ALPHA_EDEFAULT;
 			case AnalysisPackage.LINEAR_PLOT__ANIMATION:
-				return animation != null && !animation.isEmpty();
+				return animation != null;
 		}
 		return super.eIsSet(featureID);
 	}

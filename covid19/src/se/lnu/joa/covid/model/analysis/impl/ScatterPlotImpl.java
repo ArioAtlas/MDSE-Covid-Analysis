@@ -2,20 +2,13 @@
  */
 package se.lnu.joa.covid.model.analysis.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import se.lnu.joa.covid.model.analysis.AnalysisPackage;
 import se.lnu.joa.covid.model.analysis.Animation;
@@ -32,6 +25,7 @@ import se.lnu.joa.covid.model.analysis.ScatterPlot;
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.ScatterPlotImpl#getAlpha <em>Alpha</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.ScatterPlotImpl#getStroke <em>Stroke</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.impl.ScatterPlotImpl#getAnimation <em>Animation</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.impl.ScatterPlotImpl#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,14 +72,34 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	protected float stroke = STROKE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnimation() <em>Animation</em>}' containment reference list.
+	 * The cached value of the '{@link #getAnimation() <em>Animation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnimation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Animation> animation;
+	protected Animation animation;
+
+	/**
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected String size = SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,11 +172,66 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * @generated
 	 */
 	@Override
-	public EList<Animation> getAnimation() {
-		if (animation == null) {
-			animation = new EObjectContainmentEList<Animation>(Animation.class, this, AnalysisPackage.SCATTER_PLOT__ANIMATION);
-		}
+	public Animation getAnimation() {
 		return animation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAnimation(Animation newAnimation, NotificationChain msgs) {
+		Animation oldAnimation = animation;
+		animation = newAnimation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AnalysisPackage.SCATTER_PLOT__ANIMATION, oldAnimation, newAnimation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAnimation(Animation newAnimation) {
+		if (newAnimation != animation) {
+			NotificationChain msgs = null;
+			if (animation != null)
+				msgs = ((InternalEObject)animation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.SCATTER_PLOT__ANIMATION, null, msgs);
+			if (newAnimation != null)
+				msgs = ((InternalEObject)newAnimation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AnalysisPackage.SCATTER_PLOT__ANIMATION, null, msgs);
+			msgs = basicSetAnimation(newAnimation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.SCATTER_PLOT__ANIMATION, newAnimation, newAnimation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSize() {
+		return size;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSize(String newSize) {
+		String oldSize = size;
+		size = newSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnalysisPackage.SCATTER_PLOT__SIZE, oldSize, size));
 	}
 
 	/**
@@ -174,7 +243,7 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AnalysisPackage.SCATTER_PLOT__ANIMATION:
-				return ((InternalEList<?>)getAnimation()).basicRemove(otherEnd, msgs);
+				return basicSetAnimation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -193,6 +262,8 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 				return getStroke();
 			case AnalysisPackage.SCATTER_PLOT__ANIMATION:
 				return getAnimation();
+			case AnalysisPackage.SCATTER_PLOT__SIZE:
+				return getSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,7 +273,6 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -213,8 +283,10 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 				setStroke((Float)newValue);
 				return;
 			case AnalysisPackage.SCATTER_PLOT__ANIMATION:
-				getAnimation().clear();
-				getAnimation().addAll((Collection<? extends Animation>)newValue);
+				setAnimation((Animation)newValue);
+				return;
+			case AnalysisPackage.SCATTER_PLOT__SIZE:
+				setSize((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,7 +307,10 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 				setStroke(STROKE_EDEFAULT);
 				return;
 			case AnalysisPackage.SCATTER_PLOT__ANIMATION:
-				getAnimation().clear();
+				setAnimation((Animation)null);
+				return;
+			case AnalysisPackage.SCATTER_PLOT__SIZE:
+				setSize(SIZE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -254,7 +329,9 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 			case AnalysisPackage.SCATTER_PLOT__STROKE:
 				return stroke != STROKE_EDEFAULT;
 			case AnalysisPackage.SCATTER_PLOT__ANIMATION:
-				return animation != null && !animation.isEmpty();
+				return animation != null;
+			case AnalysisPackage.SCATTER_PLOT__SIZE:
+				return SIZE_EDEFAULT == null ? size != null : !SIZE_EDEFAULT.equals(size);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,6 +350,8 @@ public class ScatterPlotImpl extends VisualizationImpl implements ScatterPlot {
 		result.append(alpha);
 		result.append(", stroke: ");
 		result.append(stroke);
+		result.append(", size: ");
+		result.append(size);
 		result.append(')');
 		return result.toString();
 	}

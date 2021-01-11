@@ -2,8 +2,6 @@
  */
 package se.lnu.joa.covid.model.data;
 
-import java.util.Date;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -25,14 +23,14 @@ import org.eclipse.emf.common.util.EList;
 public interface DateSet extends DataSet {
 	/**
 	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
-	 * The list contents are of type {@link java.util.Date}.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see se.lnu.joa.covid.model.data.DataPackage#getDateSet_Values()
-	 * @model unique="false" ordered="false"
+	 * @model unique="false"
 	 * @generated
 	 */
-	EList<Date> getValues();
+	EList<String> getValues();
 
 } // DateSet

@@ -111,6 +111,8 @@ public class ConfigValidator extends EObjectValidator {
 				return validateVisualizationInfo((VisualizationInfo)value, diagnostics, context);
 			case ConfigPackage.SCALE:
 				return validateScale((Scale)value, diagnostics, context);
+			case ConfigPackage.FILTER:
+				return validateFilter((Filter)value, diagnostics, context);
 			case ConfigPackage.VISUALIZATION_TYPE:
 				return validateVisualizationType((VisualizationType)value, diagnostics, context);
 			case ConfigPackage.REGRESSION_TYPE:
@@ -221,6 +223,15 @@ public class ConfigValidator extends EObjectValidator {
 	 */
 	public boolean validateScale(Scale scale, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(scale, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFilter(Filter filter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(filter, diagnostics, context);
 	}
 
 	/**

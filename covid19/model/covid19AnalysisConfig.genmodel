@@ -18,7 +18,8 @@
       <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//RegressionType/Logarithmic"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="covid19AnalysisConfig.ecore#//ScaleType">
-      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//ScaleType/Log10"/>
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//ScaleType/Range"/>
+      <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//ScaleType/Log"/>
       <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//ScaleType/Sqrt"/>
       <genEnumLiterals ecoreEnumLiteral="covid19AnalysisConfig.ecore#//ScaleType/Date"/>
     </genEnums>
@@ -32,11 +33,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/datasetName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/dataSource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/columns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//DataModel/filters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//DataModel/dateFormat"/>
     </genClasses>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Visualization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Visualization/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Visualization/axes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference covid19AnalysisConfig.ecore#//Visualization/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Visualization/size"/>
     </genClasses>
     <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Animation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Animation/label"/>
@@ -75,6 +79,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Scale/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Scale/format"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Scale/breaks"/>
+    </genClasses>
+    <genClasses ecoreClass="covid19AnalysisConfig.ecore#//Filter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Filter/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute covid19AnalysisConfig.ecore#//Filter/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

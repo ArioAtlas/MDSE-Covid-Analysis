@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link se.lnu.joa.covid.model.config.Visualization#getType <em>Type</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.Visualization#getAxes <em>Axes</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.config.Visualization#getInfo <em>Info</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.config.Visualization#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.config.ConfigPackage#getVisualization()
@@ -91,5 +92,27 @@ public interface Visualization extends EObject {
 	 * @generated
 	 */
 	void setInfo(VisualizationInfo value);
+
+	/**
+	 * Returns the value of the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Size</em>' attribute.
+	 * @see #setSize(String)
+	 * @see se.lnu.joa.covid.model.config.ConfigPackage#getVisualization_Size()
+	 * @model
+	 * @generated
+	 */
+	String getSize();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.config.Visualization#getSize <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size</em>' attribute.
+	 * @see #getSize()
+	 * @generated
+	 */
+	void setSize(String value);
 
 } // Visualization

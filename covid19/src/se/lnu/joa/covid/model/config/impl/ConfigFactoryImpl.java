@@ -66,6 +66,7 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 			case ConfigPackage.AXES: return createAxes();
 			case ConfigPackage.VISUALIZATION_INFO: return createVisualizationInfo();
 			case ConfigPackage.SCALE: return createScale();
+			case ConfigPackage.FILTER: return createFilter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -197,6 +198,16 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	public Scale createScale() {
 		ScaleImpl scale = new ScaleImpl();
 		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter createFilter() {
+		FilterImpl filter = new FilterImpl();
+		return filter;
 	}
 
 	/**

@@ -20,6 +20,7 @@ import se.lnu.joa.covid.model.config.Config;
 import se.lnu.joa.covid.model.config.ConfigFactory;
 import se.lnu.joa.covid.model.config.ConfigPackage;
 import se.lnu.joa.covid.model.config.DataModel;
+import se.lnu.joa.covid.model.config.Filter;
 import se.lnu.joa.covid.model.config.Regression;
 import se.lnu.joa.covid.model.config.RegressionType;
 import se.lnu.joa.covid.model.config.Scale;
@@ -99,6 +100,13 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
 	private EClass scaleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,6 +285,24 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDataModel_Filters() {
+		return (EReference)dataModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataModel_DateFormat() {
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVisualization() {
 		return visualizationEClass;
 	}
@@ -306,6 +332,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 */
 	public EReference getVisualization_Info() {
 		return (EReference)visualizationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVisualization_Size() {
+		return (EAttribute)visualizationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -574,6 +609,33 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFilter() {
+		return filterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFilter_Key() {
+		return (EAttribute)filterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFilter_Value() {
+		return (EAttribute)filterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getVisualizationType() {
 		return visualizationTypeEEnum;
 	}
@@ -634,11 +696,14 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(dataModelEClass, DATA_MODEL__DATASET_NAME);
 		createEAttribute(dataModelEClass, DATA_MODEL__DATA_SOURCE);
 		createEAttribute(dataModelEClass, DATA_MODEL__COLUMNS);
+		createEReference(dataModelEClass, DATA_MODEL__FILTERS);
+		createEAttribute(dataModelEClass, DATA_MODEL__DATE_FORMAT);
 
 		visualizationEClass = createEClass(VISUALIZATION);
 		createEAttribute(visualizationEClass, VISUALIZATION__TYPE);
 		createEReference(visualizationEClass, VISUALIZATION__AXES);
 		createEReference(visualizationEClass, VISUALIZATION__INFO);
+		createEAttribute(visualizationEClass, VISUALIZATION__SIZE);
 
 		animationEClass = createEClass(ANIMATION);
 		createEAttribute(animationEClass, ANIMATION__LABEL);
@@ -674,6 +739,10 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(scaleEClass, SCALE__TYPE);
 		createEAttribute(scaleEClass, SCALE__FORMAT);
 		createEAttribute(scaleEClass, SCALE__BREAKS);
+
+		filterEClass = createEClass(FILTER);
+		createEAttribute(filterEClass, FILTER__KEY);
+		createEAttribute(filterEClass, FILTER__VALUE);
 
 		// Create enums
 		visualizationTypeEEnum = createEEnum(VISUALIZATION_TYPE);
@@ -721,11 +790,14 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getDataModel_DatasetName(), ecorePackage.getEString(), "datasetName", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_DataSource(), ecorePackage.getEString(), "dataSource", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataModel_Filters(), this.getFilter(), null, "filters", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_DateFormat(), ecorePackage.getEString(), "dateFormat", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(visualizationEClass, Visualization.class, "Visualization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualization_Type(), this.getVisualizationType(), "type", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVisualization_Axes(), this.getAxes(), null, "axes", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVisualization_Info(), this.getVisualizationInfo(), null, "info", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVisualization_Size(), ecorePackage.getEString(), "size", null, 0, 1, Visualization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(animationEClass, Animation.class, "Animation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnimation_Label(), ecorePackage.getEString(), "label", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -770,6 +842,10 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getScale_Format(), ecorePackage.getEString(), "format", null, 0, 1, Scale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScale_Breaks(), ecorePackage.getEString(), "breaks", null, 0, 1, Scale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFilter_Key(), ecorePackage.getEString(), "key", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFilter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(visualizationTypeEEnum, VisualizationType.class, "VisualizationType");
 		addEEnumLiteral(visualizationTypeEEnum, VisualizationType.LINEAR_PLOT);
@@ -780,7 +856,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		addEEnumLiteral(regressionTypeEEnum, RegressionType.LOGARITHMIC);
 
 		initEEnum(scaleTypeEEnum, ScaleType.class, "ScaleType");
-		addEEnumLiteral(scaleTypeEEnum, ScaleType.LOG10);
+		addEEnumLiteral(scaleTypeEEnum, ScaleType.RANGE);
+		addEEnumLiteral(scaleTypeEEnum, ScaleType.LOG);
 		addEEnumLiteral(scaleTypeEEnum, ScaleType.SQRT);
 		addEEnumLiteral(scaleTypeEEnum, ScaleType.DATE);
 

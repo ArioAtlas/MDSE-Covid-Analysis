@@ -2,7 +2,6 @@
  */
 package se.lnu.joa.covid.model.analysis;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getAlpha <em>Alpha</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getStroke <em>Stroke</em>}</li>
  *   <li>{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getAnimation <em>Animation</em>}</li>
+ *   <li>{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getScatterPlot()
@@ -68,15 +68,47 @@ public interface ScatterPlot extends Visualization {
 	void setStroke(float value);
 
 	/**
-	 * Returns the value of the '<em><b>Animation</b></em>' containment reference list.
-	 * The list contents are of type {@link se.lnu.joa.covid.model.analysis.Animation}.
+	 * Returns the value of the '<em><b>Animation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Animation</em>' containment reference list.
+	 * @return the value of the '<em>Animation</em>' containment reference.
+	 * @see #setAnimation(Animation)
 	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getScatterPlot_Animation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Animation> getAnimation();
+	Animation getAnimation();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getAnimation <em>Animation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Animation</em>' containment reference.
+	 * @see #getAnimation()
+	 * @generated
+	 */
+	void setAnimation(Animation value);
+
+	/**
+	 * Returns the value of the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Size</em>' attribute.
+	 * @see #setSize(String)
+	 * @see se.lnu.joa.covid.model.analysis.AnalysisPackage#getScatterPlot_Size()
+	 * @model
+	 * @generated
+	 */
+	String getSize();
+
+	/**
+	 * Sets the value of the '{@link se.lnu.joa.covid.model.analysis.ScatterPlot#getSize <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size</em>' attribute.
+	 * @see #getSize()
+	 * @generated
+	 */
+	void setSize(String value);
 
 } // ScatterPlot
