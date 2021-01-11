@@ -1,5 +1,3 @@
-#install.packages("gganimate")
-#install.packages("gifski")
 library(gganimate)
 library(ggplot2)
 library(dplyr)

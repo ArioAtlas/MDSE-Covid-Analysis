@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:Config xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:covid19="http://lnu.se/dv651/covid19/config">
-  <source datasetName="test3" dataSource="path1" dateFormat="%m-%d-%Y">
+  <source datasetName="test1" dataSource="path1" dateFormat="%m-%d-%Y">
     <columns>key</columns>
     <columns>date</columns>
     <columns>new_confirmed</columns>
@@ -8,13 +8,12 @@
     <columns>total_confirmed</columns>
     <columns>total_deceased</columns>
   </source>
-  <visualization type="ScatterPlot">
+  <visualization>
     <axes>
-      <x label="Days Passed" column="date_d"/>
-      <y label="Total Infection" column="total_confirmed"/>
+      <x label="Date" column="date"/>
+      <y label="New Cases" column="new_confirmed"/>
       <z label="Country" column="key"/>
     </axes>
-    <info title="Infection over Time in Europe" subTitle="" caption="Source: Google Open Data"/>
+    <info title="COVID-19 New Cases in Europe" subTitle="Spain, United Kingdm, Italy, Sweden, Netherlands, Germany" caption="Source: Google Open Data"/>
   </visualization>
-  <regression type="Logarithmic" dependentValue="total_deceased" independentValue="total_confirmed"/>
 </covid19:Config>

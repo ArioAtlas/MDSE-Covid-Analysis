@@ -6,7 +6,7 @@ library(dplyr)
 library(gapminder)
 library(ggthemes)
 
-epidemiology <- read.csv("C:/Users/Omid/Desktop/Lnu/4DV651/Project/MDSE-Covid-Analysis/covid19/epidemiology_EU.csv")
+epidemiology <- read.csv("epidemiology_EU.csv")
 
 epidemiology$DateS <- as.Date(epidemiology$date, "%m/%d/%Y")
 
@@ -32,6 +32,7 @@ graph1.animation = graph1 +
   labs(subtitle = "Date: {frame_time}") +
   shadow_wake(wake_length = 0.01)
 
-animate(graph1.animation, height = 500, width = 800, fps = 30, duration = 20,
-        end_pause = 60, res = 100)
-anim_save("gapminder graph.gif")
+animate(graph1.animation, height = 500, width = 800, fps = 10, duration = 10,
+        end_pause = 60, res = 100, renderer = gifski_renderer())
+anim_save("gapminder graph.gif",animation = graph1.animation)
+

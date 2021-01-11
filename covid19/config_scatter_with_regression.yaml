@@ -1,0 +1,33 @@
+dataModel:
+  dataSource: path1
+  datasetName: test3
+  dateformat: "%m-%d-%Y"
+  columns:
+    - key
+    - date
+    - new_confirmed
+    - new_deceased
+    - total_confirmed
+    - total_deceased
+  
+visualization:
+  type: ScatterPlot
+  axes:
+    x:
+      label: "Days Passed"
+      column: date_d
+    y:
+      label: "Total Infection"
+      column: total_confirmed
+    z:
+      label: "Country"
+      column: key
+  info:
+    title: "Infection over Time in Europe"
+    subTitle: ""
+    caption: "Source: Google Open Data"
+
+regression:
+  type: Logarithmic
+  dependentValue: total_deceased
+  independentValue: total_confirmed

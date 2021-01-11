@@ -1,0 +1,40 @@
+dataModel:
+  dataSource: path1
+  datasetName: test4
+  dateformat: "%m-%d-%Y"
+  columns:
+    - key
+    - date
+    - new_confirmed
+    - new_deceased
+    - total_confirmed
+    - total_deceased
+  
+visualization:
+  type: ScatterPlot
+  size: total_confirmed
+  axes:
+    x:
+      label: "New Cases"
+      column: new_confirmed
+      scale:
+        type: Log
+    y:
+      label: "New Deaths"
+      column: new_deceased
+    z:
+      label: "Country"
+      column: key
+  info:
+    title: "Infection vs Death over Time by Country"
+    subTitle: ""
+    caption: "Source: Google Open Data"
+
+animation:
+  label: "Date"
+  transitionTime: date
+  width: 800
+  height: 500
+  duration: 20
+  outputName: "Infection vs Death over Time"
+  outputPath: out

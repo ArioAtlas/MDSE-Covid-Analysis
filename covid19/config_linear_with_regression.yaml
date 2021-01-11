@@ -1,0 +1,33 @@
+dataModel:
+  dataSource: path1
+  datasetName: test2
+  dateformat: "%m-%d-%Y"
+  filters:
+    - key: key
+      value: SE
+  columns:
+    - key
+    - date
+    - new_confirmed
+    - new_deceased
+    - total_confirmed
+    - total_deceased
+  
+visualization:
+  type: ScatterPlot
+  axes:
+    x:
+      label: "Total Infection"
+      column: total_deceased
+    y:
+      label: "Total Deaths"
+      column: total_confirmed
+  info:
+    title: "Infection vs Death"
+    subTitle: ""
+    caption: "Source: Google Open Data"
+
+regression:
+  type: Linear
+  dependentValue: total_deceased
+  independentValue: total_confirmed

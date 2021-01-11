@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:AnalyticModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/analysis">
-  <regression xsi:type="covid19:LogarithmicRegression" dependentValue="total_deceased" independentValue="total_confirmed"/>
-  <visualization xsi:type="covid19:ScatterPlot" xAxis="date_d" yAxis="total_confirmed" color="key" title="Infection over Time in Europe" subTitle="" xAxisLabel="Days Passed" yAxisLabel="Total Infection" colorLabel="Country" caption="Source: Google Open Data" alpha="0.7"/>
-  <dataSource name="test3" path="path1">
+  <visualization xsi:type="covid19:LinearPlot" xAxis="date" yAxis="new_confirmed" color="key" title="COVID-19 New Cases in Europe" subTitle="Spain, United Kingdm, Italy, Sweden, Netherlands, Germany" xAxisLabel="Date" yAxisLabel="New Cases" colorLabel="Country" caption="Source: Google Open Data" lineSize="1.2" lineAlpha="1.8"/>
+  <dataSource name="test1" path="path1">
     <data header="key" type="string">
       <values>ES</values>
       <values>FR</values>

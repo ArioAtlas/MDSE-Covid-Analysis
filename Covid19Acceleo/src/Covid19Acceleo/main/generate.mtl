@@ -2,14 +2,185 @@
 [module generate('http://lnu.se/dv651/covid19/analysis')]
 
 
-[template public generate(a : AnalyticModel)]
+[template public generate(model : AnalyticModel)]
 [comment @main/]
-[a.dataSource.generateCsvDataFile()/]
-[file (a.visualization.title, false, 'UTF-8')]
-	hi it is a test [a.visualization.caption/]
+[model.dataSource.generateCsvDataFile()/]
+[model.GenerateSourceCodeForR()/]
+[/template]
+
+[template public GenerateSourceCodeForR(model : AnalyticModel)]
+[file (model.dataSource.name+'_Analysis.R', false, 'UTF-8')]
+# This file has been auto-generated based on Model Driven Engineering techniques
+# as a projects in model-based development at Linnaeus University (2021)
+# Authors: Angelica Hjelm Gardner, Jens Jakob Sveding, Omid Golshan Tafti
+# Special thanks to: Mirko D' Angelo, Diego Perez Palacin, and Cristian Leoni
+
+
+[comment Requierd Libraries /]
+[model.addLibraries()/]
+
+[comment Load Data File /]
+[model.dataSource.loadDataFile()/]
+
+[comment Create Modifiers /]
+[model.dataSource.createDataModifiers()/]
+
+[comment Create Visualization /]
+[if (model.visualization.oclIsKindOf(LinearPlot))]
+[model.visualization.oclAsType(LinearPlot).createLinearPlot(model.dataSource.name,model.regression)/]
+[elseif (model.visualization.oclIsKindOf(ScatterPlot))]
+[model.visualization.oclAsType(ScatterPlot).createScatterPlot(model.dataSource.name,model.regression)/]
+[else]
+# Could not find proper themplate for given visualization
+[/if]
 [/file]
 [/template]
 
+[template public createDataModifiers(ds : DataSource)]
+# Data Modifiers
+[for (dc : DataColumn | ds.data)]
+[comment Adds filtering commands /]
+[if (not dc.filter.oclIsUndefined())]
+[ds.name/] <- filter([ds.name/],[dc.header/]=="[dc.filter/]")
+[/if]
+[if (dc.type.equalsIgnoreCase('date'))]
+[comment Adds special additional columns for date values /]
+[ds.name/]$[dc.header/] <- as.Date([ds.name/]$[dc.header/],"[dc.format/]")
+[ds.name/]$[dc.header/]_d <- as.numeric(difftime([ds.name/]$[dc.header/],[ds.name/]$[dc.header/]['[1]'/],units="days"))
+[ds.name/]$[dc.header/]_w <- as.numeric(difftime([ds.name/]$[dc.header/],[ds.name/]$[dc.header/]['[1]'/],units="week"))
+[ds.name/]$[dc.header/]_h <- as.numeric(difftime([ds.name/]$[dc.header/],[ds.name/]$[dc.header/]['[1]'/],units="hours"))
+[ds.name/]$[dc.header/]_m <- as.numeric(difftime([ds.name/]$[dc.header/],[ds.name/]$[dc.header/]['[1]'/],units="mins"))
+[ds.name/]$[dc.header/]_s <- as.numeric(difftime([ds.name/]$[dc.header/],[ds.name/]$[dc.header/]['[1]'/],units="secs"))
+[/if]
+[/for]
+[/template]
+
+[template public createLinearPlot(vis : LinearPlot, dataSetName : String, reg : Regression)]
+[comment Create Linear Plot Visualization /]
+# GGPLOT Configuration
+plot0 = [dataSetName/] %>%
+  ggplot(aes(x = [vis.xAxis/], y = [vis.yAxis/][if (not vis.color.oclIsUndefined())],color= [vis.color/][/if])) +
+  geom_line(size = [vis.lineSize/], alpha = [vis.lineAlpha/]) +[comment adds scale for the X axis/][vis.scale_x.addScale('x')/][comment adds scale for the Y axis/][vis.scale_y.addScale('y')/]
+  labs(title = "[vis.title/]",
+       subtitle = "[vis.subTitle/]",
+       x = "[vis.xAxisLabel/]",
+       y = "[vis.yAxisLabel/]"
+       [if (not vis.color.oclIsUndefined())],color = "[vis.colorLabel/]"[/if]) + 
+  theme_fivethirtyeight() +
+  theme(axis.title = element_text())
+
+[comment If model has a animaion create an animation process /] 
+[if (not vis.animation.oclIsUndefined())]
+# GGAnimate Configuration
+plot0.animation = plot0 +
+  transition_time([vis.animation.transitionTime/])+
+  labs(subtitle = "[vis.animation.label/]: {frame_time}") +
+  shadow_wake(wake_length = [vis.animation.shadowWake/])
+
+#Render and save the animation
+animate(plot0.animation, height = [vis.animation.height/], width = [vis.animation.width/], fps = [vis.animation.fps/], duration = [vis.animation.duration/],
+        end_pause = [vis.animation.endPause/], res = [vis.animation.resolution/], renderer = gifski_renderer("./[vis.animation.outputName.replace(' ', '_')/]_animatin.gif"))
+
+[comment save the nimation output /] 
+#anim_save("[vis.title.replace(' ', '_')/]_animatin.gif")
+[else]
+[comment save the plot output /] 
+#Save the plot image
+ggsave("[vis.title.replace(' ', '_')/]_LinearPlot.png")
+[/if]
+[/template]
+
+[template public createScatterPlot(vis : ScatterPlot, dataSetName : String, reg : Regression)]
+[comment Scatter Linear Plot Visualization /]
+# GGPLOT Configuration
+plot0 = [dataSetName/] %>%
+  ggplot(aes(x=[vis.xAxis/], y=[vis.yAxis/][if (not vis.color.oclIsUndefined())],color= [vis.color/][/if][if (not vis.size.oclIsUndefined())],size= [vis.size/][/if])) +
+  geom_point(alpha = [vis.alpha/], stroke = [vis.stroke/]) +
+  theme_fivethirtyeight() +[comment adds scale for the X axis/][vis.scale_x.addScale('x')/][comment adds scale for the Y axis/][vis.scale_y.addScale('y')/]
+  labs(title = "[vis.title/]",
+       x = "[vis.xAxisLabel/]",
+       y = "[vis.yAxisLabel/]",
+       color = "[vis.colorLabel/]",
+       caption = "[vis.caption/]") +
+  theme(axis.title = element_text(),
+        text = element_text(family = "Rubik"),
+        legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = "Set2")[if (not reg.oclIsUndefined())][if (reg.oclIsKindOf(LinnearRegression))][reg.oclAsType(LinnearRegression).addLinnearRegression(dataSetName)/][elseif(reg.oclIsKindOf(LogarithmicRegression))][reg.oclAsType(LogarithmicRegression).addLogarithmicRegression(dataSetName)/][/if][/if]
+
+
+[comment If model has a animaion create an animation process /] 
+[if (not vis.animation.oclIsUndefined())]
+# GGAnimate Configuration
+plot0.animation = plot0 +
+  transition_time([vis.animation.transitionTime/])+
+  labs(subtitle = "[vis.animation.label/]: {frame_time}") +
+  shadow_wake(wake_length = [vis.animation.shadowWake/])
+
+#Render and save the animation
+animate(plot0.animation, height = [vis.animation.height/], width = [vis.animation.width/], fps = [vis.animation.fps/], duration = [vis.animation.duration/],
+        end_pause = [vis.animation.endPause/], res = [vis.animation.resolution/], renderer = gifski_renderer("./[vis.animation.outputName.replace(' ', '_')/]_animatin.gif"))
+
+[comment save the nimation output /] 
+#anim_save("[vis.title.replace(' ', '_')/]_animatin.gif")
+
+[else]
+[comment save the plot output /] 
+#Save the plot image
+ggsave("[vis.title.replace(' ', '_')/]_ScatterPlot.png")
+[/if]
+[/template]
+
+[template public addScale(scale : Scale, axis : String) post (trim())]
+[if (not scale.oclIsUndefined())]
+[if (scale.oclIsKindOf(Log10Scale))]
+scale_[axis/]_log10()+
+[elseif (scale.oclIsKindOf(SqrtScale))]
+scale_[axis/]_sqrt()+
+[elseif (scale.oclIsKindOf(DateScale))]
+scale_[axis/]_date(labels = date_format("[scale.oclAsType(DateScale).format/]"),breaks = date_breaks("[scale.oclAsType(DateScale).breaks/]"))+
+[/if]
+[/if]
+[/template]
+
+[template public addLinnearRegression(reg : LinnearRegression, dataSetName : String)]
+[comment adds regression calculation to plot /] 
++ 
+stat_summary(fun.data= mean_cl_normal) + 
+geom_smooth(color='red',method='lm')
+
+summary(lm([dataSetName/],formula=[reg.dependentValue/] ~ [reg.independentValue/]))
+
+[/template]
+
+[template public addLogarithmicRegression(reg : LogarithmicRegression, dataSetName : String)]
+[comment adds regression calculation to plot /] 
++ 
+geom_smooth()
+[/template]
+
+[template public addLibraries(model : AnalyticModel)]
+[comment adds requiered libraries /] 
+
+# Notice: Below package are required
+# in order to install each you can easily uncomment them
+#install.packages("gifski")
+
+# Libraries
+library(gganimate)
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+library(ggthemes)
+
+# Options
+options(max.print = 100000)
+
+[/template]
+
+[template public loadDataFile(df : DataSource)]
+# Data input
+[df.name/] <- read.csv("./[df.name/].csv")
+[/template]
 
 [template public generateCsvDataFile(source : DataSource) post (trim())]
 [comment Generate a CSV file with the data in AnalysisModel.DataSource /]
@@ -35,6 +206,6 @@
 [/for]
 [/template]
 
-[query public getCellValue(source : DataSource, i : Integer, j : Integer) : String = self.data->at(j).values->asSequence()->at(i) /]
+[query public getCellValue(source : DataSource, row : Integer, column : Integer) : String = self.data->at(column).values->asSequence()->at(row) /]
 
 

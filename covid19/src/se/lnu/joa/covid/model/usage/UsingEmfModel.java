@@ -67,17 +67,27 @@ public class UsingEmfModel {
     public static void main(String[] args) {
     	
     	final String configFile = "config.yaml";
-    	final File folder = new File("./data_pool");
+    	final String dataPoolSrc = "./data_pool";
+    	final File folder = new File(dataPoolSrc);
     
+    	System.out.println("Configuration: "+configFile);
+    	System.out.println("Data Pool: "+dataPoolSrc);
     	
 		try {
+			System.out.print("\nInitialing Meta Models ");
 			EcorePackage.eINSTANCE.eClass();    // Makes sure EMF is up and running
+			System.out.print(".");
 			DataPackage.eINSTANCE.eClass(); 
+			System.out.print(".");
 			ConfigPackage.eINSTANCE.eClass();
+			System.out.print(".");
 			AnalysisPackage.eINSTANCE.eClass();
+			System.out.print(".");
 			
 			// Read input files
+			System.out.print("\nCreating Data Model Intance ...");
 			DataPool pool = readCsvData(folder);
+			System.out.print("\nCreating Config Model Intance ...");
 	        Config config = readConfig(configFile);
 	        
 	        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -97,15 +107,21 @@ public class UsingEmfModel {
 	        // example everything is hierarchical included in this first node
 	        dataResource.getContents().add(pool);
 	        configResource.getContents().add(config);
+	        
+	        System.out.println("\n");
 	        	        
 	        // Save the content.
 	        try {
 	        	dataResource.save(Collections.EMPTY_MAP);
+	        	System.out.println("Data model instance has saved at ./generatedModels/data.model");
 	            configResource.save(Collections.EMPTY_MAP);
+	            System.out.println("Config model instance has saved at ./generatedModels/config.model");
 	        } catch (IOException e) {
+	        	System.err.println("Error in saving model intances");
 	            e.printStackTrace();
 	        }
 	        
+	        System.out.println("\nModel to Model Transformation from DataModel+ConfigModel to AnalysisModel");
 	        
 	        // create executor for the QVT transformation	        
 	        TransformationExecutor executor = new TransformationExecutor(
@@ -135,6 +151,7 @@ public class UsingEmfModel {
 			
 
 			if (result.getSeverity() == Diagnostic.OK) {
+				System.out.println("\nM2M Transformation has been compeleted");
 		        List<EObject> outObjects = output.getContents();
 		        
 		        URI outUri = URI.createURI("generatedModels/analysis.model");
@@ -144,19 +161,26 @@ public class UsingEmfModel {
 		        
 		        try {
 		            res.save(Collections.emptyMap());
+		            System.out.println("Generated Analysis Model has saved at ./generatedModels/analysis.model");
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        }
 		        
 		        try {
+		        	System.out.println("\nModel to Text Transformation from AnalysisModel to .CSV data file and .R source code");
 					final File outputDir = new File("outputDir/");
 					List<String> arguments = new ArrayList<String>();
 					/*fc is an instance of a EMF Compare Comparison object
 					 * the nsURI for it is http://www.eclipse.org/emf/compare
 					 */
+					System.out.println("M2T Trasformation has been Startet");
 					Generate generator = new Generate(outUri, outputDir, arguments);                                 
 					            generator.doGenerate(new BasicMonitor());
+					
+					System.out.println("M2T Transformation has been completed");
+					System.out.println("M2T Transformation result saved at ./outputDir");
 				} catch (IOException e) {
+					System.err.println("Error in M2T Transformation");
 					e.printStackTrace();
 				}
 				
@@ -175,6 +199,7 @@ public class UsingEmfModel {
 			e1.printStackTrace();
 		}
     	
+		System.out.println("\nTransformation Completed");
         
     }
     

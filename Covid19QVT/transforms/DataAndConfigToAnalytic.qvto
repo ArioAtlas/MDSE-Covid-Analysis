@@ -8,7 +8,7 @@ transformation DataAndConfigToAnalytic(in dataModel : DATA, in configModel : CON
 
 
 main() {
-	log("Csv2Csv M2M Transformation has been started!");
+	log("M2M Transformation has been started!");
 	
 	configModel.rootObjects()[Config] -> map ConfigToAnalysis(dataModel.GetDataPool());
 
@@ -23,8 +23,6 @@ query DATA::GetDataPool() : DataPool {
 }
 
 query DataPool::RetriveDataColumn(columnName:String) : List(String) {
-	log("RetriveDataColumn #"+columnName);
-	
 	self.sources->forEach(src){
 		src.data->forEach(ds){
 			if(ds.title = columnName){
@@ -39,6 +37,29 @@ query DataPool::RetriveDataColumn(columnName:String) : List(String) {
 				};
 				if(ds.metaClassName() = "StringSet"){ 
 					return ds.oclAsType(StringSet).values->asList();
+				};
+			}
+		}
+	};
+	
+	return null;
+}
+
+query DataPool::RetriveDataColumnType(columnName:String) : String {	
+	self.sources->forEach(src){
+		src.data->forEach(ds){
+			if(ds.title = columnName){
+				if(ds.metaClassName() = "IntSet"){ 
+					return "int";
+				};
+				if(ds.metaClassName() = "DoubleSet"){ 
+					return "double";
+				};
+				if(ds.metaClassName() = "DateSet"){ 
+					return "date";
+				};
+				if(ds.metaClassName() = "StringSet"){ 
+					return "string";
 				};
 			}
 		}
@@ -82,9 +103,11 @@ query DATA::DateSet::ConvertToStringList() : List(String) {
 // Config Model To Analysis Model Transformations
 //
 mapping Config::ConfigToAnalysis(data:DataPool) : AnalyticModel {
-	log("In ConfigToAnalysis");
+	log("\n1.Transformin Data to Analysis");
 	
 	result.dataSource := self.source.map DataModel2DataSource(data);
+	
+	log("\n2.Transformin Config to Analysis");
 		
 	switch {
 			case (self.visualization.type = CONFIG::VisualizationType::LinearPlot) result.visualization := self.visualization.map Visualization2LinearPlot();
@@ -101,7 +124,7 @@ mapping Config::ConfigToAnalysis(data:DataPool) : AnalyticModel {
 }
 
 mapping DataModel::DataModel2DataSource(data:DataPool) : ANALYSIS::DataSource {
-	log("In DataModel2DataSource");
+	log(" 1.1.Transformin DataModel to DataSource");
 	
 	result.name := self.datasetName;
 	result.path := self.dataSource;
@@ -109,23 +132,31 @@ mapping DataModel::DataModel2DataSource(data:DataPool) : ANALYSIS::DataSource {
 	self.columns->asList()->forEach(col){
 		result.data += self.map ToDataColumn(data,col);
 	};	
-	
-	
-	log("\tSet datsource name, path, and headers");
-	
 }
 
 mapping DataModel::ToDataColumn(data:DataPool, col:String) : ANALYSIS::DataColumn {
+	log("  -Transformin DataModel.Column to DataColumn for #"+col);
+	result.header := col;
+	result.type := data.RetriveDataColumnType(col);
 
-	header := col;
+	self.filters->forEach(f){
+		if(f.key = col){
+			result.filter := f.value;
+			break;
+		}
+	};
+	
+	if(result.type = 'date'){
+		result.format := self.dateFormat;
+	};
 	
 	data.RetriveDataColumn(col)->forEach(q){
-		values += q;
+		result.values += q;
 	};
 }
 
 mapping CONFIG::Visualization::Visualization2Visualization() : ANALYSIS::Visualization {
-	log("In Visualization2Visualization");
+	log(" 2.1.Transforming Config:Visualization to Analysis:Visualization");
 
 	result.xAxis := self.axes.x.column;
 	result.yAxis := self.axes.y.column;
@@ -138,13 +169,13 @@ mapping CONFIG::Visualization::Visualization2Visualization() : ANALYSIS::Visuali
 	result.caption := self.info.caption;
 	
 	switch {
-		case(self.axes.x.scale.type = CONFIG::ScaleType::Log10) result.scale_x := self.axes.x.scale.map Scale2Log10Scale();
+		case(self.axes.x.scale.type = CONFIG::ScaleType::Log) result.scale_x := self.axes.x.scale.map Scale2Log10Scale();
 		case(self.axes.x.scale.type = CONFIG::ScaleType::Sqrt) result.scale_x := self.axes.x.scale.map Scale2SqrtScale();
 		case(self.axes.x.scale.type = CONFIG::ScaleType::Date) result.scale_x := self.axes.x.scale.map Scale2DateScale();
 	};
 	
 	switch {
-		case(self.axes.y.scale.type = CONFIG::ScaleType::Log10) result.scale_y := self.axes.y.scale.map Scale2Log10Scale();
+		case(self.axes.y.scale.type = CONFIG::ScaleType::Log) result.scale_y := self.axes.y.scale.map Scale2Log10Scale();
 		case(self.axes.y.scale.type = CONFIG::ScaleType::Sqrt) result.scale_y := self.axes.y.scale.map Scale2SqrtScale();
 		case(self.axes.y.scale.type = CONFIG::ScaleType::Date) result.scale_y := self.axes.y.scale.map Scale2DateScale();
 	};
@@ -152,25 +183,25 @@ mapping CONFIG::Visualization::Visualization2Visualization() : ANALYSIS::Visuali
 }
 
 mapping CONFIG::Scale::Scale2Scale() : ANALYSIS::Scale {
-	log("In Scale2Scale");
+	log("  -Transforming Config:Scale to Analysis:Scale");
 	
 }
 
 mapping CONFIG::Scale::Scale2Log10Scale() : ANALYSIS::Log10Scale 
 inherits CONFIG::Scale::Scale2Scale {
-	log("In Scale2Log10Scale");
+	log("  -Transforming Config:Scale to Analysis:Log10Scale");
 	
 }
 
 mapping CONFIG::Scale::Scale2SqrtScale() : ANALYSIS::SqrtScale 
 inherits CONFIG::Scale::Scale2Scale {
-	log("In Scale2SqrtScale");
+	log("  -Transforming Config:Scale to Analysis:SqrtScale");
 	
 }
 
 mapping CONFIG::Scale::Scale2DateScale() : ANALYSIS::DateScale 
 inherits CONFIG::Scale::Scale2Scale {
-	log("In Scale2DateScale");
+	log("  -Transforming Config:Scale to Analysis:DateScale");
 	
 	result.format := self.format;
 	result.breaks := self.breaks;
@@ -178,7 +209,7 @@ inherits CONFIG::Scale::Scale2Scale {
 
 mapping CONFIG::Visualization::Visualization2LinearPlot() : ANALYSIS::LinearPlot 
 inherits CONFIG::Visualization::Visualization2Visualization {
-	log("In Visualization2LinearPlot");
+	log("  -Transforming Visualization to LinearPlot");
 	
 	result.lineSize := 1.2;
 	result.lineAlpha := 1.8;
@@ -189,10 +220,11 @@ inherits CONFIG::Visualization::Visualization2Visualization {
 
 mapping CONFIG::Visualization::Visualization2ScatterPlot() : ANALYSIS::ScatterPlot 
 inherits CONFIG::Visualization::Visualization2Visualization {
-	log("In Visualization2ScatterPlot");
+		log("  -Transforming Visualization to ScatterPlot");
 	
 	result.alpha := 0.7;
 	result.stroke := 0;
+	result.size := self.size;
 	
 	result.animation := self.container().oclAsType(CONFIG::Config).animation.map Animation2Animation();
 
@@ -200,7 +232,7 @@ inherits CONFIG::Visualization::Visualization2Visualization {
 
 
 mapping CONFIG::Animation::Animation2Animation() : ANALYSIS::Animation {
-	log("In Animation2Animation");
+	log("\n 2.2.Transforming Config:Animation to Analysis:Animation");
 
 	result.label := self.label;
 	result.transitionTime := self.transitionTime;
@@ -209,7 +241,7 @@ mapping CONFIG::Animation::Animation2Animation() : ANALYSIS::Animation {
 	result.duration := self.duration;
 	result.outputName := self.outputName;
 	result.outputPath := self.outputPath;
-	result.shadowWake := 0.1;
+	result.shadowWake := 0.02;
 	result.fps := 30;
 	result.endPause := 60;
 	result.resolution := 100;
@@ -217,7 +249,7 @@ mapping CONFIG::Animation::Animation2Animation() : ANALYSIS::Animation {
 
 
 mapping CONFIG::Regression::Regression2Regression() : ANALYSIS::Regression {
-	log("In Regression2Regression");
+	log("\n 2.3.Transforming Config:Regression to Analysis:Regression");
 	
 	result.dependentValue := self.dependentValue;
 	result.independentValue := self.independentValue;
@@ -225,24 +257,12 @@ mapping CONFIG::Regression::Regression2Regression() : ANALYSIS::Regression {
 
 mapping CONFIG::Regression::Regression2LinnearRegression() : ANALYSIS::LinnearRegression 
 inherits CONFIG::Regression::Regression2Regression {
-	log("In Regression2LinnearRegression");
+	log("  -Transforming Regression to LinnearRegression");
 
 }
 
 mapping CONFIG::Regression::Regression2LogarithmicRegression() : ANALYSIS::LogarithmicRegression 
 inherits CONFIG::Regression::Regression2Regression {
-	log("In Regression2LogarithmicRegression");
+	log("  -Transforming Regression to LogarithmicRegression");
 	
 }
-
-
-//
-// Data Model To Analysis Model Transformations
-//
-mapping DATA::DataPool::DataPool2AnalyticModel() : AnalyticModel {
-	log("In DataPool2AnalyticModel");
-	
-	log(result.dataSource.resolveoneIn(CONFIG::DataModel::DataModel2DataSource, ANALYSIS::DataSource).name);
-}
-
-
