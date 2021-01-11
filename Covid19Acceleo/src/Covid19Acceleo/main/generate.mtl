@@ -148,8 +148,9 @@ scale_[axis/]_date(labels = date_format("[scale.oclAsType(DateScale).format/]"),
 stat_summary(fun.data= mean_cl_normal) + 
 geom_smooth(color='red',method='lm')
 
+sink("[dataSetName/]_linear_regression_result.txt")
 summary(lm([dataSetName/],formula=[reg.dependentValue/] ~ [reg.independentValue/]))
-
+sink()
 [/template]
 
 [template public addLogarithmicRegression(reg : LogarithmicRegression, dataSetName : String)]

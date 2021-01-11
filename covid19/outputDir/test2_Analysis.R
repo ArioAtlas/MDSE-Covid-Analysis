@@ -32,8 +32,6 @@ test2$date_h <- as.numeric(difftime(test2$date,test2$date[1],units="hours"))
 test2$date_m <- as.numeric(difftime(test2$date,test2$date[1],units="mins"))
 test2$date_s <- as.numeric(difftime(test2$date,test2$date[1],units="secs"))
 
-scale_size(range=c(2,12), guide="none") +
-  scale_x_log10() +
 
 # GGPLOT Configuration
 plot0 = test2 %>%
@@ -48,11 +46,14 @@ plot0 = test2 %>%
   theme(axis.title = element_text(),
         text = element_text(family = "Rubik"),
         legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = "Set2")+ 
   stat_summary(fun.data= mean_cl_normal) + 
   geom_smooth(color='red',method='lm')
   
+  sink("test2_linear_regression_result.txt")
   summary(lm(test2,formula=total_deceased ~ total_confirmed))
-  
+  sink()
+
 
 #Save the plot image
 ggsave("Infection_vs Death_ScatterPlot.png")
