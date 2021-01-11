@@ -65,13 +65,35 @@ import se.lnu.joa.covid.model.data.StringSet;
 
 public class UsingEmfModel {
     public static void main(String[] args) {
+    	String configFile;
+    	String dataPoolSrc;
     	
-    	final String configFile = "config.yaml";
-    	final String dataPoolSrc = "./data_pool";
+    	System.out.println("  __  __         _     _   ___      _                  _             _         _    ");
+    	System.out.println(" |  \\/  |___  __| |___| | |   \\ _ _(_)_ _____ _ _     /_\\  _ _  __ _| |_  _ __(_)___");
+    	System.out.println(" | |\\/| / _ \\/ _` / -_) | | |) | '_| \\ V / -_) ' \\   / _ \\| ' \\/ _` | | || (_-< (_-<");
+    	System.out.println(" |_|  |_\\___/\\__,_\\___|_| |___/|_| |_|\\_/\\___|_||_| /_/ \\_\\_||_\\__,_|_|\\_, /__/_/__/");
+    	System.out.println("                                                                       |__/         ");
+    	System.out.println(" By: Angelica Hjelm Gardner, Jens Jakob Sveding, Omid Golshan Tafti");
+    	System.out.println(" Linnaeus University 2021\n\n");
+    	
+    	if(args.length>1) {
+    		configFile = args[0];
+        	dataPoolSrc = args[1];
+    	}
+    	else {
+    		configFile = "config.yaml";
+        	dataPoolSrc = "./data_pool";
+    	}
+    	
     	final File folder = new File(dataPoolSrc);
     
     	System.out.println("Configuration: "+configFile);
     	System.out.println("Data Pool: "+dataPoolSrc);
+    	
+        if(!folder.exists()) {
+        	System.err.println("Cannot find any directory at "+dataPoolSrc);
+        	System.exit(0);
+        }
     	
 		try {
 			System.out.print("\nInitialing Meta Models ");
@@ -113,9 +135,9 @@ public class UsingEmfModel {
 	        // Save the content.
 	        try {
 	        	dataResource.save(Collections.EMPTY_MAP);
-	        	System.out.println("Data model instance has saved at ./generatedModels/data.model");
+	        	System.out.println("Data model instance has been saved at ./generatedModels/data.model");
 	            configResource.save(Collections.EMPTY_MAP);
-	            System.out.println("Config model instance has saved at ./generatedModels/config.model");
+	            System.out.println("Config model instance has been saved at ./generatedModels/config.model");
 	        } catch (IOException e) {
 	        	System.err.println("Error in saving model intances");
 	            e.printStackTrace();
@@ -161,7 +183,7 @@ public class UsingEmfModel {
 		        
 		        try {
 		            res.save(Collections.emptyMap());
-		            System.out.println("Generated Analysis Model has saved at ./generatedModels/analysis.model");
+		            System.out.println("Generated Analysis Model has been saved at ./generatedModels/analysis.model");
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        }
@@ -178,7 +200,7 @@ public class UsingEmfModel {
 					            generator.doGenerate(new BasicMonitor());
 					
 					System.out.println("M2T Transformation has been completed");
-					System.out.println("M2T Transformation result saved at ./outputDir");
+					System.out.println("M2T Transformation result has been saved at ./outputDir");
 				} catch (IOException e) {
 					System.err.println("Error in M2T Transformation");
 					e.printStackTrace();
@@ -210,7 +232,7 @@ public class UsingEmfModel {
     	Yaml yaml = new Yaml(new Constructor(AnalyticConfig.class));
     	try {
 			InputStream inputStream = new FileInputStream(configSource);
-			
+			 
 			// Load YAML file to the proper POJO class
 			AnalyticConfig aConfig = yaml.load(inputStream);
 		
@@ -328,7 +350,7 @@ public class UsingEmfModel {
 		        }
 			}
 			
-			// create Regression from config file
+			// create Regression from configuration file
 			if(aConfig.getRegression()!=null){
 				Regression reg = configFactory.createRegression();
 				reg.setType(RegressionType.get(aConfig.getRegression().getType()));
@@ -340,8 +362,8 @@ public class UsingEmfModel {
 			return config;
 			
     	} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+    		System.err.println("\nCannot find any configuration with name "+configSource);
+        	System.exit(0);
 		}
     	
     	return null;
@@ -359,6 +381,11 @@ public class UsingEmfModel {
         Reader in;
         
         List<File> dataFiles = listFilesForFolder(folder);
+        
+        if(dataFiles.size()==0) {
+        	System.err.println("Cannot find any data file in "+folder.getAbsolutePath());
+        	System.exit(0);
+        }
         
         for(int i=0; i<dataFiles.size(); i++) {
         	        	
@@ -476,7 +503,6 @@ public class UsingEmfModel {
 	            files.add(fileEntry);
 	        }
 	    }
-	    
 	    return files;
 	}
 

@@ -103,11 +103,11 @@ query DATA::DateSet::ConvertToStringList() : List(String) {
 // Config Model To Analysis Model Transformations
 //
 mapping Config::ConfigToAnalysis(data:DataPool) : AnalyticModel {
-	log("\n1.Transformin Data to Analysis");
+	log("\n1.Transforming Data to Analysis");
 	
 	result.dataSource := self.source.map DataModel2DataSource(data);
 	
-	log("\n2.Transformin Config to Analysis");
+	log("\n2.Transforming Config to Analysis");
 		
 	switch {
 			case (self.visualization.type = CONFIG::VisualizationType::LinearPlot) result.visualization := self.visualization.map Visualization2LinearPlot();
@@ -124,7 +124,7 @@ mapping Config::ConfigToAnalysis(data:DataPool) : AnalyticModel {
 }
 
 mapping DataModel::DataModel2DataSource(data:DataPool) : ANALYSIS::DataSource {
-	log(" 1.1.Transformin DataModel to DataSource");
+	log(" 1.1.Transforming DataModel to DataSource");
 	
 	result.name := self.datasetName;
 	result.path := self.dataSource;
@@ -135,7 +135,7 @@ mapping DataModel::DataModel2DataSource(data:DataPool) : ANALYSIS::DataSource {
 }
 
 mapping DataModel::ToDataColumn(data:DataPool, col:String) : ANALYSIS::DataColumn {
-	log("  -Transformin DataModel.Column to DataColumn for #"+col);
+	log("  -Transforming DataModel.Column to DataColumn for #"+col);
 	result.header := col;
 	result.type := data.RetriveDataColumnType(col);
 
