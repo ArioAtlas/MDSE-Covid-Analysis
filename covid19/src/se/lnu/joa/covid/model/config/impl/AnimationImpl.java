@@ -356,27 +356,25 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostic != null) {
-				diagnostic.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 ConfigValidator.DIAGNOSTIC_SOURCE,
-						 ConfigValidator.ANIMATION__VALIDATE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
-						 new Object [] { this }));
+		boolean valid = true;
+
+		if (diagnostic != null) {
+			if(getHeight() < 0)
+			{
+				valid = false;
+				diagnostic.add(new BasicDiagnostic(Diagnostic.WARNING,
+						ConfigValidator.DIAGNOSTIC_SOURCE,
+						ConfigValidator.ANIMATION__VALIDATE, "Error: Height cannot be below zero. Found height:" + getHeight(),
+						new Object[] { this }));
 			}
-			return false;
 		}
-		return true;
+
+		return valid;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

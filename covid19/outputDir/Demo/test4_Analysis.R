@@ -52,10 +52,10 @@ plot0 = test4 %>%
 plot0.animation = plot0 +
   transition_time(date)+
   labs(subtitle = "Date: {frame_time}") +
-  shadow_wake(wake_length = 0.02)
+  shadow_wake(wake_length = 0.1)
 
 #Render and save the animation
-animate(plot0.animation, height = -50, width = 800, fps = 30, duration = 20,
+animate(plot0.animation, height = 500, width = 800, fps = 30, duration = 20,
         end_pause = 60, res = 100, renderer = gifski_renderer("./Infection_vs Death over Time_animatin.gif"))
 
 #anim_save("Infection_vs Death over Time by Country_animatin.gif")

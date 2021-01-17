@@ -48,6 +48,7 @@ plot0 = test3 %>%
   scale_color_brewer(palette = "Set2")+ 
   geom_smooth()
 
+
 #Save the plot image
 ggsave("Infection_over Time in Europe_ScatterPlot.png")
 

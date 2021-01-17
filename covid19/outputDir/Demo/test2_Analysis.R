@@ -35,7 +35,7 @@ test2$date_s <- as.numeric(difftime(test2$date,test2$date[1],units="secs"))
 
 # GGPLOT Configuration
 plot0 = test2 %>%
-  ggplot(aes(x=total_confirmed, y=total_deceased)) +
+  ggplot(aes(x=total_deceased, y=total_confirmed)) +
   geom_point(alpha = 0.7, stroke = 0.0) +
   theme_fivethirtyeight() +
   labs(title = "Infection vs Death",

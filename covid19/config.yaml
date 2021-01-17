@@ -1,6 +1,6 @@
 dataModel:
   dataSource: path1
-  datasetName: test1
+  datasetName: test4
   dateformat: "%m-%d-%Y"
   columns:
     - key
@@ -11,19 +11,30 @@ dataModel:
     - total_deceased
   
 visualization:
-  type: LinearPlot
+  type: ScatterPlot
+  size: total_confirmed
   axes:
     x:
-      label: "Date"
-      column: date
-    y:
       label: "New Cases"
       column: new_confirmed
+      scale:
+        type: Log
+    y:
+      label: "New Deaths"
+      column: new_deceased
     z:
       label: "Country"
       column: key
   info:
-    title: "COVID-19 New Cases in Europe"
-    subTitle: "Spain, United Kingdm, Italy, Sweden, Netherlands, Germany"
+    title: "Infection vs Death over Time by Country"
+    subTitle: ""
     caption: "Source: Google Open Data"
 
+animation:
+  label: "Date"
+  transitionTime: date
+  width: 800
+  height: -50
+  duration: 20
+  outputName: "Infection vs Death over Time"
+  outputPath: out

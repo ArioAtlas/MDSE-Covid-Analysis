@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <covid19:AnalyticModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:covid19="http://lnu.se/dv651/covid19/analysis">
-  <visualization xsi:type="covid19:LinearPlot" xAxis="date" yAxis="new_confirmed" color="key" title="COVID-19 New Cases in Europe" subTitle="Spain, United Kingdm, Italy, Sweden, Netherlands, Germany" xAxisLabel="Date" yAxisLabel="New Cases" colorLabel="Country" caption="Source: Google Open Data" lineSize="1.2" lineAlpha="1.8"/>
-  <dataSource name="test1" path="path1">
+  <visualization xsi:type="covid19:ScatterPlot" xAxis="new_confirmed" yAxis="new_deceased" color="key" title="Infection vs Death over Time by Country" subTitle="" xAxisLabel="New Cases" yAxisLabel="New Deaths" colorLabel="Country" caption="Source: Google Open Data" alpha="0.7" size="total_confirmed">
+    <scale_x xsi:type="covid19:Log10Scale"/>
+    <animation label="Date" transitionTime="date" shadowWake="0.02" width="800" height="-50" duration="20" fps="30" endPause="60" resolution="100" outputPath="out" outputName="Infection vs Death over Time"/>
+  </visualization>
+  <dataSource name="test4" path="path1">
     <data header="key" type="string">
       <values>ES</values>
       <values>FR</values>
